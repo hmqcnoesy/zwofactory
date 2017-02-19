@@ -1,8 +1,7 @@
 
 html { font-family: Segoe UI, Arial, Helvetica, sans-serif; background-color: #aaa; padding:0; }
-body {  background-color: gainsboro; max-width: 900px; padding-bottom: 200px; margin: auto; padding: 1.5em; min-width: 840px; }
+body {  background-color: gainsboro; max-width: 1800px; margin: auto; padding: 1em; min-width: 840px; }
 a { color: #293e60; }
-button { background-color: black; font-size: 0.35rem; color: white; border: none; border-radius: 100%; width: 4em; height: 4em; text-align: center; vertical-align: middle; }
 h1 { background-color: #293e60; color: white; padding: 0.25em 0.5em; margin: 0; text-align: center; }
 p {padding-top: 0.35em}
 li {padding: 0.3em;}
@@ -18,12 +17,14 @@ label { display: block; }
 .u-1-8 { width: 12.5%; }
 .u-1-10 { width: 10%; }
 .u-1-12 { width: 8.33%; }
-textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; width:100%; }
-input[type=text] { width: 100%; }
-input[type=number] { padding: 0.5em; text-align: center; width: 3em; -moz-appearance: textfield; }
+textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; width:100%; }
+input[type=text],
+input[type=number] { width: 100%; box-sizing: border-box; }
+input[type=number] { text-align: center; color: white; }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0; }
+button { background-color: transparent; border: none; cursor: pointer; }
 
-.control { display: inline-block; cursor: pointer; border-radius: 0.5em; border: 1px solid black; color: white; font-size: 0.75rem; width: 100%; text-align: center; padding: 1.5em 0; }
+.control { display: inline-block; cursor: pointer; border: 1px solid black; color: white; font-size: 0.75rem; width: 100%; text-align: center; padding: 1.5em 0; border-radius: 0.25em; }
 .z1 { background-color: #837C83; }
 .z2 { background-color: #3C8FD1; }
 .z3 { background-color: #4AC171; }
@@ -34,3 +35,6 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appe
 .cd { background: linear-gradient(to left,  gainsboro, black); }
 .fr { background: linear-gradient(gainsboro, #837C83); }
 .te { background-color: black; }
+
+.template { display: none; }
+.segment { margin-top: 0.25em; padding: 0.25em; border-radius: 0.2em; }

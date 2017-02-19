@@ -28,66 +28,123 @@
     </div>
 </div>
 
-<div class="grid controls">
+<div id="divControls" class="grid controls">
     <div class="u-1-10">
-        <div class="control z1">Z1</div>
+        <button class="control z1" data-ftp="50">Z1</button>
     </div>
     <div class="u-1-10">
-        <div class="control z2">Z2</div>
+        <button class="control z2" data-ftp="60">Z2</button>
     </div>
     <div class="u-1-10">
-        <div class="control z3">Z3</div>
+        <button class="control z3" data-ftp="70">Z3</button>
     </div>
     <div class="u-1-10">
-        <div class="control z4">Z4</div>
+        <button class="control z4" data-ftp="80">Z4</button>
     </div>
     <div class="u-1-10">
-        <div class="control z5">Z5</div>
+        <button class="control z5" data-ftp="90">Z5</button>
     </div>
     <div class="u-1-10">
-        <div class="control z6">Z6</div>
+        <button class="control z6" data-ftp="100">Z6</button>
     </div>
     <div class="u-1-10">
-        <div class="control wu">warm up</div>
+        <button class="control wu" data-ftp="">warm up</button>
     </div>
     <div class="u-1-10">
-        <div class="control cd">cool down</div>
+        <button class="control cd" data-ftp="">cool down</button>
     </div>
     <div class="u-1-10">
-        <div class="control fr">free ride</div>
+        <button class="control fr" data-ftp="">free ride</button>
     </div>
     <div class="u-1-10">
-        <div class="control te">text event</div>
+        <button class="control te">text event</button>
     </div>
-    
 </div>
 
 
 <div class="grid">
-    <div class="u-1-5">
+    <div id="divSegmentList" class="u-1-4">
         <div class="grid">
-            <div class="u-1-3">% FTP</div>
-            <div class="u-1-3">Minutes</div>
+            <div class="u-1-4">% FTP</div>
+            <div class="u-1-4">Minutes</div>
         </div>
-        <div class="segment grid">
+        <div id="divSegmentTemplate" class="segment grid template">
             <div class="u-1-3">
-                <input type="number" />
+                <input type="hidden" />
+                <input type="number" data-ftp />
             </div>
             <div class="u-1-3">
-                <input type="number" />
+                <input type="number" data-time />
             </div>
-            <div class="u-1-3">
-                <button>▲</button>
-                <button>▼</button>
+            <div class="u-1-3" style="text-align: center;">
+                <button data-direction="up">↑</button>
+                <button data-direction="down">↓</button>
+                <button data-remove>✗</button>
             </div>
         </div>
     </div>
-    <div class="u-4-5">
-        canvas goes here
+    <div id="divSegmentChart" class="u-3-4">
+
     </div>
 </div>
 
 <script>
+    document.getElementById('divControls').addEventListener('click', function(e) {
+        if (e.target.tagName == 'BUTTON') addSegment(e.target);
+    });
+
+
+    document.getElementById('divSegmentList').addEventListener('click', function(e) {
+        if (e.target.tagName != 'BUTTON') return;
+
+        var segmentElement = findAncestorByClass(e.target, 'segment'); 
+
+        if (e.target.hasAttribute('data-remove')) {
+            removeSegment(segmentElement);
+            return;
+        }
+        
+        var direction = e.target.getAttribute('data-direction');
+        moveSegment(segmentElement)
+    });
+
+
+    function addSegment(sourceElement) {
+        var templ = document.getElementById('divSegmentTemplate');
+        var cloned = templ.cloneNode(true);
+        cloned.removeAttribute('id');
+        cloned.classList.remove('template');
+        cloned.querySelector('input[type=hidden]').value = createGuid();
+        cloned.querySelector('input[data-ftp]').value = sourceElement.getAttribute('data-ftp');
+        cloned.querySelector('input[data-ftp]').classList.add(sourceElement.classList[1]);
+        cloned.querySelector('input[data-time]').classList.add(sourceElement.classList[1]);
+        cloned.querySelector('input[data-time]').value = "5";
+        document.getElementById('divSegmentList').appendChild(cloned);
+        cloned.querySelector('input[type]').select();
+    }
+
+
+    function removeSegment(segmentElement) {
+        segmentElement.parentNode.removeChild(segmentElement);
+    }
+
+
+    function moveSegment(segmentElement, direction) {
+
+    }
+
+
+    function createGuid() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+            return v.toString(16);
+        });
+    }
+
+    function findAncestorByClass (el, cls) {
+        while ((el = el.parentElement) && !el.classList.contains(cls));
+        return el;
+    }
 </script>
 
 </body>
