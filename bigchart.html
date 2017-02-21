@@ -66,7 +66,7 @@
 </div>
 
 <div id="divSegmentChart" class="u-4-5">
-    <input type="radio" name="segment" id="x00" /><label for="x00" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label> 
+    <!--<input type="radio" name="segment" id="x00" /><label for="x00" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label> 
     <input type="radio" name="segment" id="x01" /><label for="x01" class="segment"><div style="padding-top: 20px"><div class="z4" style="width:150px;"></div></div></label>
     <input type="radio" name="segment" id="x02" /><label for="x02" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
     <input type="radio" name="segment" id="x03" /><label for="x03" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
@@ -88,6 +88,7 @@
     <input type="radio" name="segment" id="x19" /><label for="x19" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
     <input type="radio" name="segment" id="x20" /><label for="x20" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
     <input type="radio" name="segment" id="x21" /><label for="x21" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    -->
 </div>
 
 
@@ -97,40 +98,47 @@
     });
 
 
-    document.getElementById('btnMoveSegmentUp').addEventListener('click', function(e) {
-        var selectedSegment = getSelectedSegment();
-        if (!selectedSegment) return;
-    });
+    // document.getElementById('btnMoveSegmentUp').addEventListener('click', function(e) {
+    //     var selectedSegment = getSelectedSegment();
+    //     if (!selectedSegment) return;
+    // });
 
 
-    document.getElementById('btnMoveSegmentDown').addEventListener('click', function(e) {
-        var selectedSegment = getSelectedSegment();
-        if (!selectedSegment) return;
-    });
+    // document.getElementById('btnMoveSegmentDown').addEventListener('click', function(e) {
+    //     var selectedSegment = getSelectedSegment();
+    //     if (!selectedSegment) return;
+    // });
 
 
-    document.getElementById('btnRemoveSegment').addEventListener('click', function(e) {
-        var selectedSegment = getSelectedSegment();
-        if (selectedSegment) selectedSegment.parentNode.removeChild(segmentElement);
-    });
+    // document.getElementById('btnRemoveSegment').addEventListener('click', function(e) {
+    //     var selectedSegment = getSelectedSegment();
+    //     if (selectedSegment) selectedSegment.parentNode.removeChild(segmentElement);
+    // });
 
 
     function addSegment(sourceElement) {
-        var templ = document.getElementById('labelSegmentTemplate');
-        var cloned = templ.cloneNode(true);
-        cloned.removeAttribute('id');
-        cloned.classList.remove('template');
-        var guid = createGuid();
-        var newSegmentId = 'div' + guid;
-        cloned.id = newSegmentId;
-        cloned.querySelector('input[type=radio]').id = "rb" + guid;
-        cloned.querySelector('input[data-ftp]').value = sourceElement.getAttribute('data-ftp');
-        cloned.querySelector('div:first-child').classList.add(sourceElement.classList[1]);
-        cloned.querySelector('input[data-time]').value = "5";
-        document.getElementById('divSegmentList').appendChild(cloned);
-        var appendedElement = document.querySelector('#' + newSegmentId + ' input[data-time]');
-        appendedElementx.focus();
-        appendedElement.select();
+        var id = 'x' + createGuid();
+        var input = document.createElement('input');
+        input.setAttribute('type', 'radio');
+        input.setAttribute('name','segment');
+        input.setAttribute('id', id);
+
+        var label = document.createElement('label');
+        label.setAttribute('for', id);
+        label.classList.add('segment');
+        
+        var div1 = document.createElement('div');
+        div1.setAttribute('style', 'padding-top:' + (100 - parseInt(sourceElement.getAttribute('data-ftp'))) + 'px;');
+
+        var div2 = document.createElement('div');
+        div2.classList.add(sourceElement.classList[1]);
+        div2.setAttribute('style', 'width: 50px;');
+
+        label.appendChild(div1);
+        label.appendChild(div2);
+        var segmentList = document.getElementById('divSegmentChart');
+        segmentList.appendChild(input);
+        segmentList.appendChild(label);
     }
 
 
