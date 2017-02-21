@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>zwofactory</title>
-    <link rel="stylesheet" href="site.css" />
+    <link rel="stylesheet" href="bigchart.css" />
 </head> 
 <body>
 <h1>zwofactory</h1>
@@ -61,35 +61,35 @@
     </div>
 </div>
 
-
 <div class="grid">
-    <div id="divSegmentList" class="u-1-5">
-        <div class="grid">
-            <div class="u-1-3"><button id="btnMoveSegmentUp">↑</button></div>
-            <div class="u-1-3"><button id="btnMoveSegmentDown">↓</button></div>
-            <div class="u-1-3"><button id="btnRemoveSegment">✗</button></div>
-        </div>
-        <div class="grid">
-            <div class="u-1-8"></div>
-            <div class="u-1-2">% FTP</div>
-            <div class="u-3-8">Minutes</div>
-        </div>
-        <label id="labelSegmentTemplate" class="grid segment template">
-            <div class="u-1-8 indicator">
-                <input type="radio" style="display:none" />
-            </div>
-            <div class="u-1-2">
-                <input type="number" data-ftp />
-            </div>
-            <div class="u-3-8">
-                <input type="number" data-time />
-            </div>
-        </label>
-    </div>
-    <div id="divSegmentChart" class="u-4-5">
-        <div class="z3 control" style="height:400px;width:50px;"></div>
-    </div>
+<div class="u-1">Move left, Move right, delete, FTP, Duration, count, etc.</div>
 </div>
+
+<div id="divSegmentChart" class="u-4-5">
+    <input type="radio" name="segment" id="x00" /><label for="x00" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label> 
+    <input type="radio" name="segment" id="x01" /><label for="x01" class="segment"><div style="padding-top: 20px"><div class="z4" style="width:150px;"></div></div></label>
+    <input type="radio" name="segment" id="x02" /><label for="x02" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x03" /><label for="x03" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x04" /><label for="x04" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x05" /><label for="x05" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x06" /><label for="x06" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x07" /><label for="x07" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x08" /><label for="x08" class="segment"><div style="padding-top: 20px"><div class="z4" style="width:150px;"></div></div></label>
+    <input type="radio" name="segment" id="x09" /><label for="x09" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x10" /><label for="x10" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x11" /><label for="x11" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x12" /><label for="x12" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x13" /><label for="x13" class="segment"><div style="padding-top: 20px"><div class="z4" style="width:150px;"></div></div></label>
+    <input type="radio" name="segment" id="x14" /><label for="x14" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x15" /><label for="x15" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x16" /><label for="x16" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x17" /><label for="x17" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x18" /><label for="x18" class="segment"><div style="padding-top: 20px"><div class="z4" style="width:150px;"></div></div></label>
+    <input type="radio" name="segment" id="x19" /><label for="x19" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+    <input type="radio" name="segment" id="x20" /><label for="x20" class="segment"><div style="padding-top: 50px"><div class="z3" style="width:50px;"></div></div></label>
+    <input type="radio" name="segment" id="x21" /><label for="x21" class="segment"><div style="padding-top: 20px"><div class="z2" style="width:75px;"></div></div></label>
+</div>
+
 
 <script>
     document.getElementById('divControls').addEventListener('click', function(e) {

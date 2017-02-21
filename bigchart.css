@@ -1,6 +1,6 @@
 
 html { font-family: Segoe UI, Arial, Helvetica, sans-serif; background-color: #aaa; padding:0; }
-body {  background-color: gainsboro; max-width: 1800px; margin: auto; padding: 1em; min-width: 840px; }
+body {  background-color: gainsboro; max-width: 1800px; margin: auto; padding: 1em; min-width: 480px; }
 a { color: #293e60; }
 h1 { background-color: #293e60; color: white; padding: 0.25em 0.5em; margin: 0; text-align: center; }
 p {padding-top: 0.35em}
@@ -8,6 +8,7 @@ li {padding: 0.3em;}
 label { display: block; }
 .grid { display: flex; flex-flow: row wrap; align-content: flex-start; letter-spacing: -.31em; vertical-align: bottom; }
 .grid > * { display: inline-block; padding: 0.25em; box-sizing: border-box; letter-spacing: normal; }
+.u-1 { width: 100%; }
 .u-1-2 { width: 50%; }
 .u-1-3 { width: 33.3%; }
 .u-1-4 { width: 25%; }
@@ -41,5 +42,9 @@ button { background-color: transparent; border: none; cursor: pointer; }
 .segment { margin-top: 0.25em; padding: 0.25em; border-radius: 0.2em; }
 .indicator { width: 1em; height: 1em; margin-top: auto; margin-bottom: auto; border-radius: 100%; vertical-align: bottom; line-height: 1em; }
 
-#divSegmentChart { position: relative; background-color: white; height: 620px; vertical-align: bottom; overflow-x: auto; }
-#divSegmentChart > div { position: absolute; bottom: 10px; box-sizing: border-box; margin: 0; }
+#divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 320px; vertical-align: bottom; padding: 10px; overflow-x: scroll; }
+#divSegmentChart > label { display: inline-block; height: 100%; box-sizing: border-box; padding: 0; margin: -2px; border-bottom: 6px solid transparent; }
+#divSegmentChart > label > div { display: inline-block; height: 100%; box-sizing: border-box; padding: 0; margin: 0; }
+#divSegmentChart > label > div > div { height: 100%; box-sizing: border-box; border-width: 1px; padding: 0; margin:0; }
+#divSegmentChart input[type="radio"] { display: none; }
+#divSegmentChart input[type="radio"]:checked + label { border-bottom: 6px solid black; }
