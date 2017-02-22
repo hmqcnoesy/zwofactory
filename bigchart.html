@@ -30,31 +30,31 @@
 
 <div id="divControls" class="grid controls">
     <div class="u-1-10">
-        <button class="control z1" data-ftp="50">Z1</button>
+        <button class="control z1" data-ftp="50" data-length="10">Z1</button>
     </div>
     <div class="u-1-10">
-        <button class="control z2" data-ftp="60">Z2</button>
+        <button class="control z2" data-ftp="60" data-length="5">Z2</button>
     </div>
     <div class="u-1-10">
-        <button class="control z3" data-ftp="70">Z3</button>
+        <button class="control z3" data-ftp="70" data-length="5">Z3</button>
     </div>
     <div class="u-1-10">
-        <button class="control z4" data-ftp="80">Z4</button>
+        <button class="control z4" data-ftp="80" data-length="5">Z4</button>
     </div>
     <div class="u-1-10">
-        <button class="control z5" data-ftp="90">Z5</button>
+        <button class="control z5" data-ftp="90" data-length="5">Z5</button>
     </div>
     <div class="u-1-10">
-        <button class="control z6" data-ftp="100">Z6</button>
+        <button class="control z6" data-ftp="100" data-length="1">Z6</button>
     </div>
     <div class="u-1-10">
-        <button class="control wu" data-ftp="">warm up</button>
+        <button class="control wu" data-ftp="50" data-length="10">warm up</button>
     </div>
     <div class="u-1-10">
-        <button class="control cd" data-ftp="">cool down</button>
+        <button class="control cd" data-ftp="50" data-length="10">cool down</button>
     </div>
     <div class="u-1-10">
-        <button class="control fr" data-ftp="">free ride</button>
+        <button class="control fr" data-ftp="70" data-length="20">free ride</button>
     </div>
     <div class="u-1-10">
         <button class="control te">text event</button>
@@ -62,7 +62,8 @@
 </div>
 
 <div class="grid">
-<div class="u-1">Move left, Move right, delete, FTP, Duration, count, etc.</div>
+<div class="u-1">
+    <button id="btnMoveLeft">Move left</button>, Move right, delete, FTP, Duration, count, etc.</div>
 </div>
 
 <div id="divSegmentChart" class="u-4-5">
@@ -98,10 +99,12 @@
     });
 
 
-    // document.getElementById('btnMoveSegmentUp').addEventListener('click', function(e) {
-    //     var selectedSegment = getSelectedSegment();
-    //     if (!selectedSegment) return;
-    // });
+    document.getElementById('btnMoveLeft').addEventListener('click', function(e) {
+        var selectedSegment = getSelectedSegmentId();
+        if (!selectedSegment) return;
+
+        
+    });
 
 
     // document.getElementById('btnMoveSegmentDown').addEventListener('click', function(e) {
@@ -133,13 +136,32 @@
 
         var div2 = document.createElement('div');
         div2.classList.add(sourceElement.classList[1]);
-        div2.setAttribute('style', 'width: 50px;');
+        div2.setAttribute('style', 'width: ' + 10 * parseInt(sourceElement.getAttribute('data-length')) + 'px;');
 
         div1.appendChild(div2);
         label.appendChild(div1);
         var segmentList = document.getElementById('divSegmentChart');
         segmentList.appendChild(input);
         segmentList.appendChild(label);
+        loadSegment(id);
+    }
+
+
+    document.getElementById('divSegmentChart').addEventListener('click', function(e) {
+        if (e.target.tagName != 'INPUT') return;
+        loadSegment(e.target.getAttribute('id'));
+    });
+
+
+    function getSelectedSegmentId() {
+        var selectedSegment = document.querySelector('#divSegmentChart input:checked');
+        if (selectedSegment) return selectedSegment.id;
+        return null;
+    }
+
+
+    function loadSegment(segmentId) {
+        console.log('loading ' + segmentId);
     }
 
 
