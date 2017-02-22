@@ -122,20 +122,21 @@
         input.setAttribute('type', 'radio');
         input.setAttribute('name','segment');
         input.setAttribute('id', id);
+        input.checked = true;
 
         var label = document.createElement('label');
         label.setAttribute('for', id);
         label.classList.add('segment');
         
         var div1 = document.createElement('div');
-        div1.setAttribute('style', 'padding-top:' + (100 - parseInt(sourceElement.getAttribute('data-ftp'))) + 'px;');
+        div1.setAttribute('style', 'padding-top:' + (300 - 3*parseInt(sourceElement.getAttribute('data-ftp'))) + 'px;');
 
         var div2 = document.createElement('div');
         div2.classList.add(sourceElement.classList[1]);
         div2.setAttribute('style', 'width: 50px;');
 
+        div1.appendChild(div2);
         label.appendChild(div1);
-        label.appendChild(div2);
         var segmentList = document.getElementById('divSegmentChart');
         segmentList.appendChild(input);
         segmentList.appendChild(label);
