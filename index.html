@@ -30,66 +30,48 @@
 
 <div id="divControls" class="grid controls">
     <div class="u-1-10">
-        <button class="control z1" data-ftp="50">Z1</button>
+        <button class="control z1" data-ftp="50" data-length="10">Z1</button>
     </div>
     <div class="u-1-10">
-        <button class="control z2" data-ftp="60">Z2</button>
+        <button class="control z2" data-ftp="60" data-length="5">Z2</button>
     </div>
     <div class="u-1-10">
-        <button class="control z3" data-ftp="70">Z3</button>
+        <button class="control z3" data-ftp="70" data-length="5">Z3</button>
     </div>
     <div class="u-1-10">
-        <button class="control z4" data-ftp="80">Z4</button>
+        <button class="control z4" data-ftp="80" data-length="5">Z4</button>
     </div>
     <div class="u-1-10">
-        <button class="control z5" data-ftp="90">Z5</button>
+        <button class="control z5" data-ftp="90" data-length="5">Z5</button>
     </div>
     <div class="u-1-10">
-        <button class="control z6" data-ftp="100">Z6</button>
+        <button class="control z6" data-ftp="100" data-length="1">Z6</button>
     </div>
     <div class="u-1-10">
-        <button class="control wu" data-ftp="">warm up</button>
+        <button class="control wu" data-ftp="50" data-length="10">warm up</button>
     </div>
     <div class="u-1-10">
-        <button class="control cd" data-ftp="">cool down</button>
+        <button class="control cd" data-ftp="50" data-length="10">cool down</button>
     </div>
     <div class="u-1-10">
-        <button class="control fr" data-ftp="">free ride</button>
+        <button class="control fr" data-ftp="70" data-length="20">free ride</button>
     </div>
     <div class="u-1-10">
         <button class="control te">text event</button>
     </div>
 </div>
 
-
 <div class="grid">
-    <div id="divSegmentList" class="u-1-5">
-        <div class="grid">
-            <div class="u-1-3"><button id="btnMoveSegmentUp">↑</button></div>
-            <div class="u-1-3"><button id="btnMoveSegmentDown">↓</button></div>
-            <div class="u-1-3"><button id="btnRemoveSegment">✗</button></div>
-        </div>
-        <div class="grid">
-            <div class="u-1-8"></div>
-            <div class="u-1-2">% FTP</div>
-            <div class="u-3-8">Minutes</div>
-        </div>
-        <label id="labelSegmentTemplate" class="grid segment template">
-            <div class="u-1-8 indicator">
-                <input type="radio" style="display:none" />
-            </div>
-            <div class="u-1-2">
-                <input type="number" data-ftp />
-            </div>
-            <div class="u-3-8">
-                <input type="number" data-time />
-            </div>
-        </label>
-    </div>
-    <div id="divSegmentChart" class="u-4-5">
-        <div class="z3 control" style="height:400px;width:50px;"></div>
+    <div class="u-1">
+        <button id="btnMoveLeft">Move left</button>
+        <button id="btnMoveRight">Move right</button>
+        <button id="btnDelete">Delete</button>
     </div>
 </div>
+
+<div id="divSegmentChart" class="u-4-5">
+</div>
+
 
 <script>
     document.getElementById('divControls').addEventListener('click', function(e) {
@@ -97,40 +79,80 @@
     });
 
 
-    document.getElementById('btnMoveSegmentUp').addEventListener('click', function(e) {
-        var selectedSegment = getSelectedSegment();
-        if (!selectedSegment) return;
+    document.getElementById('divSegmentChart').addEventListener('click', function(e) {
+        if (e.target.tagName != 'INPUT') return;
+        loadSegment(e.target.getAttribute('id'));
     });
 
 
-    document.getElementById('btnMoveSegmentDown').addEventListener('click', function(e) {
-        var selectedSegment = getSelectedSegment();
-        if (!selectedSegment) return;
+    document.getElementById('btnMoveLeft').addEventListener('click', function(e) {
+        var selectedBlock = getSelectedBlock();
+        if (!selectedBlock) return;
+        var previousBlock = selectedBlock.previousElementSibling;
+        if (previousBlock) selectedBlock.parentNode.insertBefore(selectedBlock, previousBlock);
     });
 
 
-    document.getElementById('btnRemoveSegment').addEventListener('click', function(e) {
-        var selectedSegment = getSelectedSegment();
-        if (selectedSegment) selectedSegment.parentNode.removeChild(segmentElement);
+    document.getElementById('btnMoveRight').addEventListener('click', function(e) {
+        var selectedBlock = getSelectedBlock();
+        if (!selectedBlock) return;
+        var nextBlock = selectedBlock.nextElementSibling;
+        if (nextBlock) selectedBlock.parentNode.insertBefore(nextBlock, selectedBlock);
+    });
+
+
+    document.getElementById('btnDelete').addEventListener('click', function(e) {
+        var selectedBlock = getSelectedBlock();
+        if (!selectedBlock) return;
+        var previousBlock = selectedBlock.previousElementSibling;
+        var nextBlock = selectedBlock.nextElementSibling;
+        selectedBlock.parentNode.removeChild(selectedBlock);
+        if (previousBlock && !nextBlock) previousBlock.querySelector('input[type=radio]').checked = true;
+        else if (nextBlock) nextBlock.querySelector('input[type=radio]').checked = true;
     });
 
 
     function addSegment(sourceElement) {
-        var templ = document.getElementById('labelSegmentTemplate');
-        var cloned = templ.cloneNode(true);
-        cloned.removeAttribute('id');
-        cloned.classList.remove('template');
-        var guid = createGuid();
-        var newSegmentId = 'div' + guid;
-        cloned.id = newSegmentId;
-        cloned.querySelector('input[type=radio]').id = "rb" + guid;
-        cloned.querySelector('input[data-ftp]').value = sourceElement.getAttribute('data-ftp');
-        cloned.querySelector('div:first-child').classList.add(sourceElement.classList[1]);
-        cloned.querySelector('input[data-time]').value = "5";
-        document.getElementById('divSegmentList').appendChild(cloned);
-        var appendedElement = document.querySelector('#' + newSegmentId + ' input[data-time]');
-        appendedElementx.focus();
-        appendedElement.select();
+        var id = 'x' + createGuid();
+        var input = document.createElement('input');
+        input.setAttribute('type', 'radio');
+        input.setAttribute('name','segment');
+        input.setAttribute('id', id);
+        input.checked = true;
+
+        var divBlock = document.createElement('div');
+        divBlock.classList.add('block');
+        divBlock.setAttribute('data-id', id);
+
+        var label = document.createElement('label');
+        label.setAttribute('for', id);
+        label.classList.add('block');
+        
+        var div1 = document.createElement('div');
+        div1.setAttribute('style', 'padding-top:' + (300 - 3*parseInt(sourceElement.getAttribute('data-ftp'))) + 'px;');
+
+        var div2 = document.createElement('div');
+        div2.classList.add(sourceElement.classList[1]);
+        div2.setAttribute('style', 'width: ' + 10 * parseInt(sourceElement.getAttribute('data-length')) + 'px;');
+
+        div1.appendChild(div2);
+        label.appendChild(div1);
+        divBlock.appendChild(input);
+        divBlock.appendChild(label);
+        document.getElementById('divSegmentChart').appendChild(divBlock);
+        loadSegment(id);
+    }
+
+
+    function getSelectedBlock() {
+        var selectedSegment = document.querySelector('#divSegmentChart input:checked');
+        if (!selectedSegment) return null;
+        return document.querySelector('div[data-id="' + selectedSegment.id + '"]');
+    }
+
+
+    function loadSegment(segmentId) {
+        console.log('loading ' + segmentId);
     }
 
 
