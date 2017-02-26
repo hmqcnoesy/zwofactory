@@ -36,17 +36,16 @@ button { background-color: transparent; border: none; cursor: pointer; }
 .wu { background: linear-gradient(to right, gainsboro, black); }
 .cd { background: linear-gradient(to left,  gainsboro, black); }
 .fr { background: linear-gradient(gainsboro, #837C83); }
-.te { background-color: black; }
+.in { background: repeating-linear-gradient(to right, #FFCC3F, #FFCC3F 15px, #3C8FD1 15px, #3C8FD1 30px); }
 
 .template { display: none; }
-.segment { margin-top: 0.25em; padding: 0.25em; border-radius: 0.2em; }
 .indicator { width: 1em; height: 1em; margin-top: auto; margin-bottom: auto; border-radius: 100%; vertical-align: bottom; line-height: 1em; }
 
 #divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 320px; vertical-align: bottom; padding: 10px; overflow-x: auto; }
-.block {display: inline-block; height: 100%; }
-.block > label { height: 100%; padding: 0; margin: 0; border-bottom: 6px solid transparent; }
-.block > label > div { display: inline-block; height: 100%; box-sizing: border-box; padding: 0; margin: 0; }
-.block > label > div > div { height: 100%; box-sizing: border-box; border: 1px solid white; border-radius: 4px; padding: 0; margin: 0; }
-.block > input[type="radio"] { display: none; }
-.block > input[type="radio"]:hover + label { border-bottom: 6px solid gainsboro; }
-.block > input[type="radio"]:checked + label { border-bottom: 6px solid black; }
+.segment {display: inline-block; height: 100%; }
+.segment > label { display: inline-block; height: 100%; padding: 0; margin: 0; border-bottom: 6px solid transparent; }
+.segment > label > div { display: inline-block; height: 100%; box-sizing: border-box; padding: 0; margin: 0; }
+.segment > label > div > div { height: 100%; box-sizing: border-box; border: 1px solid white; border-radius: 4px; padding: 0; margin: 0; }
+.segment > input[type="radio"] { display: none; }
+.segment > input[type="radio"]:hover + label { border-bottom: 6px solid gainsboro; }
+.segment > input[type="radio"]:checked + label { border-bottom: 6px solid black; }

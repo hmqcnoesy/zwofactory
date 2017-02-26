@@ -30,43 +30,66 @@
 
 <div id="divControls" class="grid controls">
     <div class="u-1-10">
-        <button class="control z1" data-ftp="50" data-length="10">Z1</button>
+        <button class="control z1" data-ftp="50" data-length="10" data-count="1">Z1
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1"><input name="segment" type="radio"><label><div style="padding-top:150px;"><div class="z1" style="width: 100px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control z2" data-ftp="60" data-length="5">Z2</button>
+        <button class="control z2" data-ftp="60" data-length="5" data-count="1">Z2
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1"><input name="segment" type="radio"><label><div style="padding-top:120px;"><div class="z2" style="width: 50px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control z3" data-ftp="70" data-length="5">Z3</button>
+        <button class="control z3" data-ftp="70" data-length="5" data-count="1">Z3
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1"><input name="segment" type="radio"><label><div style="padding-top:90px;"><div class="z3" style="width: 50px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control z4" data-ftp="80" data-length="5">Z4</button>
+        <button class="control z4" data-ftp="80" data-length="5" data-count="1">Z4
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1"><input name="segment" type="radio"><label><div style="padding-top:60px;"><div class="z4" style="width: 50px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control z5" data-ftp="90" data-length="5">Z5</button>
+        <button class="control z5" data-ftp="90" data-length="5" data-count="1">Z5
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1"><input name="segment" type="radio"><label><div style="padding-top:30px;"><div class="z5" style="width: 50px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control z6" data-ftp="100" data-length="1">Z6</button>
+        <button class="control z6" data-ftp="100" data-length="1" data-count="1">Z6
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1"><input name="segment" type="radio"><label><div style="padding-top:0px;"><div class="z6" style="width: 10px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control wu" data-ftp="50" data-length="10">warm up</button>
+        <button class="control wu" data-ftp="50" data-length="10" data-count="1">warm up
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1 txtDuration2 txtPower2"><input name="segment" type="radio"><label><div style="padding-top:150px;"><div class="wu" style="width: 100px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control cd" data-ftp="50" data-length="10">cool down</button>
+        <button class="control cd" data-ftp="50" data-length="10" data-count="1">cool down
+            <div style="display:none" class="segment" data-enable="txtDuration1 txtPower1 txtDuration2 txtPower2"><input name="segment" type="radio"><label><div style="padding-top:150px;"><div class="cd" style="width: 100px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control fr" data-ftp="70" data-length="20">free ride</button>
+        <button class="control fr" data-ftp="70" data-length="20" data-count="1">free ride
+            <div style="display:none" class="segment" data-enable="txtDuration1"><input name="segment" type="radio"><label><div style="padding-top:90px;"><div class="fr" style="width: 200px;"></div></div></label></div>
+        </button>
     </div>
     <div class="u-1-10">
-        <button class="control te">text event</button>
+        <button class="control in">int
+            <div style="display:none" class="segment" data-enable="txtRepeat txtDuration1 txtPower1 txtDuration2 txtPower2"><input name="segment" type="radio"><label><div style="padding-top:60px;"><div class="z4" style="width: 50px;"></div></div><div style="padding-top:120px;"><div class="z2" style="width: 20px;"></div></div><div style="padding-top:60px;"><div class="z4" style="width: 50px;"></div></div><div style="padding-top:120px;"><div class="z2" style="width: 20px;"></div></div><div style="padding-top:60px;"><div class="z4" style="width: 50px;"></div></div><div style="padding-top:120px;"><div class="z2" style="width: 20px;"></div></div></label></div>
+        </button>
     </div>
 </div>
 
 <div class="grid">
-    <div class="u-1">
-        <button id="btnMoveLeft">Move left</button>
-        <button id="btnMoveRight">Move right</button>
-        <button id="btnDelete">Delete</button>
-    </div>
+    <div class="u-1-10"><button id="btnMoveLeft">Move left</button></div>
+    <div class="u-1-10"><button id="btnMoveRight">Move right</button></div>
+    <div class="u-1-10"><button id="btnDelete">Delete</button></div>
+    <div class="u-1-10"><label for="txtRepeat">Repeat</label><input disabled type="number" id="txtRepeat" /></div>
+    <div class="u-1-10"><label for="txtDuration1">Duration</label><input disabled type="number" id="txtDuration1" /></div>
+    <div class="u-1-10"><label for="txtPower1">%FTP</label><input disabled type="number" id="txtPower1" /></div>
+    <div class="u-1-10"><label for="txtDuration2">Duration 2</label><input disabled type="number" id="txtDuration2" /></div>
+    <div class="u-1-10"><label for="txtPower2">%FTP 2</label><input disabled type="number" id="txtPower2" /></div>
 </div>
 
 <div id="divSegmentChart" class="u-4-5">
@@ -107,39 +130,37 @@
         var previousBlock = selectedBlock.previousElementSibling;
         var nextBlock = selectedBlock.nextElementSibling;
         selectedBlock.parentNode.removeChild(selectedBlock);
-        if (previousBlock && !nextBlock) previousBlock.querySelector('input[type=radio]').checked = true;
-        else if (nextBlock) nextBlock.querySelector('input[type=radio]').checked = true;
+        if (previousBlock && !nextBlock) {
+            previousBlock.querySelector('input[type=radio]').checked = true;
+            loadSegment(previousBlock.getAttribute('data-id'));
+        }
+        else if (nextBlock) {
+            nextBlock.querySelector('input[type=radio]').checked = true;
+            loadSegment(nextBlock.getAttribute('data-id'));
+        }
+    });
+
+
+    document.getElementById('divSegmentChart').addEventListener('change', function(e) {
+        loadSegment(e.target.id);
     });
 
 
     function addSegment(sourceElement) {
         var id = 'x' + createGuid();
-        var input = document.createElement('input');
-        input.setAttribute('type', 'radio');
-        input.setAttribute('name','segment');
+        var clone = sourceElement.querySelector('div').cloneNode(true);
+        clone.setAttribute('data-id', id);
+        clone.removeAttribute('style');
+
+        var input = clone.querySelector('input');
         input.setAttribute('id', id);
         input.checked = true;
 
-        var divBlock = document.createElement('div');
-        divBlock.classList.add('block');
-        divBlock.setAttribute('data-id', id);
-
-        var label = document.createElement('label');
+        var label = clone.querySelector('label');
         label.setAttribute('for', id);
-        label.classList.add('block');
-        
-        var div1 = document.createElement('div');
-        div1.setAttribute('style', 'padding-top:' + (300 - 3*parseInt(sourceElement.getAttribute('data-ftp'))) + 'px;');
 
-        var div2 = document.createElement('div');
-        div2.classList.add(sourceElement.classList[1]);
-        div2.setAttribute('style', 'width: ' + 10 * parseInt(sourceElement.getAttribute('data-length')) + 'px;');
-
-        div1.appendChild(div2);
-        label.appendChild(div1);
-        divBlock.appendChild(input);
-        divBlock.appendChild(label);
-        document.getElementById('divSegmentChart').appendChild(divBlock);
+        document.getElementById('divSegmentChart').appendChild(clone);
+        clone.scrollIntoView();
         loadSegment(id);
     }
 
@@ -152,7 +173,23 @@
 
 
     function loadSegment(segmentId) {
-        console.log('loading ' + segmentId);
+        var txtRepeat = document.querySelector('#txtRepeat');
+        var txtDuration1 = document.querySelector('#txtDuration1');
+        var txtPower1 = document.querySelector('#txtPower1');
+        var txtDuration2 = document.querySelector('#txtDuration2');
+        var txtPower2 = document.querySelector('#txtPower2');
+        var selectedSegment = document.querySelector('div[data-id="' + segmentId + '"]');
+        var inputsToEnable = selectedSegment.getAttribute('data-enable').split(' ');
+        var repeat = selectedSegment.querySelectorAll('label > div').length / 2;
+        var duration1 = selectedSegment.querySelector('label > div > div').offsetWidth;
+        var power1 = selectedSegment.querySelector('label > div').style.paddingTop.replace('px', '');
+        // TODO left off here
+        
+        if (inputsToEnable.indexOf('txtRepeat') != -1) { txtRepeat.value = repeat; txtRepeat.removeAttribute('disabled'); } else { txtRepeat.value = ''; txtRepeat.setAttribute('disabled', true); }
+        if (inputsToEnable.indexOf('txtDuration1') != -1) txtDuration1.removeAttribute('disabled'); else { txtDuration1.setAttribute('disabled', true); }
+        if (inputsToEnable.indexOf('txtPower1') != -1) txtPower1.removeAttribute('disabled'); else { txtPower1.setAttribute('disabled', true); }
+        if (inputsToEnable.indexOf('txtDuration2') != -1) txtDuration2.removeAttribute('disabled'); else { txtDuration2.setAttribute('disabled', true); }
+        if (inputsToEnable.indexOf('txtPower2') != -1) txtPower2.removeAttribute('disabled'); else { txtPower2.setAttribute('disabled', true); }
     }
 
 
