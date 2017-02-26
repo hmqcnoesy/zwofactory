@@ -82,17 +82,27 @@
 </div>
 
 <div class="grid">
-    <div class="u-1-10"><button id="btnMoveLeft">Move left</button></div>
-    <div class="u-1-10"><button id="btnMoveRight">Move right</button></div>
-    <div class="u-1-10"><button id="btnDelete">Delete</button></div>
-    <div class="u-1-10"><label for="txtRepeat">Repeat</label><input disabled type="number" id="txtRepeat" /></div>
-    <div class="u-1-10"><label for="txtDuration1">Duration</label><input disabled type="number" id="txtDuration1" /></div>
-    <div class="u-1-10"><label for="txtPower1">%FTP</label><input disabled type="number" id="txtPower1" /></div>
-    <div class="u-1-10"><label for="txtDuration2">Duration 2</label><input disabled type="number" id="txtDuration2" /></div>
-    <div class="u-1-10"><label for="txtPower2">%FTP 2</label><input disabled type="number" id="txtPower2" /></div>
+    <div class="u-1-10"><button id="btnMoveLeft">← Move Left</button></div>
+    <div class="u-1-10"><button id="btnMoveRight">Move Right →</button></div>
+    <div class="u-1-10"></div>
+    <div class="u-1-10"></div>
+    <div class="u-1-10"></div>
+    <div class="u-1-10"></div>
+    <div class="u-1-10"></div>
+    <div class="u-1-10"></div>
+    <div class="u-1-10"></div>
+    <div class="u-1-10" style="text-align: right"><button id="btnDelete">⌫ Delete</button></div>
 </div>
 
 <div id="divSegmentChart" class="u-4-5">
+</div>
+
+<div class="grid">
+    <div class="u-1-5"><label for="txtRepeat">Repeat</label><input disabled type="number" id="txtRepeat" /></div>
+    <div class="u-1-5"><label for="txtDuration1">Duration</label><input disabled type="number" id="txtDuration1" /></div>
+    <div class="u-1-5"><label for="txtPower1">%FTP</label><input disabled type="number" id="txtPower1" /></div>
+    <div class="u-1-5"><label for="txtDuration2">Duration 2</label><input disabled type="number" id="txtDuration2" /></div>
+    <div class="u-1-5"><label for="txtPower2">%FTP 2</label><input disabled type="number" id="txtPower2" /></div>
 </div>
 
 
@@ -137,6 +147,8 @@
         else if (nextBlock) {
             nextBlock.querySelector('input[type=radio]').checked = true;
             loadSegment(nextBlock.getAttribute('data-id'));
+        } else {
+            loadNoSegment();
         }
     });
 
@@ -190,6 +202,25 @@
         if (inputsToEnable.indexOf('txtPower1') != -1) txtPower1.removeAttribute('disabled'); else { txtPower1.setAttribute('disabled', true); }
         if (inputsToEnable.indexOf('txtDuration2') != -1) txtDuration2.removeAttribute('disabled'); else { txtDuration2.setAttribute('disabled', true); }
         if (inputsToEnable.indexOf('txtPower2') != -1) txtPower2.removeAttribute('disabled'); else { txtPower2.setAttribute('disabled', true); }
+    }
+
+
+    function loadNoSegment() {
+        var txtRepeat = document.querySelector('#txtRepeat');
+        txtRepeat.value = ''; 
+        txtRepeat.setAttribute('disabled', true);
+        var txtDuration1 = document.querySelector('#txtDuration1');
+        txtDuration1.value = ''; 
+        txtDuration1.setAttribute('disabled', true);
+        var txtPower1 = document.querySelector('#txtPower1');
+        txtPower1.value = ''; 
+        txtPower1.setAttribute('disabled', true);
+        var txtDuration2 = document.querySelector('#txtDuration2');
+        txtDuration2.value = ''; 
+        txtDuration2.setAttribute('disabled', true);
+        var txtPower2 = document.querySelector('#txtPower2');
+        txtPower2.value = ''; 
+        txtPower2.setAttribute('disabled', true);
     }
 
 
