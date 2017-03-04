@@ -36,7 +36,7 @@ button { background-color: transparent; border: none; cursor: pointer; }
 .wu { background: linear-gradient(to right, gainsboro, black); }
 .cd { background: linear-gradient(to left,  gainsboro, black); }
 .fr { background: linear-gradient(gainsboro, #837C83); }
-.in { background: repeating-linear-gradient(to right, #FFCC3F, #FFCC3F 15px, #3C8FD1 15px, #3C8FD1 30px); }
+.in { background: repeating-linear-gradient(to right, #837C83, #837C83 15px, #3C8FD1 15px, #3C8FD1 30px); }
 
 .template { display: none; }
 .indicator { width: 1em; height: 1em; margin-top: auto; margin-bottom: auto; border-radius: 100%; vertical-align: bottom; line-height: 1em; }

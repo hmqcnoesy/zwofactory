@@ -61,22 +61,22 @@
     </div>
     <div class="u-1-10">
         <button class="control wu">warm up
-            <div style="display:none" class="segment" data-segment-type="Warmup" data-ftp="25" data-duration="600" data-ftp-2="75" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:150px;"><div class="wu" style="width: 100px;"></div></div></label></div>
+            <div style="display:none" class="segment" data-segment-type="Warmup" data-ftp="25" data-duration="600" data-ftp-2="75" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:225px;"><div class="wu" style="width: 100px;"></div></div></label></div>
         </button>
     </div>
     <div class="u-1-10">
         <button class="control cd">cool down
-            <div style="display:none" class="segment" data-segment-type="Cooldown" data-ftp="75" data-duration="600" data-ftp-2="25" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:150px;"><div class="cd" style="width: 100px;"></div></div></label></div>
+            <div style="display:none" class="segment" data-segment-type="Cooldown" data-ftp="75" data-duration="600" data-ftp-2="25" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:225px;"><div class="cd" style="width: 100px;"></div></div></label></div>
         </button>
     </div>
     <div class="u-1-10">
         <button class="control fr">free ride
-            <div style="display:none" class="segment" data-segment-type="FreeRide" data-ftp="70" data-duration="600" data-enable="txtDuration1"><input name="segment" type="radio"><label><div style="padding-top:90px;"><div class="fr" style="width: 200px;"></div></div></label></div>
+            <div style="display:none" class="segment" data-segment-type="FreeRide" data-ftp="70" data-duration="600" data-enable="txtDuration1"><input name="segment" type="radio"><label><div style="padding-top:230px;"><div class="fr" style="width: 100px;"></div></div></label></div>
         </button>
     </div>
     <div class="u-1-10">
         <button class="control in">int
-            <div style="display:none" class="segment" data-segment-type="IntervalsT" data-ftp="75" data-duration="60" data-ftp-2="50" data-duration-2="300" data-repeat="4" data-enable="txtRepeat txtDuration1 txtFtp1 txtDuration2 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:60px;"><div class="z4" style="width: 50px;"></div></div><div style="padding-top:120px;"><div class="z2" style="width: 20px;"></div></div><div style="padding-top:60px;"><div class="z4" style="width: 50px;"></div></div><div style="padding-top:120px;"><div class="z2" style="width: 20px;"></div></div><div style="padding-top:60px;"><div class="z4" style="width: 50px;"></div></div><div style="padding-top:120px;"><div class="z2" style="width: 20px;"></div></div></label></div>
+            <div style="display:none" class="segment" data-segment-type="IntervalsT" data-ftp="75" data-duration="60" data-ftp-2="50" data-duration-2="300" data-repeat="4" data-enable="txtRepeat txtDuration1 txtFtp1 txtDuration2 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:235px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div><div style="padding-top:235px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div><div style="padding-top:235px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div></label></div>
         </button>
     </div>
 </div>
@@ -202,7 +202,6 @@
         var ftp1 = selectedSegment.getAttribute('data-ftp');
         var duration2 = selectedSegment.getAttribute('data-duration-2');
         var ftp2 = selectedSegment.getAttribute('data-ftp-2');
-        // TODO left off here
         
         if (inputsToEnable.indexOf('txtRepeat') != -1) { txtRepeat.value = repeat; txtRepeat.removeAttribute('disabled'); } else { txtRepeat.value = ''; txtRepeat.setAttribute('disabled', true); }
         if (inputsToEnable.indexOf('txtDuration1') != -1) { txtDuration1.value = duration1; txtDuration1.removeAttribute('disabled'); } else { txtDuration1.value = ''; txtDuration1.setAttribute('disabled', true); }
@@ -264,6 +263,7 @@
         var divToRedrawWidth = segment.querySelector('label > div > div');
         var newWidth = Math.max(Math.floor(duration1 / 6), 10);
         divToRedrawWidth.setAttribute('style', 'width: ' + newWidth + 'px;');
+        reclassifyBlockZone(divToRedrawWidth, ftp1);
 
         var divToRepad = segment.querySelector('label > div');
         var newPadding = Math.max(Math.floor(300 - Math.min(ftp1, 300)), 0);
@@ -272,37 +272,86 @@
 
 
     function redrawSegmentRamp(segment) {
-        var ftp1 = document.getElementById('txtFtp1').value;
-        var duration1 = document.getElementById('txtDuration1').value;
-        var ftp2 = document.getElementById('txtFtp2').value;
-        var duration2 = document.getElementById('txtDuration2').value;
+        var ftp1 = getNumericInput('txtFtp1', 5);
+        var duration1 = getNumericInput('txtDuration1', 1);
+        var ftp2 = getNumericInput('txtFtp2', 5);
 
         segment.setAttribute('data-ftp', ftp1);
         segment.setAttribute('data-duration', duration1);
         segment.setAttribute('data-ftp-2', ftp2);
-        segment.setAttribute('data-duration-2', duration2);
+        
+        var divToRedrawWidth = segment.querySelector('label > div > div');
+        var newWidth = Math.max(Math.floor(duration1 / 6), 10);
+        divToRedrawWidth.setAttribute('style', 'width: ' + newWidth + 'px;');
+
+        var divToRepad = segment.querySelector('label > div');
+        var newPadding = Math.max(Math.floor(300 - Math.min(Math.max(ftp1, ftp2), 300)), 0);
+        divToRepad.setAttribute('style', 'padding-top: ' + newPadding + 'px');
     }
 
 
     function redrawSegmentFreeRide(segment) {
-        var duration1 = document.getElementById('txtDuration1').value;
+        var duration1 = getNumericInput('txtDuration1', 1);
 
         segment.setAttribute('data-duration', duration1);
+        
+        var divToRedrawWidth = segment.querySelector('label > div > div');
+        var newWidth = Math.max(Math.floor(duration1 / 6), 10);
+        divToRedrawWidth.setAttribute('style', 'width: ' + newWidth + 'px;');
     }
 
 
     function redrawSegmentIntervalsT(segment) {
-        var ftp1 = document.getElementById('txtFtp1').value;
-        var duration1 = document.getElementById('txtDuration1').value;
-        var ftp2 = document.getElementById('txtFtp2').value;
-        var duration2 = document.getElementById('txtDuration2').value;
-        var repeat = document.getElementById('txtRepeat').value;
+        var ftp1 = getNumericInput('txtFtp1', 5);
+        var duration1 = getNumericInput('txtDuration1', 1);
+        var ftp2 = getNumericInput('txtFtp2', 5);
+        var duration2 = getNumericInput('txtDuration2', 1);
+        var repeat = getNumericInput('txtRepeat', 1);
 
         segment.setAttribute('data-ftp', ftp1);
         segment.setAttribute('data-duration', duration1);
         segment.setAttribute('data-ftp-2', ftp2);
         segment.setAttribute('data-duration-2', duration2);
         segment.setAttribute('data-repeat', repeat);
+
+        var divsToRedrawWidth1 = segment.querySelectorAll('label > div:nth-child(odd) > div');
+        var divsToRedrawWidth2 = segment.querySelectorAll('label > div:nth-child(even) > div');
+        var newWidth1 = Math.max(Math.floor(duration1 / 6), 10);
+        var newWidth2 = Math.max(Math.floor(duration2 / 6), 10);
+        for (var i = 0; i < divsToRedrawWidth1.length; i++) {
+            divsToRedrawWidth1[i].setAttribute('style', 'width: ' + newWidth1 + 'px;');
+        }
+
+        for (var i = 0; i < divsToRedrawWidth2.length; i++) {
+            divsToRedrawWidth2[i].setAttribute('style', 'width: ' + newWidth2 + 'px;');
+        }
+
+        var divsToRepad1 = segment.querySelectorAll('label > div:nth-child(odd)');
+        var divsToRepad2 = segment.querySelectorAll('label > div:nth-child(even)');
+        var newPadding1 = Math.max(Math.floor(300 - Math.min(ftp1, 300)), 0);
+        var newPadding2 = Math.max(Math.floor(300 - Math.min(ftp2, 300)), 0);
+        for (var i = 0; i < divsToRepad1.length; i++) {
+            divsToRepad1[i].setAttribute('style', 'padding-top: ' + newPadding1 + 'px');
+            reclassifyBlockZone(divsToRepad1[i].childNodes[0], ftp1);
+        }
+        for (var i = 0; i < divsToRepad2.length; i++) {
+            divsToRepad2[i].setAttribute('style', 'padding-top: ' + newPadding2 + 'px');
+            reclassifyBlockZone(divsToRepad2[i].childNodes[0], ftp2);
+        }
+
+        //todo - handle repeat change
+    }
+
+
+    function reclassifyBlockZone(element, ftp) {
+        var newClass = 'z1';
+        if (ftp >= 125) newClass = 'z6';
+        else if (ftp >= 100) newClass = 'z5';
+        else if (ftp >= 95) newClass = 'z4';
+        else if (ftp >= 80) newClass = 'z3';
+        else if (ftp >= 65) newClass = 'z2';
+
+        element.classList = newClass;
     }
 
 
