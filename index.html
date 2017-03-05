@@ -105,6 +105,13 @@
     <div class="u-1-5"><label for="txtRepeat">Repeat</label><input disabled type="number" id="txtRepeat" min="1" max="20" /></div>
 </div>
 
+<div class="grid">
+    <div class="u-1-4"><button id="btnCreateLink">Create link</button></div>
+    <div class="u-1-4"></div>
+    <div class="u-1-4"></div>
+    <div class="u-1-4"><button id="btnSaveZwoFile">Save .zwo file</button></div>
+</div>
+
 
 <script>
     document.getElementById('divControls').addEventListener('click', function(e) {
@@ -158,9 +165,95 @@
     });
 
 
+    document.getElementById('btnSaveZwoFile').addEventListener('click', function() {
+        if (!validateInput()) return;
+        var xml = createXmlString();
+        //var uriContent = 'data:application/octet-stream,' + encodeURIComponent(xml);
+        //location.href = uriContent;
+        var fileName = document.getElementById('txtName').value.replace(/[^A-Z0-9]/ig, '_') + '.zwo';
+        var link = document.createElement('a');
+        link.setAttribute('href', 'data:application/octet-stream,' + encodeURIComponent(xml));
+        link.setAttribute('download', fileName);
+        if (document.createEvent) {
+            var event = document.createEvent('MouseEvents');
+            event.initEvent('click', true, true);
+            link.dispatchEvent(event);
+        }
+        else {
+            link.click();
+        }
+    });
+
+
     document.getElementById('divSegmentChart').addEventListener('change', function(e) {
         loadSegment(e.target.id);
     });
+
+
+    function validateInput() {
+        var msg = 'Correct following before saving a file:\r\n';
+        var errors = [];
+        var name = document.getElementById('txtName').value;
+        if (!name) errors.push('Name is required.');
+
+        if (errors.length == 0) return true;
+
+        alert(msg + errors.join('\r\n'));
+    }
+
+
+    function createXmlString() {
+        var name = document.getElementById('txtName').value;
+        var author = document.getElementById('txtAuthor').value;
+        var description = document.getElementById('txtDescription').value;
+        var tags = document.getElementById('txtTags').value.split(' ');
+        var segments = document.querySelectorAll('#divSegmentChart > div');
+        var xml = '<workout_file>\r\n'
+            + '    <author>' + escapeXml(author) + '</author>\r\n'
+            + '    <name>' + escapeXml(name) + '</name>\r\n'
+            + '    <description>' + escapeXml(description) + '</description>\r\n'
+            + '    <sportType>bike</sportType>\r\n'
+            + '    <tags>\r\n';
+
+        for (var i = 0; i < tags.length; i++) {
+            if (!tags[i] || tags[i].trim() == '') continue;
+            xml += '        <tag name="' + escapeXml(tags[i]) + '"/>\r\n';
+        }
+        xml += '    </tags>\r\n';
+        xml += '    <workout>\r\n';
+
+        for (var i = 0; i < segments.length; i++) {
+            xml += '        ' + createWorkoutElement(segments[i]) + '\r\n';
+        }
+
+        xml += '    </workout>\r\n'
+            + '</workout_file>';
+
+        return xml;
+    }
+
+
+    function createWorkoutElement(segment) {
+        switch(segment.getAttribute('data-segment-type')) {
+            case "SteadyState":
+                return '<SteadyState Duration="' + segment.getAttribute('data-duration') + '" Power="' + segment.getAttribute('data-ftp') + '"/>';
+                break;
+            case "Warmup":
+                return '<Warmup Duration="' + segment.getAttribute('data-duration') + '" PowerLow="' + segment.getAttribute('data-ftp') + '" PowerHigh="' + segment.getAttribute('data-ftp-2') + '"/>';
+                break;
+            case "Cooldown":
+                return '<Cooldown Duration="' + segment.getAttribute('data-duration') + '" PowerLow="' + segment.getAttribute('data-ftp') + '" PowerHigh="' + segment.getAttribute('data-ftp-2') + '"/>';
+                break;
+            case "FreeRide":
+                return '<FreeRide Duration="' + segment.getAttribute('data-duration') + '" FlatRoad="1" />';
+                break;
+            case "IntervalsT":
+                return '<IntervalsT Repeat="' + segment.getAttribute('data-repeat') + '" OnDuration="' + segment.getAttribute('data-duration') + '" OffDuration="' + segment.getAttribute('data-duration-2') + '" OnPower="' + segment.getAttribute('data-ftp') + '" OffPower="' + segment.getAttribute('data-ftp-2') + '"/>';
+                break;
+            default:
+                break;
+        }
+    }
 
 
     function addSegment(sourceElement) {
@@ -382,6 +475,18 @@
         if (!intVal) return minimumDefaultValue;
 
         return Math.max(intVal, minimumDefaultValue);
+    }
+
+    function escapeXml(unsafe) {
+        return unsafe.replace(/[<>&'"]/g, function (c) {
+            switch (c) {
+                case '<': return '&lt;';
+                case '>': return '&gt;';
+                case '&': return '&amp;';
+                case '\'': return '&apos;';
+                case '"': return '&quot;';
+            }
+        });
     }
 </script>
 
