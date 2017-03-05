@@ -76,7 +76,7 @@
     </div>
     <div class="u-1-10">
         <button class="control in">int
-            <div style="display:none" class="segment" data-segment-type="IntervalsT" data-ftp="75" data-duration="60" data-ftp-2="50" data-duration-2="300" data-repeat="4" data-enable="txtRepeat txtDuration1 txtFtp1 txtDuration2 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:235px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div><div style="padding-top:235px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div><div style="padding-top:235px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div></label></div>
+            <div style="display:none" class="segment" data-segment-type="IntervalsT" data-ftp="75" data-duration="60" data-ftp-2="50" data-duration-2="300" data-repeat="4" data-enable="txtRepeat txtDuration1 txtFtp1 txtDuration2 txtFtp2"><input name="segment" type="radio"><label><div style="padding-top:225px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div><div style="padding-top:225px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div><div style="padding-top:225px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div><div style="padding-top:225px;"><div class="z2" style="width: 10px;"></div></div><div style="padding-top:250px;"><div class="z1" style="width: 50px;"></div></div></label></div>
         </button>
     </div>
 </div>
@@ -98,11 +98,11 @@
 </div>
 
 <div id="divSegmentInputs" class="grid">
-    <div class="u-1-5"><label for="txtFtp1">FTP (%)</label><input disabled type="number" id="txtFtp1" /></div>
-    <div class="u-1-5"><label for="txtDuration1">Duration (s)</label><input disabled type="number" id="txtDuration1" /></div>
-    <div class="u-1-5"><label for="txtFtp2">FTP 2 (%)</label><input disabled type="number" id="txtFtp2" /></div>
-    <div class="u-1-5"><label for="txtDuration2">Duration 2 (s)</label><input disabled type="number" id="txtDuration2" /></div>
-    <div class="u-1-5"><label for="txtRepeat">Repeat</label><input disabled type="number" id="txtRepeat" /></div>
+    <div class="u-1-5"><label for="txtFtp1">FTP (%)</label><input disabled type="number" id="txtFtp1" min="5" step="5" /></div>
+    <div class="u-1-5"><label for="txtDuration1">Duration (s)</label><input disabled type="number" id="txtDuration1" min="5" step="5" /></div>
+    <div class="u-1-5"><label for="txtFtp2">FTP 2 (%)</label><input disabled type="number" id="txtFtp2" min="5" step="5" /></div>
+    <div class="u-1-5"><label for="txtDuration2">Duration 2 (s)</label><input disabled type="number" id="txtDuration2" min="5" step="5" /></div>
+    <div class="u-1-5"><label for="txtRepeat">Repeat</label><input disabled type="number" id="txtRepeat" min="1" max="20" /></div>
 </div>
 
 
@@ -339,7 +339,20 @@
             reclassifyBlockZone(divsToRepad2[i].childNodes[0], ftp2);
         }
 
-        //todo - handle repeat change
+        var displayedCount = segment.querySelectorAll('label > div').length / 2;
+        var difference = displayedCount - repeat;
+        if (difference === 0) return;
+
+        var label = segment.querySelector('label');
+        for (var i = 0; i < difference; i++) {
+            label.removeChild(label.lastChild);
+            label.removeChild(label.lastChild);
+        }
+        for (var i = 0; i > difference; i--) {
+            label.appendChild(label.lastChild.previousSibling.cloneNode(true));
+            label.appendChild(label.lastChild.previousSibling.cloneNode(true));
+        }
+        
     }
 
 
