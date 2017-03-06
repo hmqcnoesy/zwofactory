@@ -51,10 +51,9 @@ document.getElementById('btnDelete').addEventListener('click', function(e) {
 
 
 document.getElementById('btnSaveZwoFile').addEventListener('click', function() {
-    if (!validateInput()) return;
     var xml = createXmlString();
     var blob = new Blob([xml], {type: "application/xml"});
-    var fileName = document.getElementById('txtName').value.replace(/[^A-Z0-9]/ig, '_') + '.zwo';
+    var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
     saveAs(blob, fileName);
 });
 
@@ -68,20 +67,15 @@ document.getElementById('divSegmentChart').addEventListener('change', function(e
 });
 
 
-function validateInput() {
-    var msg = 'Correct following before saving a file:\r\n';
-    var errors = [];
-    var name = document.getElementById('txtName').value;
-    if (!name) errors.push('Name is required.');
-
-    if (errors.length == 0) return true;
-
-    alert(msg + errors.join('\r\n'));
+function getName() {
+     var name = document.getElementById('txtName').value;
+     if (!name) name = 'New Workout ' + new Date().toLocaleString();
+     return name;
 }
 
 
 function createXmlString() {
-    var name = document.getElementById('txtName').value;
+    var name = getName();
     var author = document.getElementById('txtAuthor').value;
     var description = document.getElementById('txtDescription').value;
     var tags = document.getElementById('txtTags').value.split(' ');
