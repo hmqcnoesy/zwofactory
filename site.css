@@ -22,11 +22,11 @@ label { display: block; }
 textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; width:100%; border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
 input[type=text],
 input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid black; border-radius: 10px; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);}
-input[type=number] { text-align: center; }
+input[type=number] { text-align: center; min-width: 62px; }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0; }
 button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; }
 
-.control { display: inline-block; color: white; font-size: 0.75rem; width: 100%; text-align: center; padding: 1.5em 0; }
+.control { display: inline-block; color: white; font-size: 0.75rem; width: 100%; min-width: 62px; text-align: center; padding: 1.5em 0; }
 .z1 { background-color: #837C83; }
 .z2 { background-color: #3C8FD1; }
 .z3 { background-color: #4AC171; }
