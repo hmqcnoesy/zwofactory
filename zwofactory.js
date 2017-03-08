@@ -1,3 +1,17 @@
+document.addEventListener('DOMContentLoaded', function() {
+    var qs = window.location.search;
+    if (!qs) return;
+
+    var params = qs.split('&');
+    for (var i = 0; i < params.length; i++) {
+        if (params[i].substr(0, 1) == 'w') loadWorkout(params[i].substr(2));
+        else if (params[i].substr(0, 1) == 't') document.getElementById('txtTags').value = decodeURIComponent(params[i].substr(2));
+        else if (params[i].substr(0, 1) == 'a') document.getElementById('txtAuthor').value = decodeURIComponent(params[i].substr(2));
+        else if (params[i].substr(0, 1) == 'n') document.getElementById('txtName').value = decodeURIComponent(params[i].substr(2));
+        else if (params[i].substr(0, 1) == 'd') document.getElementById('txtDescription').value = decodeURIComponent(params[i].substr(2));
+    }
+});
+
 
 document.getElementById('divControls').addEventListener('click', function(e) {
     if (e.target.tagName == 'BUTTON') addSegment(e.target);
@@ -59,6 +73,14 @@ document.getElementById('btnSaveZwoFile').addEventListener('click', function() {
 
 
 document.getElementById('btnCreateLink').addEventListener('click', function() {
+    var qs = createQueryString();
+    var url = [location.protocol, '//', location.host, location.pathname, qs].join('');
+    var a = document.createElement('a');
+    a.href = url;
+    a.innerText = 'Copy this shareable link!';
+    var div = document.getElementById('divLink');
+    div.innerHTML = '';
+    div.appendChild(a);
 });
 
 
@@ -67,10 +89,38 @@ document.getElementById('divSegmentChart').addEventListener('change', function(e
 });
 
 
+function loadWorkout(workoutString) {
+    // TODO load the workout!
+}
+
+
 function getName() {
      var name = document.getElementById('txtName').value;
-     if (!name) name = 'New Workout ' + new Date().toLocaleString();
+     var now = new Date();
+     if (!name) {
+         name = 'New-Workout-' 
+            + now.getFullYear() + '-' 
+            + (1 + now.getMonth()) + '-' 
+            + now.getDate() + '-' 
+            + now.getHours() + '-' 
+            + now.getMinutes() + '-' 
+            + now.getSeconds();
+     }
      return name;
+}
+
+function selectText(element) {
+    if (document.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();        
+        var range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
 }
 
 
@@ -102,6 +152,39 @@ function createXmlString() {
         + '</workout_file>';
 
     return xml;
+}
+
+
+function createQueryString() {
+    var name = getName();
+    var author = document.getElementById('txtAuthor').value.trim();
+    var description = document.getElementById('txtDescription').value.trim();
+    var tags = document.getElementById('txtTags').value.trim();
+    var segments = document.querySelectorAll('#divSegmentChart > div');
+    var qs = '?w=';
+    for (var i = 0; i < segments.length; i++) {
+        qs += segments[i].getAttribute('data-segment-type').charAt(0) + '-';
+        qs += getQsParamAttributeIfExists(segments[i], 'data-ftp');
+        qs += getQsParamAttributeIfExists(segments[i], 'data-duration');
+        qs += getQsParamAttributeIfExists(segments[i], 'data-ftp-2');
+        qs += getQsParamAttributeIfExists(segments[i], 'data-duration-2');
+        qs += getQsParamAttributeIfExists(segments[i], 'data-repeat');
+        qs = qs.substr(0, qs.length-1) + '!';
+    }
+
+    qs += '&t=' + encodeURIComponent(tags);
+    qs += '&a=' + encodeURIComponent(author);
+    qs += '&n=' + encodeURIComponent(name);
+    qs += '&d=' + encodeURIComponent(description);
+
+    return qs;
+}
+
+
+function getQsParamAttributeIfExists(segment, attrName) {
+    var attr = segment.getAttribute(attrName);
+    if (attr) return attr + '-';
+    else return '';
 }
 
 
