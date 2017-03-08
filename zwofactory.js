@@ -97,17 +97,14 @@ function loadWorkout(workoutString) {
         var pieces = segments[i].split('-');
         switch(pieces[0]) {
             case "S":
+                // TODO here
                 break;
-
             case "W":
                 break;
-
             case "C":
                 break;
-
             case "F":
                 break;
-
             case "I":
                 break;
         }
