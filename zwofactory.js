@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var qs = window.location.search;
     if (!qs) return;
 
-    var params = qs.split('&');
+    var params = qs.replace('?', '').split('&');
     for (var i = 0; i < params.length; i++) {
         if (params[i].substr(0, 1) == 'w') loadWorkout(params[i].substr(2));
         else if (params[i].substr(0, 1) == 't') document.getElementById('txtTags').value = decodeURIComponent(params[i].substr(2));
@@ -90,7 +90,28 @@ document.getElementById('divSegmentChart').addEventListener('change', function(e
 
 
 function loadWorkout(workoutString) {
-    // TODO load the workout!
+    var segments = workoutString.split('!');
+    for (var i = 0; i < segments.length; i++) {
+        if (!segments[i]) continue;
+
+        var pieces = segments[i].split('-');
+        switch(pieces[0]) {
+            case "S":
+                break;
+
+            case "W":
+                break;
+
+            case "C":
+                break;
+
+            case "F":
+                break;
+
+            case "I":
+                break;
+        }
+    }
 }
 
 
