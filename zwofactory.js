@@ -77,10 +77,11 @@ document.getElementById('btnCreateLink').addEventListener('click', function() {
     var url = [location.protocol, '//', location.host, location.pathname, qs].join('');
     var a = document.createElement('a');
     a.href = url;
-    a.innerText = 'Copy this shareable link!';
-    var div = document.getElementById('divLink');
-    div.innerHTML = '';
-    div.appendChild(a);
+    a.setAttribute('class', 'transparent');
+    a.innerText = getName();
+    var div = document.getElementById('divLinks');
+    div.insertBefore(a, div.firstChild);
+    window.setTimeout(function() { a.classList.add('opaque'); }, 15);
 });
 
 
@@ -95,20 +96,42 @@ function loadWorkout(workoutString) {
         if (!segments[i]) continue;
 
         var pieces = segments[i].split('-');
+        var hiddenButton = document.getElementById('btnHidden' + pieces[0]);
+        var div = hiddenButton.querySelector('div');
         switch(pieces[0]) {
             case "S":
-                // TODO here
+                if (isNumeric(pieces[1])) div.setAttribute('data-ftp', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) div.setAttribute('data-duration', parseFloat(pieces[2]));
+                hiddenButton.click();
                 break;
             case "W":
-                break;
             case "C":
+                if (isNumeric(pieces[1])) div.setAttribute('data-ftp', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) div.setAttribute('data-duration', parseFloat(pieces[2]));
+                if (isNumeric(pieces[3])) div.setAttribute('data-ftp-2', parseFloat(pieces[3]));
+                hiddenButton.click();
                 break;
             case "F":
+                if (isNumeric(pieces[1])) div.setAttribute('data-duration', parseFloat(pieces[1]));
+                hiddenButton.click();
                 break;
             case "I":
+                if (isNumeric(pieces[1])) div.setAttribute('data-ftp', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) div.setAttribute('data-duration', parseFloat(pieces[2]));
+                if (isNumeric(pieces[3])) div.setAttribute('data-ftp-2', parseFloat(pieces[3]));
+                if (isNumeric(pieces[4])) div.setAttribute('data-duration-2', parseFloat(pieces[4]));
+                if (isNumeric(pieces[5])) div.setAttribute('data-repeat', parseInt(pieces[5]));
+                hiddenButton.click();
                 break;
         }
     }
+
+    document.querySelector('#divSegmentChart > div:first-child > label').click();
+}
+
+
+function isNumeric(value) {
+    return !isNaN(parseFloat(value)) && isFinite(value);
 }
 
 
@@ -245,6 +268,7 @@ function addSegment(sourceElement) {
     document.getElementById('divSegmentChart').appendChild(clone);
     clone.scrollIntoView();
     loadSegment(id);
+    redrawSelectedSegment();
 }
 
 
@@ -364,6 +388,9 @@ function redrawSegmentFreeRide(segment) {
     var divToRedrawWidth = segment.querySelector('label > div > div');
     var newWidth = Math.max(Math.floor(duration1 / 6), 10);
     divToRedrawWidth.setAttribute('style', 'width: ' + newWidth + 'px;');
+
+    var divToRepad = segment.querySelector('label > div');
+    divToRepad.setAttribute('style', 'padding-top: 200px');
 }
 
 

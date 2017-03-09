@@ -1,13 +1,13 @@
 
-html { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-weight: bold; padding:10px; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: gainsboro; }
+html { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-weight: bold; padding:10px; color: #555; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: gainsboro; }
 body {  margin: auto; padding: 1em; max-width: 1200px; background-color: white; border: 1px solid black; border-radius: 0.25em;  }
 a { color: #293e60; }
-h1 { padding: 0.25em 0.5em; margin: 0; text-align: center; }
+h1 { padding: 0; margin: 0; text-align: center; }
 p {padding-top: 0.35em}
 li {padding: 0.3em;}
 label { display: block; }
 .grid { display: flex; flex-flow: row wrap; align-content: flex-start; letter-spacing: -.31em; vertical-align: bottom; }
-.grid > * { display: inline-block; padding: 1em; box-sizing: border-box; letter-spacing: normal; }
+.grid > * { display: inline-block; padding: 0.4em 1em; box-sizing: border-box; letter-spacing: normal; }
 .u-1 { width: 100%; }
 .u-1-2 { width: 50%; }
 .u-1-3 { width: 33.3%; }
@@ -26,7 +26,7 @@ input[type=number] { text-align: center; min-width: 62px; }
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0; }
 button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; }
 
-.control { display: inline-block; color: white; font-size: 0.75rem; width: 100%; min-width: 62px; text-align: center; padding: 1.5em 0; }
+.control { display: inline-block; color: white; font-size: 0.75rem; width: 10%; min-width: 62px; text-align: center; padding: 1.5em 0; margin: 0; }
 .z1 { background-color: #837C83; }
 .z2 { background-color: #3C8FD1; }
 .z3 { background-color: #4AC171; }
@@ -49,3 +49,7 @@ button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,
 .segment > input[type="radio"] { display: none; }
 .segment > input[type="radio"]:hover + label { border-bottom: 8px solid gainsboro; }
 .segment > input[type="radio"]:checked + label { border-bottom: 8px solid black; }
+
+a { display: block; color: #456; }
+.transparent { opacity: 0; }
+.opaque { transition-duration: 1s; transition-property: opacity; opacity: 1; }
