@@ -1,8 +1,9 @@
 
 html { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-weight: bold; padding:10px; color: #555; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: gainsboro; }
 body {  margin: auto; padding: 1em; max-width: 1200px; background-color: white; border: 1px solid black; border-radius: 0.25em;  }
-a { color: #293e60; }
+a { display: block; color: #456; }
 h1 { padding: 0; margin: 0; text-align: center; }
+hr { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
 p {padding-top: 0.35em}
 li {padding: 0.3em;}
 label { display: block; }
@@ -23,7 +24,7 @@ textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; 
 input[type=text],
 input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid black; border-radius: 10px; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);}
 input[type=number] { text-align: center; min-width: 62px; }
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0; }
+*:focus { outline: none; }
 button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; }
 
 .control { display: inline-block; color: white; font-size: 0.75rem; width: 10%; min-width: 62px; text-align: center; padding: 1.5em 0; margin: 0; }
@@ -50,6 +51,20 @@ button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,
 .segment > input[type="radio"]:hover + label { border-bottom: 8px solid gainsboro; }
 .segment > input[type="radio"]:checked + label { border-bottom: 8px solid black; }
 
-a { display: block; color: #456; }
 .transparent { opacity: 0; }
-.opaque { transition-duration: 1s; transition-property: opacity; opacity: 1; }
+.opaque { transition-duration: 2s; transition-property: opacity; opacity: 1; }
+
+
+@media only screen and (max-width:730px) {
+    .u-sm-1 { width: 100%; }
+    .u-sm-1-2 { width: 50%; }
+    .u-sm-1-3 { width: 33.3%; }
+    .u-sm-1-4 { width: 25%; }
+    .u-sm-1-5 { width: 20%; }
+    .u-sm-4-5 { width: 80%; }
+    .u-sm-1-6 { width: 16.66%; }
+    .u-sm-1-8 { width: 12.5%; }
+    .u-sm-3-8 { width: 37.5%; }
+    .u-sm-1-10 { width: 10%; }
+    .u-sm-1-12 { width: 8.33%; }
+}
