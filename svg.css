@@ -25,15 +25,16 @@ input[type=text],
 input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid black; border-radius: 10px; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);}
 input[type=number] { text-align: center; min-width: 62px; }
 *:focus { outline: none; }
-button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; }
+button { width: 100%; padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; background-color: gainsboro; }
+button.save { background-color: #456; color: white; font-weight: bold; }
 
 .control { display: inline-block; color: white; font-size: 0.75rem; width: 10%; min-width: 62px; text-align: center; padding: 1.5em 0; margin: 0; }
-.z1 { fill: #837C83; }
-.z2 { fill: #3C8FD1; }
-.z3 { fill: #4AC171; }
-.z4 { fill: #FFCC3F; }
-.z5 { fill: #F06D43; }
-.z6 { fill: #D6270C; }
+.z1 { fill: #837C83; background-color: #837C83; }
+.z2 { fill: #3C8FD1; background-color: #3C8FD1; }
+.z3 { fill: #4AC171; background-color: #4AC171; }
+.z4 { fill: #FFCC3F; background-color: #FFCC3F; }
+.z5 { fill: #F06D43; background-color: #F06D43; }
+.z6 { fill: #D6270C; background-color: #D6270C; }
 .wu { background: linear-gradient(to right, gainsboro, black); }
 .cd { background: linear-gradient(to left,  gainsboro, black); }
 .fr { background: linear-gradient(gainsboro, #837C83); }
@@ -42,7 +43,7 @@ button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,
 .template { display: none; }
 .indicator { width: 1em; height: 1em; margin-top: auto; margin-bottom: auto; border-radius: 100%; vertical-align: bottom; line-height: 1em; }
 
-#divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 320px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
+#divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 344px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
 #divSegmentChart div { display: inline-block; }
 #divSegmentChart svg { height: 300px; margin-right: 1px; }
 #divSegmentChart svg > path { stroke: black; stroke-width: 0.5; }

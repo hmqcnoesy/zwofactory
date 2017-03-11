@@ -105,37 +105,33 @@ function loadWorkout(workoutString) {
         if (!segments[i]) continue;
 
         var pieces = segments[i].split('-');
-        var hiddenButton = document.getElementById('btnHidden' + pieces[0]);
-        var div = hiddenButton.querySelector('div');
+        var btn = document.getElementById('btn' + pieces[0]);
+        btn.click();
+        var label = getSelectedSegment().querySelector('label');
         switch(pieces[0].toLowerCase()) {
             case "s":
-                if (isNumeric(pieces[1])) div.setAttribute('data-p-1', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) div.setAttribute('data-d-1', parseFloat(pieces[2]));
-                hiddenButton.click();
+                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
                 break;
             case "w":
             case "c":
-                if (isNumeric(pieces[1])) div.setAttribute('data-p-1', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) div.setAttribute('data-d-1', parseFloat(pieces[2]));
-                if (isNumeric(pieces[3])) div.setAttribute('data-p-2', parseFloat(pieces[3]));
-                hiddenButton.click();
+                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
+                if (isNumeric(pieces[3])) label.setAttribute('data-p-2', parseFloat(pieces[3]));
                 break;
             case "f":
-                if (isNumeric(pieces[1])) div.setAttribute('data-d-1', parseFloat(pieces[1]));
-                hiddenButton.click();
+                if (isNumeric(pieces[1])) label.setAttribute('data-d-1', parseFloat(pieces[1]));
                 break;
             case "i":
-                if (isNumeric(pieces[1])) div.setAttribute('data-p-1', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) div.setAttribute('data-d-1', parseFloat(pieces[2]));
-                if (isNumeric(pieces[3])) div.setAttribute('data-p-2', parseFloat(pieces[3]));
-                if (isNumeric(pieces[4])) div.setAttribute('data-d-2', parseFloat(pieces[4]));
-                if (isNumeric(pieces[5])) div.setAttribute('data-r', parseInt(pieces[5]));
-                hiddenButton.click();
+                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
+                if (isNumeric(pieces[3])) label.setAttribute('data-p-2', parseFloat(pieces[3]));
+                if (isNumeric(pieces[4])) label.setAttribute('data-d-2', parseFloat(pieces[4]));
+                if (isNumeric(pieces[5])) label.setAttribute('data-r', parseInt(pieces[5]));
                 break;
         }
+        redraw(label);
     }
-
-    document.querySelector('#divSegmentChart > div:first-child > label').click();
 }
 
 

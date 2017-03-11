@@ -55,7 +55,7 @@ zwofactory
 </div>
 
 <div id="divControls">
-    <button class="control z1">Z1
+    <button id="btns" class="control z1">Z1
         <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="50" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
     </button><button class="control z2">Z2
         <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="65" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
@@ -67,13 +67,13 @@ zwofactory
         <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="100" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
     </button><button class="control z6">Z6
         <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="125" data-d-1="60"><svg><path d="M1,1" /></svg></label></div>
-    </button><button class="control wu">warm up
+    </button><button id="btnw" class="control wu">warm up
         <div style="display:none"><input type="radio" name="segment" /><label data-t="w" data-p-1="25" data-d-1="600" data-p-2="75"><svg><path d="M1,1" /></svg></label></div>
-    </button><button class="control cd">cool down
+    </button><button id="btnc" class="control cd">cool down
         <div style="display:none"><input type="radio" name="segment" /><label data-t="w" data-p-1="75" data-d-1="600" data-p-2="25"><svg><path d="M1,1" /></svg></label></div>
-    </button><button class="control fr">free ride
+    </button><button id="btnf" class="control fr">free ride
         <div style="display:none"><input type="radio" name="segment" /><label data-t="f" data-d-1="600"><svg><path d="M1,1" /></svg></label></div>
-    </button><button class="control in">int
+    </button><button id="btni" class="control in">int
         <div style="display:none"><input type="radio" name="segment" /><label data-t="i" data-p-1="75" data-d-1="60" data-p-2="50" data-d-2="300" data-r="3"><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg>
     </button>
 </div>
@@ -95,8 +95,8 @@ zwofactory
 <hr />
 
 <div class="grid">
-    <div class="u-1-2"><button id="btnCreateLink">Create link</button></div>
-    <div class="u-1-2"><button id="btnSaveZwoFile">Save .zwo file</button></div>
+    <div class="u-1-2"><button class="save" id="btnCreateLink">Create link</button></div>
+    <div class="u-1-2"><button class="save" id="btnSaveZwoFile">Download .zwo file</button></div>
 </div>
 
 <div class="grid">
