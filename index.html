@@ -27,13 +27,26 @@
     <meta name="msapplication-square310x310logo" content="img/mstile-310x310.png" />
 </head> 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+<header>
 <h1>
 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="40.000000pt" height="20.700000pt" viewBox="0 0 300.000000 167.000000" preserveAspectRatio="xMidYMid meet">
     <g transform="translate(0.000000,167.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none"><path d="M1638 1100 l3 -310 -170 0 -171 0 3 195 2 194 -30 -28 c-26 -25 -671 -611 -1073 -975 -78 -71 -142 -131 -142 -133 0 -2 653 -3 1450 -3 l1450 0 0 375 0 375 -165 0 -165 0 0 310 0 310 -115 0 -115 0 0 -310 0 -310 -80 0 -81 0 3 310 3 310 -112 0 -113 0 0 -310 0 -310 -80 0 -80 0 0 310 0 310 -112 0 -113 0 3 -310z m180 -20 c2 -275 3 -285 24 -307 19 -20 31 -23 98 -23 120 0 114 -16 120 329 l5 286 65 0 65 0 5 -286 c6 -345 0 -329 120 -329 120 0 114 -16 120 329 l5 286 58 3 c35 2 64 -2 73 -9 11 -9 14 -62 14 -287 0 -346 -12 -322 166 -322 67 0 129 -3 138 -6 14 -5 16 -44 16 -329 0 -285 -2 -324 -16 -329 -26 -10 -2714 -7 -2714 3 0 12 109 113 644 600 231 209 423 381 428 381 4 0 8 -54 8 -120 0 -135 13 -186 52 -195 13 -3 93 -4 178 -3 l155 3 17 35 c16 31 18 68 18 301 0 146 3 269 7 273 4 4 34 6 68 4 l60 -3 3 -285z"/></g>
 </svg>
 zwofactory
 </h1>
+</header>
 
+<main>
 <div class="grid">
     <div class="u-1">
         <label for="txtName">Name</label>
@@ -55,36 +68,26 @@ zwofactory
 </div>
 
 <div id="divControls">
-    <button class="control z1">Z1
-        <div style="display:none" class="segment" data-segment-type="SteadyState" data-ftp="50" data-duration="300" data-enable="txtDuration1 txtFtp1"><input name="segment" type="radio"><label><div><div class="z1"></div></div></label></div>
+    <button id="btns" class="control z1">Z1
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="50" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
     </button><button class="control z2">Z2
-        <div style="display:none" class="segment" data-segment-type="SteadyState" data-ftp="65" data-duration="300" data-enable="txtDuration1 txtFtp1"><input name="segment" type="radio"><label><div><div class="z2"></div></div></label></div>
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="65" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
     </button><button class="control z3">Z3
-        <div style="display:none" class="segment" data-segment-type="SteadyState" data-ftp="80" data-duration="300" data-enable="txtDuration1 txtFtp1"><input name="segment" type="radio"><label><div><div class="z3"></div></div></label></div>
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="80" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
     </button><button class="control z4">Z4
-        <div style="display:none" class="segment" data-segment-type="SteadyState" data-ftp="95" data-duration="300" data-enable="txtDuration1 txtFtp1"><input name="segment" type="radio"><label><div><div class="z4"></div></div></label></div>
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="95" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
     </button><button class="control z5">Z5
-        <div style="display:none" class="segment" data-segment-type="SteadyState" data-ftp="100" data-duration="300" data-enable="txtDuration1 txtFtp1"><input name="segment" type="radio"><label><div><div class="z5"></div></div></label></div>
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="100" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
     </button><button class="control z6">Z6
-        <div style="display:none" class="segment" data-segment-type="SteadyState" data-ftp="125" data-duration="60" data-enable="txtDuration1 txtFtp1"><input name="segment" type="radio"><label><div><div class="z6"></div></div></label></div>
-    </button><button class="control wu">warm up
-        <div style="display:none" class="segment" data-segment-type="Warmup" data-ftp="25" data-duration="600" data-ftp-2="75" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div><div class="wu"></div></div></label></div>
-    </button><button class="control cd">cool down
-        <div style="display:none" class="segment" data-segment-type="Cooldown" data-ftp="75" data-duration="600" data-ftp-2="25" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div><div class="cd"></div></div></label></div>
-    </button><button class="control fr">free ride
-        <div style="display:none" class="segment" data-segment-type="FreeRide" data-duration="600" data-enable="txtDuration1"><input name="segment" type="radio"><label><div><div class="fr"></div></div></label></div>
-    </button><button class="control in">int
-        <div style="display:none" class="segment" data-segment-type="IntervalsT" data-ftp="75" data-duration="60" data-ftp-2="50" data-duration-2="300" data-repeat="4" data-enable="txtRepeat txtDuration1 txtFtp1 txtDuration2 txtFtp2"><input name="segment" type="radio"><label><div><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div><div style="padding-top:225px;"><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div><div style="padding-top:225px;"><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div><div style="padding-top:225px;"><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div></label></div>
-    </button><button id="btnHiddenS" style="display: none">
-        <div style="display:none" class="segment" data-segment-type="SteadyState" data-ftp="50" data-duration="300" data-enable="txtDuration1 txtFtp1"><input name="segment" type="radio"><label><div><div class="z1"></div></div></label></div>
-    </button><button id="btnHiddenW" style="display: none">
-        <div style="display:none" class="segment" data-segment-type="Warmup" data-ftp="25" data-duration="600" data-ftp-2="75" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div><div class="wu"></div></div></label></div>
-    </button><button id="btnHiddenC" style="display: none">
-        <div style="display:none" class="segment" data-segment-type="Cooldown" data-ftp="75" data-duration="600" data-ftp-2="25" data-enable="txtDuration1 txtFtp1 txtFtp2"><input name="segment" type="radio"><label><div><div class="cd"></div></div></label></div>
-    </button><button id="btnHiddenF" style="display: none">
-        <div style="display:none" class="segment" data-segment-type="FreeRide" data-duration="600" data-enable="txtDuration1"><input name="segment" type="radio"><label><div><div class="fr"></div></div></label></div>
-    </button><button id="btnHiddenI" style="display: none">
-        <div style="display:none" class="segment" data-segment-type="IntervalsT" data-ftp="75" data-duration="60" data-ftp-2="50" data-duration-2="300" data-repeat="4" data-enable="txtRepeat txtDuration1 txtFtp1 txtDuration2 txtFtp2"><input name="segment" type="radio"><label><div><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div><div style="padding-top:225px;"><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div><div style="padding-top:225px;"><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div><div style="padding-top:225px;"><div class="z2"></div></div><div style="padding-top:250px;"><div class="z1"></div></div></label></div>
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="125" data-d-1="60"><svg><path d="M1,1" /></svg></label></div>
+    </button><button id="btnw" class="control wu">warm up
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="w" data-p-1="25" data-d-1="600" data-p-2="75"><svg><path d="M1,1" /></svg></label></div>
+    </button><button id="btnc" class="control cd">cool down
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="w" data-p-1="75" data-d-1="600" data-p-2="25"><svg><path d="M1,1" /></svg></label></div>
+    </button><button id="btnf" class="control fr">free ride
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="f" data-d-1="600"><svg><path d="M1,1" /></svg></label></div>
+    </button><button id="btni" class="control in">int
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="i" data-p-1="75" data-d-1="60" data-p-2="50" data-d-2="300" data-r="3"><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg>
     </button>
 </div>
 
@@ -92,11 +95,11 @@ zwofactory
 </div>
 
 <div id="divSegmentInputs" class="grid">
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtFtp1" min="5" step="5" /><label for="txtFtp1">FTP (%)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtDuration1" min="5" step="5" /><label for="txtDuration1">Duration (s)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtFtp2" min="5" step="5" /><label for="txtFtp2">FTP 2 (%)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtDuration2" min="5" step="5" /><label for="txtDuration2">Duration 2 (s)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtRepeat" min="1" max="20" /><label for="txtRepeat">Repeat</label></div>
+    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="data-p-1" /><label for="txtP1">Power 1 (%FTP)</label></div>
+    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="data-d-1" /><label for="txtD1">Duration 1 (s)</label></div>
+    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="data-p-2" /><label for="txtP2">Power 2 (%FTP)</label></div>
+    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="data-d-2" /><label for="txtD2">Duration 2 (s)</label></div>
+    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtR" min="1" max="20" data-target="data-r" /><label for="txtR">Repeat</label></div>
     <div class="u-1-8 u-sm-1-3"><button id="btnMoveLeft">← Move Left</button></div>
     <div class="u-1-8 u-sm-1-3"><button id="btnMoveRight">Move Right →</button></div>
     <div class="u-1-8 u-sm-1-3"><button id="btnDelete">⌫ Delete</button></div>
@@ -105,13 +108,20 @@ zwofactory
 <hr />
 
 <div class="grid">
-    <div class="u-1-2"><button id="btnCreateLink">Create link</button></div>
-    <div class="u-1-2"><button id="btnSaveZwoFile">Save .zwo file</button></div>
+    <div class="u-1-2"><button class="save" id="btnCreateLink">Create link</button></div>
+    <div class="u-1-2"><button class="save" id="btnSaveZwoFile">Download .zwo file</button></div>
 </div>
 
 <div class="grid">
     <div class="u-1" id="divLinks"></div>
 </div>
+</main>
+
+<footer>
+<div class="fb-like" data-href="http://zwofactory.com" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+<hr />
+<div>&copy; 2017 Matt McNeil</div>
+</footer>
 
 <script src="fileSaver.js"></script>
 <script src="zwofactory.js"></script>

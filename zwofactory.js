@@ -1,3 +1,6 @@
+var horizSecondsPerPixel = 5;
+var vertPixelsPerPower = 1;
+
 document.addEventListener('DOMContentLoaded', function() {
     var qs = window.location.search;
     if (!qs) return;
@@ -10,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
         else if (params[i].substr(0, 1) == 'n') document.getElementById('txtName').value = decodeURIComponent(params[i].substr(2));
         else if (params[i].substr(0, 1) == 'd') document.getElementById('txtDescription').value = decodeURIComponent(params[i].substr(2));
     }
+
+    loadSegment(getSelectedSegment().getAttribute('data-id'));
 });
 
 
@@ -24,8 +29,14 @@ document.getElementById('divSegmentChart').addEventListener('click', function(e)
 });
 
 
-document.getElementById('divSegmentInputs').addEventListener('input', function() {
-    redrawSelectedSegment();
+document.getElementById('divSegmentInputs').addEventListener('input', function(e) {
+    if (e.target.tagName != 'INPUT') return;
+    var target = e.target.getAttribute('data-target');
+    var selectedSegment = getSelectedSegment();
+    if (!selectedSegment) return;
+    var label = selectedSegment.querySelector('label');
+    label.setAttribute(target, e.target.value);
+    redraw(label);
 });
 
 
@@ -96,37 +107,33 @@ function loadWorkout(workoutString) {
         if (!segments[i]) continue;
 
         var pieces = segments[i].split('-');
-        var hiddenButton = document.getElementById('btnHidden' + pieces[0]);
-        var div = hiddenButton.querySelector('div');
-        switch(pieces[0]) {
-            case "S":
-                if (isNumeric(pieces[1])) div.setAttribute('data-ftp', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) div.setAttribute('data-duration', parseFloat(pieces[2]));
-                hiddenButton.click();
+        var btn = document.getElementById('btn' + pieces[0]);
+        btn.click();
+        var label = getSelectedSegment().querySelector('label');
+        switch(pieces[0].toLowerCase()) {
+            case "s":
+                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
                 break;
-            case "W":
-            case "C":
-                if (isNumeric(pieces[1])) div.setAttribute('data-ftp', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) div.setAttribute('data-duration', parseFloat(pieces[2]));
-                if (isNumeric(pieces[3])) div.setAttribute('data-ftp-2', parseFloat(pieces[3]));
-                hiddenButton.click();
+            case "w":
+            case "c":
+                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
+                if (isNumeric(pieces[3])) label.setAttribute('data-p-2', parseFloat(pieces[3]));
                 break;
-            case "F":
-                if (isNumeric(pieces[1])) div.setAttribute('data-duration', parseFloat(pieces[1]));
-                hiddenButton.click();
+            case "f":
+                if (isNumeric(pieces[1])) label.setAttribute('data-d-1', parseFloat(pieces[1]));
                 break;
-            case "I":
-                if (isNumeric(pieces[1])) div.setAttribute('data-ftp', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) div.setAttribute('data-duration', parseFloat(pieces[2]));
-                if (isNumeric(pieces[3])) div.setAttribute('data-ftp-2', parseFloat(pieces[3]));
-                if (isNumeric(pieces[4])) div.setAttribute('data-duration-2', parseFloat(pieces[4]));
-                if (isNumeric(pieces[5])) div.setAttribute('data-repeat', parseInt(pieces[5]));
-                hiddenButton.click();
+            case "i":
+                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
+                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
+                if (isNumeric(pieces[3])) label.setAttribute('data-p-2', parseFloat(pieces[3]));
+                if (isNumeric(pieces[4])) label.setAttribute('data-d-2', parseFloat(pieces[4]));
+                if (isNumeric(pieces[5])) label.setAttribute('data-r', parseInt(pieces[5]));
                 break;
         }
+        redraw(label);
     }
-
-    document.querySelector('#divSegmentChart > div:first-child > label').click();
 }
 
 
@@ -150,18 +157,180 @@ function getName() {
      return name;
 }
 
-function selectText(element) {
-    if (document.body.createTextRange) {
-        range = document.body.createTextRange();
-        range.moveToElementText(element);
-        range.select();
-    } else if (window.getSelection) {
-        selection = window.getSelection();        
-        var range = document.createRange();
-        range.selectNodeContents(element);
-        selection.removeAllRanges();
-        selection.addRange(range);
+
+function addSegment(sourceElement) {
+    var id = 'x' + createGuid();
+    var clone = sourceElement.querySelector('div').cloneNode(true);
+    clone.setAttribute('data-id', id);
+    clone.removeAttribute('style');
+
+    var input = clone.querySelector('input');
+    input.setAttribute('id', id);
+    input.checked = true;
+
+    var label = clone.querySelector('label');
+    label.setAttribute('for', id);
+
+    document.getElementById('divSegmentChart').appendChild(clone);
+    clone.scrollIntoView();
+    loadSegment(id);
+    redraw(label);
+}
+
+
+function getSelectedSegment() {
+    var selectedSegment = document.querySelector('#divSegmentChart input:checked');
+    if (!selectedSegment) return null;
+    return document.querySelector('div[data-id="' + selectedSegment.id + '"]');
+}
+
+
+function loadSegment(segmentId) {
+    var txtR = document.querySelector('#txtR');
+    var txtD1 = document.querySelector('#txtD1');
+    var txtP1 = document.querySelector('#txtP1');
+    var txtD2 = document.querySelector('#txtD2');
+    var txtP2 = document.querySelector('#txtP2');
+    var selectedSegment = document.querySelector('div[data-id="' + segmentId + '"] label');
+    var repeat = selectedSegment.getAttribute('data-r');
+    var duration1 = selectedSegment.getAttribute('data-d-1');
+    var power1 = selectedSegment.getAttribute('data-p-1');
+    var duration2 = selectedSegment.getAttribute('data-d-2');
+    var power2 = selectedSegment.getAttribute('data-p-2');
+    
+    if (repeat) { txtR.value = repeat; txtR.removeAttribute('disabled'); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
+    if (duration1) { txtD1.value = duration1; txtD1.removeAttribute('disabled'); } else { txtD1.value = ''; txtD1.setAttribute('disabled', true); }
+    if (power1) { txtP1.value = power1; txtP1.removeAttribute('disabled'); } else { txtP1.value = ''; txtP1.setAttribute('disabled', true); }
+    if (duration2) { txtD2.value = duration2; txtD2.removeAttribute('disabled'); } else { txtD2.value = ''; txtD2.setAttribute('disabled', true); }
+    if (power2) { txtP2.value = power2; txtP2.removeAttribute('disabled'); } else { txtP2.value = ''; txtP2.setAttribute('disabled', true); }
+}
+
+
+function loadNoSegment() {
+    var txtR = document.querySelector('#txtR');
+    txtR.value = ''; 
+    txtR.setAttribute('disabled', true);
+    var txtD1 = document.querySelector('#txtD1');
+    txtD1.value = ''; 
+    txtD1.setAttribute('disabled', true);
+    var txtP1 = document.querySelector('#txtP1');
+    txtP1.value = ''; 
+    txtP1.setAttribute('disabled', true);
+    var txtD2 = document.querySelector('#txtD2');
+    txtD2.value = ''; 
+    txtD2.setAttribute('disabled', true);
+    var txtP2 = document.querySelector('#txtP2');
+    txtP2.value = ''; 
+    txtP2.setAttribute('disabled', true);
+}
+
+
+
+function redraw(labelElement) {
+    var t = labelElement.getAttribute('data-t');
+
+    if (t == 'i') redrawIntervals(labelElement);
+    else if (t == 'f') redrawFreeRide(labelElement);
+    else redrawSinglePolygon(labelElement);
+}
+
+
+function redrawIntervals(labelElement) {
+    var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
+    var d2 = getIntOrDefault(labelElement.getAttribute('data-d-2'), 5);
+    var p1 = getIntOrDefault(labelElement.getAttribute('data-p-1'), 5);
+    var p2 = getIntOrDefault(labelElement.getAttribute('data-p-2'), 5);
+    var r = getIntOrDefault(labelElement.getAttribute('data-r'), 1);
+    var width1 = Math.floor(d1/horizSecondsPerPixel);
+    var width2 = Math.floor(d2/horizSecondsPerPixel);
+
+    while (labelElement.querySelectorAll('svg').length > 2)
+        labelElement.removeChild(labelElement.lastChild);
+
+    var svg1 = labelElement.querySelector('svg:first-child');
+    svg1.setAttribute('width', width1);
+    redrawPath(svg1.querySelector('path'), 's', p1, p1, width1);
+    var svg2 = labelElement.querySelector('svg:nth-child(2)');
+    svg2.setAttribute('width', width2);
+    redrawPath(svg2.querySelector('path'), 's', p2, p2, width2);
+
+    for (var i = 1; i < r; i++) {
+        labelElement.appendChild(svg1.cloneNode(true));
+        labelElement.appendChild(svg2.cloneNode(true));
     }
+}
+
+
+function redrawFreeRide(labelElement) {
+    var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
+    var width = Math.floor(d1/horizSecondsPerPixel);
+
+    var svg = labelElement.querySelector('svg');
+    svg.setAttribute('width', width);
+
+    var path = svg.querySelector('path');
+    path.setAttribute('d', 'M 1 220 C ' + (width/3) + ' 175, ' + (width/3*2) + ' 275, ' + width + ' 220 V 300 H 1 Z');
+    path.setAttribute('class', 'z1');
+}
+
+
+function redrawSinglePolygon(labelElement) {
+    var t = labelElement.getAttribute('data-t');
+    var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
+    var width = Math.floor(d1/horizSecondsPerPixel);
+    var p1 = getIntOrDefault(labelElement.getAttribute('data-p-1'), 5);
+    var p2 = labelElement.getAttribute('data-p-2');
+    if (!p2) p2 = p1;
+
+    var svg = labelElement.querySelector('svg');
+    svg.setAttribute('width', width);
+
+    redrawPath(svg.querySelector('path'), t, p1, p2, width);
+}
+
+
+function redrawPath(pathElement, t, p1, p2, d) {
+    pathElement.setAttribute('d', 'M 1 ' + (300 - p1) + ' L ' + d + ' ' + (300 - p2) + ' L ' + d + ' 300 L 1 300 Z');
+    if (t == 'w' || t == 'c') {
+        pathElement.setAttribute('class', 'z1');
+        return;
+    }
+
+    if (p1 >= 125) pathElement.setAttribute('class', 'z6');
+    else if (p1 >= 100) pathElement.setAttribute('class', 'z5');
+    else if (p1 >= 95) pathElement.setAttribute('class', 'z4');
+    else if (p1 >= 80) pathElement.setAttribute('class', 'z3');
+    else if (p1 >= 65) pathElement.setAttribute('class', 'z2');
+    else pathElement.setAttribute('class', 'z1');
+}
+
+
+function createGuid() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+        return v.toString(16);
+    });
+}
+
+
+function getIntOrDefault(toParse, minimumDefaultValue) {
+    var parsed = parseInt(toParse);
+    if (!parsed) return minimumDefaultValue;
+    if (parsed < minimumDefaultValue) return minimumDefaultValue;
+    return Math.max(parsed, minimumDefaultValue);
+}
+
+
+function escapeXml(unsafe) {
+    return unsafe.replace(/[<>&'"]/g, function (c) {
+        switch (c) {
+            case '<': return '&lt;';
+            case '>': return '&gt;';
+            case '&': return '&amp;';
+            case '\'': return '&apos;';
+            case '"': return '&quot;';
+        }
+    });
 }
 
 
@@ -186,7 +355,7 @@ function createXmlString() {
     xml += '    <workout>\r\n';
 
     for (var i = 0; i < segments.length; i++) {
-        xml += '        ' + createWorkoutElement(segments[i]) + '\r\n';
+        xml += '        ' + createWorkoutElement(segments[i].querySelector('label')) + '\r\n';
     }
 
     xml += '    </workout>\r\n'
@@ -204,12 +373,13 @@ function createQueryString() {
     var segments = document.querySelectorAll('#divSegmentChart > div');
     var qs = '?w=';
     for (var i = 0; i < segments.length; i++) {
-        qs += segments[i].getAttribute('data-segment-type').charAt(0) + '-';
-        qs += getQsParamAttributeIfExists(segments[i], 'data-ftp');
-        qs += getQsParamAttributeIfExists(segments[i], 'data-duration');
-        qs += getQsParamAttributeIfExists(segments[i], 'data-ftp-2');
-        qs += getQsParamAttributeIfExists(segments[i], 'data-duration-2');
-        qs += getQsParamAttributeIfExists(segments[i], 'data-repeat');
+        var label = segments[i].querySelector('label');
+        qs += label.getAttribute('data-t').charAt(0) + '-';
+        qs += getQsParamAttributeIfExists(label, 'data-p-1');
+        qs += getQsParamAttributeIfExists(label, 'data-d-1');
+        qs += getQsParamAttributeIfExists(label, 'data-p-2');
+        qs += getQsParamAttributeIfExists(label, 'data-d-2');
+        qs += getQsParamAttributeIfExists(label, 'data-r');
         qs = qs.substr(0, qs.length-1) + '!';
     }
 
@@ -230,261 +400,23 @@ function getQsParamAttributeIfExists(segment, attrName) {
 
 
 function createWorkoutElement(segment) {
-    switch(segment.getAttribute('data-segment-type')) {
-        case "SteadyState":
-            return '<SteadyState Duration="' + segment.getAttribute('data-duration') + '" Power="' + segment.getAttribute('data-ftp') + '"/>';
+    switch(segment.getAttribute('data-t').toLowerCase()) {
+        case "s":
+            return '<SteadyState Duration="' + segment.getAttribute('data-d-1') + '" Power="' + segment.getAttribute('data-p-1') + '"/>';
             break;
-        case "Warmup":
-            return '<Warmup Duration="' + segment.getAttribute('data-duration') + '" PowerLow="' + segment.getAttribute('data-ftp') + '" PowerHigh="' + segment.getAttribute('data-ftp-2') + '"/>';
+        case "w":
+            return '<Warmup Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + segment.getAttribute('data-p-1') + '" PowerHigh="' + segment.getAttribute('data-p-2') + '"/>';
             break;
-        case "Cooldown":
-            return '<Cooldown Duration="' + segment.getAttribute('data-duration') + '" PowerLow="' + segment.getAttribute('data-ftp') + '" PowerHigh="' + segment.getAttribute('data-ftp-2') + '"/>';
+        case "c":
+            return '<Cooldown Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + segment.getAttribute('data-p-1') + '" PowerHigh="' + segment.getAttribute('data-p-2') + '"/>';
             break;
-        case "FreeRide":
-            return '<FreeRide Duration="' + segment.getAttribute('data-duration') + '" FlatRoad="1" />';
+        case "f":
+            return '<FreeRide Duration="' + segment.getAttribute('data-d-1') + '" FlatRoad="1" />';
             break;
-        case "IntervalsT":
-            return '<IntervalsT Repeat="' + segment.getAttribute('data-repeat') + '" OnDuration="' + segment.getAttribute('data-duration') + '" OffDuration="' + segment.getAttribute('data-duration-2') + '" OnPower="' + segment.getAttribute('data-ftp') + '" OffPower="' + segment.getAttribute('data-ftp-2') + '"/>';
-            break;
-        default:
-            break;
-    }
-}
-
-
-function addSegment(sourceElement) {
-    var id = 'x' + createGuid();
-    var clone = sourceElement.querySelector('div').cloneNode(true);
-    clone.setAttribute('data-id', id);
-    clone.removeAttribute('style');
-
-    var input = clone.querySelector('input');
-    input.setAttribute('id', id);
-    input.checked = true;
-
-    var label = clone.querySelector('label');
-    label.setAttribute('for', id);
-
-    document.getElementById('divSegmentChart').appendChild(clone);
-    clone.scrollIntoView();
-    loadSegment(id);
-    redrawSelectedSegment();
-}
-
-
-function getSelectedSegment() {
-    var selectedSegment = document.querySelector('#divSegmentChart input:checked');
-    if (!selectedSegment) return null;
-    return document.querySelector('div[data-id="' + selectedSegment.id + '"]');
-}
-
-
-function loadSegment(segmentId) {
-    var txtRepeat = document.querySelector('#txtRepeat');
-    var txtDuration1 = document.querySelector('#txtDuration1');
-    var txtFtp1 = document.querySelector('#txtFtp1');
-    var txtDuration2 = document.querySelector('#txtDuration2');
-    var txtFtp2 = document.querySelector('#txtFtp2');
-    var selectedSegment = document.querySelector('div[data-id="' + segmentId + '"]');
-    var inputsToEnable = selectedSegment.getAttribute('data-enable').split(' ');
-    var repeat = selectedSegment.getAttribute('data-repeat');
-    var duration1 = selectedSegment.getAttribute('data-duration');
-    var ftp1 = selectedSegment.getAttribute('data-ftp');
-    var duration2 = selectedSegment.getAttribute('data-duration-2');
-    var ftp2 = selectedSegment.getAttribute('data-ftp-2');
-    
-    if (inputsToEnable.indexOf('txtRepeat') != -1) { txtRepeat.value = repeat; txtRepeat.removeAttribute('disabled'); } else { txtRepeat.value = ''; txtRepeat.setAttribute('disabled', true); }
-    if (inputsToEnable.indexOf('txtDuration1') != -1) { txtDuration1.value = duration1; txtDuration1.removeAttribute('disabled'); } else { txtDuration1.value = ''; txtDuration1.setAttribute('disabled', true); }
-    if (inputsToEnable.indexOf('txtFtp1') != -1) { txtFtp1.value = ftp1; txtFtp1.removeAttribute('disabled'); } else { txtFtp1.value = ''; txtFtp1.setAttribute('disabled', true); }
-    if (inputsToEnable.indexOf('txtDuration2') != -1) { txtDuration2.value = duration2; txtDuration2.removeAttribute('disabled'); } else { txtDuration2.value = ''; txtDuration2.setAttribute('disabled', true); }
-    if (inputsToEnable.indexOf('txtFtp2') != -1) { txtFtp2.value = ftp2; txtFtp2.removeAttribute('disabled'); } else { txtFtp2.value = ''; txtFtp2.setAttribute('disabled', true); }
-}
-
-
-function loadNoSegment() {
-    var txtRepeat = document.querySelector('#txtRepeat');
-    txtRepeat.value = ''; 
-    txtRepeat.setAttribute('disabled', true);
-    var txtDuration1 = document.querySelector('#txtDuration1');
-    txtDuration1.value = ''; 
-    txtDuration1.setAttribute('disabled', true);
-    var txtFtp1 = document.querySelector('#txtFtp1');
-    txtFtp1.value = ''; 
-    txtFtp1.setAttribute('disabled', true);
-    var txtDuration2 = document.querySelector('#txtDuration2');
-    txtDuration2.value = ''; 
-    txtDuration2.setAttribute('disabled', true);
-    var txtFtp2 = document.querySelector('#txtFtp2');
-    txtFtp2.value = ''; 
-    txtFtp2.setAttribute('disabled', true);
-}
-
-
-function redrawSelectedSegment() {
-    var selectedSegment = getSelectedSegment();
-
-    switch (selectedSegment.getAttribute('data-segment-type')) {
-        case "SteadyState":
-            redrawSegmentSteadyState(selectedSegment);
-            break;
-        case "Warmup":
-        case "Cooldown":
-            redrawSegmentRamp(selectedSegment);
-            break;
-        case "FreeRide":
-            redrawSegmentFreeRide(selectedSegment);
-            break;
-        case "IntervalsT":
-            redrawSegmentIntervalsT(selectedSegment);
+        case "i":
+            return '<IntervalsT Repeat="' + segment.getAttribute('data-r') + '" OnDuration="' + segment.getAttribute('data-d-1') + '" OffDuration="' + segment.getAttribute('data-d-2') + '" OnPower="' + segment.getAttribute('data-p-1') + '" OffPower="' + segment.getAttribute('data-p-2') + '"/>';
             break;
         default:
             break;
     }
-}
-
-
-function redrawSegmentSteadyState(segment) {
-    var ftp1 = getNumericInput('txtFtp1', 5);
-    var duration1 = getNumericInput('txtDuration1', 1); 
-
-    segment.setAttribute('data-ftp', ftp1);
-    segment.setAttribute('data-duration', duration1);
-
-    var divToRedrawWidth = segment.querySelector('label > div > div');
-    var newWidth = Math.max(Math.floor(duration1 / 6), 10);
-    divToRedrawWidth.setAttribute('style', 'width: ' + newWidth + 'px;');
-    reclassifyBlockZone(divToRedrawWidth, ftp1);
-
-    var divToRepad = segment.querySelector('label > div');
-    var newPadding = Math.max(Math.floor(300 - Math.min(ftp1, 300)), 0);
-    divToRepad.setAttribute('style', 'padding-top: ' + newPadding + 'px');
-}
-
-
-function redrawSegmentRamp(segment) {
-    var ftp1 = getNumericInput('txtFtp1', 5);
-    var duration1 = getNumericInput('txtDuration1', 1);
-    var ftp2 = getNumericInput('txtFtp2', 5);
-
-    segment.setAttribute('data-ftp', ftp1);
-    segment.setAttribute('data-duration', duration1);
-    segment.setAttribute('data-ftp-2', ftp2);
-    
-    var divToRedrawWidth = segment.querySelector('label > div > div');
-    var newWidth = Math.max(Math.floor(duration1 / 6), 10);
-    divToRedrawWidth.setAttribute('style', 'width: ' + newWidth + 'px;');
-
-    var divToRepad = segment.querySelector('label > div');
-    var newPadding = Math.max(Math.floor(300 - Math.min(Math.max(ftp1, ftp2), 300)), 0);
-    divToRepad.setAttribute('style', 'padding-top: ' + newPadding + 'px');
-}
-
-
-function redrawSegmentFreeRide(segment) {
-    var duration1 = getNumericInput('txtDuration1', 1);
-
-    segment.setAttribute('data-duration', duration1);
-    
-    var divToRedrawWidth = segment.querySelector('label > div > div');
-    var newWidth = Math.max(Math.floor(duration1 / 6), 10);
-    divToRedrawWidth.setAttribute('style', 'width: ' + newWidth + 'px;');
-
-    var divToRepad = segment.querySelector('label > div');
-    divToRepad.setAttribute('style', 'padding-top: 200px');
-}
-
-
-function redrawSegmentIntervalsT(segment) {
-    var ftp1 = getNumericInput('txtFtp1', 5);
-    var duration1 = getNumericInput('txtDuration1', 1);
-    var ftp2 = getNumericInput('txtFtp2', 5);
-    var duration2 = getNumericInput('txtDuration2', 1);
-    var repeat = getNumericInput('txtRepeat', 1);
-
-    segment.setAttribute('data-ftp', ftp1);
-    segment.setAttribute('data-duration', duration1);
-    segment.setAttribute('data-ftp-2', ftp2);
-    segment.setAttribute('data-duration-2', duration2);
-    segment.setAttribute('data-repeat', repeat);
-
-    var divsToRedrawWidth1 = segment.querySelectorAll('label > div:nth-child(odd) > div');
-    var divsToRedrawWidth2 = segment.querySelectorAll('label > div:nth-child(even) > div');
-    var newWidth1 = Math.max(Math.floor(duration1 / 6), 10);
-    var newWidth2 = Math.max(Math.floor(duration2 / 6), 10);
-    for (var i = 0; i < divsToRedrawWidth1.length; i++) {
-        divsToRedrawWidth1[i].setAttribute('style', 'width: ' + newWidth1 + 'px;');
-    }
-
-    for (var i = 0; i < divsToRedrawWidth2.length; i++) {
-        divsToRedrawWidth2[i].setAttribute('style', 'width: ' + newWidth2 + 'px;');
-    }
-
-    var divsToRepad1 = segment.querySelectorAll('label > div:nth-child(odd)');
-    var divsToRepad2 = segment.querySelectorAll('label > div:nth-child(even)');
-    var newPadding1 = Math.max(Math.floor(300 - Math.min(ftp1, 300)), 0);
-    var newPadding2 = Math.max(Math.floor(300 - Math.min(ftp2, 300)), 0);
-    for (var i = 0; i < divsToRepad1.length; i++) {
-        divsToRepad1[i].setAttribute('style', 'padding-top: ' + newPadding1 + 'px');
-        reclassifyBlockZone(divsToRepad1[i].childNodes[0], ftp1);
-    }
-    for (var i = 0; i < divsToRepad2.length; i++) {
-        divsToRepad2[i].setAttribute('style', 'padding-top: ' + newPadding2 + 'px');
-        reclassifyBlockZone(divsToRepad2[i].childNodes[0], ftp2);
-    }
-
-    var displayedCount = segment.querySelectorAll('label > div').length / 2;
-    var difference = displayedCount - repeat;
-    if (difference === 0) return;
-
-    var label = segment.querySelector('label');
-    for (var i = 0; i < difference; i++) {
-        label.removeChild(label.lastChild);
-        label.removeChild(label.lastChild);
-    }
-    for (var i = 0; i > difference; i--) {
-        label.appendChild(label.lastChild.previousSibling.cloneNode(true));
-        label.appendChild(label.lastChild.previousSibling.cloneNode(true));
-    }
-    
-}
-
-
-function reclassifyBlockZone(element, ftp) {
-    var newClass = 'z1';
-    if (ftp >= 125) newClass = 'z6';
-    else if (ftp >= 100) newClass = 'z5';
-    else if (ftp >= 95) newClass = 'z4';
-    else if (ftp >= 80) newClass = 'z3';
-    else if (ftp >= 65) newClass = 'z2';
-
-    element.classList = newClass;
-}
-
-
-function createGuid() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-        var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
-        return v.toString(16);
-    });
-}
-
-
-function getNumericInput(elementId, minimumDefaultValue) {
-    var strVal = document.getElementById(elementId).value;
-    var intVal = parseInt(strVal);
-    if (!intVal) return minimumDefaultValue;
-
-    return Math.max(intVal, minimumDefaultValue);
-}
-
-function escapeXml(unsafe) {
-    return unsafe.replace(/[<>&'"]/g, function (c) {
-        switch (c) {
-            case '<': return '&lt;';
-            case '>': return '&gt;';
-            case '&': return '&amp;';
-            case '\'': return '&apos;';
-            case '"': return '&quot;';
-        }
-    });
 }

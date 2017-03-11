@@ -1,6 +1,10 @@
 
-html { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-weight: bold; padding:10px; color: #555; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: gainsboro; }
-body {  margin: auto; padding: 1em; max-width: 1200px; background-color: white; border: 1px solid black; border-radius: 0.25em;  }
+html { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-weight: bold; padding:0; color: #555; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: #456; }
+body {  margin: auto; max-width: 1200px; }
+header,main,footer { background-color: white; padding: 1em; border-radius: 0.25em; border: 1px solid black; }
+header { border-top-left-radius: 0; border-top-right-radius: 0; border-top: none; padding: 0.5em 0; margin-bottom: 10px; }
+main { margin-bottom: 10px; }
+footer { border-bottom-left-radius: 0; border-bottom-right-radius: 0; padding: 1em; text-align: center; }
 a { display: block; color: #456; }
 h1 { padding: 0; margin: 0; text-align: center; }
 hr { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
@@ -25,15 +29,16 @@ input[type=text],
 input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid black; border-radius: 10px; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);}
 input[type=number] { text-align: center; min-width: 62px; }
 *:focus { outline: none; }
-button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; }
+button { width: 100%; padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; background-color: gainsboro; }
+button.save { background-color: #456; color: white; font-weight: bold; }
 
 .control { display: inline-block; color: white; font-size: 0.75rem; width: 10%; min-width: 62px; text-align: center; padding: 1.5em 0; margin: 0; }
-.z1 { background-color: #837C83; }
-.z2 { background-color: #3C8FD1; }
-.z3 { background-color: #4AC171; }
-.z4 { background-color: #FFCC3F; }
-.z5 { background-color: #F06D43; }
-.z6 { background-color: #D6270C; }
+.z1 { fill: #837C83; background-color: #837C83; }
+.z2 { fill: #3C8FD1; background-color: #3C8FD1; }
+.z3 { fill: #4AC171; background-color: #4AC171; }
+.z4 { fill: #FFCC3F; background-color: #FFCC3F; }
+.z5 { fill: #F06D43; background-color: #F06D43; }
+.z6 { fill: #D6270C; background-color: #D6270C; }
 .wu { background: linear-gradient(to right, gainsboro, black); }
 .cd { background: linear-gradient(to left,  gainsboro, black); }
 .fr { background: linear-gradient(gainsboro, #837C83); }
@@ -42,14 +47,14 @@ button { padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,
 .template { display: none; }
 .indicator { width: 1em; height: 1em; margin-top: auto; margin-bottom: auto; border-radius: 100%; vertical-align: bottom; line-height: 1em; }
 
-#divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 320px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
-.segment {display: inline-block; height: 100%; }
-.segment > label { display: inline-block; height: 100%; padding: 0; margin: 0; border-bottom: 8px solid transparent; }
-.segment > label > div { display: inline-block; height: 100%; box-sizing: border-box; padding: 0; margin: 0; }
-.segment > label > div > div { height: 100%; box-sizing: border-box; border: 1px solid white; border-radius: 4px; padding: 0; margin: 0; }
-.segment > input[type="radio"] { display: none; }
-.segment > input[type="radio"]:hover + label { border-bottom: 8px solid gainsboro; }
-.segment > input[type="radio"]:checked + label { border-bottom: 8px solid black; }
+#divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 344px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
+#divSegmentChart div { display: inline-block; }
+#divSegmentChart svg { height: 300px; margin-right: 1px; }
+#divSegmentChart svg > path { stroke: black; stroke-width: 0.5; }
+#divSegmentChart input { display: none; }
+#divSegmentChart input:checked + label { border-bottom: 6px solid #456; }
+#divSegmentChart label { display: inline; cursor: pointer; }
+#divSegmentChart label:hover { border-bottom: 6px solid gainsboro; }
 
 .transparent { opacity: 0; }
 .opaque { transition-duration: 2s; transition-property: opacity; opacity: 1; }
