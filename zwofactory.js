@@ -1,5 +1,10 @@
 var horizSecondsPerPixel = 5;
 var vertPixelsPerPower = 1;
+var keyCodes = { 
+    '1': 'btns', '2': 'btnz2', '3': 'btnz3', '4': 'btnz4', '5': 'btnz5', '6': 'btnz6', 
+    '7': 'btnw', '8': 'btnc', '9': 'btnf', '0': 'btni',
+    'ArrowRight': 'btnMoveRight', 'ArrowLeft': 'btnMoveLeft', 'Delete': 'btnDelete' 
+};
 
 document.addEventListener('DOMContentLoaded', function() {
     var qs = window.location.search;
@@ -15,6 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     loadSegment(getSelectedSegment().getAttribute('data-id'));
+});
+
+
+document.addEventListener('keypress', function(e) {
+    if (e.keyCode == 27) e.target.blur();
+    if (e.target.tagName != 'BODY') return;
+    console.log(e);
+    if (!keyCodes.hasOwnProperty(e.key)) return;
+    document.getElementById(keyCodes[e.key]).click();
 });
 
 
@@ -62,13 +76,13 @@ document.getElementById('btnDelete').addEventListener('click', function(e) {
     var previousBlock = selectedSegment.previousElementSibling;
     var nextBlock = selectedSegment.nextElementSibling;
     selectedSegment.parentNode.removeChild(selectedSegment);
-    if (previousBlock && !nextBlock) {
-        previousBlock.querySelector('input[type=radio]').checked = true;
-        loadSegment(previousBlock.getAttribute('data-id'));
-    }
-    else if (nextBlock) {
+    if (nextBlock) {
         nextBlock.querySelector('input[type=radio]').checked = true;
         loadSegment(nextBlock.getAttribute('data-id'));
+    }
+    else if (previousBlock) {
+        previousBlock.querySelector('input[type=radio]').checked = true;
+        loadSegment(previousBlock.getAttribute('data-id'));
     } else {
         loadNoSegment();
     }
