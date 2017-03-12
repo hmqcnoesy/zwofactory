@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('keypress', function(e) {
     if (e.keyCode == 27) e.target.blur();
     if (e.target.tagName != 'BODY') return;
-    console.log(e);
     if (!keyCodes.hasOwnProperty(e.key)) return;
     document.getElementById(keyCodes[e.key]).click();
 });
@@ -113,6 +112,106 @@ document.getElementById('btnCreateLink').addEventListener('click', function() {
 document.getElementById('divSegmentChart').addEventListener('change', function(e) {
     loadSegment(e.target.id);
 });
+
+
+document.getElementById('divSegmentChart').addEventListener('dragenter', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    e.dataTransfer.dropEffect = 'copy';
+    this.classList.add('dragover');
+}, false);
+
+
+document.getElementById('divSegmentChart').addEventListener('dragleave', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.classList.remove('dragover');
+}, false);
+
+
+document.getElementById('divSegmentChart').addEventListener('dragover', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+}, false);
+
+
+document.getElementById('divSegmentChart').addEventListener('drop', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    this.classList.remove('dragover');
+    var files = e.dataTransfer.files; 
+    if (files.length != 1) return;
+    if (files[0].name.toLowerCase().indexOf('.zwo') != files[0].name.length - 4) return;
+
+    var reader = new FileReader();
+    reader.onload = function(event) {
+        var xml = event.target.result;
+        parser = new DOMParser();
+        xmlDoc = parser.parseFromString(xml, "text/xml");
+        document.getElementById('txtName').value = xmlDoc.getElementsByTagName('name')[0].childNodes[0].nodeValue;
+        document.getElementById('txtAuthor').value = xmlDoc.getElementsByTagName('author')[0].childNodes[0].nodeValue;
+        document.getElementById('txtDescription').value = xmlDoc.getElementsByTagName('description')[0].childNodes[0].nodeValue;
+        document.getElementById('txtTags').value = '';
+
+        var tags = xmlDoc.getElementsByTagName('tag');
+        for (var i = 0; i < tags.length; i++) {
+            if (tags[i].nodeType != 1) continue;
+            document.getElementById('txtTags').value += tags[i].getAttribute('name') + ' ';
+        }
+
+        document.getElementById('divSegmentChart').innerHTML = '';
+        var segments = xmlDoc.getElementsByTagName('workout')[0].childNodes;
+        var workoutString = '';
+        for (var i = 0; i < segments.length; i++) {
+            if (segments[i].nodeType != 1) continue;
+            var segmentType = segments[i].tagName.toLowerCase().charAt(0);
+            switch (segmentType) {
+                case "s":
+                    workoutString += 's';
+                    var p1 = segments[i].getAttribute('Power');
+                    var d1 = segments[i].getAttribute('Duration');
+                    workoutString += '-' + p1;
+                    workoutString += '-' + d1;
+                    workoutString += '!';
+                    break;
+                case "w":
+                case "c":
+                    workoutString += segmentType;
+                    var p1 = segments[i].getAttribute('PowerLow');
+                    var d1 = segments[i].getAttribute('Duration');
+                    var p2 = segments[i].getAttribute('PowerHigh');
+                    workoutString += '-' + p1;
+                    workoutString += '-' + d1;
+                    workoutString += '-' + p2;
+                    workoutString += '!';
+                    break;
+                case "f":
+                    workoutString += 'f';
+                    var d1 = segments[i].getAttribute('Duration');
+                    workoutString += '-' + d1;
+                    workoutString += '!';
+                    break;
+                case "i":
+                    workoutString += 'i';
+                    var p1 = segments[i].getAttribute('OnPower');
+                    var d1 = segments[i].getAttribute('OnDuration');
+                    var p2 = segments[i].getAttribute('OffPower');
+                    var d2 = segments[i].getAttribute('OffDuration');
+                    var r = segments[i].getAttribute('Repeat');
+                    workoutString += '-' + p1;
+                    workoutString += '-' + d1;
+                    workoutString += '-' + p2;
+                    workoutString += '-' + d2;
+                    workoutString += '-' + r;
+                    workoutString += '!';
+                    break;
+            }
+        }
+        
+        loadWorkout(workoutString);
+    };
+    reader.readAsText(files[0]);
+}, false);
 
 
 function loadWorkout(workoutString) {

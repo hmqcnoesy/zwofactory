@@ -59,6 +59,7 @@ button.save { background-color: #456; color: white; font-weight: bold; }
 
 .transparent { opacity: 0; }
 .opaque { transition-duration: 2s; transition-property: opacity; opacity: 1; }
+.dragover { background-color: gainsboro !important; }
 
 
 @media only screen and (max-width:730px) {

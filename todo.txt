@@ -1,0 +1,5 @@
+- xml drag/drop
+- settings
+- help/info
+- templates
+- crappy browser warning
