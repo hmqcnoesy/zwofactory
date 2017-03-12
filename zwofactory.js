@@ -185,8 +185,10 @@ function addSegment(sourceElement) {
     var label = clone.querySelector('label');
     label.setAttribute('for', id);
 
-    document.getElementById('divSegmentChart').appendChild(clone);
-    clone.scrollIntoView();
+    var chart = document.getElementById('divSegmentChart');
+    chart.appendChild(clone);
+    chart.scrollLeft = 9e9;
+    
     loadSegment(id);
     redraw(label);
 }
@@ -212,11 +214,11 @@ function loadSegment(segmentId) {
     var duration2 = selectedSegment.getAttribute('data-d-2');
     var power2 = selectedSegment.getAttribute('data-p-2');
     
-    if (repeat) { txtR.value = repeat; txtR.removeAttribute('disabled'); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
-    if (duration1) { txtD1.value = duration1; txtD1.removeAttribute('disabled'); } else { txtD1.value = ''; txtD1.setAttribute('disabled', true); }
-    if (power1) { txtP1.value = power1; txtP1.removeAttribute('disabled'); } else { txtP1.value = ''; txtP1.setAttribute('disabled', true); }
-    if (duration2) { txtD2.value = duration2; txtD2.removeAttribute('disabled'); } else { txtD2.value = ''; txtD2.setAttribute('disabled', true); }
-    if (power2) { txtP2.value = power2; txtP2.removeAttribute('disabled'); } else { txtP2.value = ''; txtP2.setAttribute('disabled', true); }
+    if (repeat) { txtR.value = repeat; txtR.removeAttribute('disabled'); txtR.select(); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
+    if (duration2) { txtD2.value = duration2; txtD2.removeAttribute('disabled'); txtD2.select(); } else { txtD2.value = ''; txtD2.setAttribute('disabled', true); }
+    if (power2) { txtP2.value = power2; txtP2.removeAttribute('disabled'); txtP2.select() } else { txtP2.value = ''; txtP2.setAttribute('disabled', true); }
+    if (duration1) { txtD1.value = duration1; txtD1.removeAttribute('disabled'); txtD1.select(); } else { txtD1.value = ''; txtD1.setAttribute('disabled', true); }
+    if (power1) { txtP1.value = power1; txtP1.removeAttribute('disabled'); txtP1.select(); } else { txtP1.value = ''; txtP1.setAttribute('disabled', true); }
 }
 
 
@@ -283,7 +285,7 @@ function redrawFreeRide(labelElement) {
     svg.setAttribute('width', width);
 
     var path = svg.querySelector('path');
-    path.setAttribute('d', 'M 1 220 C ' + (width/3) + ' 175, ' + (width/3*2) + ' 275, ' + width + ' 220 V 300 H 1 Z');
+    path.setAttribute('d', 'M 1 225 C ' + (width/3) + ' 175, ' + (width/3*2) + ' 275, ' + width + ' 225 V 300 H 1 Z');
     path.setAttribute('class', 'z1');
 }
 

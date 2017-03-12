@@ -5,6 +5,7 @@ header,main,footer { background-color: white; padding: 1em; border-radius: 0.25e
 header { border-top-left-radius: 0; border-top-right-radius: 0; border-top: none; padding: 0.5em 0; margin-bottom: 10px; }
 main { margin-bottom: 10px; }
 footer { border-bottom-left-radius: 0; border-bottom-right-radius: 0; padding: 1em; text-align: center; }
+header a { text-decoration: none; }
 a { display: block; color: #456; }
 h1 { padding: 0; margin: 0; text-align: center; }
 hr { border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
