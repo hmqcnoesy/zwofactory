@@ -1,5 +1,10 @@
 - xml drag/drop
+- save links
 - settings
+    - delete all links
+    - default durations?
 - help/info
 - templates
 - crappy browser warning
+- cadence
+- text event

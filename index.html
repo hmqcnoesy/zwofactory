@@ -78,28 +78,48 @@ zwofactory.com
         <div style="display:none"><input type="radio" name="segment" /><label data-t="f" data-d-1="600"><svg><path d="M1,1" /></svg></label></div>
     </button><button id="btni" class="control in">int
         <div style="display:none"><input type="radio" name="segment" /><label data-t="i" data-p-1="75" data-d-1="60" data-p-2="50" data-d-2="300" data-r="3"><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg>
+    </button><button id="btnr" style="display:none">
+        <div style="display:none"><input type="radio" name="segment" /><label data-t="r" data-p-1="75" data-d-1="600" data-p-2="75"><svg><path d="M1,1" /></svg></label></div>
     </button>
+</div>
+<div class="grid">
+    <div class="u-1-5"><button id="btnSelectPrevious">Select Previous</button></div>
+    <div class="u-1-5"><button id="btnSelectNext">Select Next</button></div>
+    <div class="u-1-5"><button id="btnMoveLeft">← Move Left</button></div>
+    <div class="u-1-5"><button id="btnMoveRight">Move Right →</button></div>
+    <div class="u-1-5"><button id="btnDelete">⌫ Delete</button></div>
 </div>
 
 <div id="divSegmentChart">
 </div>
 
 <div id="divSegmentInputs" class="grid">
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="data-p-1" /><label for="txtP1">Power 1 (%FTP)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="data-d-1" /><label for="txtD1">Duration 1 (s)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="data-p-2" /><label for="txtP2">Power 2 (%FTP)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="data-d-2" /><label for="txtD2">Duration 2 (s)</label></div>
-    <div class="u-1-8 u-sm-1-5"><input disabled type="number" id="txtR" min="1" max="20" data-target="data-r" /><label for="txtR">Repeat</label></div>
-    <div class="u-1-8 u-sm-1-3"><button id="btnMoveLeft">← Move Left</button></div>
-    <div class="u-1-8 u-sm-1-3"><button id="btnMoveRight">Move Right →</button></div>
-    <div class="u-1-8 u-sm-1-3"><button id="btnDelete">⌫ Delete</button></div>
+    <div class="u-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="data-p-1" /><label for="txtP1">Power 1 (%FTP)</label></div>
+    <div class="u-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="data-d-1" /><label for="txtD1">Duration 1 (s)</label></div>
+    <div class="u-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="data-p-2" /><label for="txtP2">Power 2 (%FTP)</label></div>
+    <div class="u-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="data-d-2" /><label for="txtD2">Duration 2 (s)</label></div>
+    <div class="u-1-5"><input disabled type="number" id="txtR" min="1" max="20" data-target="data-r" /><label for="txtR">Repeat</label></div>
+</div>
+<div class="grid">
+    <div class="u-3-4"><button id="btnAddTextEvent">+ Text Event</button>
+        <div id="divTextEvents"></div>
+        <div id="divTextEventToClone" class="grid invisible">
+            <div class="u-4-5"><input type="text" /></div>
+            <div class="u-1-10"><input type="number" /></div>
+            <div class="u-1-10"><button>⌫</button></div>
+        </div>
+    </div>
+    <div class="u-1-4"><button id="btnToggleCadence">+ Cadence</button>
+        <div class="invisible cadence-input"><input disabled type="number" id="txtC1" min="10" max="200" data-target="data-c-1" /><label for="txtC1">Cadence 1 (RPM)</label></div>
+        <div class="invisible cadence-input"><input disabled type="number" id="txtC2" min="10" max="200" data-target="data-c-2" /><label for="txtC2">Cadence 2 (RPM)</label></div>
+    </div>
 </div>
 
 <hr />
 
 <div class="grid">
-    <div class="u-1-2"><button class="save" id="btnCreateLink">Create link</button></div>
-    <div class="u-1-2"><button class="save" id="btnSaveZwoFile">Download .zwo file</button></div>
+    <div class="u-1-2"><button class="save" id="btnSaveToMyWorkouts">Save to My Workouts</button></div>
+    <div class="u-1-2"><button class="save" id="btnDownloadZwoFile">Download .zwo file</button></div>
 </div>
 
 <div class="grid">
@@ -109,15 +129,17 @@ zwofactory.com
 
 <footer>
     <div class="grid">
-        <div class="u-1-4 u-sm-1"><a href="index.html">zwofactory.com</a></div>
-        <div class="u-1-4 u-sm-1"><a href="info.html">Info</a></div>
-        <div class="u-1-4 u-sm-1"><a href="settings.html">Settings</a></div>
-        <div class="u-1-4 u-sm-1"><a href="templates.html">Workout Templates</a></div>
+        <div class="u-1-5 u-sm-1"><a href="index.html">zwofactory.com</a></div>
+        <div class="u-1-5 u-sm-1"><a href="myworkouts.html">My Workouts</a></div>
+        <div class="u-1-5 u-sm-1"><a href="info.html">Info</a></div>
+        <div class="u-1-5 u-sm-1"><a href="settings.html">Settings</a></div>
+        <div class="u-1-5 u-sm-1"><a href="templates.html">Workout Templates</a></div>
     </div>
     <hr />
     <div>&copy; 2017 Matt McNeil</div>
 </footer>
 <script src="fileSaver.js"></script>
+<script src="settings.js"></script>
 <script src="zwofactory.js"></script>
 </body>
 </html>

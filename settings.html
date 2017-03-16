@@ -37,20 +37,68 @@ zwofactory.com
 </header>
 
 <main>
-hey settings!
+<div class="grid">
+    <div class="u-1">
+        <label><input type="checkbox" data-key="rememberLinks" />Remember links - uncheck this box to forget links you create.</label>
+    </div>
+</div>
+<div class="grid">
+    <div class="u-1-10 u-sm-1">
+        <input type="number" min="1" step="1" data-key="horizSecondsPerPixel" />
+    </div>
+    <div class="u-9-10 u-sm-1"> 
+        <label>Seconds per pixel - higher number squeezes more into the viewing area at a time, but can be harder to edit.</label>
+    </div>
+</div>
+<hr />
+<div class="grid">
+    <div class="u-1">
+        <button id="btnSave">Save Settings</button>
+    </div>
+</div>
 </main>
 
 <footer>
     <div class="grid">
-        <div class="u-1-4 u-sm-1"><a href="index.html">zwofactory.com</a></div>
-        <div class="u-1-4 u-sm-1"><a href="info.html">Info</a></div>
-        <div class="u-1-4 u-sm-1"><a href="settings.html">Settings</a></div>
-        <div class="u-1-4 u-sm-1"><a href="templates.html">Workout Templates</a></div>
+        <div class="u-1-5 u-sm-1"><a href="index.html">zwofactory.com</a></div>
+        <div class="u-1-5 u-sm-1"><a href="myworkouts.html">My Workouts</a></div>
+        <div class="u-1-5 u-sm-1"><a href="info.html">Info</a></div>
+        <div class="u-1-5 u-sm-1"><a href="settings.html">Settings</a></div>
+        <div class="u-1-5 u-sm-1"><a href="templates.html">Workout Templates</a></div>
     </div>
     <hr />
     <div>&copy; 2017 Matt McNeil</div>
 </footer>
-<script src="fileSaver.js"></script>
-<script src="zwofactory.js"></script>
+<script src="settings.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var userSettings = getSettings();
+        var checkboxes  = document.querySelectorAll('input[type=checkbox]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            checkboxes[i].checked = userSettings[checkboxes[i].getAttribute('data-key')];
+        }
+
+        var numInputs = document.querySelectorAll('input[type=number]');
+        for (var i = 0; i < numInputs.length; i++) {
+            numInputs[i].value = userSettings[numInputs[i].getAttribute('data-key')];
+        }
+    });
+
+    document.getElementById('btnSave').addEventListener('click', function() {
+        var userSettings = getSettings();
+        var checkboxes  = document.querySelectorAll('input[type=checkbox]');
+        for (var i = 0; i < checkboxes.length; i++) {
+            userSettings[checkboxes[i].getAttribute('data-key')] = checkboxes[i].checked;
+        }
+
+        var numInputs = document.querySelectorAll('input[type=number]');
+        for (var i = 0; i < numInputs.length; i++) {
+            userSettings[numInputs[i].getAttribute('data-key')] = numInputs[i].value;
+        }
+
+        saveSettings(userSettings);
+        window.location = 'index.html';
+    });
+</script>
 </body>
 </html>

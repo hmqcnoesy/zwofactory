@@ -1,12 +1,13 @@
-var horizSecondsPerPixel = 5;
-var vertPixelsPerPower = 1;
 var keyCodes = { 
     '1': 'btns', '2': 'btnz2', '3': 'btnz3', '4': 'btnz4', '5': 'btnz5', '6': 'btnz6', 
     '7': 'btnw', '8': 'btnc', '9': 'btnf', '0': 'btni',
     'ArrowRight': 'btnMoveRight', 'ArrowLeft': 'btnMoveLeft', 'Delete': 'btnDelete' 
 };
+var userSettings = getSettings();
 
 document.addEventListener('DOMContentLoaded', function() {
+    if (userSettings.rememberLinks) loadLinks();
+    
     var qs = window.location.search;
     if (!qs) return;
 
@@ -28,6 +29,42 @@ document.addEventListener('keypress', function(e) {
     if (e.target.tagName != 'BODY') return;
     if (!keyCodes.hasOwnProperty(e.key)) return;
     document.getElementById(keyCodes[e.key]).click();
+});
+
+
+document.getElementById('btnToggleCadence').addEventListener('click', function() {
+    var selectedSegment = getSelectedSegment();
+    if (!selectedSegment) return;
+
+    var cadenceInput = document.querySelectorAll('.cadence-input');
+    if (cadenceInput[0].classList.contains('invisible')) {
+        for (var i = 0; i < cadenceInput.length; i++) {
+            cadenceInput[i].classList.remove('invisible');
+        }
+        this.innerHTML = '- Cadence';
+    } else {
+        for (var i = 0; i < cadenceInput.length; i++) {
+            cadenceInput[i].classList.add('invisible');
+        }
+        this.innerHTML = '+ Cadence';
+    }
+});
+
+
+document.getElementById('btnAddTextEvent').addEventListener('click', function() {
+    var selectedSegment = getSelectedSegment();
+    if (!selectedSegment) return;
+    var clone = document.getElementById('divTextEventToClone').cloneNode(true);
+    clone.classList.remove('invisible');
+    clone.removeAttribute('id');
+    document.getElementById('divTextEvents').appendChild(clone);
+});
+
+
+document.getElementById('divTextEvents').addEventListener('click', function(e) {
+    if (e.target.tagName != 'BUTTON') return;
+    var divToDelete = e.target.parentNode.parentNode;
+    divToDelete.parentNode.removeChild(divToDelete);
 });
 
 
@@ -88,7 +125,7 @@ document.getElementById('btnDelete').addEventListener('click', function(e) {
 });
 
 
-document.getElementById('btnSaveZwoFile').addEventListener('click', function() {
+document.getElementById('btnDownloadZwoFile').addEventListener('click', function() {
     var xml = createXmlString();
     var blob = new Blob([xml], {type: "application/xml"});
     var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
@@ -96,16 +133,22 @@ document.getElementById('btnSaveZwoFile').addEventListener('click', function() {
 });
 
 
-document.getElementById('btnCreateLink').addEventListener('click', function() {
+document.getElementById('btnSaveToMyWorkouts').addEventListener('click', function() {
     var qs = createQueryString();
     var url = [location.protocol, '//', location.host, location.pathname, qs].join('');
     var a = document.createElement('a');
     a.href = url;
     a.setAttribute('class', 'transparent');
-    a.innerText = getName();
+    var name = getName();
+    a.innerText = name;
     var div = document.getElementById('divLinks');
     div.insertBefore(a, div.firstChild);
     window.setTimeout(function() { a.classList.add('opaque'); }, 15);
+
+    if (!userSettings.rememberLinks) return;
+    
+    userSettings.links.push({name: name, href: url});
+    saveSettings(userSettings);
 });
 
 
@@ -168,18 +211,19 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
             switch (segmentType) {
                 case "s":
                     workoutString += 's';
-                    var p1 = segments[i].getAttribute('Power');
-                    var d1 = segments[i].getAttribute('Duration');
+                    var p1 = getIntOrDefault(100*segments[i].getAttribute('Power'), 5);
+                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
                     workoutString += '-' + p1;
                     workoutString += '-' + d1;
                     workoutString += '!';
                     break;
                 case "w":
                 case "c":
+                case "r":
                     workoutString += segmentType;
-                    var p1 = segments[i].getAttribute('PowerLow');
-                    var d1 = segments[i].getAttribute('Duration');
-                    var p2 = segments[i].getAttribute('PowerHigh');
+                    var p1 = getIntOrDefault(100*segments[i].getAttribute('PowerLow'), 5);
+                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
+                    var p2 = getIntOrDefault(100*segments[i].getAttribute('PowerHigh'), 5);
                     workoutString += '-' + p1;
                     workoutString += '-' + d1;
                     workoutString += '-' + p2;
@@ -187,17 +231,17 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
                     break;
                 case "f":
                     workoutString += 'f';
-                    var d1 = segments[i].getAttribute('Duration');
+                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
                     workoutString += '-' + d1;
                     workoutString += '!';
                     break;
                 case "i":
                     workoutString += 'i';
-                    var p1 = segments[i].getAttribute('OnPower');
-                    var d1 = segments[i].getAttribute('OnDuration');
-                    var p2 = segments[i].getAttribute('OffPower');
-                    var d2 = segments[i].getAttribute('OffDuration');
-                    var r = segments[i].getAttribute('Repeat');
+                    var p1 = getIntOrDefault(100*segments[i].getAttribute('OnPower'), 5);
+                    var d1 = getIntOrDefault(segments[i].getAttribute('OnDuration'), 5);
+                    var p2 = getIntOrDefault(100*segments[i].getAttribute('OffPower'), 5);
+                    var d2 = getIntOrDefault(segments[i].getAttribute('OffDuration'), 5);
+                    var r = getIntOrDefault(segments[i].getAttribute('Repeat'), 1);
                     workoutString += '-' + p1;
                     workoutString += '-' + d1;
                     workoutString += '-' + p2;
@@ -212,6 +256,17 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
     };
     reader.readAsText(files[0]);
 }, false);
+
+
+function loadLinks() {
+    var linksElement = document.getElementById('divLinks');
+    for (var i = 0; i < userSettings.links.length; i++) {
+        var link = document.createElement('a');
+        link.setAttribute('href', userSettings.links[i].href);
+        link.appendChild(document.createTextNode(userSettings.links[i].name));
+        linksElement.appendChild(link);
+    }
+}
 
 
 function loadWorkout(workoutString) {
@@ -230,6 +285,7 @@ function loadWorkout(workoutString) {
                 break;
             case "w":
             case "c":
+            case "r":
                 if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
                 if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
                 if (isNumeric(pieces[3])) label.setAttribute('data-p-2', parseFloat(pieces[3]));
@@ -356,8 +412,8 @@ function redrawIntervals(labelElement) {
     var p1 = getIntOrDefault(labelElement.getAttribute('data-p-1'), 5);
     var p2 = getIntOrDefault(labelElement.getAttribute('data-p-2'), 5);
     var r = getIntOrDefault(labelElement.getAttribute('data-r'), 1);
-    var width1 = Math.floor(d1/horizSecondsPerPixel);
-    var width2 = Math.floor(d2/horizSecondsPerPixel);
+    var width1 = Math.floor(d1/userSettings.horizSecondsPerPixel);
+    var width2 = Math.floor(d2/userSettings.horizSecondsPerPixel);
 
     while (labelElement.querySelectorAll('svg').length > 2)
         labelElement.removeChild(labelElement.lastChild);
@@ -378,7 +434,7 @@ function redrawIntervals(labelElement) {
 
 function redrawFreeRide(labelElement) {
     var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
-    var width = Math.floor(d1/horizSecondsPerPixel);
+    var width = Math.floor(d1/userSettings.horizSecondsPerPixel);
 
     var svg = labelElement.querySelector('svg');
     svg.setAttribute('width', width);
@@ -392,7 +448,7 @@ function redrawFreeRide(labelElement) {
 function redrawSinglePolygon(labelElement) {
     var t = labelElement.getAttribute('data-t');
     var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
-    var width = Math.floor(d1/horizSecondsPerPixel);
+    var width = Math.floor(d1/userSettings.horizSecondsPerPixel);
     var p1 = getIntOrDefault(labelElement.getAttribute('data-p-1'), 5);
     var p2 = labelElement.getAttribute('data-p-2');
     if (!p2) p2 = p1;
@@ -411,11 +467,11 @@ function redrawPath(pathElement, t, p1, p2, d) {
         return;
     }
 
-    if (p1 >= 125) pathElement.setAttribute('class', 'z6');
-    else if (p1 >= 100) pathElement.setAttribute('class', 'z5');
-    else if (p1 >= 95) pathElement.setAttribute('class', 'z4');
-    else if (p1 >= 80) pathElement.setAttribute('class', 'z3');
-    else if (p1 >= 65) pathElement.setAttribute('class', 'z2');
+    if (p1 >= 119) pathElement.setAttribute('class', 'z6');
+    else if (p1 > 105) pathElement.setAttribute('class', 'z5');
+    else if (p1 > 90) pathElement.setAttribute('class', 'z4');
+    else if (p1 > 75) pathElement.setAttribute('class', 'z3');
+    else if (p1 > 60) pathElement.setAttribute('class', 'z2');
     else pathElement.setAttribute('class', 'z1');
 }
 
@@ -429,10 +485,10 @@ function createGuid() {
 
 
 function getIntOrDefault(toParse, minimumDefaultValue) {
-    var parsed = parseInt(toParse);
+    var parsed = parseFloat(toParse);
     if (!parsed) return minimumDefaultValue;
     if (parsed < minimumDefaultValue) return minimumDefaultValue;
-    return Math.max(parsed, minimumDefaultValue);
+    return Math.max(Math.round(parsed), minimumDefaultValue);
 }
 
 
@@ -517,19 +573,22 @@ function getQsParamAttributeIfExists(segment, attrName) {
 function createWorkoutElement(segment) {
     switch(segment.getAttribute('data-t').toLowerCase()) {
         case "s":
-            return '<SteadyState Duration="' + segment.getAttribute('data-d-1') + '" Power="' + segment.getAttribute('data-p-1') + '"/>';
+            return '<SteadyState Duration="' + segment.getAttribute('data-d-1') + '" Power="' + (segment.getAttribute('data-p-1') / 100) + '"/>';
             break;
         case "w":
-            return '<Warmup Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + segment.getAttribute('data-p-1') + '" PowerHigh="' + segment.getAttribute('data-p-2') + '"/>';
+            return '<Warmup Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + (segment.getAttribute('data-p-1') / 100) + '" PowerHigh="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
             break;
         case "c":
-            return '<Cooldown Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + segment.getAttribute('data-p-1') + '" PowerHigh="' + segment.getAttribute('data-p-2') + '"/>';
+            return '<Cooldown Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + (segment.getAttribute('data-p-1') / 100) + '" PowerHigh="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
+            break;
+        case "r":
+            return '<Ramp Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + (segment.getAttribute('data-p-1') / 100) + '" PowerHigh="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
             break;
         case "f":
             return '<FreeRide Duration="' + segment.getAttribute('data-d-1') + '" FlatRoad="1" />';
             break;
         case "i":
-            return '<IntervalsT Repeat="' + segment.getAttribute('data-r') + '" OnDuration="' + segment.getAttribute('data-d-1') + '" OffDuration="' + segment.getAttribute('data-d-2') + '" OnPower="' + segment.getAttribute('data-p-1') + '" OffPower="' + segment.getAttribute('data-p-2') + '"/>';
+            return '<IntervalsT Repeat="' + segment.getAttribute('data-r') + '" OnDuration="' + segment.getAttribute('data-d-1') + '" OffDuration="' + segment.getAttribute('data-d-2') + '" OnPower="' + (segment.getAttribute('data-p-1') / 100) + '" OffPower="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
             break;
         default:
             break;

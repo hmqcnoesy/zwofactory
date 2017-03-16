@@ -22,6 +22,7 @@ label { display: block; }
 .u-4-5 { width: 80%; }
 .u-1-6 { width: 16.66%; }
 .u-1-8 { width: 12.5%; }
+.u-3-4 { width: 75%; }
 .u-3-8 { width: 37.5%; }
 .u-1-10 { width: 10%; }
 .u-1-12 { width: 8.33%; }
@@ -47,6 +48,7 @@ button.save { background-color: #456; color: white; font-weight: bold; }
 
 .template { display: none; }
 .indicator { width: 1em; height: 1em; margin-top: auto; margin-bottom: auto; border-radius: 100%; vertical-align: bottom; line-height: 1em; }
+.invisible { display: none; }
 
 #divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 344px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
 #divSegmentChart div { display: inline-block; }
