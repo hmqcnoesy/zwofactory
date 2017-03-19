@@ -1,261 +1,146 @@
-var keyCodes = { 
-    '1': 'btns', '2': 'btnz2', '3': 'btnz3', '4': 'btnz4', '5': 'btnz5', '6': 'btnz6', 
-    '7': 'btnw', '8': 'btnc', '9': 'btnf', '0': 'btni',
-    'ArrowRight': 'btnMoveRight', 'ArrowLeft': 'btnMoveLeft', 'Delete': 'btnDelete' 
+var Workout = function(name, desc, auth, tagStr) {
+    this.id = createGuid();
+    this.name = name;
+    this.description = desc;
+    this.author = auth;
+    this.tags = [];
+    if (tagStr) tags = tagStr.split(' ');
+    this.segments = [];
 };
-var userSettings = getSettings();
 
-document.addEventListener('DOMContentLoaded', function() {
-    if (userSettings.rememberLinks) loadLinks();
+
+Workout.prototype.setTags = function(tagStr) {
+    this.tags = tagStr.split(' ');
+};
+
+
+Workout.prototype.addSegment = function(segment) {
+    this.segments.push(segment);
+};
+
+
+var Segment = function(t, p1, d1, p2, d2, r) {
+    this.id = createGuid();
+    this.t = t;
+    if (isNumeric(p1)) this.p1 = p1;
+    if (isNumeric(d1)) this.d1 = d1;
+    if (isNumeric(p2)) this.p2 = p2;
+    if (isNumeric(d2)) this.d2 = d2;
+    if (isNumeric(r)) this.r = r;
+    this.textEvents = [];
+};
+
+
+Segment.prototype.addTextEvent = function(text, offset) {
+    var id = createGuid();
+    this.textEvents.push({id:id, text:text, offset:offset});
+    return id;
+};
+
+Segment.prototype.addCadence = function(c1, c2) {
+    if (isNumeric(c1)) this.c1 = c1;
+    if (isNumeric(c2)) this.c2 = c2;
+};
+
+
+Segment.prototype.toSvgs = function(horizSecondsPerPixel) {
+    if (this.t == 'i') return this.toSvgIntervals(horizSecondsPerPixel);
+    else if (this.t == 'f') return [this.toSvgFreeRide(horizSecondsPerPixel)];
+    else return [this.toSvgSinglePolygon(horizSecondsPerPixel)];
+};
+
+
+Segment.prototype.toSvgIntervals = function(horizSecondsPerPixel) {
+    var uri = 'http://www.w3.org/2000/svg';
+    this.d1 = getIntOrDefault(this.d1, 5);
+    this.d2 = getIntOrDefault(this.d2, 5);
+    this.p1 = getIntOrDefault(this.p1, 5);
+    this.p2 = getIntOrDefault(this.p2, 5);
+    this.r = getIntOrDefault(this.r, 1);
+    var width1 = Math.floor(this.d1/horizSecondsPerPixel);
+    var width2 = Math.floor(this.d2/horizSecondsPerPixel);
+
+    var svgs = [];
+    var svg1 = document.createElementNS(uri, 'svg');
+    svg1.setAttribute('width', width1);
+    var path1 = this.createPolygonPath('s', this.p1, this.p1, width1);
+    svg1.appendChild(path1);
+    if (this.c1) svg1.appendChild(this.createCadencePath());
     
-    var qs = window.location.search;
-    if (!qs) return;
+    var svg2 = document.createElementNS(uri, 'svg');
+    svg2.setAttribute('width', width2);
+    var path2 = this.createPolygonPath('s', this.p2, this.p2, width2);
+    svg2.appendChild(path2);
+    if (this.c2) svg2.appendChild(this.createCadencePath());
 
-    var params = qs.replace('?', '').split('&');
-    for (var i = 0; i < params.length; i++) {
-        if (params[i].substr(0, 1) == 'w') loadWorkout(params[i].substr(2));
-        else if (params[i].substr(0, 1) == 't') document.getElementById('txtTags').value = decodeURIComponent(params[i].substr(2));
-        else if (params[i].substr(0, 1) == 'a') document.getElementById('txtAuthor').value = decodeURIComponent(params[i].substr(2));
-        else if (params[i].substr(0, 1) == 'n') document.getElementById('txtName').value = decodeURIComponent(params[i].substr(2));
-        else if (params[i].substr(0, 1) == 'd') document.getElementById('txtDescription').value = decodeURIComponent(params[i].substr(2));
+    for (var i = 0; i < this.r; i++) {
+        svgs.push(svg1.cloneNode(true));
+        svgs.push(svg2.cloneNode(true));
     }
 
-    loadSegment(getSelectedSegment().getAttribute('data-id'));
-});
+    return svgs;
+};
 
 
-document.addEventListener('keypress', function(e) {
-    if (e.keyCode == 27) e.target.blur();
-    if (e.target.tagName != 'BODY') return;
-    if (!keyCodes.hasOwnProperty(e.key)) return;
-    document.getElementById(keyCodes[e.key]).click();
-});
+Segment.prototype.toSvgFreeRide = function(horizSecondsPerPixel) {
+    var uri = 'http://www.w3.org/2000/svg';
+    this.d1 = getIntOrDefault(this.d1, 5);
+    var width = Math.floor(this.d1/horizSecondsPerPixel);
+
+    var svg = document.createElementNS(uri, 'svg');
+    svg.setAttribute('width', width);
+
+    var path = document.createElementNS(uri, 'path');
+    path.setAttribute('d', 'M 1 225 C ' + (width/3) + ' 175, ' + (width/3*2) + ' 275, ' + width + ' 225 V 300 H 1 Z');
+    path.setAttribute('class', 'z1');
+    svg.appendChild(path);
+    if (this.c1) svg.appendChild(this.createCadencePath());
+    return svg;
+};
 
 
-document.getElementById('btnToggleCadence').addEventListener('click', function() {
-    var selectedSegment = getSelectedSegment();
-    if (!selectedSegment) return;
+Segment.prototype.toSvgSinglePolygon = function(horizSecondsPerPixel) {
+    var uri = 'http://www.w3.org/2000/svg';
+    var d1 = getIntOrDefault(this.d1, 5);
+    var width = Math.floor(d1/horizSecondsPerPixel);
+    var p1 = getIntOrDefault(this.p1, 5);
 
-    var cadenceInput = document.querySelectorAll('.cadence-input');
-    if (cadenceInput[0].classList.contains('invisible')) {
-        for (var i = 0; i < cadenceInput.length; i++) {
-            cadenceInput[i].classList.remove('invisible');
-        }
-        this.innerHTML = '- Cadence';
-    } else {
-        for (var i = 0; i < cadenceInput.length; i++) {
-            cadenceInput[i].classList.add('invisible');
-        }
-        this.innerHTML = '+ Cadence';
+    var svg = document.createElementNS(uri, 'svg');
+    svg.setAttribute('width', width);
+    var path = this.createPolygonPath(this.t, this.p1, this.p2 ? this.p2 : this.p1, width);
+    svg.appendChild(path);
+    if (this.c1) svg.appendChild(this.createCadencePath());
+    return svg;
+}
+
+
+Segment.prototype.createPolygonPath = function(t, p1, p2, d) {
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', 'M 1 ' + (300 - p1) + ' L ' + d + ' ' + (300 - p2) + ' L ' + d + ' 300 L 1 300 Z');
+    if (t == 'r') {
+        path.setAttribute('class', 'z1');
+        return path;
     }
-});
+
+    if (p1 >= 119) path.setAttribute('class', 'z6');
+    else if (p1 >= 105) path.setAttribute('class', 'z5');
+    else if (p1 >= 90) path.setAttribute('class', 'z4');
+    else if (p1 >= 76) path.setAttribute('class', 'z3');
+    else if (p1 >= 60) path.setAttribute('class', 'z2');
+    else path.setAttribute('class', 'z1');
+
+    return path;
+};
 
 
-document.getElementById('btnAddTextEvent').addEventListener('click', function() {
-    var selectedSegment = getSelectedSegment();
-    if (!selectedSegment) return;
-    var clone = document.getElementById('divTextEventToClone').cloneNode(true);
-    clone.classList.remove('invisible');
-    clone.removeAttribute('id');
-    document.getElementById('divTextEvents').appendChild(clone);
-});
-
-
-document.getElementById('divTextEvents').addEventListener('click', function(e) {
-    if (e.target.tagName != 'BUTTON') return;
-    var divToDelete = e.target.parentNode.parentNode;
-    divToDelete.parentNode.removeChild(divToDelete);
-});
-
-
-document.getElementById('divControls').addEventListener('click', function(e) {
-    if (e.target.tagName == 'BUTTON') addSegment(e.target);
-});
-
-
-document.getElementById('divSegmentChart').addEventListener('click', function(e) {
-    if (e.target.tagName != 'INPUT') return;
-    loadSegment(e.target.getAttribute('id'));
-});
-
-
-document.getElementById('divSegmentInputs').addEventListener('input', function(e) {
-    if (e.target.tagName != 'INPUT') return;
-    var target = e.target.getAttribute('data-target');
-    var selectedSegment = getSelectedSegment();
-    if (!selectedSegment) return;
-    var label = selectedSegment.querySelector('label');
-    label.setAttribute(target, e.target.value);
-    redraw(label);
-});
-
-
-document.getElementById('btnMoveLeft').addEventListener('click', function(e) {
-    var selectedSegment = getSelectedSegment();
-    if (!selectedSegment) return;
-    var previousBlock = selectedSegment.previousElementSibling;
-    if (previousBlock) selectedSegment.parentNode.insertBefore(selectedSegment, previousBlock);
-});
-
-
-document.getElementById('btnMoveRight').addEventListener('click', function(e) {
-    var selectedSegment = getSelectedSegment();
-    if (!selectedSegment) return;
-    var nextBlock = selectedSegment.nextElementSibling;
-    if (nextBlock) selectedSegment.parentNode.insertBefore(nextBlock, selectedSegment);
-});
-
-
-document.getElementById('btnDelete').addEventListener('click', function(e) {
-    var selectedSegment = getSelectedSegment();
-    if (!selectedSegment) return;
-    var previousBlock = selectedSegment.previousElementSibling;
-    var nextBlock = selectedSegment.nextElementSibling;
-    selectedSegment.parentNode.removeChild(selectedSegment);
-    if (nextBlock) {
-        nextBlock.querySelector('input[type=radio]').checked = true;
-        loadSegment(nextBlock.getAttribute('data-id'));
-    }
-    else if (previousBlock) {
-        previousBlock.querySelector('input[type=radio]').checked = true;
-        loadSegment(previousBlock.getAttribute('data-id'));
-    } else {
-        loadNoSegment();
-    }
-});
-
-
-document.getElementById('btnDownloadZwoFile').addEventListener('click', function() {
-    var xml = createXmlString();
-    var blob = new Blob([xml], {type: "application/xml"});
-    var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
-    saveAs(blob, fileName);
-});
-
-
-document.getElementById('btnSaveToMyWorkouts').addEventListener('click', function() {
-    var qs = createQueryString();
-    var url = [location.protocol, '//', location.host, location.pathname, qs].join('');
-    var a = document.createElement('a');
-    a.href = url;
-    a.setAttribute('class', 'transparent');
-    var name = getName();
-    a.innerText = name;
-    var div = document.getElementById('divLinks');
-    div.insertBefore(a, div.firstChild);
-    window.setTimeout(function() { a.classList.add('opaque'); }, 15);
-
-    if (!userSettings.rememberLinks) return;
-    
-    userSettings.links.push({name: name, href: url});
-    saveSettings(userSettings);
-});
-
-
-document.getElementById('divSegmentChart').addEventListener('change', function(e) {
-    loadSegment(e.target.id);
-});
-
-
-document.getElementById('divSegmentChart').addEventListener('dragenter', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    e.dataTransfer.dropEffect = 'copy';
-    this.classList.add('dragover');
-}, false);
-
-
-document.getElementById('divSegmentChart').addEventListener('dragleave', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    this.classList.remove('dragover');
-}, false);
-
-
-document.getElementById('divSegmentChart').addEventListener('dragover', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-}, false);
-
-
-document.getElementById('divSegmentChart').addEventListener('drop', function(e) {
-    e.stopPropagation();
-    e.preventDefault();
-    this.classList.remove('dragover');
-    var files = e.dataTransfer.files; 
-    if (files.length != 1) return;
-    if (files[0].name.toLowerCase().indexOf('.zwo') != files[0].name.length - 4) return;
-
-    var reader = new FileReader();
-    reader.onload = function(event) {
-        var xml = event.target.result;
-        parser = new DOMParser();
-        xmlDoc = parser.parseFromString(xml, "text/xml");
-        document.getElementById('txtName').value = xmlDoc.getElementsByTagName('name')[0].childNodes[0].nodeValue;
-        document.getElementById('txtAuthor').value = xmlDoc.getElementsByTagName('author')[0].childNodes[0].nodeValue;
-        document.getElementById('txtDescription').value = xmlDoc.getElementsByTagName('description')[0].childNodes[0].nodeValue;
-        document.getElementById('txtTags').value = '';
-
-        var tags = xmlDoc.getElementsByTagName('tag');
-        for (var i = 0; i < tags.length; i++) {
-            if (tags[i].nodeType != 1) continue;
-            document.getElementById('txtTags').value += tags[i].getAttribute('name') + ' ';
-        }
-
-        document.getElementById('divSegmentChart').innerHTML = '';
-        var segments = xmlDoc.getElementsByTagName('workout')[0].childNodes;
-        var workoutString = '';
-        for (var i = 0; i < segments.length; i++) {
-            if (segments[i].nodeType != 1) continue;
-            var segmentType = segments[i].tagName.toLowerCase().charAt(0);
-            switch (segmentType) {
-                case "s":
-                    workoutString += 's';
-                    var p1 = getIntOrDefault(100*segments[i].getAttribute('Power'), 5);
-                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
-                    workoutString += '-' + p1;
-                    workoutString += '-' + d1;
-                    workoutString += '!';
-                    break;
-                case "w":
-                case "c":
-                case "r":
-                    workoutString += segmentType;
-                    var p1 = getIntOrDefault(100*segments[i].getAttribute('PowerLow'), 5);
-                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
-                    var p2 = getIntOrDefault(100*segments[i].getAttribute('PowerHigh'), 5);
-                    workoutString += '-' + p1;
-                    workoutString += '-' + d1;
-                    workoutString += '-' + p2;
-                    workoutString += '!';
-                    break;
-                case "f":
-                    workoutString += 'f';
-                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
-                    workoutString += '-' + d1;
-                    workoutString += '!';
-                    break;
-                case "i":
-                    workoutString += 'i';
-                    var p1 = getIntOrDefault(100*segments[i].getAttribute('OnPower'), 5);
-                    var d1 = getIntOrDefault(segments[i].getAttribute('OnDuration'), 5);
-                    var p2 = getIntOrDefault(100*segments[i].getAttribute('OffPower'), 5);
-                    var d2 = getIntOrDefault(segments[i].getAttribute('OffDuration'), 5);
-                    var r = getIntOrDefault(segments[i].getAttribute('Repeat'), 1);
-                    workoutString += '-' + p1;
-                    workoutString += '-' + d1;
-                    workoutString += '-' + p2;
-                    workoutString += '-' + d2;
-                    workoutString += '-' + r;
-                    workoutString += '!';
-                    break;
-            }
-        }
-        
-        loadWorkout(workoutString);
-    };
-    reader.readAsText(files[0]);
-}, false);
+Segment.prototype.createCadencePath = function() {
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('style', 'fill:none;');
+    path.setAttribute('stroke', 'black');
+    path.setAttribute('stroke-width', '1');
+    path.setAttribute('d', 'M8,292 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,292 l-5.5,-5.5 M11.5,296 l1.75,1.75');
+    return path;
+};
 
 
 function loadLinks() {
@@ -327,53 +212,10 @@ function getName() {
 }
 
 
-function addSegment(sourceElement) {
-    var id = 'x' + createGuid();
-    var clone = sourceElement.querySelector('div').cloneNode(true);
-    clone.setAttribute('data-id', id);
-    clone.removeAttribute('style');
-
-    var input = clone.querySelector('input');
-    input.setAttribute('id', id);
-    input.checked = true;
-
-    var label = clone.querySelector('label');
-    label.setAttribute('for', id);
-
-    var chart = document.getElementById('divSegmentChart');
-    chart.appendChild(clone);
-    chart.scrollLeft = 9e9;
-    
-    loadSegment(id);
-    redraw(label);
-}
-
-
 function getSelectedSegment() {
     var selectedSegment = document.querySelector('#divSegmentChart input:checked');
     if (!selectedSegment) return null;
     return document.querySelector('div[data-id="' + selectedSegment.id + '"]');
-}
-
-
-function loadSegment(segmentId) {
-    var txtR = document.querySelector('#txtR');
-    var txtD1 = document.querySelector('#txtD1');
-    var txtP1 = document.querySelector('#txtP1');
-    var txtD2 = document.querySelector('#txtD2');
-    var txtP2 = document.querySelector('#txtP2');
-    var selectedSegment = document.querySelector('div[data-id="' + segmentId + '"] label');
-    var repeat = selectedSegment.getAttribute('data-r');
-    var duration1 = selectedSegment.getAttribute('data-d-1');
-    var power1 = selectedSegment.getAttribute('data-p-1');
-    var duration2 = selectedSegment.getAttribute('data-d-2');
-    var power2 = selectedSegment.getAttribute('data-p-2');
-    
-    if (repeat) { txtR.value = repeat; txtR.removeAttribute('disabled'); txtR.select(); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
-    if (duration2) { txtD2.value = duration2; txtD2.removeAttribute('disabled'); txtD2.select(); } else { txtD2.value = ''; txtD2.setAttribute('disabled', true); }
-    if (power2) { txtP2.value = power2; txtP2.removeAttribute('disabled'); txtP2.select() } else { txtP2.value = ''; txtP2.setAttribute('disabled', true); }
-    if (duration1) { txtD1.value = duration1; txtD1.removeAttribute('disabled'); txtD1.select(); } else { txtD1.value = ''; txtD1.setAttribute('disabled', true); }
-    if (power1) { txtP1.value = power1; txtP1.removeAttribute('disabled'); txtP1.select(); } else { txtP1.value = ''; txtP1.setAttribute('disabled', true); }
 }
 
 
@@ -396,88 +238,8 @@ function loadNoSegment() {
 }
 
 
-
-function redraw(labelElement) {
-    var t = labelElement.getAttribute('data-t');
-
-    if (t == 'i') redrawIntervals(labelElement);
-    else if (t == 'f') redrawFreeRide(labelElement);
-    else redrawSinglePolygon(labelElement);
-}
-
-
-function redrawIntervals(labelElement) {
-    var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
-    var d2 = getIntOrDefault(labelElement.getAttribute('data-d-2'), 5);
-    var p1 = getIntOrDefault(labelElement.getAttribute('data-p-1'), 5);
-    var p2 = getIntOrDefault(labelElement.getAttribute('data-p-2'), 5);
-    var r = getIntOrDefault(labelElement.getAttribute('data-r'), 1);
-    var width1 = Math.floor(d1/userSettings.horizSecondsPerPixel);
-    var width2 = Math.floor(d2/userSettings.horizSecondsPerPixel);
-
-    while (labelElement.querySelectorAll('svg').length > 2)
-        labelElement.removeChild(labelElement.lastChild);
-
-    var svg1 = labelElement.querySelector('svg:first-child');
-    svg1.setAttribute('width', width1);
-    redrawPath(svg1.querySelector('path'), 's', p1, p1, width1);
-    var svg2 = labelElement.querySelector('svg:nth-child(2)');
-    svg2.setAttribute('width', width2);
-    redrawPath(svg2.querySelector('path'), 's', p2, p2, width2);
-
-    for (var i = 1; i < r; i++) {
-        labelElement.appendChild(svg1.cloneNode(true));
-        labelElement.appendChild(svg2.cloneNode(true));
-    }
-}
-
-
-function redrawFreeRide(labelElement) {
-    var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
-    var width = Math.floor(d1/userSettings.horizSecondsPerPixel);
-
-    var svg = labelElement.querySelector('svg');
-    svg.setAttribute('width', width);
-
-    var path = svg.querySelector('path');
-    path.setAttribute('d', 'M 1 225 C ' + (width/3) + ' 175, ' + (width/3*2) + ' 275, ' + width + ' 225 V 300 H 1 Z');
-    path.setAttribute('class', 'z1');
-}
-
-
-function redrawSinglePolygon(labelElement) {
-    var t = labelElement.getAttribute('data-t');
-    var d1 = getIntOrDefault(labelElement.getAttribute('data-d-1'), 5);
-    var width = Math.floor(d1/userSettings.horizSecondsPerPixel);
-    var p1 = getIntOrDefault(labelElement.getAttribute('data-p-1'), 5);
-    var p2 = labelElement.getAttribute('data-p-2');
-    if (!p2) p2 = p1;
-
-    var svg = labelElement.querySelector('svg');
-    svg.setAttribute('width', width);
-
-    redrawPath(svg.querySelector('path'), t, p1, p2, width);
-}
-
-
-function redrawPath(pathElement, t, p1, p2, d) {
-    pathElement.setAttribute('d', 'M 1 ' + (300 - p1) + ' L ' + d + ' ' + (300 - p2) + ' L ' + d + ' 300 L 1 300 Z');
-    if (t == 'w' || t == 'c') {
-        pathElement.setAttribute('class', 'z1');
-        return;
-    }
-
-    if (p1 >= 119) pathElement.setAttribute('class', 'z6');
-    else if (p1 > 105) pathElement.setAttribute('class', 'z5');
-    else if (p1 > 90) pathElement.setAttribute('class', 'z4');
-    else if (p1 > 75) pathElement.setAttribute('class', 'z3');
-    else if (p1 > 60) pathElement.setAttribute('class', 'z2');
-    else pathElement.setAttribute('class', 'z1');
-}
-
-
 function createGuid() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    return 'zxxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
         return v.toString(16);
     });

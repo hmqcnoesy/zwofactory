@@ -37,81 +37,116 @@ zwofactory.com
 </header>
 
 <main>
-<div class="grid">
-    <div class="u-1">
-        <label for="txtName">Name</label>
-        <input type="text" id="txtName" autofocus maxlength="30" />
-    </div>
-</div>
-
-<div class="grid">
-    <div class="u-1-2">
-        <label for="txtDescription">Description</label>
-        <textarea id="txtDescription" rows="4"></textarea>
-    </div>
-    <div class="u-1-2">
-        <label for="txtAuthor">Author</label>
-        <input type="text" id="txtAuthor" />
-        <label for="txtTags">Tags</label>
-        <input type="text" id="txtTags" />
-    </div>
-</div>
-
-<div id="divControls">
-    <button id="btns" class="control z1">Z1
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="50" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnz2" class="control z2">Z2
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="65" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnz3" class="control z3">Z3
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="80" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnz4" class="control z4">Z4
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="95" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnz5" class="control z5">Z5
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="100" data-d-1="300"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnz6" class="control z6">Z6
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="s" data-p-1="125" data-d-1="60"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnw" class="control wu">warm up
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="w" data-p-1="25" data-d-1="600" data-p-2="75"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnc" class="control cd">cool down
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="c" data-p-1="75" data-d-1="600" data-p-2="25"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btnf" class="control fr">free ride
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="f" data-d-1="600"><svg><path d="M1,1" /></svg></label></div>
-    </button><button id="btni" class="control in">int
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="i" data-p-1="75" data-d-1="60" data-p-2="50" data-d-2="300" data-r="3"><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg><svg width="10"><path d="M1,1" /></svg><svg width="50"><path d="M1,1" /></svg>
-    </button><button id="btnr" style="display:none">
-        <div style="display:none"><input type="radio" name="segment" /><label data-t="r" data-p-1="75" data-d-1="600" data-p-2="75"><svg><path d="M1,1" /></svg></label></div>
-    </button>
-</div>
-<div class="grid">
-    <div class="u-1-5"><button id="btnSelectPrevious">Select Previous</button></div>
-    <div class="u-1-5"><button id="btnSelectNext">Select Next</button></div>
-    <div class="u-1-5"><button id="btnMoveLeft">← Move Left</button></div>
-    <div class="u-1-5"><button id="btnMoveRight">Move Right →</button></div>
-    <div class="u-1-5"><button id="btnDelete">⌫ Delete</button></div>
-</div>
-
-<div id="divSegmentChart">
-</div>
-
-<div id="divSegmentInputs" class="grid">
-    <div class="u-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="data-p-1" /><label for="txtP1">Power 1 (%FTP)</label></div>
-    <div class="u-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="data-d-1" /><label for="txtD1">Duration 1 (s)</label></div>
-    <div class="u-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="data-p-2" /><label for="txtP2">Power 2 (%FTP)</label></div>
-    <div class="u-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="data-d-2" /><label for="txtD2">Duration 2 (s)</label></div>
-    <div class="u-1-5"><input disabled type="number" id="txtR" min="1" max="20" data-target="data-r" /><label for="txtR">Repeat</label></div>
-</div>
-<div class="grid">
-    <div class="u-3-4"><button id="btnAddTextEvent">+ Text Event</button>
-        <div id="divTextEvents"></div>
-        <div id="divTextEventToClone" class="grid invisible">
-            <div class="u-4-5"><input type="text" /></div>
-            <div class="u-1-10"><input type="number" /></div>
-            <div class="u-1-10"><button>⌫</button></div>
+<div id="divWorkoutInfo">
+    <div class="grid">
+        <div class="u-1">
+            <label for="txtName">Name</label>
+            <input type="text" id="txtName" autofocus maxlength="30" />
         </div>
     </div>
-    <div class="u-1-4"><button id="btnToggleCadence">+ Cadence</button>
-        <div class="invisible cadence-input"><input disabled type="number" id="txtC1" min="10" max="200" data-target="data-c-1" /><label for="txtC1">Cadence 1 (RPM)</label></div>
-        <div class="invisible cadence-input"><input disabled type="number" id="txtC2" min="10" max="200" data-target="data-c-2" /><label for="txtC2">Cadence 2 (RPM)</label></div>
+
+    <div class="grid">
+        <div class="u-1-2">
+            <label for="txtDescription">Description</label>
+            <textarea id="txtDescription" rows="4"></textarea>
+        </div>
+        <div class="u-1-2">
+            <label for="txtAuthor">Author</label>
+            <input type="text" id="txtAuthor" />
+            <label for="txtTags">Tags</label>
+            <input type="text" id="txtTags" />
+        </div>
+    </div>
+</div>
+<div class="grid">
+    <div class="u-1-2 u-sm-1" id="divSegmentButtons">
+        <svg data-t="s" data-p-1="50" data-d-1="300" width="30" height="30"><path class="z1" d="M1,1 L30,1 L30,30 L1,30 Z"></path></svg><!--
+        --><svg data-t="s" data-p-1="65" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z2"></path></svg><!--
+        --><svg data-t="s" data-p-1="80" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z3"></path></svg><!--
+        --><svg data-t="s" data-p-1="95" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z4"></path></svg><!--
+        --><svg data-t="s" data-p-1="110" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z5"></path></svg><!--
+        --><svg data-t="s" data-p-1="125" data-d-1="60" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z6"></path></svg><!--
+        --><svg data-t="r" data-p-1="25" data-d-1="600" data-p-2="75" width="30" height="30"><path d="M1,20 L30,1 L30,30 L1,30 Z" class="wu"></path></svg><!--
+        --><svg data-t="r" data-p-1="75" data-d-1="600" data-p-2="25" width="30" height="30"><path d="M1,1 L30,20 L30,30 L1,30 Z" class="cd"></path></svg><!--
+        --><svg data-t="f" data-d-1="600" width="30" height="30"><path class="fr" d="M 1 15 C 9 2, 20 18, 29 10 H 30 V 30 H 1 Z"></path></svg><!--
+        --><svg data-t="i" data-p-1="75" data-d-1="60" data-p-2="50" data-d-2="300" data-r="3" width="30" height="30"><path class="z2" d="M1,1 h5 v30 h-5 Z"></path><path class="z1" d="M5,10 h10 v20 h-10 Z"></path><path class="z2" d="M15,1 h5 v30 h-5 Z"></path><path class="z1" d="M20,10 h10 v20 h-10 Z"></path></svg>
+    </div>
+    <div class="u-1-2 u-sm-1" style="text-align: right;">
+        <svg width="30" height="30" id="btnSelectPrevious">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M9,30 v-10"></path>
+            <path stroke="black" stroke-width="1" d="M6,23 l3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M9,20 l3,3"></path>
+        </svg>
+        <svg width="30" height="30" id="btnSelectNext">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M5,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M19,30 v-10"></path>
+            <path stroke="black" stroke-width="1" d="M16,23 l3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M19,20 l3,3"></path>
+        </svg>
+        <svg width="30" height="30" id="btnMoveLeft">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M19,12 h-18"></path>
+            <path stroke="black" stroke-width="1" d="M1,12 l3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M1,12 l3,3"></path>
+        </svg>
+        <svg width="30" height="30" id="btnMoveRight">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M5,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M8,12 h18"></path>
+            <path stroke="black" stroke-width="1" d="M26,12 l-3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M26,12 l-3,3"></path>
+        </svg>
+        <svg width="30" height="30" id="btnDelete">
+            
+            <path d="M10,1 h10 v20 h-10 z" class="z0"></path>
+            <path d="M10,23 h10 v3 h-10 z"></path>
+            <path stroke="red" stroke-width="1" d="M8,6 l14,10 M8,16 l14,-10"></path>
+            <!--<path stroke="gray" stroke-width="1" d="M5,8 l2,20 h12 l2,-20 z M8,10 l2,16 M13,10 v16 M18,10 l-2,16 M5,8 h-1 v-2 h18 v2 h-2 z M11,6 v-3 h4 v3 z" class="z0"></path>-->
+        </svg>
+    </div>
+</div>
+
+<div id="divSegmentChart"></div>
+
+<div id="divSegmentInputs" class="grid">
+    <div class="u-1-6"><input disabled type="number" id="txtP1" min="5" step="5" data-target="p1" /><label for="txtP1">Power 1 (%FTP)</label></div>
+    <div class="u-1-6"><input disabled type="number" id="txtD1" min="5" step="5" data-target="d1" /><label for="txtD1">Duration 1 (s)</label></div>
+    <div class="u-1-6"><input disabled type="number" id="txtP2" min="5" step="5" data-target="p2" /><label for="txtP2">Power 2 (%FTP)</label></div>
+    <div class="u-1-6"><input disabled type="number" id="txtD2" min="5" step="5" data-target="d2" /><label for="txtD2">Duration 2 (s)</label></div>
+    <div class="u-1-6"><input disabled type="number" id="txtR" min="1" max="20" data-target="r" /><label for="txtR">Repeat</label></div>
+    <div class="u-1-12"><button id="btnShowCadence">Cadence</button></div>
+    <div class="u-1-12"><button id="btnShowTextEvents">Texts</button></div>
+    <div class="modal" id="divModalCadence">
+        <label for="chkCadence"><input type="checkbox" id="chkCadence" />Set cadence on selected segment</label>
+        <hr />
+        <div><input type="number" id="txtC1" min="10" max="200" data-target="c1" /><label for="txtC1">Cadence 1 (RPM)</label></div>
+        <div><input type="number" id="txtC2" min="10" max="200" data-target="c2" /><label for="txtC2">Cadence 2 (RPM)</label></div>
+        <hr />
+        <button id="btnDimissCadence">Close</button>
+    </div>
+    <div class="modal" id="divModalTextEvents">
+        <button id="btnAddTextEvent">+ Text Event</button>
+        <div class="grid">
+            <div class="u-3-5">Text</div>
+            <div class="u-2-5">Offset (s)</div>
+        </div>
+        <div id="divTextEventToClone" class="invisible grid"><div class="u-3-5">
+            <input type="text" value="Text" /></div><div class="u-1-5">
+            <input type="number" value="0" min="0" step="10" name="offset" /></div><div class="u-1-5">
+            <button>⌫</button></div>
+        </div>
+        <div id="divTextEvents">
+        </div>
+        <hr />
+        <button id="btnDimissTextEvents">Close</button>
     </div>
 </div>
 
@@ -141,5 +176,6 @@ zwofactory.com
 <script src="fileSaver.js"></script>
 <script src="settings.js"></script>
 <script src="zwofactory.js"></script>
+<script src="index.html.js"></script>
 </body>
 </html>
