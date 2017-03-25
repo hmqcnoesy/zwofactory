@@ -28,6 +28,7 @@ label { display: block; }
 .u-3-8 { width: 37.5%; }
 .u-1-10 { width: 10%; }
 .u-1-12 { width: 8.33%; }
+.u-1-24 { width: 4.1666%; }
 textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; width:100%; border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
 input[type=text],
 input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid black; border-radius: 10px; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);}
@@ -35,8 +36,8 @@ input[type=number] { text-align: center; min-width: 62px; }
 *:focus { outline: none; }
 button { width: 100%; padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; background-color: gainsboro; }
 button.save { background-color: #456; color: white; font-weight: bold; }
+svg { display: inline-block; }
 
-svg { cursor: pointer; display: inline-block; }
 .z0 { fill: gainsboro; }
 .z1 { fill: #837C83; }
 .z2 { fill: #3C8FD1; }
@@ -54,7 +55,7 @@ svg { cursor: pointer; display: inline-block; }
 
 #divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 344px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid black; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
 #divSegmentChart div { display: inline-block; }
-#divSegmentChart svg { margin-right: 1px; }
+#divSegmentChart svg { cursor: pointer; margin-right: 1px; }
 #divSegmentChart svg > path { stroke: black; stroke-width: 0.5; }
 #divSegmentChart input { display: none; }
 #divSegmentChart input:checked + label { border-bottom: 6px solid #456; }
