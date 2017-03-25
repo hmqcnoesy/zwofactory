@@ -1,5 +1,4 @@
 var Workout = function(name, desc, auth, tagStr) {
-    this.id = createGuid();
     this.name = name;
     this.description = desc;
     this.author = auth;
@@ -7,6 +6,27 @@ var Workout = function(name, desc, auth, tagStr) {
     if (tagStr) tags = tagStr.split(' ');
     this.segments = [];
 };
+
+
+Workout.prototype.reconstituteFromDeserialized = function(workout) {
+    this.name = workout.name;
+    this.description = workout.description;
+    this.author = workout.author;
+    this.tags = workout.tags;
+    this.segments = [];
+    for (var i = 0; i < workout.segments.length; i++) {
+        var s = workout.segments[i];
+        var segment = new Segment(s.t, s.p1, s.d1, s.p2, s.d2, s.r);
+        if (s.c1) segment.c1 = s.c1;
+        if (s.c2) segment.c2 = s.c2;
+        if (s.textEvents) {
+            for (var j = 0; j < s.textEvents.length; j++) {
+                segment.textEvents.push({id: s.textEvents[j].id, text: s.textEvents[j].text, offset: s.textEvents[j].offset });
+            }
+        }
+        this.segments.push(segment);
+    }
+}
 
 
 Workout.prototype.setTags = function(tagStr) {
@@ -43,32 +63,34 @@ Segment.prototype.addCadence = function(c1, c2) {
 };
 
 
-Segment.prototype.toSvgs = function(horizSecondsPerPixel) {
-    if (this.t == 'i') return this.toSvgIntervals(horizSecondsPerPixel);
-    else if (this.t == 'f') return [this.toSvgFreeRide(horizSecondsPerPixel)];
-    else return [this.toSvgSinglePolygon(horizSecondsPerPixel)];
+Segment.prototype.toSvgs = function(settings) {
+    if (this.t == 'i') return this.toSvgIntervals(settings);
+    else if (this.t == 'f') return [this.toSvgFreeRide(settings)];
+    else return [this.toSvgSinglePolygon(settings)];
 };
 
 
-Segment.prototype.toSvgIntervals = function(horizSecondsPerPixel) {
+Segment.prototype.toSvgIntervals = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
     this.d1 = getIntOrDefault(this.d1, 5);
     this.d2 = getIntOrDefault(this.d2, 5);
     this.p1 = getIntOrDefault(this.p1, 5);
     this.p2 = getIntOrDefault(this.p2, 5);
     this.r = getIntOrDefault(this.r, 1);
-    var width1 = Math.floor(this.d1/horizSecondsPerPixel);
-    var width2 = Math.floor(this.d2/horizSecondsPerPixel);
+    var width1 = Math.floor(this.d1/settings.horizSecondsPerPixel);
+    var width2 = Math.floor(this.d2/settings.horizSecondsPerPixel);
 
     var svgs = [];
     var svg1 = document.createElementNS(uri, 'svg');
     svg1.setAttribute('width', width1);
+    svg1.setAttribute('height', settings.shapeHeight);
     var path1 = this.createPolygonPath('s', this.p1, this.p1, width1);
     svg1.appendChild(path1);
     if (this.c1) svg1.appendChild(this.createCadencePath());
-    
+
     var svg2 = document.createElementNS(uri, 'svg');
     svg2.setAttribute('width', width2);
+    svg2.setAttribute('height', settings.shapeHeight);
     var path2 = this.createPolygonPath('s', this.p2, this.p2, width2);
     svg2.appendChild(path2);
     if (this.c2) svg2.appendChild(this.createCadencePath());
@@ -78,38 +100,47 @@ Segment.prototype.toSvgIntervals = function(horizSecondsPerPixel) {
         svgs.push(svg2.cloneNode(true));
     }
 
+    if (this.textEvents.length > 0) svgs[0].appendChild(this.createTextEventElement(this.textEvents.length));
+
     return svgs;
 };
 
 
-Segment.prototype.toSvgFreeRide = function(horizSecondsPerPixel) {
+Segment.prototype.toSvgFreeRide = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
     this.d1 = getIntOrDefault(this.d1, 5);
-    var width = Math.floor(this.d1/horizSecondsPerPixel);
+    var width = Math.floor(this.d1/settings.horizSecondsPerPixel);
 
     var svg = document.createElementNS(uri, 'svg');
     svg.setAttribute('width', width);
+    svg.setAttribute('height', settings.shapeHeight);
 
     var path = document.createElementNS(uri, 'path');
-    path.setAttribute('d', 'M 1 225 C ' + (width/3) + ' 175, ' + (width/3*2) + ' 275, ' + width + ' 225 V 300 H 1 Z');
+    var y1 = settings.shapeHeight - (75/settings.verticalPercentsPerPixel);
+    var y2 = y1 - (50/settings.verticalPercentsPerPixel);
+    var y3 = y1 + (50/settings.verticalPercentsPerPixel);
+    path.setAttribute('d', 'M 1 ' + y1 + ' C ' + (width/3) + ' ' + y2 + ', ' + (width/3*2) + ' ' + y3 + ', ' + width + ' ' + y1 + ' V ' + settings.shapeHeight + ' H 1 Z');
     path.setAttribute('class', 'z1');
     svg.appendChild(path);
     if (this.c1) svg.appendChild(this.createCadencePath());
+    if (this.textEvents.length > 0) svg.appendChild(this.createTextEventElement(this.textEvents.length));
     return svg;
 };
 
 
-Segment.prototype.toSvgSinglePolygon = function(horizSecondsPerPixel) {
+Segment.prototype.toSvgSinglePolygon = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
     var d1 = getIntOrDefault(this.d1, 5);
-    var width = Math.floor(d1/horizSecondsPerPixel);
+    var width = Math.floor(d1/settings.horizSecondsPerPixel);
     var p1 = getIntOrDefault(this.p1, 5);
 
     var svg = document.createElementNS(uri, 'svg');
     svg.setAttribute('width', width);
+    svg.setAttribute('height', settings.shapeHeight);
     var path = this.createPolygonPath(this.t, this.p1, this.p2 ? this.p2 : this.p1, width);
     svg.appendChild(path);
     if (this.c1) svg.appendChild(this.createCadencePath());
+    if (this.textEvents.length > 0) svg.appendChild(this.createTextEventElement(this.textEvents.length));
     return svg;
 }
 
@@ -141,6 +172,16 @@ Segment.prototype.createCadencePath = function() {
     path.setAttribute('d', 'M8,292 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,292 l-5.5,-5.5 M11.5,296 l1.75,1.75');
     return path;
 };
+
+
+Segment.prototype.createTextEventElement = function(count) {
+    var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+    text.setAttribute('x', 2);
+    text.setAttribute('y', 282);
+    text.setAttribute('style', 'font-family:Times New Roman,Times;font-size:12px;color:black;');
+    text.innerHTML = 'T:' + count;
+    return text;    
+}
 
 
 function loadLinks() {
@@ -197,17 +238,14 @@ function isNumeric(value) {
 
 
 function getName() {
-     var name = document.getElementById('txtName').value;
      var now = new Date();
-     if (!name) {
-         name = 'New-Workout-' 
+     var name = 'New-Workout-' 
             + now.getFullYear() + '-' 
             + (1 + now.getMonth()) + '-' 
             + now.getDate() + '-' 
             + now.getHours() + '-' 
             + now.getMinutes() + '-' 
             + now.getSeconds();
-     }
      return name;
 }
 

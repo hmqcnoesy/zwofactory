@@ -1,4 +1,4 @@
-var userSettings = getSettings();
+var userSettings = new UserSettings();
 var currentWorkout = new Workout();
 
 document.getElementById('divWorkoutInfo').addEventListener('input', function(e) {
@@ -26,7 +26,7 @@ document.getElementById('divSegmentButtons').addEventListener('click', function(
     var r = svg.getAttribute('data-r');
     var segment = new Segment(t, p1, d1, p2, d2, r);
     currentWorkout.addSegment(segment);
-    var svgs = segment.toSvgs(userSettings.horizSecondsPerPixel);
+    var svgs = segment.toSvgs(userSettings);
     var div = document.createElement('div');
     div.setAttribute('data-id', segment.id);
     var input = document.createElement('input');
@@ -167,7 +167,7 @@ document.getElementById('chkCadence').addEventListener('click', function() {
 
 
 document.getElementById('divSegmentInputs').addEventListener('input', function(e) {
-    if (e.target.tagName != 'INPUT') return;
+    if (e.target.tagName != 'INPUT' && e.target.tagName != 'BUTTON') return;
     var selectedSegment = getSelectedSegment();
     if (!selectedSegment) return;
     
@@ -189,7 +189,7 @@ document.getElementById('divSegmentInputs').addEventListener('input', function(e
     }
 
     label.innerHTML = '';
-    var svgs = segment.toSvgs(userSettings.horizSecondsPerPixel);
+    var svgs = segment.toSvgs(userSettings);
     for (var i = 0; i < svgs.length; i++) {
         label.appendChild(svgs[i]);
     }
@@ -203,35 +203,48 @@ document.getElementById('btnAddTextEvent').addEventListener('click', function() 
     var offset = document.querySelector('#divTextEventToClone input[type=number]').value;
     var id = currentWorkout.segments.find(s => s.id == selectedSegment.getAttribute('data-id')).addTextEvent(text, offset);
     addTextEventControls({id:id,text:text,offset:offset});
+    var segment = currentWorkout.segments.find(s => s.id == selectedSegment.getAttribute('data-id'));
+    var label = selectedSegment.querySelector('label');
+    label.innerHTML = '';
+    var svgs = segment.toSvgs(userSettings);
+    for (var i = 0; i < svgs.length; i++) {
+        label.appendChild(svgs[i]);
+    }
 });
 
 
 document.getElementById('divTextEvents').addEventListener('click', function(e) {
     if (e.target.tagName != 'BUTTON') return;
     var divToDelete = e.target.parentNode.parentNode;
-    var segment = currentWorkout.segments.find(s => s.id == getSelectedSegment().getAttribute('data-id'));
+    var selectedSegment = getSelectedSegment();
+    var segment = currentWorkout.segments.find(s => s.id == selectedSegment.getAttribute('data-id'));
     var textEventIndexToDelete = segment.textEvents.findIndex(t => t.id == divToDelete.id);
     segment.textEvents.splice(textEventIndexToDelete, 1);
     divToDelete.parentNode.removeChild(divToDelete);
+    var label = selectedSegment.querySelector('label');
+    label.innerHTML = '';
+    var svgs = segment.toSvgs(userSettings);
+    for (var i = 0; i < svgs.length; i++) {
+        label.appendChild(svgs[i]);
+    }
 });
 
 
 document.getElementById('btnSaveToMyWorkouts').addEventListener('click', function() {
-    var qs = createQueryString();
-    var url = [location.protocol, '//', location.host, location.pathname, qs].join('');
-    var a = document.createElement('a');
-    a.href = url;
-    a.setAttribute('class', 'transparent');
-    var name = getName();
-    a.innerText = name;
-    var div = document.getElementById('divLinks');
-    div.insertBefore(a, div.firstChild);
-    window.setTimeout(function() { a.classList.add('opaque'); }, 15);
-
-    if (!userSettings.rememberLinks) return;
+    if (!currentWorkout.name) {
+        var name = getName();
+        currentWorkout.name = name;
+        document.getElementById('txtName').value = name;
+    }
     
-    userSettings.links.push({name: name, href: url});
-    saveSettings(userSettings);
+    var existingWorkout = userSettings.getMyWorkout(currentWorkout.name);
+
+    if (existingWorkout) {
+        var response = confirm('You already have a workout named ' + currentWorkout.name +'. Do you want to overwrite it?');
+        if (response) userSettings.saveMyWorkout(currentWorkout);
+    } else {
+        userSettings.saveMyWorkout(currentWorkout);
+    }
 });
 
 
