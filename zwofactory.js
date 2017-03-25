@@ -77,30 +77,30 @@ Segment.prototype.toSvgIntervals = function(settings) {
     this.p1 = getIntOrDefault(this.p1, 5);
     this.p2 = getIntOrDefault(this.p2, 5);
     this.r = getIntOrDefault(this.r, 1);
-    var width1 = Math.floor(this.d1/settings.horizSecondsPerPixel);
-    var width2 = Math.floor(this.d2/settings.horizSecondsPerPixel);
+    var width1 = Math.max(this.d1/settings.horizSecondsPerPixel, settings.minShapeWidth);
+    var width2 = Math.max(this.d2/settings.horizSecondsPerPixel, settings.minShapeWidth);
 
     var svgs = [];
     var svg1 = document.createElementNS(uri, 'svg');
     svg1.setAttribute('width', width1);
     svg1.setAttribute('height', settings.shapeHeight);
-    var path1 = this.createPolygonPath('s', this.p1, this.p1, width1);
+    var path1 = this.createPolygonPath(settings, 's', this.p1, this.p1, width1);
     svg1.appendChild(path1);
-    if (this.c1) svg1.appendChild(this.createCadencePath());
+    if (this.c1 && settings.showCadenceIndicator) svg1.appendChild(this.createCadencePath(settings));
 
     var svg2 = document.createElementNS(uri, 'svg');
     svg2.setAttribute('width', width2);
     svg2.setAttribute('height', settings.shapeHeight);
-    var path2 = this.createPolygonPath('s', this.p2, this.p2, width2);
+    var path2 = this.createPolygonPath(settings, 's', this.p2, this.p2, width2);
     svg2.appendChild(path2);
-    if (this.c2) svg2.appendChild(this.createCadencePath());
+    if (this.c2 && settings.showCadenceIndicator) svg2.appendChild(this.createCadencePath(settings));
 
     for (var i = 0; i < this.r; i++) {
         svgs.push(svg1.cloneNode(true));
         svgs.push(svg2.cloneNode(true));
     }
 
-    if (this.textEvents.length > 0) svgs[0].appendChild(this.createTextEventElement(this.textEvents.length));
+    if (this.textEvents.length > 0 && settings.showTextEventIndicator) svgs[0].appendChild(this.createTextEventElement(settings, this.textEvents.length));
 
     return svgs;
 };
@@ -109,7 +109,7 @@ Segment.prototype.toSvgIntervals = function(settings) {
 Segment.prototype.toSvgFreeRide = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
     this.d1 = getIntOrDefault(this.d1, 5);
-    var width = Math.floor(this.d1/settings.horizSecondsPerPixel);
+    var width = Math.max(this.d1/settings.horizSecondsPerPixel, settings.minShapeWidth);
 
     var svg = document.createElementNS(uri, 'svg');
     svg.setAttribute('width', width);
@@ -122,8 +122,8 @@ Segment.prototype.toSvgFreeRide = function(settings) {
     path.setAttribute('d', 'M 1 ' + y1 + ' C ' + (width/3) + ' ' + y2 + ', ' + (width/3*2) + ' ' + y3 + ', ' + width + ' ' + y1 + ' V ' + settings.shapeHeight + ' H 1 Z');
     path.setAttribute('class', 'z1');
     svg.appendChild(path);
-    if (this.c1) svg.appendChild(this.createCadencePath());
-    if (this.textEvents.length > 0) svg.appendChild(this.createTextEventElement(this.textEvents.length));
+    if (this.c1 && settings.showCadenceIndicator) svg.appendChild(this.createCadencePath(settings));
+    if (this.textEvents.length > 0 && settings.showTextEventIndicator) svg.appendChild(this.createTextEventElement(settings, this.textEvents.length));
     return svg;
 };
 
@@ -131,23 +131,25 @@ Segment.prototype.toSvgFreeRide = function(settings) {
 Segment.prototype.toSvgSinglePolygon = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
     var d1 = getIntOrDefault(this.d1, 5);
-    var width = Math.floor(d1/settings.horizSecondsPerPixel);
+    var width = Math.max(d1/settings.horizSecondsPerPixel, settings.minShapeWidth);
     var p1 = getIntOrDefault(this.p1, 5);
 
     var svg = document.createElementNS(uri, 'svg');
     svg.setAttribute('width', width);
     svg.setAttribute('height', settings.shapeHeight);
-    var path = this.createPolygonPath(this.t, this.p1, this.p2 ? this.p2 : this.p1, width);
+    var path = this.createPolygonPath(settings, this.t, this.p1, this.p2 ? this.p2 : this.p1, width);
     svg.appendChild(path);
-    if (this.c1) svg.appendChild(this.createCadencePath());
-    if (this.textEvents.length > 0) svg.appendChild(this.createTextEventElement(this.textEvents.length));
+    if (this.c1 && settings.showCadenceIndicator) svg.appendChild(this.createCadencePath(settings));
+    if (this.textEvents.length > 0 && settings.showTextEventIndicator) svg.appendChild(this.createTextEventElement(settings, this.textEvents.length));
     return svg;
 }
 
 
-Segment.prototype.createPolygonPath = function(t, p1, p2, d) {
+Segment.prototype.createPolygonPath = function(settings, t, p1, p2, width) {
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-    path.setAttribute('d', 'M 1 ' + (300 - p1) + ' L ' + d + ' ' + (300 - p2) + ' L ' + d + ' 300 L 1 300 Z');
+    var y1 = settings.shapeHeight - (p1/settings.verticalPercentsPerPixel);
+    var y2 = settings.shapeHeight - (p2/settings.verticalPercentsPerPixel);
+    path.setAttribute('d', 'M 1 ' + y1 + ' L ' + width + ' ' + y2 + ' V ' + settings.shapeHeight + ' H 1 Z');
     if (t == 'r') {
         path.setAttribute('class', 'z1');
         return path;
@@ -164,20 +166,22 @@ Segment.prototype.createPolygonPath = function(t, p1, p2, d) {
 };
 
 
-Segment.prototype.createCadencePath = function() {
+Segment.prototype.createCadencePath = function(settings) {
+    var y1 = settings.shapeHeight - 8;
+    var y2 = y1 - 2;
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('style', 'fill:none;');
     path.setAttribute('stroke', 'black');
     path.setAttribute('stroke-width', '1');
-    path.setAttribute('d', 'M8,292 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,292 l-5.5,-5.5 M11.5,296 l1.75,1.75');
+    path.setAttribute('d', 'M8,' + y1 + ' m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,' + y1 + ' l-5.5,-5.5 M11.5,' + y2 + ' l1.75,1.75');
     return path;
 };
 
 
-Segment.prototype.createTextEventElement = function(count) {
+Segment.prototype.createTextEventElement = function(settings, count) {
     var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     text.setAttribute('x', 2);
-    text.setAttribute('y', 282);
+    text.setAttribute('y', settings.shapeHeight - 18);
     text.setAttribute('style', 'font-family:Times New Roman,Times;font-size:12px;color:black;');
     text.innerHTML = 'T:' + count;
     return text;    

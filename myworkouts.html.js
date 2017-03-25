@@ -39,7 +39,13 @@
 
     function drawWorkout(targetElement, workout) {
         var w = new Workout();
-        var settings = {horizSecondsPerPixel: 30, verticalPercentsPerPixel: 3, shapeHeight: 300 };
+        var settings = {
+            horizSecondsPerPixel: 20, 
+            verticalPercentsPerPixel: 3, 
+            shapeHeight: 75,
+            showCadenceIndicator: false,
+            showTextEventIndicator: false,
+            minShapeWidth: 3 };
         w.reconstituteFromDeserialized(workout);
         for (var i = 0; i < w.segments.length; i++) {
             var svgs = w.segments[i].toSvgs(settings);
