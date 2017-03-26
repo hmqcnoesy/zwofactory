@@ -283,70 +283,9 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
     var reader = new FileReader();
     reader.onload = function(event) {
         var xml = event.target.result;
-        parser = new DOMParser();
-        xmlDoc = parser.parseFromString(xml, "text/xml");
-        document.getElementById('txtName').value = xmlDoc.getElementsByTagName('name')[0].childNodes[0].nodeValue;
-        document.getElementById('txtAuthor').value = xmlDoc.getElementsByTagName('author')[0].childNodes[0].nodeValue;
-        document.getElementById('txtDescription').value = xmlDoc.getElementsByTagName('description')[0].childNodes[0].nodeValue;
-        document.getElementById('txtTags').value = '';
-
-        var tags = xmlDoc.getElementsByTagName('tag');
-        for (var i = 0; i < tags.length; i++) {
-            if (tags[i].nodeType != 1) continue;
-            document.getElementById('txtTags').value += tags[i].getAttribute('name') + ' ';
-        }
-
-        document.getElementById('divSegmentChart').innerHTML = '';
-        var segments = xmlDoc.getElementsByTagName('workout')[0].childNodes;
-        var workoutString = '';
-        for (var i = 0; i < segments.length; i++) {
-            if (segments[i].nodeType != 1) continue;
-            var segmentType = segments[i].tagName.toLowerCase().charAt(0);
-            switch (segmentType) {
-                case "s":
-                    workoutString += 's';
-                    var p1 = getIntOrDefault(100*segments[i].getAttribute('Power'), 5);
-                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
-                    workoutString += '-' + p1;
-                    workoutString += '-' + d1;
-                    workoutString += '!';
-                    break;
-                case "w":
-                case "c":
-                case "r":
-                    workoutString += segmentType;
-                    var p1 = getIntOrDefault(100*segments[i].getAttribute('PowerLow'), 5);
-                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
-                    var p2 = getIntOrDefault(100*segments[i].getAttribute('PowerHigh'), 5);
-                    workoutString += '-' + p1;
-                    workoutString += '-' + d1;
-                    workoutString += '-' + p2;
-                    workoutString += '!';
-                    break;
-                case "f":
-                    workoutString += 'f';
-                    var d1 = getIntOrDefault(segments[i].getAttribute('Duration'), 5);
-                    workoutString += '-' + d1;
-                    workoutString += '!';
-                    break;
-                case "i":
-                    workoutString += 'i';
-                    var p1 = getIntOrDefault(100*segments[i].getAttribute('OnPower'), 5);
-                    var d1 = getIntOrDefault(segments[i].getAttribute('OnDuration'), 5);
-                    var p2 = getIntOrDefault(100*segments[i].getAttribute('OffPower'), 5);
-                    var d2 = getIntOrDefault(segments[i].getAttribute('OffDuration'), 5);
-                    var r = getIntOrDefault(segments[i].getAttribute('Repeat'), 1);
-                    workoutString += '-' + p1;
-                    workoutString += '-' + d1;
-                    workoutString += '-' + p2;
-                    workoutString += '-' + d2;
-                    workoutString += '-' + r;
-                    workoutString += '!';
-                    break;
-            }
-        }
-        
-        loadWorkout(workoutString);
+        var workout = new Workout();
+        workout.loadFromXml(xml);
+        loadWorkout(workout);
     };
     reader.readAsText(files[0]);
 }, false);
@@ -365,6 +304,7 @@ function loadWorkout(workout) {
     document.getElementById('txtDescription').value = workout.description;
     document.getElementById('txtAuthor').value = workout.author;
     document.getElementById('txtTags').value = workout.tags.join(' ');
+    document.getElementById('divSegmentChart').innerHTML = '';
     for (var i = 0; i < workout.segments.length; i++) {
         addSegmentToChart(workout.segments[i]);
     }

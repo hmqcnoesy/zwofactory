@@ -1,4 +1,4 @@
-var Workout = function(name, desc, auth, tagStr) {
+function Workout (name, desc, auth, tagStr) {
     this.name = name;
     this.description = desc;
     this.author = auth;
@@ -69,7 +69,55 @@ Workout.prototype.toZwoXml = function() {
 };
 
 
-var Segment = function(t, p1, d1, p2, d2, r) {
+Workout.prototype.loadFromXml = function(xml) {
+    parser = new DOMParser();
+    xmlDoc = parser.parseFromString(xml, "text/xml");
+    this.name = getXmlElementValue(xmlDoc, 'name');
+    this.author = getXmlElementValue(xmlDoc, 'author');
+    this.description = getXmlElementValue(xmlDoc, 'description');
+    var tags = xmlDoc.getElementsByTagName('tag');
+    for (var i = 0; i < tags.length; i++) {
+        if (tags[i].nodeType != 1) continue;
+        this.tags.push(tags[i].getAttribute('name'));
+    }
+
+    var xmlSegments = xmlDoc.getElementsByTagName('workout')[0].childNodes;
+    var segmentToAdd;
+
+    for (var i = 0; i < xmlSegments.length; i++) {
+        if (xmlSegments[i].nodeType != 1) continue;
+        switch (xmlSegments[i].tagName.toLowerCase().charAt(0)) {
+            case "s":
+                var p1 = getIntOrDefault(100*xmlSegments[i].getAttribute('Power'), 5);
+                var d1 = getIntOrDefault(xmlSegments[i].getAttribute('Duration'), 5);
+                segmentToAdd = new Segment('s', p1, d1, null, null, null);
+                break;
+            case "w":
+            case "c":
+            case "r":
+                var p1 = getIntOrDefault(100*xmlSegments[i].getAttribute('PowerLow'), 5);
+                var d1 = getIntOrDefault(xmlSegments[i].getAttribute('Duration'), 5);
+                var p2 = getIntOrDefault(100*xmlSegments[i].getAttribute('PowerHigh'), 5);
+                segmentToAdd = new Segment('r', p1, d1, p2, null, null);
+                break;
+            case "f":
+                segmentToAdd = new Segment('f', null, getIntOrDefault(xmlSegments[i].getAttribute('Duration'), 5), null, null, null);
+                break;
+            case "i":
+                var p1 = getIntOrDefault(100*xmlSegments[i].getAttribute('OnPower'), 5);
+                var d1 = getIntOrDefault(xmlSegments[i].getAttribute('OnDuration'), 5);
+                var p2 = getIntOrDefault(100*xmlSegments[i].getAttribute('OffPower'), 5);
+                var d2 = getIntOrDefault(xmlSegments[i].getAttribute('OffDuration'), 5);
+                var r = getIntOrDefault(xmlSegments[i].getAttribute('Repeat'), 1);
+                segmentToAdd = new Segment('i', p1, d1, p2, d2, r);
+                break;
+        }
+        this.segments.push(segmentToAdd);
+    }
+};
+
+
+function Segment(t, p1, d1, p2, d2, r) {
     this.id = createGuid();
     this.t = t;
     if (isNumeric(p1)) this.p1 = p1;
@@ -312,4 +360,11 @@ function escapeXml(unsafe) {
             case '"': return '&quot;';
         }
     });
+}
+
+
+function getXmlElementValue(xmlDoc, tagName) {
+    var node = xmlDoc.getElementsByTagName(tagName)[0];
+    if (!node.childNodes || !node.childNodes.length || node.childNodes.length == 0) return '';
+    return node.childNodes[0].nodeValue;
 }
