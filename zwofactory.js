@@ -222,28 +222,48 @@ Segment.prototype.toZwoXmlElement = function() {
     var xml = '        ';
     switch(this.t) {
         case "s":
-            xml += '<SteadyState Duration="' + this.d1 + '" Power="' + (this.p1 / 100) + '"/>\r\n';
+            xml += '<SteadyState Duration="' + this.d1 + '" Power="' + (this.p1 / 100) + '"';
             break;
         case "w":
-            xml += '<Warmup Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"/>\r\n';
+            xml += '<Warmup Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"';
             break;
         case "c":
-            xml += '<Cooldown Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"/>\r\n';
+            xml += '<Cooldown Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"';
             break;
         case "r":
-            xml += '<Ramp Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"/>\r\n';
+            xml += '<Ramp Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"';
             break;
         case "f":
-            xml += '<FreeRide Duration="' + this.d1 + '" FlatRoad="1" />\r\n';
+            xml += '<FreeRide Duration="' + this.d1 + '" FlatRoad="1"';
             break;
         case "i":
-            xml += '<IntervalsT Repeat="' + this.r + '" OnDuration="' + this.d1 + '" OffDuration="' + this.d2 + '" OnPower="' + (this.p1 / 100) + '" OffPower="' + (this.p2 / 100) + '"/>\r\n';
+            xml += '<IntervalsT Repeat="' + this.r + '" OnDuration="' + this.d1 + '" OffDuration="' + this.d2 + '" OnPower="' + (this.p1 / 100) + '" OffPower="' + (this.p2 / 100) + '"';
             break;
         default:
             break;
     }
 
+    if (this.c1) xml += ' Cadence="' + this.c1 + '"';
+    if (this.c2) xml += ' CadenceResting="' + this.c2 + '"';
+    var texts = this.textEventsToZwoElements();
+    if (texts.length > 0) {
+        xml += '>\r\n'
+        xml += texts.join('\r\n');
+        xml += '\r\n        </' + xml.trim().substr(1, xml.trim().indexOf(' ')-1) + '>\r\n';
+    } else {
+        xml += '/>\r\n';
+    }
     return xml;
+};
+
+
+Segment.prototype.textEventsToZwoElements = function() {
+    var xmlElements = [];
+    if (!this.textEvents || !this.textEvents.length || this.textEvents.length == 0) return xmlElements;
+    for (var i = 0; i < this.textEvents.length; i++) {
+        xmlElements.push('            <textevent timeoffset="' + this.textEvents[i].offset + '" message="' + escapeXml(this.textEvents[i].text) + '"/>');
+    }
+    return xmlElements;
 };
 
 
