@@ -242,7 +242,7 @@ document.getElementById('btnSaveToMyWorkouts').addEventListener('click', functio
 
 
 document.getElementById('btnDownloadZwoFile').addEventListener('click', function() {
-    var xml = createXmlString();
+    var xml = currentWorkout.toZwoXml();
     var blob = new Blob([xml], {type: "application/xml"});
     var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
     saveAs(blob, fileName);
@@ -350,6 +350,13 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
 }, false);
 
 
+function getSelectedSegment() {
+    var selectedSegment = document.querySelector('#divSegmentChart input:checked');
+    if (!selectedSegment) return null;
+    return document.querySelector('div[data-id="' + selectedSegment.id + '"]');
+}
+
+
 function loadWorkout(workout) {
     currentWorkout = workout;
     document.getElementById('txtName').value = workout.name;
@@ -407,6 +414,25 @@ function loadSegmentInfo(segmentId) {
     for (var i = 0; i < selected.textEvents.length; i++) {
         addTextEventControls(selected.textEvents[i]);
     }
+}
+
+
+function loadNoSegment() {
+    var txtR = document.querySelector('#txtR');
+    txtR.value = ''; 
+    txtR.setAttribute('disabled', true);
+    var txtD1 = document.querySelector('#txtD1');
+    txtD1.value = ''; 
+    txtD1.setAttribute('disabled', true);
+    var txtP1 = document.querySelector('#txtP1');
+    txtP1.value = ''; 
+    txtP1.setAttribute('disabled', true);
+    var txtD2 = document.querySelector('#txtD2');
+    txtD2.value = ''; 
+    txtD2.setAttribute('disabled', true);
+    var txtP2 = document.querySelector('#txtP2');
+    txtP2.value = ''; 
+    txtP2.setAttribute('disabled', true);
 }
 
 

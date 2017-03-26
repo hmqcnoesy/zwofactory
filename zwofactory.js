@@ -39,6 +39,36 @@ Workout.prototype.addSegment = function(segment) {
 };
 
 
+Workout.prototype.toZwoXml = function() {
+    var xml = '<workout_file>\r\n'
+        + '    <author>' + escapeXml(this.author) + '</author>\r\n'
+        + '    <name>' + escapeXml(this.name) + '</name>\r\n'
+        + '    <description>' + escapeXml(this.description) + '</description>\r\n'
+        + '    <sportType>bike</sportType>\r\n'
+        + '    <tags>\r\n';
+
+    for (var i = 0; i < this.tags.length; i++) {
+        if (this.tags[i].trim() == '') continue;
+        xml += '        <tag name="' + escapeXml(this.tags[i]) + '"/>\r\n';
+    }
+    xml += '    </tags>\r\n';
+    xml += '    <workout>\r\n';
+
+    for (var i = 0; i < this.segments.length; i++) {
+        if (this.segments[i].t == 'r' && i == 0) this.segments[i].t = 'w';
+        if (this.segments[i].t == 'w' && i != 0) this.segments[i].t = 'r';
+        if (this.segments[i].t == 'r' && i == (this.segments.length - 1)) this.segments[i].t = 'c';
+        if (this.segments[i].t == 'c' && i != (this.segments.length - 1)) this.segments[i].t = 'r';
+        xml += this.segments[i].toZwoXmlElement();
+    }
+
+    xml += '    </workout>\r\n'
+        + '</workout_file>';
+
+    return xml;
+};
+
+
 var Segment = function(t, p1, d1, p2, d2, r) {
     this.id = createGuid();
     this.t = t;
@@ -185,44 +215,36 @@ Segment.prototype.createTextEventElement = function(settings, count) {
     text.setAttribute('style', 'font-family:Times New Roman,Times;font-size:12px;color:black;');
     text.innerHTML = 'T:' + count;
     return text;    
-}
+};
 
 
-function xloadWorkout(workoutString) {
-    var segments = workoutString.split('!');
-    for (var i = 0; i < segments.length; i++) {
-        if (!segments[i]) continue;
-
-        var pieces = segments[i].split('-');
-        var btn = document.getElementById('btn' + pieces[0]);
-        btn.click();
-        var label = getSelectedSegment().querySelector('label');
-        switch(pieces[0].toLowerCase()) {
-            case "s":
-                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
-                break;
-            case "w":
-            case "c":
-            case "r":
-                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
-                if (isNumeric(pieces[3])) label.setAttribute('data-p-2', parseFloat(pieces[3]));
-                break;
-            case "f":
-                if (isNumeric(pieces[1])) label.setAttribute('data-d-1', parseFloat(pieces[1]));
-                break;
-            case "i":
-                if (isNumeric(pieces[1])) label.setAttribute('data-p-1', parseFloat(pieces[1]));
-                if (isNumeric(pieces[2])) label.setAttribute('data-d-1', parseFloat(pieces[2]));
-                if (isNumeric(pieces[3])) label.setAttribute('data-p-2', parseFloat(pieces[3]));
-                if (isNumeric(pieces[4])) label.setAttribute('data-d-2', parseFloat(pieces[4]));
-                if (isNumeric(pieces[5])) label.setAttribute('data-r', parseInt(pieces[5]));
-                break;
-        }
-        redraw(label);
+Segment.prototype.toZwoXmlElement = function() {
+    var xml = '        ';
+    switch(this.t) {
+        case "s":
+            xml += '<SteadyState Duration="' + this.d1 + '" Power="' + (this.p1 / 100) + '"/>\r\n';
+            break;
+        case "w":
+            xml += '<Warmup Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"/>\r\n';
+            break;
+        case "c":
+            xml += '<Cooldown Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"/>\r\n';
+            break;
+        case "r":
+            xml += '<Ramp Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"/>\r\n';
+            break;
+        case "f":
+            xml += '<FreeRide Duration="' + this.d1 + '" FlatRoad="1" />\r\n';
+            break;
+        case "i":
+            xml += '<IntervalsT Repeat="' + this.r + '" OnDuration="' + this.d1 + '" OffDuration="' + this.d2 + '" OnPower="' + (this.p1 / 100) + '" OffPower="' + (this.p2 / 100) + '"/>\r\n';
+            break;
+        default:
+            break;
     }
-}
+
+    return xml;
+};
 
 
 function isNumeric(value) {
@@ -240,32 +262,6 @@ function getName() {
             + now.getMinutes() + '-' 
             + now.getSeconds();
      return name;
-}
-
-
-function getSelectedSegment() {
-    var selectedSegment = document.querySelector('#divSegmentChart input:checked');
-    if (!selectedSegment) return null;
-    return document.querySelector('div[data-id="' + selectedSegment.id + '"]');
-}
-
-
-function loadNoSegment() {
-    var txtR = document.querySelector('#txtR');
-    txtR.value = ''; 
-    txtR.setAttribute('disabled', true);
-    var txtD1 = document.querySelector('#txtD1');
-    txtD1.value = ''; 
-    txtD1.setAttribute('disabled', true);
-    var txtP1 = document.querySelector('#txtP1');
-    txtP1.value = ''; 
-    txtP1.setAttribute('disabled', true);
-    var txtD2 = document.querySelector('#txtD2');
-    txtD2.value = ''; 
-    txtD2.setAttribute('disabled', true);
-    var txtP2 = document.querySelector('#txtP2');
-    txtP2.value = ''; 
-    txtP2.setAttribute('disabled', true);
 }
 
 
@@ -295,95 +291,4 @@ function escapeXml(unsafe) {
             case '"': return '&quot;';
         }
     });
-}
-
-
-function createXmlString() {
-    var name = getName();
-    var author = document.getElementById('txtAuthor').value;
-    var description = document.getElementById('txtDescription').value;
-    var tags = document.getElementById('txtTags').value.split(' ');
-    var segments = document.querySelectorAll('#divSegmentChart > div');
-    var xml = '<workout_file>\r\n'
-        + '    <author>' + escapeXml(author) + '</author>\r\n'
-        + '    <name>' + escapeXml(name) + '</name>\r\n'
-        + '    <description>' + escapeXml(description) + '</description>\r\n'
-        + '    <sportType>bike</sportType>\r\n'
-        + '    <tags>\r\n';
-
-    for (var i = 0; i < tags.length; i++) {
-        if (!tags[i] || tags[i].trim() == '') continue;
-        xml += '        <tag name="' + escapeXml(tags[i]) + '"/>\r\n';
-    }
-    xml += '    </tags>\r\n';
-    xml += '    <workout>\r\n';
-
-    for (var i = 0; i < segments.length; i++) {
-        xml += '        ' + createWorkoutElement(segments[i].querySelector('label')) + '\r\n';
-    }
-
-    xml += '    </workout>\r\n'
-        + '</workout_file>';
-
-    return xml;
-}
-
-
-function createQueryString() {
-    var name = getName();
-    var author = document.getElementById('txtAuthor').value.trim();
-    var description = document.getElementById('txtDescription').value.trim();
-    var tags = document.getElementById('txtTags').value.trim();
-    var segments = document.querySelectorAll('#divSegmentChart > div');
-    var qs = '?w=';
-    for (var i = 0; i < segments.length; i++) {
-        var label = segments[i].querySelector('label');
-        qs += label.getAttribute('data-t').charAt(0) + '-';
-        qs += getQsParamAttributeIfExists(label, 'data-p-1');
-        qs += getQsParamAttributeIfExists(label, 'data-d-1');
-        qs += getQsParamAttributeIfExists(label, 'data-p-2');
-        qs += getQsParamAttributeIfExists(label, 'data-d-2');
-        qs += getQsParamAttributeIfExists(label, 'data-r');
-        qs = qs.substr(0, qs.length-1) + '!';
-    }
-
-    qs += '&t=' + encodeURIComponent(tags);
-    qs += '&a=' + encodeURIComponent(author);
-    qs += '&n=' + encodeURIComponent(name);
-    qs += '&d=' + encodeURIComponent(description);
-
-    return qs;
-}
-
-
-function getQsParamAttributeIfExists(segment, attrName) {
-    var attr = segment.getAttribute(attrName);
-    if (attr) return attr + '-';
-    else return '';
-}
-
-
-function createWorkoutElement(segment) {
-    switch(segment.getAttribute('data-t').toLowerCase()) {
-        case "s":
-            return '<SteadyState Duration="' + segment.getAttribute('data-d-1') + '" Power="' + (segment.getAttribute('data-p-1') / 100) + '"/>';
-            break;
-        case "w":
-            return '<Warmup Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + (segment.getAttribute('data-p-1') / 100) + '" PowerHigh="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
-            break;
-        case "c":
-            return '<Cooldown Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + (segment.getAttribute('data-p-1') / 100) + '" PowerHigh="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
-            break;
-        case "r":
-            return '<Ramp Duration="' + segment.getAttribute('data-d-1') + '" PowerLow="' + (segment.getAttribute('data-p-1') / 100) + '" PowerHigh="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
-            break;
-        case "f":
-            return '<FreeRide Duration="' + segment.getAttribute('data-d-1') + '" FlatRoad="1" />';
-            break;
-        case "i":
-            return '<IntervalsT Repeat="' + segment.getAttribute('data-r') + '" OnDuration="' + segment.getAttribute('data-d-1') + '" OffDuration="' + segment.getAttribute('data-d-2') + '" OnPower="' + (segment.getAttribute('data-p-1') / 100) + '" OffPower="' + (segment.getAttribute('data-p-2') / 100) + '"/>';
-            break;
-        default:
-            break;
-    }
 }
