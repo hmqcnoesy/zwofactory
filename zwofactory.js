@@ -282,6 +282,7 @@ function getIntOrDefault(toParse, minimumDefaultValue) {
 
 
 function escapeXml(unsafe) {
+    if (!unsafe) return '';
     return unsafe.replace(/[<>&'"]/g, function (c) {
         switch (c) {
             case '<': return '&lt;';

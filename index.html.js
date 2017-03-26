@@ -156,6 +156,8 @@ document.getElementById('chkCadence').addEventListener('click', function() {
         txtC1.setAttribute('disabled', true);
         txtC2.setAttribute('disabled', true);
     }
+
+    txtC1.dispatchEvent(new Event('input', {bubbles:true,cancelable:true}));
 });
 
 
