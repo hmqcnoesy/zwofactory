@@ -1,6 +1,14 @@
 var userSettings = new UserSettings();
 var currentWorkout = new Workout();
 
+document.addEventListener('DOMContentLoaded', function() {
+    var savedWorkout = userSettings.getAndUnsetWorkoutForEditing();
+    if (!savedWorkout) return;
+    var workoutToBeEdited = new Workout();
+    workoutToBeEdited.reconstituteFromDeserialized(savedWorkout);
+    loadWorkout(workoutToBeEdited);
+});
+
 document.getElementById('divWorkoutInfo').addEventListener('input', function(e) {
     if (e.target.id == 'txtName') currentWorkout.name = e.target.value;
     if (e.target.id == 'txtDescription') currentWorkout.description = e.target.value;
@@ -26,22 +34,7 @@ document.getElementById('divSegmentButtons').addEventListener('click', function(
     var r = svg.getAttribute('data-r');
     var segment = new Segment(t, p1, d1, p2, d2, r);
     currentWorkout.addSegment(segment);
-    var svgs = segment.toSvgs(userSettings);
-    var div = document.createElement('div');
-    div.setAttribute('data-id', segment.id);
-    var input = document.createElement('input');
-    input.setAttribute('type', 'radio');
-    input.setAttribute('id', segment.id);
-    input.setAttribute('name', 'segment');
-    var label = document.createElement('label');
-    label.setAttribute('for', segment.id);
-    for (var i = 0; i < svgs.length; i++) {
-        label.appendChild(svgs[i]);
-    }
-    div.appendChild(input);
-    div.appendChild(label);
-    document.getElementById('divSegmentChart').appendChild(div);
-    input.click();
+    addSegmentToChart(segment);
 }, false);
 
 
@@ -99,11 +92,11 @@ document.getElementById('btnDelete').addEventListener('click', function(e) {
     selectedSegment.parentNode.removeChild(selectedSegment);
     if (nextBlock) {
         nextBlock.querySelector('input[type=radio]').checked = true;
-        loadSegment(nextBlock.getAttribute('data-id'));
+        loadSegmentInfo(nextBlock.getAttribute('data-id'));
     }
     else if (previousBlock) {
         previousBlock.querySelector('input[type=radio]').checked = true;
-        loadSegment(previousBlock.getAttribute('data-id'));
+        loadSegmentInfo(previousBlock.getAttribute('data-id'));
     } else {
         loadNoSegment();
     }
@@ -111,7 +104,7 @@ document.getElementById('btnDelete').addEventListener('click', function(e) {
 
 
 document.getElementById('divSegmentChart').addEventListener('change', function(e) {
-    loadSegment(e.target.id);
+    loadSegmentInfo(e.target.id);
 });
 
 
@@ -357,7 +350,39 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
 }, false);
 
 
-function loadSegment(segmentId) {
+function loadWorkout(workout) {
+    currentWorkout = workout;
+    document.getElementById('txtName').value = workout.name;
+    document.getElementById('txtDescription').value = workout.description;
+    document.getElementById('txtAuthor').value = workout.author;
+    document.getElementById('txtTags').value = workout.tags.join(' ');
+    for (var i = 0; i < workout.segments.length; i++) {
+        addSegmentToChart(workout.segments[i]);
+    }
+}
+
+
+function addSegmentToChart(segment) {
+    var svgs = segment.toSvgs(userSettings);
+    var div = document.createElement('div');
+    div.setAttribute('data-id', segment.id);
+    var input = document.createElement('input');
+    input.setAttribute('type', 'radio');
+    input.setAttribute('id', segment.id);
+    input.setAttribute('name', 'segment');
+    var label = document.createElement('label');
+    label.setAttribute('for', segment.id);
+    for (var i = 0; i < svgs.length; i++) {
+        label.appendChild(svgs[i]);
+    }
+    div.appendChild(input);
+    div.appendChild(label);
+    document.getElementById('divSegmentChart').appendChild(div);
+    input.click();
+}
+
+
+function loadSegmentInfo(segmentId) {
     var txtR = document.getElementById('txtR');
     var txtD1 = document.getElementById('txtD1');
     var txtP1 = document.getElementById('txtP1');

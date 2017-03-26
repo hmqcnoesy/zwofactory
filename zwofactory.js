@@ -168,7 +168,7 @@ Segment.prototype.createPolygonPath = function(settings, t, p1, p2, width) {
 
 Segment.prototype.createCadencePath = function(settings) {
     var y1 = settings.shapeHeight - 8;
-    var y2 = y1 - 2;
+    var y2 = y1 + 3.5;
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
     path.setAttribute('style', 'fill:none;');
     path.setAttribute('stroke', 'black');
@@ -188,18 +188,7 @@ Segment.prototype.createTextEventElement = function(settings, count) {
 }
 
 
-function loadLinks() {
-    var linksElement = document.getElementById('divLinks');
-    for (var i = 0; i < userSettings.links.length; i++) {
-        var link = document.createElement('a');
-        link.setAttribute('href', userSettings.links[i].href);
-        link.appendChild(document.createTextNode(userSettings.links[i].name));
-        linksElement.appendChild(link);
-    }
-}
-
-
-function loadWorkout(workoutString) {
+function xloadWorkout(workoutString) {
     var segments = workoutString.split('!');
     for (var i = 0; i < segments.length; i++) {
         if (!segments[i]) continue;

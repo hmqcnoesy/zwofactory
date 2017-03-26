@@ -54,3 +54,27 @@ UserSettings.prototype.saveMyWorkout = function(workout) {
     localStorage.myWorkoutInfo = JSON.stringify(allWorkoutsInfo);
     localStorage['workout:' + workout.name] = JSON.stringify(workout);
 }
+
+
+UserSettings.prototype.deleteWorkout = function(workoutName) {
+    if (!localStorage || !localStorage.myWorkoutInfo) return;
+    var myWorkoutInfo = JSON.parse(localStorage.myWorkoutInfo);
+    var thisWorkoutIndex = myWorkoutInfo.findIndex(w => w.name == workoutName);
+    myWorkoutInfo.splice(thisWorkoutIndex, 1);
+    localStorage.myWorkoutInfo = JSON.stringify(myWorkoutInfo);
+    localStorage.removeItem('workout:' + workoutName);
+}
+
+
+UserSettings.prototype.setWorkoutForEditing = function(workoutName) {
+    if (!localStorage) return;
+    localStorage.workoutForEditing = workoutName;
+}
+
+
+UserSettings.prototype.getAndUnsetWorkoutForEditing = function() {
+    if (!localStorage || !localStorage.workoutForEditing) return null;
+    var workoutName = localStorage.workoutForEditing;
+    localStorage.removeItem('workoutForEditing');
+    return this.getMyWorkout(workoutName);
+}

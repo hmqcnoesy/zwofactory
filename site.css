@@ -71,6 +71,8 @@ svg { display: inline-block; }
 .modal.shown { z-index:999; display: block; position: fixed; margin: auto; top: 30%; left: 50%; margin-left: -200px; margin-right: -200px; }
 
 @media only screen and (max-width:730px) {
+    .sm-hidden { display:none; }
+
     .u-sm-1 { width: 100%; }
     .u-sm-1-2 { width: 50%; }
     .u-sm-1-3 { width: 33.3%; }

@@ -2,11 +2,16 @@
     var userSettings = new UserSettings();
 
     document.addEventListener('DOMContentLoaded', function() {
-        var workouts = userSettings.getAllMyWorkouts();
+        var workouts = userSettings.getAllMyWorkouts().sort(function(a,b) {
+            if (a.modifiedOn < b.modifiedOn) return 1;
+            if (a.modifiedOn > b.modifiedOn) return -1;
+            if (a.modifiedOn == b.modifiedOn) return 0;
+        });
         var divMyWorkouts = document.getElementById('divMyWorkouts');
         var divToClone = document.getElementById('divToClone');
         for (var i = 0; i < workouts.length; i++) {
             var cloned = divToClone.cloneNode(true);
+            cloned.removeAttribute('id');
             cloned.classList.remove('invisible');
             var a = cloned.querySelector('a');
             a.setAttribute('data-name', workouts[i].name);
@@ -74,11 +79,16 @@
 
 
     function editWorkout(workoutName) {
-        console.log('editing ' + workoutName);
+        userSettings.setWorkoutForEditing(workoutName);
+        window.location = 'index.html';
     }
 
 
     function deleteWorkout(workoutName) {
-        console.log(workoutName + ' deleted');
+        if (!confirm('Are you sure you want to permanently delete "' + workoutName + '"?')) return;
+        
+        userSettings.deleteWorkout(workoutName);
+        var elementToRemove = document.querySelector('[data-name="' + workoutName + '"]').parentNode;
+        elementToRemove.parentNode.removeChild(elementToRemove);
     }
 })();
