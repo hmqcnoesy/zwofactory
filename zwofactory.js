@@ -112,6 +112,16 @@ Workout.prototype.loadFromXml = function(xml) {
                 segmentToAdd = new Segment('i', p1, d1, p2, d2, r);
                 break;
         }
+        if (xmlSegments[i].getAttribute('Cadence')) segmentToAdd.c1 = xmlSegments[i].getAttribute('Cadence');
+        if (xmlSegments[i].getAttribute('CadenceResting')) segmentToAdd.c2 = xmlSegments[i].getAttribute('CadenceResting');
+        if (xmlSegments[i].childNodes && xmlSegments[i].childNodes.length > 0) {
+            for (var j = 0; j < xmlSegments[i].childNodes.length; j++) {
+                if (xmlSegments[i].childNodes[j].nodeType != 1) continue;
+                if (xmlSegments[i].childNodes[j].tagName.toLowerCase() != 'textevent') continue;
+                segmentToAdd.textEvents.push({ text: xmlSegments[i].childNodes[j].getAttribute('message'), 
+                    offset: getIntOrDefault(xmlSegments[i].childNodes[j].getAttribute('timeoffset'), 0)});
+            }
+        }
         this.segments.push(segmentToAdd);
     }
 };
