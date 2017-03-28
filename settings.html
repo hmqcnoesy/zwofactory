@@ -37,17 +37,39 @@ zwofactory.com
 </header>
 
 <main>
+<p>These settings change the behavior and appearance of the workout editing experience.  </p>
+<p>Do not change any settings unless you are certain what you are doing. </p>
+<p>If settings cause a problem with the app, reset your settings to defaults and save.</p>
+<hr />
 <div class="grid">
-    <div class="u-1">
-        <label><input type="checkbox" data-key="rememberLinks" />Remember links - uncheck this box to forget links you create.</label>
-    </div>
+    <div class="u-1-4 u-sm-1-2"><button id="btnReloadDefaults">Reload defaults</button></div>
+    <div class="u-3-4 u-sm-1-2">Click this button to reload the app's default settings.  Don't forget to save.</div>
 </div>
-<div class="grid">
-    <div class="u-1-10 u-sm-1">
-        <input type="number" min="1" step="1" data-key="horizSecondsPerPixel" />
+<hr />
+<div class="striped">
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="showCadenceIndicator" />Show cadence indicators</label></div>
+        <div class="u-3-4 u-sm-1-2">Uncheck this box to remove the cadence indicators from blocks with a cadence requirement.</label></div>
     </div>
-    <div class="u-9-10 u-sm-1"> 
-        <label>Seconds per pixel - higher number squeezes more into the viewing area at a time, but can be harder to edit.</label>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="showTextEventIndicator" />Show text event indicators</label></div>
+        <div class="u-3-4 u-sm-1-2">Uncheck this box to remove the text indicators from the segments with text events.</label></div>
+    </div>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="horizSecondsPerPixel" />Seconds per pixel</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Higher number squeezes more into the viewing area at a time, but can be harder to edit.</label></div>
+    </div>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="shapeHeight" />Shape height</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Number of vertical pixels to use when drawing workout shapes.</label></div>
+    </div>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="minShapeWidth" />Minimum shape width</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Minimum number of pixels to use when drawing a workout block's width.</label></div>
+    </div>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="verticalPercentsPerPixel" />Vertical % per pixel</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Higher number compresses workout blocks vertically.</label></div>
     </div>
 </div>
 <hr />
@@ -70,35 +92,6 @@ zwofactory.com
     <div>&copy; 2017 Matt McNeil</div>
 </footer>
 <script src="settings.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var userSettings = getSettings();
-        var checkboxes  = document.querySelectorAll('input[type=checkbox]');
-        for (var i = 0; i < checkboxes.length; i++) {
-            checkboxes[i].checked = userSettings[checkboxes[i].getAttribute('data-key')];
-        }
-
-        var numInputs = document.querySelectorAll('input[type=number]');
-        for (var i = 0; i < numInputs.length; i++) {
-            numInputs[i].value = userSettings[numInputs[i].getAttribute('data-key')];
-        }
-    });
-
-    document.getElementById('btnSave').addEventListener('click', function() {
-        var userSettings = getSettings();
-        var checkboxes  = document.querySelectorAll('input[type=checkbox]');
-        for (var i = 0; i < checkboxes.length; i++) {
-            userSettings[checkboxes[i].getAttribute('data-key')] = checkboxes[i].checked;
-        }
-
-        var numInputs = document.querySelectorAll('input[type=number]');
-        for (var i = 0; i < numInputs.length; i++) {
-            userSettings[numInputs[i].getAttribute('data-key')] = numInputs[i].value;
-        }
-
-        saveSettings(userSettings);
-        window.location = 'index.html';
-    });
-</script>
+<script src="settings.html.js"></script>
 </body>
 </html>

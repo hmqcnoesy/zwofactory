@@ -344,11 +344,11 @@ function loadSegmentInfo(segmentId) {
     var btnAddTextEvent = document.getElementById('btnAddTextEvent');
     var selected = currentWorkout.segments.find(s => s.id === segmentId);
     
-    if (selected.r) { txtR.value = selected.r; txtR.removeAttribute('disabled'); txtR.select(); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
-    if (selected.d2) { txtD2.value = selected.d2; txtD2.removeAttribute('disabled'); txtD2.select(); } else { txtD2.value = ''; txtD2.setAttribute('disabled', true); }
-    if (selected.p2) { txtP2.value = selected.p2; txtP2.removeAttribute('disabled'); txtP2.select() } else { txtP2.value = ''; txtP2.setAttribute('disabled', true); }
-    if (selected.d1) { txtD1.value = selected.d1; txtD1.removeAttribute('disabled'); txtD1.select(); } else { txtD1.value = ''; txtD1.setAttribute('disabled', true); }
-    if (selected.p1) { txtP1.value = selected.p1; txtP1.removeAttribute('disabled'); txtP1.select(); } else { txtP1.value = ''; txtP1.setAttribute('disabled', true); }
+    if (selected.r) { txtR.value = selected.r; txtR.removeAttribute('disabled'); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
+    if (selected.d2) { txtD2.value = selected.d2; txtD2.removeAttribute('disabled'); } else { txtD2.value = ''; txtD2.setAttribute('disabled', true); }
+    if (selected.p2) { txtP2.value = selected.p2; txtP2.removeAttribute('disabled'); } else { txtP2.value = ''; txtP2.setAttribute('disabled', true); }
+    if (selected.d1) { txtD1.value = selected.d1; txtD1.removeAttribute('disabled'); } else { txtD1.value = ''; txtD1.setAttribute('disabled', true); }
+    if (selected.p1) { txtP1.value = selected.p1; txtP1.removeAttribute('disabled'); } else { txtP1.value = ''; txtP1.setAttribute('disabled', true); }
     if (selected.c1) { txtC1.value = selected.c1; txtC1.removeAttribute('disabled'); chkCadence.checked = true; } else { txtC1.value = ''; txtC1.setAttribute('disabled', true); chkCadence.checked = false;  }
     if (selected.c2) { txtC2.value = selected.c2; txtC2.removeAttribute('disabled'); } else { txtC2.value = ''; txtC2.setAttribute('disabled', true); }
 

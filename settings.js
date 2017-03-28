@@ -1,14 +1,12 @@
-function UserSettings() {
-    this.rememberLinks = true;
+function UserSettings(useDefaults) {
     this.horizSecondsPerPixel = 5;
     this.shapeHeight = 300;
     this.minShapeWidth = 3;
     this.verticalPercentsPerPixel = 1;
     this.showCadenceIndicator = true;
     this.showTextEventIndicator = true;
-    this.links = [];
 
-    if (localStorage && localStorage.zwofactorySettings) {
+    if (!useDefaults && localStorage && localStorage.zwofactorySettings) {
         var savedSettings = JSON.parse(localStorage.zwofactorySettings);
         
         for (var prop in savedSettings) {
@@ -20,7 +18,7 @@ function UserSettings() {
 
 UserSettings.prototype.saveSettings = function() {
     if (!localStorage) return;
-    localStorage.zwofactorySettings = JSON.stringify(settings);
+    localStorage.zwofactorySettings = JSON.stringify(this);
 }
 
 
