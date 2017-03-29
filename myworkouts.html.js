@@ -24,17 +24,10 @@
     document.getElementById('divMyWorkouts').addEventListener('click', function(e) {
         if (e.target.hasAttribute('data-toggle')) toggleVisibility(e.target);
 
-        var svg;
-
-        if (e.target.tagName.toLowerCase() == 'path') 
-            svg = e.target.parentNode;
-        else
-            svg = e.target;
-
-        var workoutName = svg.parentNode.parentNode.parentNode.querySelector('a').getAttribute('data-name');
-        if (svg.hasAttribute('data-edit')) editWorkout(workoutName);
-        if (svg.hasAttribute('data-download')) downloadWorkout(workoutName);
-        if (svg.hasAttribute('data-delete')) deleteWorkout(workoutName);
+        var workoutName = e.target.parentNode.parentNode.parentNode.querySelector('a').getAttribute('data-name');
+        if (e.target.hasAttribute('data-edit')) editWorkout(workoutName);
+        if (e.target.hasAttribute('data-download')) downloadWorkout(workoutName);
+        if (e.target.hasAttribute('data-delete')) deleteWorkout(workoutName);
     }, true);
 
 
