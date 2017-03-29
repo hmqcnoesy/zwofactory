@@ -236,10 +236,13 @@ document.getElementById('btnSaveToMyWorkouts').addEventListener('click', functio
 
     if (existingWorkout) {
         var response = confirm('You already have a workout named ' + currentWorkout.name +'. Do you want to overwrite it?');
-        if (response) userSettings.saveMyWorkout(currentWorkout);
-    } else {
-        userSettings.saveMyWorkout(currentWorkout);
+        if (!response) return; 
     }
+
+    userSettings.saveMyWorkout(currentWorkout);
+    var savedSpan = this.querySelector('.saved');
+    savedSpan.classList.remove('saved');
+    setTimeout(function() { savedSpan.classList.add('saved'); }, 1000);
 });
 
 

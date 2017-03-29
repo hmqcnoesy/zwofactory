@@ -48,18 +48,10 @@ My Workouts<hr />
         <div class="u-1-6 u-sm-1" data-author></div>
         <div class="u-1-6 u-sm-1" data-tags></div>
         <div class="u-1-4 u-sm-1" data-description></div>
-        <div class="u-1-24 u-sm-1-2" style="cursor:pointer">
-            <svg data-edit width="30" height="30">
-                <path style="fill:gainsboro;stroke:black;stroke-width:1px;" d="M1,28 l7,-7 v4 h5 v-6 h5 v6 h5 v-6 h5 V29 H1 Z"></path>
-                <path style="fill:white;stroke:black;stroke-width:1px;" d="M5,20 l3,-6 l17,-12 l3.5,3.5 l-1.7,1.2 l-3.5,-3.5 m3.5,3.5 l-13.7,10.3 l-3.5,-3.5 m3.5,3.5 l-7.9,2.6"></path>
-            </svg>
-        </div>
-        <div class="u-1-24 u-sm-1-2" style="cursor:pointer">
-            <svg data-delete width="30" height="30">
-                <path style="fill:gainsboro;stroke:black;stroke-width:1px;" d="M1,28 l7,-7 v4 h5 v-6 h5 v6 h5 v-6 h5 V29 H1 Z"></path>
-                <path stroke="red" stroke-width="3" d="M12,13 l14,10 M12,23 l14,-10"></path>
-            </svg>
-        </div>
+        <div class="u-1-4"><button data-edit>Edit</button></div>
+        <div class="u-1-4 u-sm-1-2"><button data-download>Download</button></div>
+        <div class="u-1-4 sm-hidden"></div>
+        <div class="u-1-4"><button data-delete>Delete</button></div>
     </div>
 </div>
 <div id="divMyWorkouts" class="striped">
@@ -80,6 +72,7 @@ My Workouts<hr />
 </footer>
 <script src="settings.js"></script>
 <script src="zwofactory.js"></script>
+<script src="fileSaver.js"></script>
 <script src="myworkouts.html.js"></script>
 </body>
 </html>

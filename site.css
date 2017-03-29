@@ -36,6 +36,8 @@ input[type=number] { text-align: center; min-width: 62px; }
 *:focus { outline: none; }
 button { width: 100%; padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; background-color: gainsboro; }
 button.save { background-color: #456; color: white; font-weight: bold; }
+button.save > .saved { opacity: 0; transition-property: opacity; transition-duration: 0.5s;  }
+button.save > :not(.saved) { opacity: 1;}
 svg { display: inline-block; }
 
 .z0 { fill: gainsboro; }

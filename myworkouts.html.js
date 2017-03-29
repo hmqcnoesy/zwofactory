@@ -33,6 +33,7 @@
 
         var workoutName = svg.parentNode.parentNode.parentNode.querySelector('a').getAttribute('data-name');
         if (svg.hasAttribute('data-edit')) editWorkout(workoutName);
+        if (svg.hasAttribute('data-download')) downloadWorkout(workoutName);
         if (svg.hasAttribute('data-delete')) deleteWorkout(workoutName);
     }, true);
 
@@ -90,5 +91,15 @@
         userSettings.deleteWorkout(workoutName);
         var elementToRemove = document.querySelector('[data-name="' + workoutName + '"]').parentNode;
         elementToRemove.parentNode.removeChild(elementToRemove);
+    }
+
+
+    function downloadWorkout(workoutName) {
+        var workout = new Workout();
+        workout.reconstituteFromDeserialized(userSettings.getMyWorkout(workoutName));
+        var xml = workout.toZwoXml();
+        var blob = new Blob([xml], {type: "application/xml"});
+        var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
+        saveAs(blob, fileName);
     }
 })();
