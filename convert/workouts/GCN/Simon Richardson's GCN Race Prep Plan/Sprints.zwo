@@ -1,0 +1,33 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Sprints</name>
+    <description>Want to win the sprint in the Zwift races?  This is the workout for you. Be prepared, not for the weak minded or legged! This simulates a run up to the sprint over 40 seconds, so be prepared for a harder and harder load as the time goes on in each sprint.  After the 4th sprint, the time between the next is at tempo pace making sure you have to give it some effort to stay in the peloton.    </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <SteadyState Duration="300" Power="0.81449997"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.75449997"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.75449997"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.75449997"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="40" PowerLow="0.85450006" PowerHigh="3.0045002"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

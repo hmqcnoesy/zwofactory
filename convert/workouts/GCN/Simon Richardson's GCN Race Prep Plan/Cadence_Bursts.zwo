@@ -1,0 +1,16 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Cadence Bursts</name>
+    <description>The goal of this workout is to get in some good solid cardiovascular work and then doing some seated cadence bursts for 30 seconds within the sustained effort.   Warm-up for 10minutes with 3 x 1minute fast pedaling intervals &gt;110rpm and then do do 40 minutes at tempo pace- 80% of FTP and do a burst every few minutes.   Cooldown.  </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="0.80449992"/>
+        <IntervalsT Repeat="14" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.0044999" OffPower="0.80449992"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

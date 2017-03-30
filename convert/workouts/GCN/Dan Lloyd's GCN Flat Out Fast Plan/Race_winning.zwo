@@ -1,0 +1,35 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Race winning</name>
+    <description>Race winning intervals are exact simulations of what it takes to win a race by attacking the peloton, escaping and maintaining that gap to the finishline.  
+Warm up for 10 minutes with 3 x 1 minute fast pedaling drill &gt;110rpm.  Then 5 minutes at tempo.   Now complete 5 x race winning interval.  Each is roughly 3:40 in length. Starting with a sprint like effort for 30 seconds, then riding just above your FTP for 3 minutes and finishing with a 10 second sprint at the end to finish strong.   Rest well between each for 4 minutes.  Cool-down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="racewinning"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="30.000002" Power="1.5044999"/>
+        <SteadyState Duration="180.00002" Power="1.0545"/>
+        <SteadyState Duration="10" Power="1.5044999"/>
+        <SteadyState Duration="240.00002" Power="0.50449997"/>
+        <SteadyState Duration="30.000002" Power="1.5044999"/>
+        <SteadyState Duration="180.00002" Power="1.0545"/>
+        <SteadyState Duration="10" Power="1.5044999"/>
+        <SteadyState Duration="240.00002" Power="0.50449997"/>
+        <SteadyState Duration="30.000002" Power="1.5044999"/>
+        <SteadyState Duration="180.00002" Power="1.0545"/>
+        <SteadyState Duration="10" Power="1.5044999"/>
+        <SteadyState Duration="240.00002" Power="0.50449997"/>
+        <SteadyState Duration="30.000002" Power="1.5044999"/>
+        <SteadyState Duration="180.00002" Power="1.0545"/>
+        <SteadyState Duration="10" Power="1.5044999"/>
+        <SteadyState Duration="240.00002" Power="0.50449997"/>
+        <SteadyState Duration="30.000002" Power="1.5044999"/>
+        <SteadyState Duration="180.00002" Power="1.0545"/>
+        <SteadyState Duration="10" Power="1.5044999"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

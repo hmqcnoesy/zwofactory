@@ -1,0 +1,26 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Finish Focus</name>
+    <description>Finishing fast is the key to winning the race.  This comes from being able to recover quickly after hard efforts, conserving energy in the race and also being able to attack hard and maintain to the finishline.  Warmup for 10minutes with 3 x 1 minute fast pedaling drills &gt;110rpm, then do (6) x 5 minute efforts with each beginning in a short sprint, followed by a effort that tapers to your FTP and then maintain FTP for the final 3 minutes.  Recover completely between each one for 3 minutes. Cool-down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="Finishfast"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <Ramp Duration="300" PowerLow="1.0044999" PowerHigh="1.2045"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <Ramp Duration="300" PowerLow="1.0044999" PowerHigh="1.2045"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <Ramp Duration="300" PowerLow="1.0044999" PowerHigh="1.2045"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <Ramp Duration="300" PowerLow="1.0044999" PowerHigh="1.2045"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <Ramp Duration="300" PowerLow="1.0044999" PowerHigh="1.2045"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <Ramp Duration="300" PowerLow="1.0044999" PowerHigh="1.2045"/>
+        <Cooldown Duration="540" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

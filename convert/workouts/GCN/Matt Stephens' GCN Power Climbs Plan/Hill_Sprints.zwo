@@ -1,0 +1,37 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Hill Sprints</name>
+    <description>This workout is designed to simulate steep, short hills that are almost like sprints. A combination of both anaerobic and neuromuscular power, (level 6 and 7), this workout is sure to fire you up!
+Warm-up 10 minutes and then do 3 x 1 minute fast pedaling drills &gt;110rpm..  Ride at tempo pace and then do hill sprints every 3minutes. Each Sprint is 20 seconds long and building in intensity.  After each sprint, come back to tempo pace.  Cool-down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180" Power="0.85254544"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.85449994"/>
+        <Ramp Duration="20" PowerLow="1.3045001" PowerHigh="2.0044999"/>
+        <Cooldown Duration="440.00003" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

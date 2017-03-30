@@ -1,0 +1,30 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Vo2max</name>
+    <description>This is designed to improve your Vo2max power, so you are ready for hard steep climbs and the big wattage needed to attack those hills. This workout has longer recoveries in order to focus on the maximum power produced for each interval. Really drill it on each. 
+Warm up for 10minutes and then do 3 x 1minute fast pedaling drills.
+Then get ready for 7 x 3minutes with 4 minutes between each at endurance pace recovering well.   
+Cool-down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="180.00002" Power="1.1544999"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <Cooldown Duration="540" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

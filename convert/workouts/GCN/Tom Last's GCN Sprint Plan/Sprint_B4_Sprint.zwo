@@ -1,0 +1,39 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Sprint B4 Sprint</name>
+    <description>This is to prepare you for what happens in a real sprint at the end of the race.    You never get to sprint from a "fresh" state.  You always have to do at least 1-2 sprints to either hold your position or get into position for the sprint.   So, this will be two sprints, the first at about 80% and then the 2nd at 100%, as if you are finishing a race and sprinting for the finish line.  Be sure to rest and pedal easy between each for 3minutes, as you will want to be recovered for the next set!
+</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="300" Power="0.81449997"/>
+        <SteadyState Duration="15.000001" Power="1.2544999"/>
+        <SteadyState Duration="20" Power="0.80449992"/>
+        <SteadyState Duration="20" Power="2.5044999"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <SteadyState Duration="15.000001" Power="1.2544999"/>
+        <SteadyState Duration="20" Power="0.80449992"/>
+        <SteadyState Duration="20" Power="2.0044999"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <SteadyState Duration="15.000001" Power="1.2544999"/>
+        <SteadyState Duration="20" Power="0.80449992"/>
+        <SteadyState Duration="20" Power="2.0044999"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <SteadyState Duration="15.000001" Power="1.2544999"/>
+        <SteadyState Duration="20" Power="0.80449992"/>
+        <SteadyState Duration="20" Power="2.0044999"/>
+        <SteadyState Duration="300" Power="0.65000004"/>
+        <SteadyState Duration="15.000001" Power="1.2544999"/>
+        <SteadyState Duration="20" Power="0.80449992"/>
+        <SteadyState Duration="20" Power="2.0044999"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <SteadyState Duration="15.000001" Power="1.2544999"/>
+        <SteadyState Duration="20" Power="0.80449992"/>
+        <SteadyState Duration="20" Power="2.0044999"/>
+        <Cooldown Duration="510.00003" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

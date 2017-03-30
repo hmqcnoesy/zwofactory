@@ -1,0 +1,16 @@
+<workout_file>
+    <author>GCN</author>
+    <name>FTP w/ Bursts</name>
+    <description>Riding at FTP, close to the edge of destruction, then having to attack with a little burst will make you stronger and ready for all that the spring classics have in store for you!   Warm-up 10 minutes with 3 x 1minute fast pedaling drills &gt;110rpm and then ride at Sweetspot 100% of FTP for 35 minutes and every two minutes, do a 10 second bursts at 130% of FTP, and recover back to sweetspot.  Get ready for these!   Cool-down.</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="1.0044999"/>
+        <IntervalsT Repeat="12" OnDuration="10" OffDuration="120" OnPower="1.3034546" OffPower="1.0052727"/>
+        <Cooldown Duration="540" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

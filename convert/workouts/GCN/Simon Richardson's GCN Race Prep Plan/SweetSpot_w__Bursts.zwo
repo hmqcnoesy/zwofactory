@@ -1,0 +1,17 @@
+<workout_file>
+    <author>GCN</author>
+    <name>SweetSpot w/ Bursts</name>
+    <description>Once you have mastered the "Tempo with bursts" workout, then you are ready to up the ante a little and ride at Sweetspot and then do the bursts!   
+Warm-up for 10minutes and then do 3 x 1 minute fast pedaling drills &gt;110rpm,  then do 40minutes at Sweetspot 90% of FTP, and every two minutes, do a burst for 20 seconds to 120% of FTP and resume at 90% of FTP.  Cool down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="0.90449995"/>
+        <IntervalsT Repeat="18" OnDuration="20" OffDuration="120" OnPower="1.2052728" OffPower="0.90345454"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

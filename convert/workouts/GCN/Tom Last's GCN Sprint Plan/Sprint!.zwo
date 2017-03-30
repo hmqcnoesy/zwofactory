@@ -1,0 +1,18 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Sprint!</name>
+    <description>Bring it on! You are going to do 10 sprints for 20 seconds each to start.  These aren't all out sprints, but the top of Zone 6. Ride at 90 rpm between each in Zone 2.
+</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="Sprint"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25150001" PowerHigh="0.75150001"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75150001" OffPower="0.50150001"/>
+        <SteadyState Duration="300" Power="0.81449997"/>
+        <IntervalsT Repeat="10" OnDuration="20" OffDuration="180.00002" OnPower="2.0044999" OffPower="0.75449997"/>
+        <Cooldown Duration="340.00003" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

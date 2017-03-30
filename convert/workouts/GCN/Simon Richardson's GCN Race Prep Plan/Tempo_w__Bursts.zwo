@@ -1,0 +1,17 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Tempo w/ Bursts</name>
+    <description>Riding in the peloton requires plenty of speed and cadence changes, along with sustained output.It's important that you are ready for those changes, and doing this workout will help!
+Warm-up for 10 minutes and then do 3 x 1 minute fast pedaling drills at &gt;110rpm with 1 minute at 80rpm between each.   Then begin a 40minute block at tempo pace, 80% of FTP, and do a "burst" for 15 seconds every two minutes.  Each burst is at 120% of FTP, and return to previous pace of 80% of FTP after each. Cool down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="0.80449992"/>
+        <IntervalsT Repeat="18" OnDuration="20" OffDuration="120.00001" OnPower="1.2045" OffPower="0.80449992"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

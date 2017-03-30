@@ -1,0 +1,18 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Hill Attacks</name>
+    <description>Prepare the mind and body for hill attacks.  You are attacking up the hill at the front of the peloton and inflicting devastation upon the peloton.  Attack after attack, the peloton is getting blown apart by your relentless attacks.  
+Warm-up for 10minutes and do 3 x 1minute fast pedaling drills&gt;110rpm. A nice tempo pace for 5minutes and then do (10) x 1minute hill attacks.   Rest for 2 minutes between each.  Cool-down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="hillattacks"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="300" Power="0.81449997"/>
+        <IntervalsT Repeat="10" OnDuration="60.000004" OffDuration="120.00001" OnPower="1.4044999" OffPower="0.50449997"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

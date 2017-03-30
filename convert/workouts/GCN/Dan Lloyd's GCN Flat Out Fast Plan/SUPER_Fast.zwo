@@ -1,0 +1,32 @@
+<workout_file>
+    <author>GCN</author>
+    <name>SUPER Fast</name>
+    <description>You want to be faster? How bad do you want it? This bad?  FTP and Anaerobic intervals are on your menu today then.  Get ready for a speed injection. Remember: "Pain is speed entering the body" 
+Warm-up 10minutes and then 3 x 1 minute fast pedaling drills &gt;110rpm
+Now, time for 4 x 10minutes at 105% of FTP, resting 3 minutes between each and then an easy cruise for 5minutes after the fourth one.  Finish with 4 x 2 minutes, working your anaerobic capacity at 125% of FTP.  Resting for 2minutes between.  Cool-down</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="Superfast"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="600" Power="1.0545"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="600" Power="1.0545"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="600" Power="1.0545"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="600" Power="1.0545"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

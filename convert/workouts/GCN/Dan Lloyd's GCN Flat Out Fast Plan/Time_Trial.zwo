@@ -1,0 +1,28 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Time Trial</name>
+    <description>One of the tricks of the pros in order to improve their time trialing speed is to do some motorpacing for short distances, but at a fast speed. You are going to simulate these kinds of intervals by doing 4 minute efforts near your FTP and keeping the cadence quick.
+    </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="TT"/>
+        <tag name="FastTT"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="300" Power="0.85449994"/>
+        <Ramp Duration="240.00002" PowerLow="0.98449993" PowerHigh="1.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <Ramp Duration="240.00002" PowerLow="0.98449993" PowerHigh="1.0044999"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <Ramp Duration="240.00002" PowerLow="1.0044999" PowerHigh="1.0545001"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <Ramp Duration="240.00002" PowerLow="1.0044999" PowerHigh="1.0745001"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <Ramp Duration="240.00002" PowerLow="0.9745" PowerHigh="1.1045001"/>
+        <SteadyState Duration="240.00002" Power="0.65449995"/>
+        <Ramp Duration="240.00002" PowerLow="0.9544999" PowerHigh="1.1344998"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,36 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Seated &amp; Standing</name>
+    <description>These are designed to be done in the saddle for the first 2minutes, then stand and do the final 30 seconds out of the saddle and sprinting over the top of the hill. Short recoveries, to help improve your "repeatability" at the same time.   
+Warm-up 10 minutes and then 3 x 1 minute fast pedaling drills &gt;110rpm
+Then do 5 minutes at tempo, followed by 10 x hill repeats.   Seated for 2 minutes, then out of the saddle as the resistance becomes harder. Recover for 2minutes and then cool-down</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="300" Power="0.81449997"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <SteadyState Duration="120.00001" Power="0.65449995"/>
+        <Ramp Duration="150" PowerLow="1.1044998" PowerHigh="1.2544999"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

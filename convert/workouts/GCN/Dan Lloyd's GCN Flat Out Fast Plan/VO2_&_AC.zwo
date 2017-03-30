@@ -1,0 +1,30 @@
+<workout_file>
+    <author>GCN</author>
+    <name>VO2 &amp; AC</name>
+    <description>In order to go fast, you'll need to be able ride at your Vo2max pace and also your anaerobic capacity, increasing these abilities so that you'll be ready to dish out the pain this coming season.   Warm-up 10 minutes and then do 3 x 1minute fast pedaling drills &gt;110rpm, 5 minutes at tempo and then do 3 minutes Vo2 and then 2 minutes AC with 2 minutes recovery between each.   Repeat 3 more times for a great workout!  Cool down.</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="VO2andAC"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="120.00001" Power="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="300" Power="0.75449997"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="120.00001" Power="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="300" Power="0.75449997"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="120.00001" Power="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="300" Power="0.75449997"/>
+        <SteadyState Duration="180.00002" Power="1.1344999"/>
+        <SteadyState Duration="120.00001" Power="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

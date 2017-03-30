@@ -1,0 +1,20 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Gearing</name>
+    <description>Small ring and big ring sprints today.  The goal with the small ring is to enhance your explosiveness, so focus on your jump.  The Big rings are longer, designed to enhance your resistance to fatigue. 
+  </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="Sprint"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="180.00002" Power="0.81449997"/>
+        <IntervalsT Repeat="6" OnDuration="15.000001" OffDuration="180.00002" OnPower="3.0045002" OffPower="0.75449997"/>
+        <SteadyState Duration="180.00002" Power="0.81449997"/>
+        <IntervalsT Repeat="6" OnDuration="25.000002" OffDuration="180.00002" OnPower="2.5044999" OffPower="0.50449997"/>
+        <Cooldown Duration="300" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,19 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Classic 2x 20</name>
+    <description>A higher FTP means you'll be faster period.  So, you are going to have to do  some classic 2 x 20 minutes intervals at 100% of your FTP and really go for it.  Warm-up for 10 minutes with 3x 1 minute fast pedaling intervals &gt;110rpm and then get to work!   2x20 minutes at 100% of FTP with 5minute easy endurance between each.  Cool-down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="FTP"/>
+        <tag name="Classic2x20"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="1200" Power="1.0044999"/>
+        <SteadyState Duration="300" Power="0.75449997"/>
+        <SteadyState Duration="1200" Power="1.0044999"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

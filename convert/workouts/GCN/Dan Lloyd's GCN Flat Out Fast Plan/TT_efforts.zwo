@@ -1,0 +1,24 @@
+<workout_file>
+    <author>GCN</author>
+    <name>TT efforts</name>
+    <description>Time trial simulations are key to improve your time trial, along with pacing. Each of these mini-time trials is 6 minutes long and I want you to seperate each into 2 minute sections. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="TTintervals"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="360.00003" Power="1.0545"/>
+        <SteadyState Duration="300" Power="0.50449997"/>
+        <SteadyState Duration="360.00003" Power="1.0545"/>
+        <SteadyState Duration="300" Power="0.50449997"/>
+        <SteadyState Duration="360.00003" Power="1.0545"/>
+        <SteadyState Duration="300" Power="0.50449997"/>
+        <SteadyState Duration="360.00003" Power="1.0545"/>
+        <SteadyState Duration="300" Power="0.50449997"/>
+        <SteadyState Duration="360.00003" Power="1.0545"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

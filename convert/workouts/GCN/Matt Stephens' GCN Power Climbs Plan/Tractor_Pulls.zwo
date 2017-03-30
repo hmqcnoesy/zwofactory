@@ -1,0 +1,20 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Tractor Pulls</name>
+    <description>This is a specific workout to improve your muscular strength so that you will have the strength needed for the steep climbs.  At the finish of the workout, you are going to do (3) gradual hills of 3 minutes each in order to address your Vo2max.  Make sure you do the "Tractor Pulls" from a slow speed, with your hands in the drops and strong core.  Stay seated the entire time and with a low cadence from the beginning of the effort, keep your cadence below 60rpm for as long as you can and try to prevent the cadence from raising above 90rpm.  Watts are from 200-300% of your FTP.
+    </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <SteadyState Duration="120.00001" Power="0.70449996"/>
+        <IntervalsT Repeat="12" OnDuration="30.000002" OffDuration="120.00001" OnPower="2.0044999" OffPower="0.70449996"/>
+        <Ramp Duration="180.00002" PowerLow="0.90449989" PowerHigh="1.1544999"/>
+        <SteadyState Duration="180.00002" Power="0.70449996"/>
+        <Ramp Duration="180.00002" PowerLow="0.90449989" PowerHigh="1.1544999"/>
+        <Cooldown Duration="480.00003" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

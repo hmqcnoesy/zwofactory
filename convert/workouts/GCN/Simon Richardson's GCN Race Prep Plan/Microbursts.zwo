@@ -1,0 +1,22 @@
+<workout_file>
+    <author>GCN</author>
+    <name>Microbursts</name>
+    <description>On and Off bursts designed to improve your neuromuscular power and FTP at the same time. 
+10 minute warm-up level 2 with 3 x 1 minute fast pedals &gt;110rpm.
+Do 3 x 10 minutes, Micro-bursts,  15 seconds ON at 150% of FTP and 15 seconds OFF at 50% of FTP.  Repeat for entire 10minutes, rest for 5minutes between each set.  It's important that you maintain 90 rpm for both the ON and the OFF periods. 
+Cool-down. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997"/>
+        <IntervalsT Repeat="20" OnDuration="15.000001" OffDuration="15.000001" OnPower="1.5044999" OffPower="0.50449997"/>
+        <SteadyState Duration="300" Power="0.50449997"/>
+        <IntervalsT Repeat="20" OnDuration="15.000001" OffDuration="15.000001" OnPower="1.5044999" OffPower="0.50449997"/>
+        <SteadyState Duration="300" Power="0.50449997"/>
+        <IntervalsT Repeat="20" OnDuration="15.000001" OffDuration="15.000001" OnPower="1.5044999" OffPower="0.50449997"/>
+        <Cooldown Duration="240.00002" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>
