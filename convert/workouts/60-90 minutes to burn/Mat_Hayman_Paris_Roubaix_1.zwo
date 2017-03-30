@@ -1,0 +1,31 @@
+<workout_file>
+    <author>Kevin Poulton / Powerhouse</author>
+    <name>Mat Hayman Paris Roubaix 1</name>
+    <description>This is a pretty full on effort that will give users an idea of the training sessions that were required for Mat Hayman to win Paris Roubaix.  If you find it too difficult, try to complete just one of the two blocks of intervals.
+
+Authored by Keven Poulton</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="ParisRoubaix"/>
+    </tags>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.39013886" PowerHigh="0.62347221"/>
+        <SteadyState Duration="10" Power="2.7790277"/>
+        <SteadyState Duration="60.000004" Power="0.64056987"/>
+        <SteadyState Duration="10" Power="2.7790277"/>
+        <SteadyState Duration="60.000004" Power="0.64013886"/>
+        <SteadyState Duration="10" Power="2.7790277"/>
+        <SteadyState Duration="180.00002" Power="0.75125003"/>
+        <SteadyState Duration="1200" Power="0.80958337">
+            <textevent timeoffset="0" message="Cadence 5rpm above comfortable"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.50124997"/>
+        <IntervalsT Repeat="6" OnDuration="120.00001" OffDuration="20" OnPower="0.87625003" OffPower="1.4040278"/>
+        <SteadyState Duration="60.000004" Power="0.87625003"/>
+        <SteadyState Duration="300" Power="0.50124997"/>
+        <IntervalsT Repeat="6" OnDuration="120.00001" OffDuration="20" OnPower="0.87625003" OffPower="1.4040278"/>
+        <SteadyState Duration="60.000004" Power="0.87625003"/>
+        <Cooldown Duration="600" PowerLow="0.64013886" PowerHigh="0.25125003"/>
+    </workout>
+</workout_file>

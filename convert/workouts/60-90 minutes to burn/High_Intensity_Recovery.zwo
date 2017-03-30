@@ -1,0 +1,15 @@
+<workout_file>
+    <author>FTP Training</author>
+    <name>High Intensity Recovery</name>
+    <description>This workout is similar to a very common FTP building working, the 2x20's, but with a twist. By changing the threshold blocks to Over/Under intervals you may also help train your body to recover when effort goes just below your threshold power.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.30000001" PowerHigh="0.80000001"/>
+        <IntervalsT Repeat="3" OnDuration="180.00002" OffDuration="180.00002" OnPower="1.0550001" OffPower="0.95000005" OverUnder="1"/>
+        <SteadyState Duration="900.00006" Power="0.60000002"/>
+        <IntervalsT Repeat="3" OnDuration="180.00002" OffDuration="180.00002" OnPower="1.0550001" OffPower="0.95000005" OverUnder="1"/>
+        <SteadyState Duration="900.00006" Power="0.60000002"/>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.45000002"/>
+    </workout>
+</workout_file>

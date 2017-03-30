@@ -1,0 +1,34 @@
+<workout_file>
+    <author>Zwift Academy</author>
+    <name>Week 3 - Crit Power Test</name>
+    <description>The efforts starts with a 20 second all out sprint (the idea is to ride this 20s as hard as you can and ignore the fact that you have to continue riding for a further 2min 40sec). as you begin to fade on the sprint, you will need to gradually reduce your gearing to maintain a cadence of around 90rpm, all whilst pushing as much power as you possibly can!. this will feel like a very long 3 minutes. the key is to not bail on the effort! regardless of how much your power fades throughout the effort, you MUST finish it.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.25" PowerHigh="0.90140581"/>
+        <SteadyState Duration="120.00001" Power="1.0048306"/>
+        <SteadyState Duration="300" Power="0.5">
+            <textevent timeoffset="230.00002" message="This next one is going to hurt..."/>
+            <textevent timeoffset="240.00002" message="Up next you&apos;ll be doing a 3 minute max-effort."/>
+            <textevent timeoffset="250.00002" message="Change to your hardest gear now."/>
+            <textevent timeoffset="260" message="First 20 seconds will be an all-out sprint."/>
+            <textevent timeoffset="270" message="Reduce gearing as you begin to fade."/>
+            <textevent timeoffset="280" message="Try to maintain 90rpm."/>
+            <textevent timeoffset="290" message="Here we go..."/>
+        </SteadyState>
+        <FreeRide Duration="180.00002" FlatRoad="1">
+            <textevent timeoffset="0.1" message="MAX POWER!"/>
+            <textevent timeoffset="10" message="BREATHE! KEEP IT GOING!"/>
+            <textevent timeoffset="20" message="Downshift! Keep going as hard as you can!"/>
+            <textevent timeoffset="30.000002" message="Downshift! Keep pedalling!"/>
+            <textevent timeoffset="45.000004" message="Maintain 90rpm!"/>
+            <textevent timeoffset="60.000004" message="I know it hurts! keep going!"/>
+            <textevent timeoffset="90.000008" message="HALF WAY! don&apos;t give up!"/>
+            <textevent timeoffset="120.00001" message="One more minute. Still alive? keep pedalling!"/>
+            <textevent timeoffset="180.00002" message="30 more seconds! Don&apos;t puke yet!"/>
+        </FreeRide>
+        <SteadyState Duration="600" Power="0.5">
+            <textevent timeoffset="1" message="Nice! Cool down with your legs moving"/>
+        </SteadyState>
+    </workout>
+</workout_file>

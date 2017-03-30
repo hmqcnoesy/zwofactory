@@ -1,0 +1,14 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Session 6: Zone 2 Cadence Changer</name>
+    <description>This session,similar to the strength-endurance efforts are designed to get you used to producing the power at different cadence ranges, the higher cadences work your cardiopulmonary system much more than a lower cadence effort. You will see your heart rate rise during the high cadence element despite the power remaining the same. This session is also good at simulating bunch-riding and having to accelerate your cadence quickly without changing power too much.
+  </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <IntervalsT Repeat="40" OnDuration="20" OffDuration="40" OnPower="0.72527272" OffPower="0.72527272" OverUnder="1"/>
+        <Cooldown Duration="600" PowerLow="0.64999998" PowerHigh="0.44999996"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,16 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Session 19: Pre-Test Day Ride</name>
+    <description>This session is best done the day before your FTP test. To get the best out of yourself in tomorrow's test, it is important that you ride today. You need to give the body some training stimulus without depleting your glycogen stores. The total ride time should be around 90 minutes, ensure that you do at least 70 min to receive credit for the workout.
+  </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <IntervalsT Repeat="2" OnDuration="300" OffDuration="300" OnPower="0.875" OffPower="0.52499998"/>
+        <SteadyState Duration="1200" Power="0.52499998"/>
+        <IntervalsT Repeat="3" OnDuration="10" OffDuration="290" OnPower="1.6" OffPower="0.52499998"/>
+        <SteadyState Duration="1200" Power="0.52499998"/>
+        <Cooldown Duration="600" PowerLow="0.64999998" PowerHigh="0.44999996"/>
+    </workout>
+</workout_file>

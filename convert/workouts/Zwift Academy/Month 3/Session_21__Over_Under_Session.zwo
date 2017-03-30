@@ -1,0 +1,42 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 21: Over Under Session</name>
+    <description>Progressing on from a previous session with the increased duration, you should hopefully have a slightly higher FTP than when you first embarked on the Canyon SRAM journey, making this session even harder! This session is designed to 'push' and 'pull' your FTP. The pushing element should feel manageable. The first few 30 seconds of pulling in each effort will feel comfortable, by the end of each interval you should be struggling! Maintain good form on the bike with the power changes, try and maintain a steady cadence regardless of the power changes.
+</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.24976188" PowerHigh="0.8497619"/>
+        <SteadyState Duration="300" Power="0.64976192"/>
+        <IntervalsT Repeat="6" OnDuration="120.00001" OffDuration="30.000002" OnPower="0.98869491" OffPower="1.0584477" OverUnder="1">
+            <textevent timeoffset="0" message="Push!"/>
+            <textevent timeoffset="120.00001" message="PULL!"/>
+            <textevent timeoffset="150" message="PUSH!"/>
+            <textevent timeoffset="270" message="PULL!"/>
+            <textevent timeoffset="300" message="PUSH!"/>
+            <textevent timeoffset="420.00003" message="PULL!"/>
+            <textevent timeoffset="450.00003" message="PUSH!"/>
+            <textevent timeoffset="570" message="PULL!"/>
+            <textevent timeoffset="600" message="PUSH!"/>
+            <textevent timeoffset="720" message="PULL!"/>
+            <textevent timeoffset="750.00006" message="PUSH!"/>
+            <textevent timeoffset="870.00006" message="PULL!"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.64976192"/>
+        <IntervalsT Repeat="6" OnDuration="120.00001" OffDuration="30.000002" OnPower="0.9545238" OffPower="1.097381" OverUnder="1">
+            <textevent timeoffset="0" message="Push!"/>
+            <textevent timeoffset="120.00001" message="PULL!"/>
+            <textevent timeoffset="150" message="PUSH!"/>
+            <textevent timeoffset="270" message="PULL!"/>
+            <textevent timeoffset="300" message="PUSH!"/>
+            <textevent timeoffset="420.00003" message="PULL!"/>
+            <textevent timeoffset="450.00003" message="PUSH!"/>
+            <textevent timeoffset="570" message="PULL!"/>
+            <textevent timeoffset="600" message="PUSH!"/>
+            <textevent timeoffset="720.00006" message="PULL!"/>
+            <textevent timeoffset="750.00006" message="PUSH!"/>
+            <textevent timeoffset="870.00006" message="PULL!"/>
+        </IntervalsT>
+        <Cooldown Duration="600" PowerLow="0.88449997" PowerHigh="0.4745"/>
+    </workout>
+</workout_file>

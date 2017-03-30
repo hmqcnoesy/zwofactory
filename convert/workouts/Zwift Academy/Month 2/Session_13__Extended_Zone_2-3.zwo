@@ -1,0 +1,16 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 13: Extended Zone 2-3</name>
+    <description>This session is designed to get you used to delivering power at a range of cadences. The low cadence effortsput the onus on leg strength while the higher cadence efforts work your cardiopulmonary system. By training the extremities of the cadence ranges, you will be better adapted for riding in your natural range. These long steady efforts can be pretty monotonous but are a very good way to improve your cycling efficiency at the power you will spend most of your time riding.</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.6045"/>
+        <SteadyState Duration="2400" Power="0.70345455"/>
+        <SteadyState Duration="600" Power="0.40450001"/>
+        <SteadyState Duration="1800.0001" Power="0.82449996"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

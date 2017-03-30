@@ -1,0 +1,21 @@
+<workout_file>
+    <author>FTP Training</author>
+    <name>2x30 FTP Intervals</name>
+    <description>A harder version of the classic 2x20's. 15 minute warmup, 2x 30 minute FTP efforts and 10 minute recoveries, with 15 minute endurance cool-down</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.39999998" PowerHigh="0.85000002"/>
+        <SteadyState Duration="300" Power="0.64999998">
+            <textevent timeoffset="0" message="85 RPM. Normal Cadence"/>
+            <textevent timeoffset="0" message="110+ RPM! High Cadence!"/>
+            <textevent timeoffset="0" message="85 RPM. Normal Cadence"/>
+            <textevent timeoffset="0" message="110+ RPM! High Cadence!"/>
+            <textevent timeoffset="0" message="85 RPM. Normal Cadence"/>
+        </SteadyState>
+        <SteadyState Duration="1800.0001" Power="1"/>
+        <SteadyState Duration="600" Power="0.5"/>
+        <SteadyState Duration="1800.0001" Power="1"/>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.54999995"/>
+    </workout>
+</workout_file>

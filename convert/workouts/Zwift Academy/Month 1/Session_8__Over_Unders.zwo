@@ -1,0 +1,16 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Session 8: Over Unders</name>
+    <description>Start with a good warm up; 15 minutes progressing from Zone 1 into Zone 3, followed by 5 minutes easy spinning. The main session is 2 x 12 minutes, to be ridden as described below. Settle into a threshold pushing effort (same power from 'Session 4'), but after every 2 minutes ramp it up it for 30 seconds to a threshold pulling effort (Zone 5). Then back into pushing again. So, 2 mins steady-hard, then 30 seconds hard. Take 10 minutes easy spinning between the two sets. Warm down = 10 minutes easy Zone 1
+  </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <IntervalsT Repeat="5" OnDuration="30" OffDuration="120" OnPower="1.1507273" OffPower="1.0016364" OverUnder="1"/>
+        <SteadyState Duration="600" Power="0.52499998"/>
+        <IntervalsT Repeat="5" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.1500001" OffPower="1"/>
+        <Cooldown Duration="600" PowerLow="0.64999998" PowerHigh="0.44999996"/>
+    </workout>
+</workout_file>

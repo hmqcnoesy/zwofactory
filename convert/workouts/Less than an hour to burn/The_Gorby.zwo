@@ -1,0 +1,11 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>The Gorby</name>
+    <description>AKA 'The Quitter'. This is a tough workout that you may be unable to finish. Give it your all and remember that riding to failure pays in both mental and physical gains.   You should use this workout to hone your climbing potential after you've developed a solid FTP.   Perform 1-2x per week for best results.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.30000001" PowerHigh="0.80000001"/>
+        <IntervalsT Repeat="5" OnDuration="300" OffDuration="300" OnPower="1.1" OffPower="0.55000001"/>
+    </workout>
+</workout_file>

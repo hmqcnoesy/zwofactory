@@ -1,0 +1,16 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Session 5: Progressive Ramp</name>
+    <description>This will feel progressively harder as the session goes on. Ensure you are hydrated throughout and have good air circulation (use a strong fan!) as we don't want you overheating during this session! This type of session will work on your endurance capacity and ability to lift the power even when fatigued. Building both your lower level threshold and working on your FTP
+  </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="300" Power="0.40000001"/>
+        <SteadyState Duration="1800" Power="0.52527273"/>
+        <SteadyState Duration="1500.0001" Power="0.72500002"/>
+        <SteadyState Duration="1200" Power="0.875"/>
+        <Cooldown Duration="600" PowerLow="0.64999998" PowerHigh="0.44999996"/>
+    </workout>
+</workout_file>

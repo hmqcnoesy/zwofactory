@@ -1,0 +1,22 @@
+<workout_file>
+    <author>Less than an hour to burn</author>
+    <name>The McCarthy Special</name>
+    <description>This is a workout with lots of anerobic efforts that build up over time, as recalled by Zwift's resident World Champion cyclist Mike McCarthy. With lots of near threshold effort it should help increase your FTP as it simulates an effort towards the end of a race.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.30000001" PowerHigh="0.69999999"/>
+        <SteadyState Duration="180.00002" Power="1"/>
+        <SteadyState Duration="180.00002" Power="1.12"/>
+        <SteadyState Duration="180.00002" Power="1.25"/>
+        <SteadyState Duration="540" Power="0.625"/>
+        <SteadyState Duration="180.00002" Power="1"/>
+        <SteadyState Duration="180.00002" Power="1.12"/>
+        <SteadyState Duration="180.00002" Power="1.25"/>
+        <SteadyState Duration="540" Power="0.625"/>
+        <SteadyState Duration="180.00002" Power="1"/>
+        <SteadyState Duration="180.00002" Power="1.12"/>
+        <SteadyState Duration="180.00002" Power="1.25"/>
+        <Cooldown Duration="300" PowerLow="0.69999999" PowerHigh="0.30000001"/>
+    </workout>
+</workout_file>

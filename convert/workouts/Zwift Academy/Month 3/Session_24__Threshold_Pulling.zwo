@@ -1,0 +1,13 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 24: Threshold Pulling</name>
+    <description>Recovery period is only short, so make sure you make the most of it, keep the legs spinning (but back off the power as much as possible), try not to slump over the bars, remain upright and ensure you have a good airflow and full bottle of drink for this one!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25450003" PowerHigh="0.85449994"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <IntervalsT Repeat="6" OnDuration="240.00002" OffDuration="240.00002" OnPower="1.0545" OffPower="0.50449997"/>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

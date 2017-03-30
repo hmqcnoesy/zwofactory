@@ -1,0 +1,16 @@
+<workout_file>
+    <author>FTP Training</author>
+    <name>SST (Med)</name>
+    <description>Sweet Spot Training (or SST for short) will give great bang for buck as you can spend quite a bit of time in the Sweet Spot of your power curve without building up undue amounts of training stress. You can do this workout as much as you'd like and watch your FTP rise over time.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.39999998" PowerHigh="0.85000002"/>
+        <IntervalsT Repeat="3" OnDuration="300" OffDuration="300" OnPower="0.94999999" OffPower="0.85500002" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.5"/>
+        <SteadyState Duration="60.000004" Power="1.1"/>
+        <SteadyState Duration="60.000004" Power="0.5"/>
+        <IntervalsT Repeat="3" OnDuration="300" OffDuration="300" OnPower="0.94999999" OffPower="0.85500002" OverUnder="1"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.54999995"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,26 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 10: Extended Zone 3</name>
+    <description>Unlike a previous session that was designed to work your low cadence power production, this session is designed to work your cardiopulmonary system and aerobic power development. These  intervals are meant to be relatively low intensity and each of the efforts should feel comfortably hard but hardly comfortable! Remember to keep good form on the the bike focusing on smooth, fluid pedaling at 90+ RPM. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25125003" PowerHigh="0.66791666"/>
+        <SteadyState Duration="480.00003" Power="0.70402777"/>
+        <SteadyState Duration="240.00002" Power="0.41791666"/>
+        <SteadyState Duration="600" Power="0.70449996"/>
+        <SteadyState Duration="240.00002" Power="0.41791666"/>
+        <SteadyState Duration="720.00006" Power="0.70449996"/>
+        <SteadyState Duration="240.00002" Power="0.41791666"/>
+        <SteadyState Duration="900.00006" Power="0.70449996"/>
+        <SteadyState Duration="240.00002" Power="0.41791666"/>
+        <SteadyState Duration="720.00006" Power="0.70449996"/>
+        <SteadyState Duration="240.00002" Power="0.41513887"/>
+        <SteadyState Duration="600" Power="0.70449996"/>
+        <SteadyState Duration="240.00002" Power="0.41791666"/>
+        <SteadyState Duration="480.00003" Power="0.70402777"/>
+        <SteadyState Duration="600" Power="0.41791666"/>
+    </workout>
+</workout_file>

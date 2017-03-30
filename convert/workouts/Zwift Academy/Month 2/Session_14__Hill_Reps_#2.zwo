@@ -1,0 +1,17 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 14: Hill Reps #2</name>
+    <description>This is progression from our last hill rep workout. In other words, more efforts! Remember to keep your upper body quiet and focus on nice, round pedaling from your legs and glutes while keeping a strong core.
+
+
+Aim for a 60-70 RPM cadence for the efforts and 90+ for everything else.</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.35449997" PowerHigh="0.85449994"/>
+        <SteadyState Duration="300" Power="0.40450001"/>
+        <IntervalsT Repeat="6" OnDuration="300" OffDuration="300" OnPower="0.90345454" OffPower="0.40527272"/>
+    </workout>
+</workout_file>

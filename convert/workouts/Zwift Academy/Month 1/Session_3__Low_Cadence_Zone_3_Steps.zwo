@@ -1,0 +1,22 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Session 3: Low Cadence Zone 3 Steps</name>
+    <description>Warm up for 10 minutes, Zone 1, progressing into mid Zone 2. Then perform blocks of the following, with 4 minutes easy spinning in between efforts So Zone 3 at 8/10/12/10/8 minutes (4 minute recovery between each effort). Keep good form on the bike focusing on smooth, fluid power! Finish with 10 minutes easy Zone 1. This session is designed to work on your ability to generate power through torque - low cadence, high power efforts are something that every rider will benefit from.
+  </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="480.00003" Power="0.875"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+        <SteadyState Duration="600" Power="0.875"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+        <SteadyState Duration="720.00006" Power="0.875"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+        <SteadyState Duration="600" Power="0.875"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+        <SteadyState Duration="480.00003" Power="0.875"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+        <Cooldown Duration="600" PowerLow="0.64999998" PowerHigh="0.44999996"/>
+    </workout>
+</workout_file>

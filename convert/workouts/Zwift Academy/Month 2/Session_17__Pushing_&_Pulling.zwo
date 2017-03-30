@@ -1,0 +1,20 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 17: Pushing &amp; Pulling</name>
+    <description>This is a tough session so don't be tempted to overdo it on the "pushing" interval as the "pulling" efforts are hard!
+
+
+Do these at whatever cadence you're most comfortable with.</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.35449997" PowerHigh="0.85449994"/>
+        <SteadyState Duration="300" Power="0.40450001"/>
+        <SteadyState Duration="900.00006" Power="0.92449993"/>
+        <SteadyState Duration="600" Power="0.40450001"/>
+        <IntervalsT Repeat="3" OnDuration="240.00002" OffDuration="240.00002" OnPower="1.0540278" OffPower="0.40402776"/>
+        <SteadyState Duration="300" Power="0.40450001"/>
+    </workout>
+</workout_file>

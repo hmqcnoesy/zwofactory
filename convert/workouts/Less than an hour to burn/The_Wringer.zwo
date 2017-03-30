@@ -1,0 +1,34 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>The Wringer</name>
+    <description>This short workout concentrates on 30 second efforts with short recoveries to help boost VO2 power (just above your FTP). </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="480.00003" PowerLow="0.29999998" PowerHigh="1"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="160" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="155" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="150" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="145" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="140" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="135" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="130" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="125.00001" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="120.00001" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="115.00001" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <SteadyState Duration="110.00001" Power="0.5"/>
+        <SteadyState Duration="30.000002" Power="2.05"/>
+        <Cooldown Duration="300" PowerLow="0.69999999" PowerHigh="0.30000001"/>
+    </workout>
+</workout_file>

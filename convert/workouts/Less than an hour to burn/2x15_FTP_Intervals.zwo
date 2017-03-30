@@ -1,0 +1,32 @@
+<workout_file>
+    <author>FTP Training</author>
+    <name>2x15 FTP Intervals</name>
+    <description>10 minute warmup, 2x15 minute FTP efforts with a short recovery, and a quick cool-down. While not as infamous as 2x20's the 2x15's will still help build base power and get you done in under an hour.  This workout should be done after an easy or rest day.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.40000004" PowerHigh="0.80000001">
+            <textevent timeoffset="590" message="Prepare yourself"/>
+        </Warmup>
+        <SteadyState Duration="900.00006" Power="1">
+            <textevent timeoffset="5" message="Hold a steady cadence of 90-100rpm"/>
+            <textevent timeoffset="600" message="Hanging in there? It&apos;s not so bad..."/>
+            <textevent timeoffset="780.00006" message="Two minutes left"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.60000002">
+            <textevent timeoffset="5" message="Welcome back."/>
+        </SteadyState>
+        <SteadyState Duration="900.00006" Power="1">
+            <textevent timeoffset="5" message="Here we go again"/>
+            <textevent timeoffset="600" message="About now you should ask yourself"/>
+            <textevent timeoffset="600" message="if this has been too easy." y="270"/>
+            <textevent timeoffset="612" message="If yes it may be time to increase your ftp."/>
+            <textevent timeoffset="612" message="or try the 2x20 FTP Intervals" y="270"/>
+            <textevent timeoffset="623" message="If no, then you&apos;re doing it right"/>
+            <textevent timeoffset="780.00006" message="You&apos;ve got this"/>
+            <textevent timeoffset="870.00006" message="30 seconds remaining"/>
+            <textevent timeoffset="890.00006" message="See the light at the end of the tunnel"/>
+        </SteadyState>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.39999998"/>
+    </workout>
+</workout_file>

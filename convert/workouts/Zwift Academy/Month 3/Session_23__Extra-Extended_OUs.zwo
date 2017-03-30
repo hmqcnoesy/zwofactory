@@ -1,0 +1,29 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 23: Extra-Extended OUs</name>
+    <description>This is a very tough session and not many people are able to complete it on first attempt - so don't be disheartened if you cannot. It is designed to stretch you to your fullest - taking you to your upper limit of aerobic powers and forcing you to recover at your threshold. Ensure you have a good quality, powerful fan during this session, you WILL get hot and you will need good airflow on the indoor trainer.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25450003" PowerHigh="0.85449994"/>
+        <SteadyState Duration="300" Power="0.65000004"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="180.00002" Power="1.0944999"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="180.00002" Power="1.0944999"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="120.00001" Power="1.25"/>
+        <SteadyState Duration="600" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="180.00002" Power="1.0944999"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="180.00002" Power="1.0944999"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="120.00001" Power="1.2544999"/>
+        <SteadyState Duration="180.00002" Power="0.95449996"/>
+        <SteadyState Duration="120.00001" Power="1.25"/>
+        <Cooldown Duration="900.00006" PowerLow="0.85449994" PowerHigh="0.25450003"/>
+    </workout>
+</workout_file>

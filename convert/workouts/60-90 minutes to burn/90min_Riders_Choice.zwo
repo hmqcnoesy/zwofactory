@@ -1,0 +1,10 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>90min Riders Choice</name>
+    <description>Do what you want without the fear of hills and descents as this workout supplies you with a flat road to work with.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <FreeRide Duration="5400.0005" FlatRoad="1"/>
+    </workout>
+</workout_file>

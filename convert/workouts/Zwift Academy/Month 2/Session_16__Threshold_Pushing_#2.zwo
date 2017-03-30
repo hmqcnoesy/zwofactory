@@ -1,0 +1,23 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 16: Threshold Pushing #2</name>
+    <description>This session is designed to increase your FTP from below, working predominately on your aerobic metabolism. In time, your body will become more comfortable at these powers and your FTP will increase. Note: Don't be tempted to over do it on these efforts. You'll want to push the power and may feel as though you're in no-man's land, not easy, not hard but this is exactly what we want. This isn't supposed to be an "eyeballs out" session as those are still to come!
+</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+    </tags>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.35449997" PowerHigh="0.85449994"/>
+        <SteadyState Duration="300" Power="0.40450001"/>
+        <SteadyState Duration="960.00006" Power="1.0044999">
+            <textevent timeoffset="490.00003" message="Don&apos;t be tempted to go harder!"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.40450001"/>
+        <SteadyState Duration="960.00006" Power="1.00125">
+            <textevent timeoffset="166.00002" message="Stay focused and disciplined"/>
+            <textevent timeoffset="669.00006" message="Finish in the zone"/>
+        </SteadyState>
+        <Cooldown Duration="900.00006" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

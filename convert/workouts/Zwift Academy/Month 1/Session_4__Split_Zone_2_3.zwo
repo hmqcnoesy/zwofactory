@@ -1,0 +1,16 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Session 4: Split Zone 2/3</name>
+    <description>This session is designed to get you used to delivering power at a range of cadences. The low cadence efforts put the onus on your leg strength (through the high torque effort), the higher cadence efforts work your cardiopulmonary (heart and lungs) system. By training the extremities of the cadence ranges, you will be better adapt at riding to your self-selected range. 
+  </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="1800" Power="0.72527272"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="600" Power="0.875"/>
+        <SteadyState Duration="600" Power="0.875"/>
+        <Cooldown Duration="600" PowerLow="0.64999998" PowerHigh="0.44999996"/>
+    </workout>
+</workout_file>

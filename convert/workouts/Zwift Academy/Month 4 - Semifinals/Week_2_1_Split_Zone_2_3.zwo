@@ -1,0 +1,18 @@
+<workout_file>
+    <author>K.Veronneau ZA Leader</author>
+    <name>Week 2/1 Split Zone 2/3</name>
+    <description>This session is designed to get you used to delivering power at a range of cadences. The low cadence work focuses on leg strength and the higher cadence trains your heart and lungs. 
+    </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.2507782" PowerHigh="0.7488327"/>
+        <SteadyState Duration="600" Power="0.65254545"/>
+        <SteadyState Duration="600" Power="0.49980545"/>
+        <SteadyState Duration="600" Power="0.81108946"/>
+        <SteadyState Duration="600" Power="0.81108946"/>
+        <SteadyState Duration="300" Power="0.81108946"/>
+        <SteadyState Duration="300" Power="0.81108946"/>
+        <Cooldown Duration="600" PowerLow="0.7488327" PowerHigh="0.2507782"/>
+    </workout>
+</workout_file>

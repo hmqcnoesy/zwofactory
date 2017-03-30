@@ -1,0 +1,40 @@
+<workout_file>
+    <author>Zwift Academy</author>
+    <name>Week 4 - Pulling Week</name>
+    <description>This is a hard session, make sure you are suitably motivated - the reduction in recovery time will get on top of you and is often around the 3 minute intervals that riders start to crack - push through it!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.25" PowerHigh="0.89707994"/>
+        <SteadyState Duration="300" Power="0.65000004"/>
+        <SteadyState Duration="240.00002" Power="1.0999999"/>
+        <SteadyState Duration="240.00002" Power="0.65000004"/>
+        <SteadyState Duration="240.00002" Power="1.0999999"/>
+        <SteadyState Duration="240.00002" Power="0.65000004"/>
+        <SteadyState Duration="180.00002" Power="1.0999999"/>
+        <SteadyState Duration="180.00002" Power="0.65000004"/>
+        <SteadyState Duration="180.00002" Power="1.0999999"/>
+        <SteadyState Duration="180.00002" Power="0.65000004"/>
+        <SteadyState Duration="180.00002" Power="1.0999999"/>
+        <SteadyState Duration="180.00002" Power="0.65000004"/>
+        <SteadyState Duration="120.00001" Power="1.0999999"/>
+        <SteadyState Duration="120.00001" Power="0.65000004"/>
+        <SteadyState Duration="120.00001" Power="1.0999999"/>
+        <SteadyState Duration="120.00001" Power="0.65000004"/>
+        <SteadyState Duration="120.00001" Power="1.0999999"/>
+        <SteadyState Duration="120.00001" Power="0.65000004"/>
+        <SteadyState Duration="120.00001" Power="1.0999999"/>
+        <SteadyState Duration="120.00001" Power="0.65000004"/>
+        <SteadyState Duration="60.000004" Power="1.0999999"/>
+        <SteadyState Duration="60.000004" Power="0.65000004"/>
+        <SteadyState Duration="60.000004" Power="1.0999999"/>
+        <SteadyState Duration="60.000004" Power="0.65000004"/>
+        <SteadyState Duration="60.000004" Power="1.0999999"/>
+        <SteadyState Duration="60.000004" Power="0.65000004"/>
+        <SteadyState Duration="60.000004" Power="1.0999999"/>
+        <SteadyState Duration="60.000004" Power="0.65000004"/>
+        <SteadyState Duration="60.000004" Power="1.0999999"/>
+        <SteadyState Duration="60.000004" Power="0.65000004"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

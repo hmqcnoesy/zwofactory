@@ -1,0 +1,37 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 26: Capacity Pyramids</name>
+    <description>Recovery period is only short, so make sure you make the most of it, keep the legs spinning (but back off the power as much as possible), try not to slump over the bars, remain upright and ensure you have a good airflow and full bottle of drink for this one!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25450003" PowerHigh="0.87995088"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <SteadyState Duration="60.000004" Power="1.0544997"/>
+        <SteadyState Duration="240.00002" Power="0.81449997"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="120" Power="1.0525455"/>
+        <SteadyState Duration="180.00002" Power="0.81449997"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.052071"/>
+        <SteadyState Duration="120.00001" Power="0.81449997"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="240.00002" Power="1.0545"/>
+        <SteadyState Duration="60.000004" Power="0.81449997"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="300" Power="1.0545"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="240.00002" Power="1.0545"/>
+        <SteadyState Duration="60.000004" Power="0.81449997"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="180.00002" Power="1.0540144"/>
+        <SteadyState Duration="120.00001" Power="0.81449997"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="120.00001" Power="1.0545"/>
+        <SteadyState Duration="180.00002" Power="0.81449997"/>
+        <SteadyState Duration="180.00002" Power="0.65449995"/>
+        <SteadyState Duration="60.000004" Power="1.0545"/>
+        <SteadyState Duration="240.00002" Power="0.81449997"/>
+        <Cooldown Duration="600" PowerLow="0.87449998" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

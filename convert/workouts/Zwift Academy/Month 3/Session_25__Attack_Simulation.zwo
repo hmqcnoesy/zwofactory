@@ -1,0 +1,12 @@
+<workout_file>
+    <author>Jon Sharples</author>
+    <name>Session 25: Attack Simulation</name>
+    <description>The 30 second effort isn't a full on sprint: think Chris Froome putting in a seated attack on a climb, rather than a full on sprint for the finish line.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1500.0001" PowerLow="0.50449997" PowerHigh="0.90449995"/>
+        <IntervalsT Repeat="4" OnDuration="30.000002" OffDuration="270" OnPower="1.2045" OffPower="0.95854342"/>
+        <Cooldown Duration="1500.0001" PowerLow="0.85449994" PowerHigh="0.25450003"/>
+    </workout>
+</workout_file>

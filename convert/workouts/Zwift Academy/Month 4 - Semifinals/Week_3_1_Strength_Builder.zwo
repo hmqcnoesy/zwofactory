@@ -1,0 +1,16 @@
+<workout_file>
+    <author>K.Veronneau ZA Leader</author>
+    <name>Week 3/1 Strength Builder</name>
+    <description>This session is designed to build leg strength. Low cadence, high torque efforts will increase your ability to generate force in races. After a 10 min warm-up, begin your first effort, a 16 min interval in Z3 at 65-75 rpm. Recover five minutes between efforts and repeat 2 more times. 3 X 16 min efforts. 15 min cool down. </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.2507782" PowerHigh="0.7488327"/>
+        <SteadyState Duration="960.00006" Power="0.81108946"/>
+        <SteadyState Duration="300" Power="0.65254545"/>
+        <SteadyState Duration="960.00006" Power="0.81108946"/>
+        <SteadyState Duration="300" Power="0.65155643"/>
+        <SteadyState Duration="960.00006" Power="0.81108946"/>
+        <Cooldown Duration="900.00006" PowerLow="0.7488327" PowerHigh="0.2507782"/>
+    </workout>
+</workout_file>

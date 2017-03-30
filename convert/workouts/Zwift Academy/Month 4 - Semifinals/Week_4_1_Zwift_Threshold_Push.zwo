@@ -1,0 +1,18 @@
+<workout_file>
+    <author>K.Veronneau ZA Leader</author>
+    <name>Week 4/1 Zwift Threshold Push</name>
+    <description>Today's session is designed to increase your FTP by working at a hard,  sustainable power.Start with a solid 15 min warm-up then 5 min at Z3. Ride easy 5 min before the first effort. Do 3 X 12 min efforts in Z4/Z5, resting 10 min between each effort. You should aim for 10-15 watt below your FTP. This is as mentally demanding as it is physically! </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.2507782" PowerHigh="0.7488327"/>
+        <SteadyState Duration="300" Power="0.81108946"/>
+        <SteadyState Duration="300" Power="0.65155643"/>
+        <SteadyState Duration="720.00006" Power="0.95116729"/>
+        <SteadyState Duration="600" Power="0.65155643"/>
+        <SteadyState Duration="720.00006" Power="0.95116729"/>
+        <SteadyState Duration="600" Power="0.65155643"/>
+        <SteadyState Duration="720.00006" Power="0.95116729"/>
+        <Cooldown Duration="1500.0001" PowerLow="0.7488327" PowerHigh="0.2507782"/>
+    </workout>
+</workout_file>
