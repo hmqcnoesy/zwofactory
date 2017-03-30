@@ -10,6 +10,7 @@ a { display: block; color: #456; cursor:pointer; text-decoration: underline; }
 h1 { padding: 0; margin: 0; text-align: center; }
 hr { margin: 18px 0; border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(68, 85, 102, 0.75), rgba(0, 0, 0, 0)); }
 p {padding: 1em}
+img { display: block; margin: 0 auto; max-width: 100%; }
 li {padding: 0.3em;}
 label { display: block; }
 .grid { display: flex; flex-flow: row wrap; align-content: flex-start; letter-spacing: -.31em; vertical-align: bottom; }
