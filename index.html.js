@@ -240,9 +240,9 @@ document.getElementById('btnSaveToMyWorkouts').addEventListener('click', functio
     }
 
     userSettings.saveMyWorkout(currentWorkout);
-    var savedSpan = this.querySelector('.saved');
-    savedSpan.classList.remove('saved');
-    setTimeout(function() { savedSpan.classList.add('saved'); }, 1000);
+    var savedDiv = this.parentNode.querySelector('.saved');
+    savedDiv.classList.remove('saved');
+    setTimeout(function() { savedDiv.classList.add('saved'); }, 2200);
 });
 
 

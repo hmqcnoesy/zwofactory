@@ -39,11 +39,102 @@ zwofactory.com
 <main id="divMain" class="striped">
 <div>
     <a data-toggle>What is zwofactory.com?</a>
-    <p class="invisible">zwofactory.com is the cooolest</p>
+    <p>
+        zwofactory.com is an editor for Zwift workouts.  Zwift has an official built-in editor but it
+        is quirky and has some bugs.  It also requires installing and running the full Zwift application,
+        loading a course, and pairing your equipment.  Ugh!<br /><br />
+        zwofactory.com aims to be an easy to use and lightweight (yet feature-complete) replacement for the built-in 
+        editor with none of the quirks or requirements.  Another aim is to do all this without any server-side logic, 
+        logins, advertisements, or other such nonsense.  Just a zwift workout editor!
+    </p>
 </div>
+
+<div>
+    <a data-toggle>How do I use zwofactory.com?</a>
+    <p class="invisible">
+        Fill in the name, description, author, and tags fields as you would using Zwift's built-in workout editor (tags
+        are separated with spaces).  <br /><br />
+        Workout segments are added to the chart by clicking the corresponding shapes:<br />
+        <svg data-t="s" data-p-1="50" data-d-1="300" width="30" height="30"><path class="z1" d="M1,1 L30,1 L30,30 L1,30 Z"></path></svg><!--
+        --><svg data-t="s" data-p-1="65" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z2"></path></svg><!--
+        --><svg data-t="s" data-p-1="80" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z3"></path></svg><!--
+        --><svg data-t="s" data-p-1="95" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z4"></path></svg><!--
+        --><svg data-t="s" data-p-1="110" data-d-1="300" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z5"></path></svg><!--
+        --><svg data-t="s" data-p-1="125" data-d-1="60" width="30" height="30"><path d="M1,1 L30,1 L30,30 L1,30 Z" class="z6"></path></svg><!--
+        --><svg data-t="r" data-p-1="25" data-d-1="600" data-p-2="75" width="30" height="30"><path d="M1,20 L30,1 L30,30 L1,30 Z" class="wu"></path></svg><!--
+        --><svg data-t="r" data-p-1="75" data-d-1="600" data-p-2="25" width="30" height="30"><path d="M1,1 L30,20 L30,30 L1,30 Z" class="cd"></path></svg><!--
+        --><svg data-t="f" data-d-1="600" width="30" height="30"><path class="fr" d="M 1 15 C 9 2, 20 18, 29 10 H 30 V 30 H 1 Z"></path></svg><!--
+        --><svg data-t="i" data-p-1="75" data-d-1="60" data-p-2="50" data-d-2="300" data-r="3" width="30" height="30"><path class="z2" d="M1,1 h5 v30 h-5 Z"></path><path class="z1" d="M5,10 h10 v20 h-10 Z"></path><path class="z2" d="M15,1 h5 v30 h-5 Z"></path><path class="z1" d="M20,10 h10 v20 h-10 Z"></path></svg> <br/><br/>
+        Select a segment in the chart by clicking it.  The selected segment will have a dark bar under it, and its info will be loaded into the
+        input fields below the chart.
+        You can select a segment to the left or to the right of the currently selected segment using these buttons:<br />
+        <svg width="30" height="30" id="btnSelectPrevious">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M9,30 v-10"></path>
+            <path stroke="black" stroke-width="1" d="M6,23 l3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M9,20 l3,3"></path>
+        </svg><svg width="30" height="30" id="btnSelectNext">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M5,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M19,30 v-10"></path>
+            <path stroke="black" stroke-width="1" d="M16,23 l3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M19,20 l3,3"></path>
+        </svg><br /><br />
+        The selected segment can be moved left or right by clicking these buttons, respectively:<br />
+        <svg width="30" height="30" id="btnMoveLeft">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M19,12 h-18"></path>
+            <path stroke="black" stroke-width="1" d="M1,12 l3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M1,12 l3,3"></path>
+        </svg><svg width="30" height="30" id="btnMoveRight">
+            <path d="M5,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M15,1 h8 v20 h-8 z" class="z0"></path>
+            <path d="M5,23 h8 v3 h-8 z"></path>
+            <path stroke="black" stroke-width="1" d="M8,12 h18"></path>
+            <path stroke="black" stroke-width="1" d="M26,12 l-3,-3"></path>
+            <path stroke="black" stroke-width="1" d="M26,12 l-3,3"></path>
+        </svg><br /><br />
+        And the currently selected sement can be deleted by clicking this button:<br />
+        <svg width="30" height="30" id="btnDelete">
+            <path d="M10,1 h10 v20 h-10 z" class="z0"></path>
+            <path d="M10,23 h10 v3 h-10 z"></path>
+            <path stroke="red" stroke-width="1" d="M8,6 l14,10 M8,16 l14,-10"></path>
+        </svg><br /><br />
+        The input fields below the chart are automatically enabled and disabled based on the segment type of the currently selected segment.<br /><br />
+        To add a cadence requirement to the selected segment, click the<svg height="12" width="16"><path style="fill:none;" stroke="black" stroke-width="1" d="M8,6 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,6 l-5.5,-5.5 M11.5,9.5 l1.75,1.75"></path></svg> button, check the box and set the cadence target(s). <br /><br />
+        To add text events to the selected segment, click the <span style="font-family:'Times New Roman',Times,serif;font-weight:bold">T</span> button and add, remove, and modify text events in the popup window as needed.<br /><br />
+        When you're done editing a workout, there are two options for saving it: save it inside your browser or download the .zwo file.  
+        Workouts saved in your browser are accessible via the "My Workouts" link at the bottom of the page.  Downloaded .zwo files can 
+        be placed in your Zwift workout folder.<br /><br />
+        The editor is also capable of loading existing .zwo files.  Drag a .zwo file from your computer and drop it inside the workout chart area,
+        and the workout will be loaded in the editor!
+    </p>
+</div>
+
+<div>
+    <a data-toggle>What are "My Workouts"</a>
+    <p class="invisible">
+        My workouts
+    </p>
+</div>
+
+<div>
+    <a data-toggle>What are "Workout Templates"?</a>
+    <p class="invisible">
+        Workout templates
+    </p>
+</div>
+
 <div>
     <a data-toggle>How is zwofactory.com the coolest?</a>
-    <p class="invisible">Because I said so.</p>
+    <p class="invisible">
+        Because I said so.
+    </p>
 </div>
 </main>
 

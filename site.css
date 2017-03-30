@@ -1,5 +1,5 @@
 
-html { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-weight: bold; padding:0; color: #555; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: #456; }
+html { font-family: Segoe UI, Arial, Helvetica, sans-serif; padding:0; color: #555; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: #468; }
 body {  margin: auto; max-width: 1200px; }
 header,main,footer { background-color: white; padding: 1em; border-radius: 0.25em; border: 1px solid black; display: block; }
 header { border-top-left-radius: 0; border-top-right-radius: 0; border-top: none; padding: 0.5em 0; margin-bottom: 10px; }
@@ -9,7 +9,7 @@ header a { text-decoration: none; }
 a { display: block; color: #456; cursor:pointer; text-decoration: underline; }
 h1 { padding: 0; margin: 0; text-align: center; }
 hr { margin: 18px 0; border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(68, 85, 102, 0.75), rgba(0, 0, 0, 0)); }
-p {padding-top: 0.35em}
+p {padding: 1em}
 li {padding: 0.3em;}
 label { display: block; }
 .grid { display: flex; flex-flow: row wrap; align-content: flex-start; letter-spacing: -.31em; vertical-align: bottom; }
@@ -36,8 +36,7 @@ input[type=number] { text-align: center; min-width: 62px; }
 *:focus { outline: none; }
 button { width: 100%; padding: 0.5em; cursor: pointer;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid black; border-radius: 10px; background-color: gainsboro; }
 button.save { background-color: #456; color: white; font-weight: bold; }
-button.save > .saved { opacity: 0; transition-property: opacity; transition-duration: 0.5s;  }
-button.save > :not(.saved) { opacity: 1;}
+.saved { opacity: 0; transition-property: opacity; transition-duration: 1s;  }
 svg { display: inline-block; }
 
 .z0 { fill: gainsboro; }
