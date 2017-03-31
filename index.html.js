@@ -247,9 +247,15 @@ document.getElementById('btnSaveToMyWorkouts').addEventListener('click', functio
 
 
 document.getElementById('btnDownloadZwoFile').addEventListener('click', function() {
+    if (!currentWorkout.name)  {
+        var name = getName();
+        currentWorkout.name = name;
+        document.getElementById('txtName').value = name;
+    }
+
     var xml = currentWorkout.toZwoXml();
     var blob = new Blob([xml], {type: "application/xml"});
-    var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
+    var fileName = currentWorkout.name.replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
     saveAs(blob, fileName);
 });
 
