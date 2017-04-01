@@ -1,0 +1,18 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5 - CrissCross Crushers</name>
+    <description>This is a solid workout at just below your threshold and then doing short, but hard little bursts above!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <IntervalsT Repeat="5" OnDuration="30.000002" OffDuration="210.00002" OnPower="1.6" OffPower="0.875"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="300" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="1.1500001"/>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,12 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5</name>
+    <description>Today is simple, ride the prescribed time your Endurance Zone (Power Z2, HR Z2, RPE 2-3). Vary your cadence throughout ride and work on pedaling form. Practice "coming over the top" and "pulling through the bottom" of the pedal (pretend there is glass in shoes). Enjoy the day!! Terrain: Flat to Rolling; Cadence: 85 - 105.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.5" PowerHigh="0.70000005"/>
+        <SteadyState Duration="7200.0005" Power="0.72500002"/>
+        <Cooldown Duration="600" PowerLow="0.70000005" PowerHigh="0.5"/>
+    </workout>
+</workout_file>

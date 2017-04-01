@@ -1,0 +1,12 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5</name>
+    <description>Build some time on the bike today with a nice Endurance ride!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.24976189" PowerHigh="0.74976188"/>
+        <SteadyState Duration="2700.0002" Power="0.74023807"/>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

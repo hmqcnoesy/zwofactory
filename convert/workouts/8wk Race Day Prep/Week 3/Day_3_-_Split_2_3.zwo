@@ -1,0 +1,13 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Day 3 - Split 2/3</name>
+    <description>This session is best done indoors on the trainer (A split session, Zone 2 followed by Zone 3). Watch the rpm's change to activate different energy system's and work the legs and lungs.  A cardio workout followed by a leg workout. No recovery between the efforts, so straight into the Zone 3 block from the 30 mins @ zone 2 </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <SteadyState Duration="1800.0001" Power="0.81449997"/>
+        <SteadyState Duration="1200" Power="0.95449996"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,32 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6 - Pyramid of Power</name>
+    <description>Ah, such a great workout and pyramid! Go for it!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.39999998" PowerHigh="0.60000002"/>
+        <SteadyState Duration="300" Power="0.69999999"/>
+        <SteadyState Duration="120.00001" Power="0.40000001"/>
+        <SteadyState Duration="180.00002" Power="1.05"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="1.1"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="90.000008" Power="1.15"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="60.000004" Power="1.2"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="30.000002" Power="1.25"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="60.000004" Power="1.2"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="90.000008" Power="1.15"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="1.1"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="1.05"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.69999999"/>
+        <Cooldown Duration="600" PowerLow="0.60000002" PowerHigh="0.30000001"/>
+    </workout>
+</workout_file>

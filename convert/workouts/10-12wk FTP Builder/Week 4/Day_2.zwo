@@ -1,0 +1,16 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 2</name>
+    <description>SFR/Tempo</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <Ramp Duration="300" PowerLow="0.85000002" PowerHigh="0.89999998"/>
+        <Ramp Duration="120.00001" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <Ramp Duration="300" PowerLow="0.85000002" PowerHigh="0.89999998"/>
+        <Ramp Duration="120.00001" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <IntervalsT Repeat="4" OnDuration="180.00002" OffDuration="180.00002" OnPower="0.875" OffPower="0.52499998"/>
+        <Cooldown Duration="600" PowerLow="0.64999998" PowerHigh="0.5"/>
+    </workout>
+</workout_file>

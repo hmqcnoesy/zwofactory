@@ -1,0 +1,23 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2</name>
+    <description>Hilly Endurance ride with VO2 Max Builders</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <SteadyState Duration="660.00006" Power="0.73449999"/>
+        <SteadyState Duration="300" Power="1.0944999"/>
+        <SteadyState Duration="300" Power="0.62450004"/>
+        <SteadyState Duration="300" Power="0.73116636"/>
+        <SteadyState Duration="240.00002" Power="1.0944999"/>
+        <SteadyState Duration="300" Power="0.61283338"/>
+        <SteadyState Duration="300" Power="0.73950005"/>
+        <SteadyState Duration="180.00002" Power="1.0944999"/>
+        <SteadyState Duration="300" Power="0.61283356"/>
+        <SteadyState Duration="300" Power="0.73449999"/>
+        <SteadyState Duration="120.00001" Power="1.0944999"/>
+        <SteadyState Duration="300" Power="0.65000004"/>
+        <Cooldown Duration="900.00006" PowerLow="0.65449995" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

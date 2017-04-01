@@ -1,0 +1,27 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4 - Tractor Pulls!</name>
+    <description>Tractor Pulls help to build muscular strength and even improve your sprint!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="300" Power="1"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <IntervalsT Repeat="10" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.6" OffPower="0.875"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <IntervalsT Repeat="5" OnDuration="60.000004" OffDuration="60.000004" OnPower="1.6" OffPower="0.875">
+            <textevent timeoffset="0" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="60.000004" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="180.00002" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="300" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="420.00003" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="540" message="85 RPM CADENCE!"/>
+        </IntervalsT>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

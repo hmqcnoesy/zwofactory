@@ -1,0 +1,55 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 1 - Cadence drills</name>
+    <description>Don't worry too much with watts or HR in this one. Just make it a fun and challenging trainer ride.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <SteadyState Duration="1200" Power="0.72500002">
+            <textevent timeoffset="0" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="60.000004" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="180.00002" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="300" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="420.00003" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="540" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="600" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="660.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="720.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="780.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="840.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="900.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="960.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="1020.0001" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="1080" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="1140" message="85 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.875">
+            <textevent timeoffset="0" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="20" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="140" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="260" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="380.00003" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="500.00003" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="600" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="620" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="720.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="740.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="840.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="860.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="960.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="980.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="1080" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="1100" message="85 RPM CADENCE!"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

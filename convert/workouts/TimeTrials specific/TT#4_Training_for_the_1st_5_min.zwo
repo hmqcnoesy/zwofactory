@@ -1,0 +1,35 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>TT#4 Training for the 1st 5 min</name>
+    <description>This workout has the goal to help the cardio-respiratory system reach the maximum efficiency without an excessive lactic acid accumulation at the start of a Time Trial, helping raise the Vo2 max (directly correlated to heart rate) as fast as possible.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.39999998" PowerHigh="0.75"/>
+        <SteadyState Duration="120.00001" Power="0.50999999"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+        <Ramp Duration="30.000002" PowerLow="0.54999995" PowerHigh="1"/>
+        <SteadyState Duration="90.000008" Power="1"/>
+        <SteadyState Duration="120.00001" Power="0.27500001"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,61 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3 - Cadence &amp; Heartrate</name>
+    <description>Let's see how cadence affects that HR at 85% of FT watts. Try a cadence of 105 rpm at 85% watts for 10 minutes and let's see what your HR does. Then 5 minutes easy. Then let's try cadence of 90 rpm at 85% of FT watts for 10 minutes, 5 minutes easy, then let's see what cadence of 75 rpm at 85% watts for 10 minutes does to your HR.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="110-130 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="110-130 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="110-130 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="110-130 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="110-130 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="900.00006" Power="0.875">
+            <textevent timeoffset="0" message="HOLD CADENCE OF 105 RPM!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="900.00006" Power="0.875">
+            <textevent timeoffset="0" message="HOLD CADENCE OF 90 RPM!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="900.00006" Power="0.875">
+            <textevent timeoffset="0" message="HOLD CADENCE OF 75 RPM!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </SteadyState>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.70000005">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </Cooldown>
+    </workout>
+</workout_file>

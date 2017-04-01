@@ -1,0 +1,66 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2 - Strength</name>
+    <description>Strength training: A certain repetition of short and maximal efforts with the goal to increase neuromuscular recruitment and maximum specific strength.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="360.00003" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="240.00002" Power="0.72500002"/>
+        <SteadyState Duration="170.00002" Power="0.875"/>
+        <SteadyState Duration="10" Power="1.6"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="600" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <SteadyState Duration="10" Power="1.6">
+            <textevent timeoffset="0" message="BIG GEAR, LOW SPEED/CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="110.00001" Power="0.52499998"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005">
+            <textevent timeoffset="0" message="100 RPM CADENCE!"/>
+        </Cooldown>
+    </workout>
+</workout_file>

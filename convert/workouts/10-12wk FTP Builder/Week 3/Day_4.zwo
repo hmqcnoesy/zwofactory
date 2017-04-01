@@ -1,0 +1,25 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 4</name>
+    <description>Tempo</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.44999999" PowerHigh="0.55000001"/>
+        <Ramp Duration="600" PowerLow="0.64999998" PowerHigh="0.75"/>
+        <SteadyState Duration="120.00001" Power="0.88499999"/>
+        <SteadyState Duration="360.00003" Power="0.82499999"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.88499999"/>
+        <SteadyState Duration="360.00003" Power="0.82499999"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.88499999"/>
+        <SteadyState Duration="360.00003" Power="0.82499999"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.88499999"/>
+        <SteadyState Duration="360.00003" Power="0.82499999"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <IntervalsT Repeat="5" OnDuration="60.000004" OffDuration="180.00002" OnPower="1.025" OffPower="0.72500002"/>
+        <Cooldown Duration="300" PowerLow="0.64999998" PowerHigh="0.5"/>
+    </workout>
+</workout_file>

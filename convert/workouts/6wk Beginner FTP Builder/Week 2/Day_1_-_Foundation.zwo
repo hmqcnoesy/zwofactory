@@ -1,0 +1,41 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 1 - Foundation</name>
+    <description>Foundation training: Relatively low intensity ride with goal of spending a large proportion of the ride into Endurance Zone 2.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="360.00003" Power="0.72500002">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="0.72500002">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="0.72500002">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="0.72500002">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="0.72500002">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998">
+            <textevent timeoffset="0" message="90-100 RPM CADENCE!"/>
+        </SteadyState>
+        <Cooldown Duration="300" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

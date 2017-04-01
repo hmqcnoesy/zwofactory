@@ -1,0 +1,38 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4 - Tempo</name>
+    <description>Tempo training: The goal of this training is to spend time in Zone 3 at an intensity where the use of sugar and fats as fuel is equal. Time spent in this zone increases muscle glycogen storages.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="300" Power="0.875">
+            <textevent timeoffset="0" message="95 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875">
+            <textevent timeoffset="0" message="95 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875">
+            <textevent timeoffset="0" message="95 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875">
+            <textevent timeoffset="0" message="95 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.875"/>
+        <SteadyState Duration="180.00002" Power="1"/>
+        <SteadyState Duration="180.00002" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.875"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+    </workout>
+</workout_file>

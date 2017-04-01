@@ -1,0 +1,62 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6 - LONG day</name>
+    <description>GO long! This will challenge you mentally and physically! It's an indoor 3 hour session with major efforts and a ton of great work! Make sure you have plenty of water set up beside you, food to eat and all the remote controls, telephones near by, so you can access them without getting off the bike. I recommend getting off the bike for at least 5-7 minutes every hour and stretching out a bit and taking a bathroom break as well.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="2100" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <IntervalsT Repeat="10" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.875" OffPower="0.875" OverUnder="1">
+            <textevent timeoffset="0" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="60.000004" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="180.00002" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="300" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="420.00003" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="540" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="600" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="660.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="720.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="780.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="840.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="900.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="960.00006" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="1020.0001" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="1080" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="1140" message="85 RPM CADENCE!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <IntervalsT Repeat="6" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.875" OffPower="0.875" OverUnder="1">
+            <textevent timeoffset="0" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="60.000004" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="180.00002" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="300" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="420.00003" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="540" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="600" message="105 RPM CADENCE!"/>
+            <textevent timeoffset="660.00006" message="85 RPM CADENCE!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <Ramp Duration="720.00006" PowerLow="0.85000002" PowerHigh="1.05"/>
+        <SteadyState Duration="600" Power="0.72500002"/>
+        <Ramp Duration="720.00006" PowerLow="0.85000002" PowerHigh="1.05"/>
+        <SteadyState Duration="1080" Power="1"/>
+        <SteadyState Duration="600" Power="0.72500002"/>
+        <IntervalsT Repeat="4" OnDuration="30.000002" OffDuration="90.000008" OnPower="1.6" OffPower="0.72500002"/>
+        <Cooldown Duration="480.00003" PowerLow="0.75" PowerHigh="0.70000005">
+            <textevent timeoffset="0" message="Congrats!!!! YOU DID IT!!!"/>
+        </Cooldown>
+    </workout>
+</workout_file>

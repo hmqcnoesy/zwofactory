@@ -1,0 +1,25 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2</name>
+    <description>Spend 10 minutes warming up in Zone 2. Follow with 15 minutes of cadence drills, ending with some hard intervals and a 10 minute cool down.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <FreeRide Duration="900.00006" FlatRoad="1">
+            <textevent timeoffset="0" message="53:15 - 50-60 rpm: PUSH the gear!"/>
+            <textevent timeoffset="60.000004" message="39:15 - 90 rpm"/>
+            <textevent timeoffset="120.00001" message="53:16 - 50-60 rpm: Resistance training on the bike."/>
+            <textevent timeoffset="180.00002" message="39:16 - 90 rpm"/>
+            <textevent timeoffset="240.00002" message="53:15 - 50-60 rpm - GRIND!"/>
+            <textevent timeoffset="300" message="39:15 - 100 rpm"/>
+            <textevent timeoffset="360.00003" message="53:14 - 50-60 rpm - PEDAL SMOOTHLY"/>
+            <textevent timeoffset="420.00003" message="39:14 - 110 rpm"/>
+            <textevent timeoffset="480.00003" message="53:13 - 50-60 rpm"/>
+            <textevent timeoffset="540" message="39:13 - 110 rpm"/>
+            <textevent timeoffset="600" message="53:19 - 90 rpm"/>
+        </FreeRide>
+        <IntervalsT Repeat="6" OnDuration="30.000002" OffDuration="60.000004" OnPower="1.1500001" OffPower="0.875"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

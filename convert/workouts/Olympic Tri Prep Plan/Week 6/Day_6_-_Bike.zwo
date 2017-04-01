@@ -1,0 +1,20 @@
+<workout_file>
+    <author>QT2</author>
+    <name>Day 6 - Bike</name>
+    <description>Bike - 40 min.
+-10 min. @ 45% FTP
+-10 min. @ 55% FTP (insert 30 sec. @ 100% FTP)
+-10 min. @ 60% FTP (insert 30 sec. @ 100% FTP)
+-10 min. @ 65% FTP (insert 30 sec. @ 100% FTP)</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="600" Power="0.45449999"/>
+        <SteadyState Duration="30.000002" Power="1.0044999"/>
+        <SteadyState Duration="600" Power="0.55449998"/>
+        <SteadyState Duration="30.000002" Power="1.0044999"/>
+        <SteadyState Duration="600" Power="0.6045"/>
+        <SteadyState Duration="30.000002" Power="1.0044999"/>
+        <SteadyState Duration="600" Power="0.65449995"/>
+    </workout>
+</workout_file>

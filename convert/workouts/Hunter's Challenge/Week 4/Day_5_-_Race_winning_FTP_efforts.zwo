@@ -1,0 +1,18 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5 - Race winning FTP efforts</name>
+    <description>The goal of this exercise is to start out too hard in order to load up the system, and then demand a steady output for a short period of time, then scaling back in order to prevent from exploding, and forcing you to hold just at your threshold power or a touch above. In the end you finally ramp back up in order to push in the very end.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <SteadyState Duration="300" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <Ramp Duration="360.00003" PowerLow="0.95999992" PowerHigh="1.1"/>
+        <Ramp Duration="420.00003" PowerLow="0.95999992" PowerHigh="1.1"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <Ramp Duration="360.00003" PowerLow="0.95999992" PowerHigh="1.1"/>
+        <Ramp Duration="420.00003" PowerLow="0.95999992" PowerHigh="1.1"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

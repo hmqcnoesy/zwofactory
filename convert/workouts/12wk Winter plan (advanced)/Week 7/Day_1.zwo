@@ -1,0 +1,29 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 1</name>
+    <description>Today is a day to push yourself! During the workout try to keep your cadence above 100 rpm for the hard efforts, dropping to an easy spin during the rests.Warm up to Tempo, followed up by 5 minutes at FTP. Next up, 5 x 1 intervals at V02 Max for a one minute out of the saddle effort with 1 minute rest. Follow up with 10 minutes at Tempo,and some one legged efforts. Which leg is stronger? Which leg is smoother? Finish up with an easy cooldown in the 39x17 gear at Active Recovery.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.25" PowerHigh="0.89999998"/>
+        <SteadyState Duration="300" Power="1"/>
+        <SteadyState Duration="60.000004" Power="0.5"/>
+        <IntervalsT Repeat="5" OnDuration="60.000004" OffDuration="60.000004" OnPower="1.05" OffPower="0.5"/>
+        <SteadyState Duration="600" Power="0.94999999"/>
+        <SteadyState Duration="600" Power="0.5">
+            <textevent timeoffset="0" message="Right leg only!"/>
+            <textevent timeoffset="62.881496" message="Left leg only!"/>
+            <textevent timeoffset="61.264748" message="Text..."/>
+            <textevent timeoffset="122.88195" message="Right leg only!"/>
+            <textevent timeoffset="180.00005" message="Left leg only!"/>
+            <textevent timeoffset="242.88205" message="Right leg only!"/>
+            <textevent timeoffset="300.00018" message="Left leg only!"/>
+            <textevent timeoffset="360.00009" message="Right leg only!"/>
+            <textevent timeoffset="422.88211" message="Left leg only!"/>
+            <textevent timeoffset="421.50864" message="Text..."/>
+            <textevent timeoffset="482.88177" message="Right leg only!"/>
+            <textevent timeoffset="542.88196" message="Left leg only!"/>
+        </SteadyState>
+        <Cooldown Duration="300" PowerLow="0.5" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,97 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4 - Cadence drills</name>
+    <description>Don't worry too much with watts or HR in this one. Just make it a fun and challenging trainer ride. 10 minutes fast warm-up with Cadence in 90-95 range and at 75% of FTP or 80% of FT HR. Then a 5 minute rest followed by 20 minutes of sweet spot pedaling with 10 bursts for 20 seconds each.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.70000005" PowerHigh="0.75">
+            <textevent timeoffset="0" message="90-95 RPM CADENCE"/>
+        </Warmup>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="100-140 RPM HIGH CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="0.875">
+            <textevent timeoffset="0" message="80-90 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002">
+            <textevent timeoffset="0" message="65 RPM EASY CADENCE"/>
+        </SteadyState>
+        <SteadyState Duration="1200" Power="0.875">
+            <textevent timeoffset="0" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="140" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="260" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="280" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="400.00003" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="420.00003" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="540" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="560" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="680.00006" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="700.00006" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="820.00006" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="840.00006" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="960.00006" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="980.00006" message="80-100 RPM CADENCE!"/>
+            <textevent timeoffset="1100" message="110 RPM CADENCE!"/>
+            <textevent timeoffset="1120" message="80-100 RPM CADENCE!"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005">
+            <textevent timeoffset="0" message="60-75 RPM EASY CADENCE"/>
+        </Cooldown>
+    </workout>
+</workout_file>

@@ -1,0 +1,22 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2 - Intermittent</name>
+    <description>Intermittent: This training is a way to introduce short high intensity riding alterating  it with short recovery, allowing the rider to recover and accumulate time at an intensity that would be difficult to maintain if ridden consecutively.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <IntervalsT Repeat="6" OnDuration="30.000002" OffDuration="30.000002" OnPower="1" OffPower="0.72500002"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+        <IntervalsT Repeat="6" OnDuration="30.000002" OffDuration="30.000002" OnPower="1" OffPower="0.72500002"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+        <IntervalsT Repeat="6" OnDuration="30.000002" OffDuration="30.000002" OnPower="1" OffPower="0.72500002"/>
+        <SteadyState Duration="240.00002" Power="0.52499998"/>
+    </workout>
+</workout_file>

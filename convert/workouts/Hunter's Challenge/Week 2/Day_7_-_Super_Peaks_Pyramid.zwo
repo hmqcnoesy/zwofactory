@@ -1,0 +1,60 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 7 - Super Peaks Pyramid</name>
+    <description>This is a great indoor trainer workout to do in order to get in some short intensity in the anaerobic capacity zone. This is nice to do every two weeks throughout the winter, so that you can just keep this system in check. Don't worry, you won't overdo it by doing this workout in the winter, just do it every two weeks and that will be great!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <SteadyState Duration="300" Power="0.875">
+            <textevent timeoffset="0" message="90 RPM CADENCE ON BIG RING!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002">
+            <textevent timeoffset="0" message="100 RPM CADENCE ON SMALL RING!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="1">
+            <textevent timeoffset="0" message="85-95 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="180.00002" Power="1">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="90.000008" Power="1.1500001">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="30.000002" Power="1.1500001">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="60.000004" Power="1.6">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="90.000008" Power="1.6">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="1">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="180.00002" Power="1">
+            <textevent timeoffset="0" message="85-95 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.875">
+            <textevent timeoffset="0" message="90 RPM CADENCE ON BIG RING!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.72500002">
+            <textevent timeoffset="0" message="100 RPM CADENCE ON SMALL RING!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

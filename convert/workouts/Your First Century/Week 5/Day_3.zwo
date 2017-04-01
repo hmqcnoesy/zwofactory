@@ -1,0 +1,14 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3</name>
+    <description>SST intervals are part of a continued effort to build and maintain base. Warm up in Endurance with 2 x 1 minute Fast Pedals (fast as you can pedal without bouncing in the saddle) to wake up your legs. Complete 2 x 17 minute intervals in the "Sweet Spot" zone with 5 minutes recovery in-between. Ride all other time in Endurance. Cadence: 85 - 105 rpm.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25" PowerHigh="0.75"/>
+        <SteadyState Duration="1080" Power="0.75"/>
+        <IntervalsT Repeat="2" OnDuration="1020.0001" OffDuration="300" OnPower="0.84999996" OffPower="0.5"/>
+        <SteadyState Duration="1080" Power="0.75374627"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

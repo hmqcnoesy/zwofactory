@@ -1,0 +1,10 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5 - Optional</name>
+    <description>Ride as you feel. No intervals. Go hard if you feel to.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <FreeRide Duration="2700.0002" FlatRoad="1"/>
+    </workout>
+</workout_file>

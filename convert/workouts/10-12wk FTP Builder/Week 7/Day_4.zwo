@@ -1,0 +1,17 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 4</name>
+    <description>Threshold Dev</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <Ramp Duration="300" PowerLow="0.5" PowerHigh="1"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.875"/>
+        <SteadyState Duration="60.000004" Power="1"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <IntervalsT Repeat="2" OnDuration="720.00006" OffDuration="480.00003" OnPower="0.875" OffPower="0.52499998"/>
+        <IntervalsT Repeat="4" OnDuration="300" OffDuration="120.00001" OnPower="1" OffPower="0.52499998"/>
+    </workout>
+</workout_file>

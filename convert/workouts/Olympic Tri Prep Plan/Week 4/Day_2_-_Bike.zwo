@@ -1,0 +1,16 @@
+<workout_file>
+    <author>QT2</author>
+    <name>Day 2 - Bike</name>
+    <description>Bike - 100 min. 
+-30 min. warm up
+-30 min. big gear 70 rpm @ 88% FTP
+-30 min. cool @ 60% FTP</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.50449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="4" OnDuration="300" OffDuration="180.00002" OnPower="1.0545" OffPower="0.50449997"/>
+        <IntervalsT Repeat="2" OnDuration="150" OffDuration="150" OnPower="1.1344999" OffPower="0.6045"/>
+        <SteadyState Duration="1680.0001" Power="0.6045"/>
+    </workout>
+</workout_file>

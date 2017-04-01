@@ -1,0 +1,20 @@
+<workout_file>
+    <author>QT2</author>
+    <name>Day 4 - Bike</name>
+    <description>Bike - 105 min.
+-30 min. warm up
+-1x (10 min. @ 89% FTP, 5 min. @ 55% FTP)
+-1x (10 min. @ 91% FTP, 5 min. @ 55% FTP)
+-45 min. cool @ 60% FTP 
+  </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1800.0001" PowerLow="0.50449997" PowerHigh="0.75449997"/>
+        <SteadyState Duration="600" Power="0.79449993"/>
+        <SteadyState Duration="300" Power="0.55449998"/>
+        <SteadyState Duration="600" Power="0.81449997"/>
+        <SteadyState Duration="300" Power="0.55449998"/>
+        <Cooldown Duration="2700.0002" PowerLow="0.60450006" PowerHigh="0.40450004"/>
+    </workout>
+</workout_file>

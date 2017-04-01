@@ -1,0 +1,14 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3</name>
+    <description>Focus on riding most of the prescribed time in Endurance. During the workout, you will also complete 1 x 35 minute TEMPO effort. Try "mixing" your spin cadence during the tempo effort by trading off between a faster and slower cadence throughout the interval.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25" PowerHigh="0.75"/>
+        <SteadyState Duration="900.00006" Power="0.75"/>
+        <SteadyState Duration="2100" Power="0.81"/>
+        <SteadyState Duration="900.00006" Power="0.75"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

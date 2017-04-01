@@ -1,0 +1,14 @@
+<workout_file>
+    <author>QT2</author>
+    <name>Day 7 - Bike</name>
+    <description>Bike - 65 min.-20 min. warm up
+-8x (20 sec. @ 135% FTP @ 85-90 rpm, 30 sec. total rest)
+-35 min. cooldown</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1200" PowerLow="0.50449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="8" OnDuration="20" OffDuration="30.000002" OnPower="1.3544999" OffPower="0.1045"/>
+        <Cooldown Duration="2100" PowerLow="0.75449997" PowerHigh="0.50449997"/>
+    </workout>
+</workout_file>

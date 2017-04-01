@@ -1,0 +1,69 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2 - Peaks Pedal Drills</name>
+    <description>This workout is to help you improve your pedal stroke.  Follow the instructions throughout the workout closely!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <IntervalsT Repeat="6" OnDuration="60.000004" OffDuration="120.00001" OnPower="1" OffPower="0.72500002">
+            <textevent timeoffset="0" message="STAND! 65 RPM CADENCE!"/>
+            <textevent timeoffset="10" message="FOCUS on your UPSTROKE!"/>
+            <textevent timeoffset="180.00002" message="STAND! 65 RPM CADENCE!"/>
+            <textevent timeoffset="190.00002" message="FOCUS on your UPSTROKE!"/>
+            <textevent timeoffset="360.00003" message="STAND! 65 RPM CADENCE!"/>
+            <textevent timeoffset="370.00003" message="FOCUS on your UPSTROKE!"/>
+            <textevent timeoffset="540" message="STAND! 65 RPM CADENCE!"/>
+            <textevent timeoffset="550" message="FOCUS on your UPSTROKE!"/>
+            <textevent timeoffset="720.00006" message="STAND! 65 RPM CADENCE!"/>
+            <textevent timeoffset="730.00006" message="FOCUS on your UPSTROKE!"/>
+            <textevent timeoffset="900.00006" message="STAND! 65 RPM CADENCE!"/>
+            <textevent timeoffset="910.00006" message="FOCUS on your UPSTROKE!"/>
+            <textevent timeoffset="1080" message="STAND! 65 RPM CADENCE!"/>
+            <textevent timeoffset="1090" message="FOCUS on your UPSTROKE!"/>
+        </IntervalsT>
+        <IntervalsT Repeat="6" OnDuration="60.000004" OffDuration="120.00001" OnPower="1" OffPower="0.72500002">
+            <textevent timeoffset="0" message="STAY SEATED! 65 RPM CADENCE!"/>
+            <textevent timeoffset="10" message="FOCUS on your DOWNSTROKE!"/>
+            <textevent timeoffset="20" message="PUSH with your HAMSTRINGS!"/>
+            <textevent timeoffset="180.00002" message="STAY SEATED! 65 RPM CADENCE!"/>
+            <textevent timeoffset="190.00002" message="FOCUS on your DOWNSTROKE!"/>
+            <textevent timeoffset="200.00002" message="PUSH with your HAMSTRINGS!"/>
+            <textevent timeoffset="360.00003" message="STAY SEATED! 65 RPM CADENCE!"/>
+            <textevent timeoffset="370.00003" message="FOCUS on your DOWNSTROKE!"/>
+            <textevent timeoffset="380.00003" message="PUSH with your HAMSTRINGS!"/>
+            <textevent timeoffset="540" message="STAY SEATED! 65 RPM CADENCE!"/>
+            <textevent timeoffset="550" message="FOCUS on your DOWNSTROKE!"/>
+            <textevent timeoffset="560" message="PUSH with your HAMSTRINGS!"/>
+            <textevent timeoffset="720.00006" message="STAY SEATED! 65 RPM CADENCE!"/>
+            <textevent timeoffset="730.00006" message="FOCUS on your DOWNSTROKE!"/>
+            <textevent timeoffset="740.00006" message="PUSH with your HAMSTRINGS!"/>
+            <textevent timeoffset="900.00006" message="STAY SEATED! 65 RPM CADENCE!"/>
+            <textevent timeoffset="910.00006" message="FOCUS on your DOWNSTROKE!"/>
+            <textevent timeoffset="920.00006" message="PUSH with your HAMSTRINGS!"/>
+            <textevent timeoffset="1080" message="STAY SEATED! 65 RPM CADENCE!"/>
+            <textevent timeoffset="1090" message="FOCUS on your DOWNSTROKE!"/>
+            <textevent timeoffset="1100" message="PUSH with your HAMSTRINGS!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <IntervalsT Repeat="8" OnDuration="60.000004" OffDuration="60.000004" OnPower="1" OffPower="0.72500002">
+            <textevent timeoffset="0" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="60.000004" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="180.00002" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="300" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="420.00003" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="540" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="600" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="660.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="720.00006" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="780.00006" message="85 RPM CADENCE!"/>
+            <textevent timeoffset="840.00006" message="120 RPM CADENCE!"/>
+            <textevent timeoffset="900.00006" message="85 RPM CADENCE!"/>
+        </IntervalsT>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,36 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5 - Optional</name>
+    <description>This optional training can be done in any other day of the week, not necessarily as last day.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="300" Power="0.52499998">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120" Power="0.72527272"/>
+        <SteadyState Duration="300" Power="0.52499998">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+    </workout>
+</workout_file>

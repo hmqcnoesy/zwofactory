@@ -1,0 +1,10 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 5</name>
+    <description>Foundation - Do this training in a fasted state (coffee allowed before)</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <FreeRide Duration="3600.0002" FlatRoad="1"/>
+    </workout>
+</workout_file>

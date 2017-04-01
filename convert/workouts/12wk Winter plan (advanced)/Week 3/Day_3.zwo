@@ -1,0 +1,36 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3</name>
+    <description>Spin for 1 minute with rpm &gt; 100 and then keep that pace while standing out of the saddle. Repeat this 5x for 10 minutes total. Then, spin at a moderate pace while listening to your body for 10 minutes. Follow this with 10 minutes of alternate one-legged pedaling.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.5" PowerHigh="1"/>
+        <IntervalsT Repeat="5" OnDuration="60.000004" OffDuration="60.000004" OnPower="1" OffPower="0.72500002">
+            <textevent timeoffset="0" message="100+ rpm: High Cadence!"/>
+            <textevent timeoffset="60.000004" message="80 rpm: Normal Cadence!"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.875"/>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="Left leg only!"/>
+            <textevent timeoffset="60.000004" message="Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="Left leg only!"/>
+            <textevent timeoffset="60.000004" message="Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="Left leg only!"/>
+            <textevent timeoffset="60.000004" message="Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="Left leg only!"/>
+            <textevent timeoffset="60.000004" message="Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="Left leg only!"/>
+            <textevent timeoffset="60.000004" message="Right leg only!"/>
+        </SteadyState>
+        <Cooldown Duration="300" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

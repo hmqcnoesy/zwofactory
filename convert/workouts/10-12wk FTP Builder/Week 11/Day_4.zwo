@@ -1,0 +1,22 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 4</name>
+    <description>Foundation - Do this training in a fasted state (coffee allowed before)</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+    </workout>
+</workout_file>

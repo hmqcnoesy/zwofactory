@@ -1,0 +1,16 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Day 1 - Strength Training</name>
+    <description>Start with a good warm up. Then 4 x 5 mins at FTP with 5 mins recovery between efforts, spin your legs easily for 10 minutes then 6 x 1 minute Upper Z6 power efforts with 2 minutes recovery in between - spin your legs out for 10 minutes then finally 10 x 15 second max sprint efforts with 45 seconds rest inbetweeen efforts. </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="4" OnDuration="300" OffDuration="300" OnPower="1.0044999" OffPower="0.50450003"/>
+        <SteadyState Duration="300" Power="0.50450003"/>
+        <IntervalsT Repeat="6" OnDuration="60.000004" OffDuration="120.00001" OnPower="1.2544999" OffPower="0.50450003"/>
+        <SteadyState Duration="450.00003" Power="0.50450003"/>
+        <IntervalsT Repeat="10" OnDuration="15.000001" OffDuration="45.000004" OnPower="1.7544999" OffPower="0.50450003"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

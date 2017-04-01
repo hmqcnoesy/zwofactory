@@ -1,0 +1,13 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3 - Earn your Bacon</name>
+    <description>Time to push it at your FTP and get a good long sweat in! GO for it!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <IntervalsT Repeat="4" OnDuration="600" OffDuration="300" OnPower="1" OffPower="0.72500002"/>
+        <IntervalsT Repeat="4" OnDuration="60.000004" OffDuration="60.000004" OnPower="1.6" OffPower="0.72500002"/>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,23 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5</name>
+    <description>Build some time on the bike today with an ENDURANCE Ride!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.58783358"/>
+        <SteadyState Duration="4500" Power="0.65449995">
+            <textevent timeoffset="300" message="Vary your cadence!"/>
+            <textevent timeoffset="600" message="Vary your cadence!"/>
+            <textevent timeoffset="900.00006" message="Vary your cadence!"/>
+            <textevent timeoffset="1200" message="Vary your cadence!"/>
+            <textevent timeoffset="1800.0001" message="Vary your cadence!"/>
+            <textevent timeoffset="2250" message="Half way there!"/>
+            <textevent timeoffset="2400" message="Vary your cadence!"/>
+            <textevent timeoffset="3000.0002" message="Vary your cadence!"/>
+            <textevent timeoffset="3600.0002" message="Vary your cadence!"/>
+            <textevent timeoffset="4200" message="Vary your cadence!"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.6045" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

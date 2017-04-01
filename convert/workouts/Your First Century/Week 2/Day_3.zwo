@@ -1,0 +1,13 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3</name>
+    <description>Long ride with group or alone, focus on riding most time in Endurance (Power Z2, HR Z2, RPE 2-3). Also complete 1 x 30-minute TEMPO effort, focusing on keeping watts at Tempo (Power Z3, HR Z3, RPE 3-4). Try "mixing" your spin cadence during the Tempo effort by trading off between a faster and slower cadence throughout the interval. Cadence 85 - 105 (80 - 90 in Tempo)</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <SteadyState Duration="3600.0002" Power="0.72500002"/>
+        <SteadyState Duration="1800.0001" Power="0.875"/>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

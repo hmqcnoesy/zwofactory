@@ -1,0 +1,16 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3</name>
+    <description>A slow burn warmup followed by 4 sets of intervals of increasing intesity. Remember to push it hard!!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25" PowerHigh="1"/>
+        <SteadyState Duration="60.000004" Power="0.5"/>
+        <IntervalsT Repeat="4" OnDuration="60.000004" OffDuration="60.000004" OnPower="1.25" OffPower="0.5"/>
+        <IntervalsT Repeat="4" OnDuration="90.000008" OffDuration="60.000004" OnPower="1.25" OffPower="0.5"/>
+        <IntervalsT Repeat="4" OnDuration="120.00001" OffDuration="300" OnPower="1.09" OffPower="0.5"/>
+        <IntervalsT Repeat="4" OnDuration="60.000004" OffDuration="60.000004" OnPower="1.25" OffPower="0.5"/>
+        <Cooldown Duration="600" PowerLow="0.50792551" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

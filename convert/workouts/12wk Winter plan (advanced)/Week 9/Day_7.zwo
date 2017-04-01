@@ -1,0 +1,13 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 7</name>
+    <description>Endurance ride. Set a pace at Endurance Power and hold this pace for the prescribed workout time. Focus on riding smooth and staying relaxed. Vary your cadence.
+	</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25450003" PowerHigh="0.70449996"/>
+        <SteadyState Duration="6000.0005" Power="0.70449996"/>
+        <Cooldown Duration="600" PowerLow="0.67116666" PowerHigh="0.25450003"/>
+    </workout>
+</workout_file>

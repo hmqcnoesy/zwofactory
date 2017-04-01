@@ -1,0 +1,22 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3</name>
+    <description>The goal today is to get in low rpm, high strength work. If you can't use the gearing suggested, that's OK! Go by the cadence and follow the spirit of the workout.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="960.00006" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <FreeRide Duration="900.00006" FlatRoad="1">
+            <textevent timeoffset="0" message="big ring 53:15 - 60-70 rpm: Pushing the gear."/>
+            <textevent timeoffset="300" message="39:15 - 100 rpm"/>
+            <textevent timeoffset="600" message="53:16 - 80-85 rpm"/>
+            <textevent timeoffset="900.00006" message="39:15 - 100 rpm"/>
+        </FreeRide>
+        <IntervalsT Repeat="8" OnDuration="8" OffDuration="30.000002" OnPower="1.1500001" OffPower="0.72500002"/>
+        <IntervalsT Repeat="8" OnDuration="8" OffDuration="60.000004" OnPower="1.1500001" OffPower="0.72500002"/>
+        <FreeRide Duration="300" FlatRoad="1">
+            <textevent timeoffset="5" message="Go hard for 5 min!"/>
+        </FreeRide>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

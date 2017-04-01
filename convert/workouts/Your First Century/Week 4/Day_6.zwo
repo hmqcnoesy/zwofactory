@@ -1,0 +1,18 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>Today is an Endurance ride with BURSTS! Ride the prescribed time in your Endurance Zone. Vary your cadence throughout the ride and work on pedaling form. Practice "coming over the top" and "pulling through the bottom" of the pedal (pretend there is glass in shoes). Do a burst at FTP every 5 minutes for 15 seconds each! Enjoy the day!! Cadence: 85 - 105.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25" PowerHigh="0.64999998">
+            <textevent timeoffset="420.00003" message="Fast pedal!"/>
+            <textevent timeoffset="480.00003" message="85 - 105 rpm"/>
+            <textevent timeoffset="540" message="Fast pedal!"/>
+            <textevent timeoffset="600" message="85 -105 rpm"/>
+        </Warmup>
+        <SteadyState Duration="300" Power="0.64999998"/>
+        <IntervalsT Repeat="17" OnDuration="15.000001" OffDuration="300" OnPower="0.94999999" OffPower="0.64999998"/>
+        <Cooldown Duration="900.00006" PowerLow="0.64999998" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,18 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Day 3 - Strength Endurance</name>
+    <description>This session is best done indoors on the trainer (A split session, Zone 2 followed by Zone 3). If short for time, drop the Zone 2 effort and go straight into the SE effort from the warm-up.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="1800.0001" Power="0.65449995"/>
+        <SteadyState Duration="300" Power="0.50450003"/>
+        <SteadyState Duration="600" Power="0.81449997">
+            <textevent timeoffset="0" message="70RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.81449997">
+            <textevent timeoffset="0" message="90RPM CADENCE!"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,75 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6 - Tractor Pulls!</name>
+    <description>Tractor Pulls help to build muscular strength and even improve your sprint! Make sure to slowly get into this gear, so start at less than 8mph, keep your hands in the drops, tighten your abdominals and stay seated for the entire interval. ONLY start the 30 second clock once you are in the gear and actually controlled and rolling smooth. Your cadence should be 40-50 RPM when you start and around 95rpm when you stop. This is about strength, not speed.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <SteadyState Duration="300" Power="1">
+            <textevent timeoffset="0" message="80-100 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <IntervalsT Repeat="6" OnDuration="30.000002" OffDuration="60.000004" OnPower="1" OffPower="1" OverUnder="1">
+            <textevent timeoffset="0" message="50-60 RPM CADENCE ON BIG GEAR!"/>
+            <textevent timeoffset="30.000002" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="90.000008" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="120.00001" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="180.00002" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="210.00002" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="270" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="300" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="360.00003" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="390.00003" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="450.00003" message="40-55 RPM CADENCE ON BIG GEAR!"/>
+            <textevent timeoffset="480.00003" message="40-90 RPM CADENCE ON NORMAL GEAR!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <IntervalsT Repeat="10" OnDuration="60.000004" OffDuration="60.000004" OnPower="1.1500001" OffPower="1">
+            <textevent timeoffset="0" message="40-55 RPM CADENCE ON BIG GEAR!"/>
+            <textevent timeoffset="60.000004" message="40-90 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="120.00001" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="180.00002" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="240.00002" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="300" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="360.00003" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="420.00003" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="480.00003" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="540" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="600" message="40-55 RPM CADENCE ON BIG GEAR!"/>
+            <textevent timeoffset="660.00006" message="40-90 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="720.00006" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="780.00006" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="840.00006" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="900.00006" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="960.00006" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="1020.0001" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+            <textevent timeoffset="1080" message="50-60 RPM CADENCE ON BIG RING!"/>
+            <textevent timeoffset="1200" message="50-100 RPM CADENCE ON NORMAL GEAR!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <IntervalsT Repeat="6" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.875" OffPower="0.72500002" OverUnder="1">
+            <textevent timeoffset="0" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="60.000004" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="180.00002" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="300" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="420.00003" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="540" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="600" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="660.00006" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="720.00006" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="780.00006" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="840.00006" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="900.00006" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="960.00006" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="1020.0001" message="110-125 RPM CADENCE!"/>
+            <textevent timeoffset="1080" message="110-125 RPM CADENCE ON SMALL RING!"/>
+            <textevent timeoffset="1200" message="110-125 RPM CADENCE!"/>
+        </IntervalsT>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

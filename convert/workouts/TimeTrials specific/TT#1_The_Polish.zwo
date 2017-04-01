@@ -1,0 +1,24 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>TT#1 The Polish</name>
+    <description>This workout has to be done when you have already have a solid aerobic base and are into the final phase of preparation.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="180.00002" Power="0.67500001"/>
+        <SteadyState Duration="120.00001" Power="0.85000002"/>
+        <SteadyState Duration="60.000004" Power="0.98000002"/>
+        <SteadyState Duration="30.000002" Power="1.13"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <IntervalsT Repeat="4" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.0550001" OffPower="0.95000005" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.27500001"/>
+        <IntervalsT Repeat="4" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.0550001" OffPower="0.95000005" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.27500001"/>
+        <IntervalsT Repeat="4" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.0550001" OffPower="0.95000005" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.27500001"/>
+        <IntervalsT Repeat="4" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.0550001" OffPower="0.95000005" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.27500001"/>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.45000002"/>
+    </workout>
+</workout_file>

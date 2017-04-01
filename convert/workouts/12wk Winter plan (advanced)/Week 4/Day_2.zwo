@@ -1,0 +1,10 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2</name>
+    <description>Today is an Active Recovery day. Focus on relaxing on the bike and enjoying the ride.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="3600.0002" Power="0.52499998"/>
+    </workout>
+</workout_file>

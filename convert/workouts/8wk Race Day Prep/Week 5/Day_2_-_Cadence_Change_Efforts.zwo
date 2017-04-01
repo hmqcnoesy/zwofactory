@@ -1,0 +1,103 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Day 2 - Cadence Change Efforts</name>
+    <description>Start with a 10 minute warm up - Zone 1. Then 40 minutes Zone 2, but for the first 20 seconds of each and every minute, lift your cadence to 110 rpm - whilst maintaining the same power. So lower the resistence/gear and raise your cadence. 10 min cool down</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <SteadyState Duration="2400" Power="0.65449995">
+            <textevent timeoffset="0" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="20" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="60.000004" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="80" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="120.00001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="140" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="180.00002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="200.00002" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="240.00002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="260" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="300" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="320" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="420.00003" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="440.00003" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="480.00003" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="500.00003" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="540" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="560" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="600" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="620" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="660.00006" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="680.00006" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="720.00006" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="740.00006" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="780.00006" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="800.00006" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="840.00006" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="860.00006" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="900.00006" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="920.00006" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1020.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1040" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1080" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1100" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1140" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1160" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1200" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1220" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1260" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1280" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1320.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1340.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1380.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1400.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1440.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1460.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1500.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1520.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1620.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1640.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1680.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1700.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1740.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1760.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1800.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1820.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1860.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1880.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1920.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="1940.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="1980.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2000.0001" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2040.0001" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2060" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2100" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2120" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2220" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2240" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2280" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2300" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2340" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2360" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2400" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2420" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2480" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2500" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2540" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2560" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2600.0002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2620.0002" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2680.0002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2700.0002" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2740.0002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2760.0002" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2800.0002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2820.0002" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2880.0002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2900.0002" message="80 RPM - NORMAL CADENCE!"/>
+            <textevent timeoffset="2940.0002" message="110 RPM - HIGH CADENCE!"/>
+            <textevent timeoffset="2960.0002" message="80 RPM - NORMAL CADENCE!"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

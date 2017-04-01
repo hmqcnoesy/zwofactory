@@ -1,0 +1,10 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 5</name>
+    <description>Optional</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <FreeRide Duration="2700.0002" FlatRoad="1"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,20 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>We're building endurance today! Warmup followed by 3 sets of fast pedals (as fast as you can pedal without bouncing in the saddle) to open up the legs, followed by a long endurance ride. Focus on staying relaxed on the bike and vary your cadence.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25" PowerHigh="0.75"/>
+        <SteadyState Duration="360.00003" Power="0.5">
+            <textevent timeoffset="60.000004" message="90 - 100 rpm"/>
+            <textevent timeoffset="120.00001" message="Fast pedal!"/>
+            <textevent timeoffset="180.00002" message="90 - 100 rpm"/>
+            <textevent timeoffset="240.00002" message="Fast pedal!"/>
+            <textevent timeoffset="300" message="90 - 100 rpm"/>
+            <textevent timeoffset="0" message="Fast pedal!"/>
+        </SteadyState>
+        <SteadyState Duration="9000" Power="0.72500002"/>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

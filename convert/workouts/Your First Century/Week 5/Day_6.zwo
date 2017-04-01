@@ -1,0 +1,22 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>Building endurance today! Warm up with 10 minutes in Endurance zone, with 3 x 1 minute fast pedals (as fast as you can pedal without bouncing in the saddle) with 1 minute rest between to open up your legs. Once you're warmed up, ride in your Endurance zone. Focus on staying relaxed on the bike and spinning circles whyile keeping your cadence between 90 -100 rpm. During the last hour of the ride you will complete 1 x 30 minute TEMPO effort keeping cadence at 75 - 85 rpm.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25" PowerHigh="0.75">
+            <textevent timeoffset="300" message="Fast pedal!"/>
+            <textevent timeoffset="360.00003" message="90 - 100 rpm"/>
+            <textevent timeoffset="420.00003" message="Fast pedal!"/>
+            <textevent timeoffset="480.00003" message="90 - 100 rpm"/>
+            <textevent timeoffset="540" message="Fast pedal!"/>
+            <textevent timeoffset="600" message="90 - 100 rpm"/>
+        </Warmup>
+        <SteadyState Duration="4200" Power="0.75">
+            <textevent timeoffset="4200" message="75 - 85 rpm"/>
+        </SteadyState>
+        <SteadyState Duration="1800.0001" Power="0.84999996"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

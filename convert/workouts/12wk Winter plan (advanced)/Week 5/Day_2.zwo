@@ -1,0 +1,29 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2</name>
+    <description>8 x 3 minutes at 50 rpm, pushing a big gear at 90% of FTP. The goal is to create more torque than watts. Stay seated for the entire effort and pull on handlebars to be able to push harder. If you need more resistance, increase the wattage.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <IntervalsT Repeat="8" OnDuration="180.00002" OffDuration="120.00001" OnPower="0.89999998" OffPower="0.56">
+            <textevent timeoffset="0" message="50 rpm"/>
+            <textevent timeoffset="180.00002" message="90 rpm"/>
+            <textevent timeoffset="300" message="50 rpm"/>
+            <textevent timeoffset="480.00003" message="90 rpm"/>
+            <textevent timeoffset="600" message="50 rpm"/>
+            <textevent timeoffset="780.00006" message="90 rpm"/>
+            <textevent timeoffset="900.00006" message="50 rpm"/>
+            <textevent timeoffset="1080" message="90 rpm"/>
+            <textevent timeoffset="1200" message="50 rpm"/>
+            <textevent timeoffset="1380.0001" message="90 rpm"/>
+            <textevent timeoffset="1500.0001" message="50 rpm"/>
+            <textevent timeoffset="1680.0001" message="90 rpm"/>
+            <textevent timeoffset="1800.0001" message="50 rpm"/>
+            <textevent timeoffset="1980.0001" message="90 rpm"/>
+            <textevent timeoffset="2100" message="50 rpm"/>
+            <textevent timeoffset="2280" message="90 rpm"/>
+        </IntervalsT>
+        <Cooldown Duration="900.00006" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

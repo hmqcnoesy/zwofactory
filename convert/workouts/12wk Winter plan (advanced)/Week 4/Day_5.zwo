@@ -1,0 +1,12 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5</name>
+    <description>Ride for 2.5 hours at an endurance pace. Vary your cadence while focusing on riding smoothly and staying relaxed.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="9000" Power="0.72500002"/>
+        <Cooldown Duration="900.00006" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

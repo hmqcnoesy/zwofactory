@@ -1,0 +1,43 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4 - Threshold Development</name>
+    <description>Threshold Development: This training is targeting the increase in lactate threshold (FTP) with relatively short intervals at intensity of Zone 4.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.875"/>
+        <SteadyState Duration="60.000004" Power="1"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.86000001">
+            <textevent timeoffset="0" message="60 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.88999999">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.86000001">
+            <textevent timeoffset="0" message="60 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.88999999">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.86000001">
+            <textevent timeoffset="0" message="60 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.88999999">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.86000001">
+            <textevent timeoffset="0" message="60 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.88999999">
+            <textevent timeoffset="0" message="90 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="1"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,12 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>Endurance ride. Set a pace at Endurance and hold this pace for the next 2.5 hours. Throughout the ride, do a 10x 10 second out-of-the-saddle bursts into your Neuromusclar Power Zone (MAX). Make sure cadence stays high</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="10" OnDuration="10" OffDuration="770.00006" OnPower="2.0044999" OffPower="0.70449996"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

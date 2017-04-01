@@ -1,0 +1,76 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 1 - The Quick Fix</name>
+    <description>Threshold and Vo2 Max! Just to make sure you are being honest and getting in your threshold and Vo2 Max work.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.85000002" PowerHigh="0.89999998">
+            <textevent timeoffset="0" message="80-100 RPM CADENCE!"/>
+        </Warmup>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="115 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1">
+            <textevent timeoffset="0" message="80 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="115 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1">
+            <textevent timeoffset="0" message="80 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="115 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1">
+            <textevent timeoffset="0" message="80 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="115 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1">
+            <textevent timeoffset="0" message="80 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="115 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1">
+            <textevent timeoffset="0" message="80 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.1500001">
+            <textevent timeoffset="0" message="115 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1">
+            <textevent timeoffset="0" message="80 RPM CADENCE!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="120.00001" Power="1"/>
+        <SteadyState Duration="30.000002" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <SteadyState Duration="300" Power="1.1500001"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <Cooldown Duration="600" PowerLow="0.89999998" PowerHigh="0.85000002"/>
+    </workout>
+</workout_file>

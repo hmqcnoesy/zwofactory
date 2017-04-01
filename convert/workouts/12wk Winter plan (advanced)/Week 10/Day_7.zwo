@@ -1,0 +1,18 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 7</name>
+    <description>Explosive Power Development!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="12.000001" OffDuration="24.000002" OnPower="2.0044999" OffPower="0.50450003"/>
+        <SteadyState Duration="900.00006" Power="0.92449999"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <IntervalsT Repeat="3" OnDuration="12.000001" OffDuration="24.000002" OnPower="2.0044999" OffPower="0.5"/>
+        <SteadyState Duration="900.00006" Power="0.92449999"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <SteadyState Duration="2784.0002" Power="0.81449997"/>
+        <Cooldown Duration="900.00006" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

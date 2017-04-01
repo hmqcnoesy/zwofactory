@@ -1,0 +1,25 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6 - FTP Test</name>
+    <description>This is your 8 week test. Warm up well and really CRUSH IT!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25450003" PowerHigh="0.80449998"/>
+        <SteadyState Duration="300" Power="1.0545">
+            <textevent timeoffset="255.00002" message="Hammer it!"/>
+        </SteadyState>
+        <SteadyState Duration="900.00006" Power="0.65000004">
+            <textevent timeoffset="840.00006" message="About to begin 20 minute FTP test!"/>
+            <textevent timeoffset="911.00006" message="Try to keep a steady pace that you can maintain for 20 minutes"/>
+        </SteadyState>
+        <FreeRide Duration="1200" FlatRoad="1">
+            <textevent timeoffset="30.000002" message="Don&apos;t start too hard!"/>
+            <textevent timeoffset="600" message="Half way done... pick up the power!"/>
+            <textevent timeoffset="900.00006" message="5 minutes left! Push it!"/>
+            <textevent timeoffset="1140" message="One minute left! Finish strong!"/>
+        </FreeRide>
+        <SteadyState Duration="600" Power="0.65449995"/>
+        <Cooldown Duration="600" PowerLow="0.65450025" PowerHigh="0.25450003"/>
+    </workout>
+</workout_file>

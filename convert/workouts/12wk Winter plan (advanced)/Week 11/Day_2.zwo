@@ -1,0 +1,12 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2</name>
+    <description>SST Intervals. On trainer, out on road or in a group, SST intervals are part of our continued effort to build and maintain base.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.24976189" PowerHigh="0.74976188"/>
+        <IntervalsT Repeat="3" OnDuration="1200" OffDuration="300" OnPower="0.92449999" OffPower="0.6645"/>
+        <Cooldown Duration="600" PowerLow="0.65449995" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

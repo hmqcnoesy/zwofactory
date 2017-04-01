@@ -1,0 +1,22 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 2</name>
+    <description>Threshold Dev</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <Ramp Duration="300" PowerLow="0.5" PowerHigh="1"/>
+        <SteadyState Duration="120.00001" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.875"/>
+        <SteadyState Duration="60.000004" Power="1"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <IntervalsT Repeat="3" OnDuration="120.00001" OffDuration="180.00002" OnPower="0.875" OffPower="1" OverUnder="1"/>
+        <SteadyState Duration="360.00003" Power="0.52499998"/>
+        <IntervalsT Repeat="3" OnDuration="120.00001" OffDuration="180.00002" OnPower="0.875" OffPower="1" OverUnder="1"/>
+        <SteadyState Duration="360.00003" Power="0.52499998"/>
+        <IntervalsT Repeat="3" OnDuration="120.00001" OffDuration="180.00002" OnPower="0.875" OffPower="1" OverUnder="1"/>
+        <SteadyState Duration="360.00003" Power="0.52499998"/>
+        <Cooldown Duration="300" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

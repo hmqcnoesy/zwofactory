@@ -1,0 +1,24 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>TT#3 Dynamic TT Course Work</name>
+    <description>This workout targets the specific demands of a twisty TT course. The 24 short intervals will help you train for accelerations out of the corners.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="180.00002" Power="0.67500001"/>
+        <SteadyState Duration="120.00001" Power="0.85000002"/>
+        <SteadyState Duration="60.000004" Power="0.98000002"/>
+        <SteadyState Duration="30.000002" Power="1.13"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <IntervalsT Repeat="6" OnDuration="10" OffDuration="50.000004" OnPower="1.625" OffPower="0.99000001"/>
+        <SteadyState Duration="240.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="6" OnDuration="10" OffDuration="50.000004" OnPower="1.625" OffPower="0.99000001"/>
+        <SteadyState Duration="240.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="6" OnDuration="10" OffDuration="50.000004" OnPower="1.625" OffPower="0.99000001"/>
+        <SteadyState Duration="240.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="6" OnDuration="10" OffDuration="50.000004" OnPower="1.625" OffPower="0.99000001"/>
+        <SteadyState Duration="240.00002" Power="0.27500001"/>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.54999995"/>
+    </workout>
+</workout_file>

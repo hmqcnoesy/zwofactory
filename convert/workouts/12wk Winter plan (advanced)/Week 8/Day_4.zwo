@@ -1,0 +1,23 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4</name>
+    <description>You get faster when you are resting and recovering, not when you are working hard!! Rest days are about going easy enough to really allow your legs to recover.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.2445" PowerHigh="0.6045"/>
+        <SteadyState Duration="300" Power="0.50450003"/>
+        <IntervalsT Repeat="7" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.65449995" OffPower="0.50450003" OverUnder="1">
+            <textevent timeoffset="0" message="High cadence! 125rpm!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.50450003"/>
+        <IntervalsT Repeat="7" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.65449995" OffPower="0.50450003" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.50450003"/>
+        <IntervalsT Repeat="7" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.65449995" OffPower="0.50450003" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.50450003"/>
+        <IntervalsT Repeat="7" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.65449995" OffPower="0.50450003" OverUnder="1"/>
+        <SteadyState Duration="300" Power="0.5"/>
+        <IntervalsT Repeat="7" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.65449995" OffPower="0.5"/>
+        <Cooldown Duration="600" PowerLow="0.60214287" PowerHigh="0.24976189"/>
+    </workout>
+</workout_file>

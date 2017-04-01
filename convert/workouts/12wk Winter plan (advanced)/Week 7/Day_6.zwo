@@ -1,0 +1,16 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>15 minute warm up working from Active recovery to Endurance with 2 x 1 minute fast pedals to wake up legs. Set a pace at Endurance and hold pace for the prescribed workout time. Focus on riding smooth and staying relaxed. Vary your cadence. Finish with 10 minutes of cool down to Active Recovery.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25" PowerHigh="0.75">
+            <textevent timeoffset="840.00006" message="Fast pedal!"/>
+            <textevent timeoffset="780.00006" message="85 - 105 rpm"/>
+            <textevent timeoffset="720.00006" message="Fast pedal!"/>
+        </Warmup>
+        <SteadyState Duration="3900.0002" Power="0.75"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,15 @@
+<workout_file>
+    <author>QT2</author>
+    <name>Day 6 - Bike</name>
+    <description>Bike - 120 min.
+-30 min. warm up
+-6x (5 min. @ 70% FTP, 5 min. @ 85% FTP)
+-30 min. cool @ 65% FTP</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="1800.0001" PowerLow="0.50449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="6" OnDuration="300" OffDuration="300" OnPower="0.70449996" OffPower="0.80449992" OverUnder="1"/>
+        <Cooldown Duration="600" PowerLow="0.65449995" PowerHigh="0.50449997"/>
+    </workout>
+</workout_file>

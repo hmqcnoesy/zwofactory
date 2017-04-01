@@ -1,0 +1,21 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4 - Tempo</name>
+    <description>Tempo training: The goal of this training is to spend time in Zone 3, an intensity where the use of sugar and fats as fuel is equal. Time spent in this zone increases muscle glycogen storages.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <IntervalsT Repeat="3" OnDuration="240.00002" OffDuration="120.00001" OnPower="0.875" OffPower="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.88999999"/>
+        <SteadyState Duration="180.00002" Power="0.86000001"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.88999999"/>
+        <SteadyState Duration="180.00002" Power="0.86000001"/>
+        <SteadyState Duration="180.00002" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.88999999"/>
+        <SteadyState Duration="180.00002" Power="0.86000001"/>
+        <SteadyState Duration="600" Power="0.72500002"/>
+        <Cooldown Duration="300" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,24 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5 - Optional</name>
+    <description>This optional training can be done in any other day of the week, not necessarily as last day. Also open the possibility to it in a fasted state.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,12 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>Today is simple, but long! ride the prescribed time in your Endurance Zone. Vary your cadence throughout ride and work on pedaling form. Practice "coming over the top" and "pulling through the bottom" of the pedal. Enjoy the day!!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.64449996"/>
+        <SteadyState Duration="11400.001" Power="0.65000004"/>
+        <Cooldown Duration="600" PowerLow="0.68449998" PowerHigh="0.25450003"/>
+    </workout>
+</workout_file>

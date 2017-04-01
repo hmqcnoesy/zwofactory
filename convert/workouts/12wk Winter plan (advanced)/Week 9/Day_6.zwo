@@ -1,0 +1,13 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>Building Endurance today! Once warmed up, ride in your ENDURANCE zone. Focus on staying relaxed on the bike and spinning circles while keeping cadence between 90-100. During the last hour of the ride complete 5 FORCE reps of 3-5 minutes each (5 minutes rest in-between) at Threshold Power. Force Reps are a big gear, low cadence effort targeting a cadence of 55-65 RPM.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.24976189" PowerHigh="0.74976188"/>
+        <SteadyState Duration="3900.0002" Power="0.70449996"/>
+        <IntervalsT Repeat="5" OnDuration="240.00002" OffDuration="300" OnPower="1.0083336" OffPower="0.5"/>
+        <Cooldown Duration="600" PowerLow="0.74976188" PowerHigh="0.24976189"/>
+    </workout>
+</workout_file>

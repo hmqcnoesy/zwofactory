@@ -1,0 +1,13 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>Building Endurance today! Once warmed up, ride in your Endurance zone. Focus on staying relaxed on the bike and spinning circles while keeping your cadence between 90-100. During the last hour of the ride complete 1 x 30-minute TEMPO effort in a cadence of 75-85.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <SteadyState Duration="4200" Power="0.65449995"/>
+        <SteadyState Duration="1800.0001" Power="0.94999999"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

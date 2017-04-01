@@ -1,0 +1,14 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 3</name>
+    <description> Long ride with group or alone, focus on riding most time in Endurance (Power Z2, HR Z2, RPE 2-3). Also complete 1 x 30-minute TEMPO effort, focusing on keeping watts at Tempo (Power Z3, HR Z3, RPE 3-4). Try "mixing" your spin cadence during the Tempo effort by trading off between a faster and slower cadence throughout the interval. 
+Terrian: Mixed. During the TEMPO interval add 5 x 20 second BURSTS at FTP (Power Z4, HR Z4, RPE 4-5). Complete a burst every 5 minutes. </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <SteadyState Duration="3600.0002" Power="0.72500002"/>
+        <IntervalsT Repeat="5" OnDuration="20" OffDuration="300" OnPower="1" OffPower="0.875" OverUnder="1"/>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

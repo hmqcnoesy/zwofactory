@@ -1,0 +1,23 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 2</name>
+    <description>2x20 Crisscross intervals. a "crisscross" interval is an interval where you vary your efforts to really teach your body to clear lactate.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="8" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.2045" OffPower="0.90449995"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <IntervalsT Repeat="8" OnDuration="30.000002" OffDuration="120.00001" OnPower="1.2045" OffPower="0.90449995"/>
+        <SteadyState Duration="300" Power="0.65449995"/>
+        <IntervalsT Repeat="2" OnDuration="300" OffDuration="180.00002" OnPower="1.1044999" OffPower="0.50450003"/>
+        <IntervalsT Repeat="5" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50450003">
+            <textevent timeoffset="0" message="High cadence! 125rpm!"/>
+            <textevent timeoffset="120.00001" message="Spin those legs out! 125rpm!"/>
+            <textevent timeoffset="240.00002" message="High cadence! shake those legs!"/>
+            <textevent timeoffset="360.00003" message="High Cadence! 125rpm!"/>
+            <textevent timeoffset="480.00003" message="Last one! 125rpm!"/>
+        </IntervalsT>
+        <Cooldown Duration="900.00006" PowerLow="0.75" PowerHigh="0.25"/>
+    </workout>
+</workout_file>

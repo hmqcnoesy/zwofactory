@@ -1,0 +1,11 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Day 2 - Zone 1 Ride</name>
+    <description>This is predominantly a fat burning ride - low efforts which will build and create a far greater mitochondrial density. Which carries more oxygen to the working muscles later... more easy riding will support the hard workouts nicely.
+HIGH CADENCE - LOW POWER - FAST BREATHING</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="3600.0002" Power="0.50450003"/>
+    </workout>
+</workout_file>

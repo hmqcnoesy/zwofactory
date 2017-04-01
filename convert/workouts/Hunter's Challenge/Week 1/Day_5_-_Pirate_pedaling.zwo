@@ -1,0 +1,85 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 5 - Pirate pedaling</name>
+    <description>One leg pedaling intervals, and 20 minutes Sub FTP. 10 x 1 minute pedaling interval - 1 minute per leg. Then 10 x 1 minute fast pedals with 1 minute rest in between each. Then 10 minutes at 80% of FTP.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.70000005" PowerHigh="0.75">
+            <textevent timeoffset="0" message="80-100 RPM CADENCE"/>
+        </Warmup>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.34999999">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.34999999">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.34999999">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.34999999">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="0.40000001">
+            <textevent timeoffset="0" message="60 RPM - Left leg only!"/>
+            <textevent timeoffset="60.000004" message="60 RPM - Right leg only!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.72500002">
+            <textevent timeoffset="0" message="100 RPM CADENCE"/>
+        </SteadyState>
+        <IntervalsT Repeat="20" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.875" OffPower="0.72500002" OverUnder="1">
+            <textevent timeoffset="0" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="60.000004" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="120.00001" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="180.00002" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="240.00002" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="300" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="360.00003" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="420.00003" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="480.00003" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="540" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="600" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="660.00006" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="720.00006" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="780.00006" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="840.00006" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="900.00006" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="960.00006" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="1240" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="1020.0001" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="1080" message="100 RPM CADENCE!"/>
+            <textevent timeoffset="1140" message="100-140 RPM CADENCE!"/>
+            <textevent timeoffset="1200" message="100 RPM CADENCE!"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.875">
+            <textevent timeoffset="0" message="80-100 RPM NORMAL CADENCE"/>
+        </SteadyState>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005">
+            <textevent timeoffset="0" message="60-75 RPM CADENCE"/>
+        </Cooldown>
+    </workout>
+</workout_file>

@@ -1,0 +1,26 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 3</name>
+    <description>Foundation</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.49999997" PowerHigh="0.54999995"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <SteadyState Duration="300" Power="0.875"/>
+        <SteadyState Duration="180.00002" Power="0.72500002"/>
+        <SteadyState Duration="120.00001" Power="0.52499998"/>
+        <Cooldown Duration="600" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,11 @@
+<workout_file>
+    <author>QT2</author>
+    <name>Day 1 - Bike</name>
+    <description>Bike - 60 minutes of Zone 1</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <SteadyState Duration="1800.0001" Power="0.5"/>
+        <SteadyState Duration="1800.0001" Power="0.55000001"/>
+    </workout>
+</workout_file>

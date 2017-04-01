@@ -1,0 +1,42 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>TT#2 Core Workout</name>
+    <description>This core TT workout is aimed to increase specific strength for TT.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <SteadyState Duration="180.00002" Power="0.67500001"/>
+        <SteadyState Duration="120.00001" Power="0.85000002"/>
+        <SteadyState Duration="60.000004" Power="0.98000002"/>
+        <SteadyState Duration="30.000002" Power="1.13"/>
+        <SteadyState Duration="300" Power="0.52499998"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <IntervalsT Repeat="3" OnDuration="20" OffDuration="40" OnPower="1.085" OffPower="0.99000001" OverUnder="1"/>
+        <SteadyState Duration="180.00002" Power="0.27500001"/>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.54999995"/>
+    </workout>
+</workout_file>

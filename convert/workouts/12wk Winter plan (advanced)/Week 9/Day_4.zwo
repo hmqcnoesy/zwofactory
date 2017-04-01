@@ -1,0 +1,12 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4</name>
+    <description>SST Intervals. On the trainer, out on the road, or in a group, SST intervals are part of our continued effort to build and maintain base. Complete 3 x 20 Minute Intervals in the "Sweet Spot" zone with 5 minutes recovery in-between, Ride all other time in Endurance zone</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="3" OnDuration="1200" OffDuration="300" OnPower="0.95449996" OffPower="0.65449995"/>
+        <Cooldown Duration="600" PowerLow="0.65449995" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

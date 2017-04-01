@@ -1,0 +1,16 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 4 - Microbursts</name>
+    <description>Microbursts are great to do on a regular basis to make sure that you can change speeds anytime in the season and be ready for that group ride. They are annoying, but great for you!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.70000005" PowerHigh="0.75"/>
+        <IntervalsT Repeat="20" OnDuration="15.000001" OffDuration="15.000001" OnPower="1.6" OffPower="0.52499998"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <IntervalsT Repeat="20" OnDuration="15.000001" OffDuration="15.000001" OnPower="1.6" OffPower="0.52499998"/>
+        <SteadyState Duration="300" Power="0.72500002"/>
+        <IntervalsT Repeat="20" OnDuration="15.000001" OffDuration="15.000001" OnPower="1.6" OffPower="0.52499998"/>
+        <Cooldown Duration="600" PowerLow="0.75" PowerHigh="0.70000005"/>
+    </workout>
+</workout_file>

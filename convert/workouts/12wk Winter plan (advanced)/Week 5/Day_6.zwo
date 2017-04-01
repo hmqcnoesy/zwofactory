@@ -1,0 +1,16 @@
+<workout_file>
+    <author>M.McNeil</author>
+    <name>Day 6</name>
+    <description>After a 15 minute high cadence warmup effort, set a pace at Endurance and hold this pace for the prescribed workout time. Focus on riding smooth and staying relaxed. Vary your cadence.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.70000005" PowerHigh="0.75">
+            <textevent timeoffset="540" message="1 minute HIGH CADENCE!"/>
+            <textevent timeoffset="660.00006" message="1 minute HIGH CADENCE!"/>
+            <textevent timeoffset="780.00006" message="1 minute HIGH CADENCE!"/>
+        </Warmup>
+        <SteadyState Duration="5400.0005" Power="0.72500002"/>
+        <Cooldown Duration="600" PowerLow="0.54999995" PowerHigh="0.49999997"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,14 @@
+<workout_file>
+    <author>trainSharp</author>
+    <name>Day 4 - Z6 Intervals</name>
+    <description>Best done on the turbo. Start with 15 min warm up. Then perform 10 minutes of 30 seconds on @ Upper Zone 6  followed by 30 seconds off @ Upper Zone 2. Spin your legs easily for 10 minutes then repeat the 30/30 set. Today is a hard session so make sure you stay fuelled and hydrated throughout the day.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="900.00006" PowerLow="0.25449997" PowerHigh="0.75449997"/>
+        <IntervalsT Repeat="10" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.3044997" OffPower="0.70449972"/>
+        <SteadyState Duration="600" Power="0.50450003"/>
+        <IntervalsT Repeat="10" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.3045" OffPower="0.70449996"/>
+        <Cooldown Duration="600" PowerLow="0.75449997" PowerHigh="0.25449997"/>
+    </workout>
+</workout_file>

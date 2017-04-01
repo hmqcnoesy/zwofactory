@@ -1,0 +1,12 @@
+<workout_file>
+    <author>Marco Pinotti</author>
+    <name>Day 1</name>
+    <description>Foundation</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="600" PowerLow="0.44999996" PowerHigh="0.64999998"/>
+        <IntervalsT Repeat="5" OnDuration="360.00003" OffDuration="120.00001" OnPower="0.69999999" OffPower="0.52499998"/>
+        <Cooldown Duration="300" PowerLow="0.75" PowerHigh="0.45000002"/>
+    </workout>
+</workout_file>
