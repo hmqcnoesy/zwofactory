@@ -1,8 +1,10 @@
 (function() {
     var userSettings = new UserSettings();
+    var workoutTemplates = null;
 
     document.addEventListener('DOMContentLoaded', function() {
-        var workouts = getWorkoutTemplates(function(workouts) {
+        getWorkoutTemplates(function(workouts) {
+            workoutTemplates = workouts;
             var divWorkoutTemplates = document.getElementById('divWorkoutTemplates');
             var divToClone = document.getElementById('divToClone');
             for (var i = 0; i < workouts.length; i++) {
@@ -20,13 +22,12 @@
     });
 
 
-    document.getElementById('divMyWorkouts').addEventListener('click', function(e) {
+    document.getElementById('divWorkoutTemplates').addEventListener('click', function(e) {
         if (e.target.hasAttribute('data-toggle')) toggleVisibility(e.target);
 
-        var workoutName = e.target.parentNode.parentNode.parentNode.querySelector('a').getAttribute('data-name');
-        if (e.target.hasAttribute('data-edit')) editWorkout(workoutName);
-        if (e.target.hasAttribute('data-download')) downloadWorkout(workoutName);
-        if (e.target.hasAttribute('data-delete')) deleteWorkout(workoutName);
+        var workoutPath = e.target.parentNode.parentNode.parentNode.querySelector('a').getAttribute('data-path');
+        if (e.target.hasAttribute('data-clone')) cloneWorkout(workoutPath);
+        if (e.target.hasAttribute('data-download')) downloadWorkout(workoutPath);
     }, true);
 
 
@@ -54,7 +55,7 @@
         var invisible = div.classList.contains('invisible');
 
         if (invisible) {
-            var workout = userSettings.getMyWorkout(aElement.getAttribute('data-name'));
+            var workout = workoutTemplates.find(w => w.path == aElement.getAttribute('data-path'));
             if (!workout) return;
             div.querySelector('[data-tags]').innerHTML = '';
             div.querySelector('[data-tags]').appendChild(document.createTextNode(workout.tags));
@@ -71,20 +72,21 @@
     }
 
 
-    function cloneWorkout(workoutName) {
-        userSettings.setWorkoutForEditing(workoutName);
+    function cloneWorkout(workoutPath) {
+        userSettings.setWorkoutForEditing(workoutPath);
         window.location = 'index.html';
     }
 
 
-    function downloadWorkout(workoutName) {
+    function downloadWorkout(workoutPath) {
         var workout = new Workout();
-        workout.reconstituteFromDeserialized(userSettings.getMyWorkout(workoutName));
+        workout.reconstituteFromDeserialized(workoutTemplates.find(w => w.path == workoutPath));
         var xml = workout.toZwoXml();
         var blob = new Blob([xml], {type: "application/xml"});
         var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
         saveAs(blob, fileName);
-    }  document.getElementById("ajaxButton").onclick = function() { makeRequest('test.html'); };
+    }
+
 
     function getWorkoutTemplates(callback, error) {
         xhr = new XMLHttpRequest();
