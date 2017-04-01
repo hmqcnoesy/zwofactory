@@ -6,13 +6,11 @@ $pwd = pwd
 $pwd = $pwd.path
 $zwos = ls *.zwo -R 
 
-
-
 foreach($zwo in $zwos) {
     $cmd = "node convert.js """ + $zwo.fullname.replace($pwd + "\", "") + """"
     $zwo.fullname.replace($pwd + "\", "")
     $jsonData = iex $cmd 
-    $jsonData = $jsonData.replace("{""name"":", "{""path"":""" + $zwo.fullname.replace($pwd + "\workouts\", "").replace("\" + $zwo.name, "") + """,""name"":")
+    $jsonData = $jsonData.replace("{""name"":", "{""path"":""" + $zwo.fullname.replace($pwd + "\workouts\", "").replace("\", "\\") + """,""name"":")
     $jsonData | add-content $jsonFile
 }
 
