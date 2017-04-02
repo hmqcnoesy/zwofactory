@@ -254,7 +254,7 @@ document.getElementById('btnDownloadZwoFile').addEventListener('click', function
     }
 
     var xml = currentWorkout.toZwoXml();
-    var blob = new Blob([xml], {type: "application/xml"});
+    var blob = new Blob([xml], {type: "application/octet-stream"});
     var fileName = currentWorkout.name.replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
     saveAs(blob, fileName);
 });

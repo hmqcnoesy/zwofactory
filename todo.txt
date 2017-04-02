@@ -1,10 +1,9 @@
-- xml drag/drop
-- save links
+- remove name from author fields
+- improved icons
+- ramp colors
+- fix "saved!" message on load of index.html
+- shareable links
 - settings
-    - delete all links
     - default durations?
-- help/info
-- templates
 - crappy browser warning
-- cadence
-- text event
+- segment editing by mouse

@@ -163,7 +163,7 @@
         var workoutToDownload = new Workout();
         workoutToDownload.reconstituteFromDeserialized(workout);
         var xml = workoutToDownload.toZwoXml();
-        var blob = new Blob([xml], {type: "application/xml"});
+        var blob = new Blob([xml], {type: "application/octet-stream"});
         var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
         saveAs(blob, fileName);
     }
