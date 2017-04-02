@@ -64,15 +64,15 @@ UserSettings.prototype.deleteWorkout = function(workoutName) {
 }
 
 
-UserSettings.prototype.setWorkoutForEditing = function(workoutName) {
+UserSettings.prototype.setWorkoutForEditing = function(workout) {
     if (!localStorage) return;
-    localStorage.workoutForEditing = workoutName;
+    localStorage.workoutForEditing = JSON.stringify(workout);
 }
 
 
 UserSettings.prototype.getAndUnsetWorkoutForEditing = function() {
     if (!localStorage || !localStorage.workoutForEditing) return null;
-    var workoutName = localStorage.workoutForEditing;
+    var workout = JSON.parse(localStorage.workoutForEditing);
     localStorage.removeItem('workoutForEditing');
-    return this.getMyWorkout(workoutName);
+    return workout;
 }

@@ -141,19 +141,25 @@
     }
 
 
-    function cloneWorkout(workoutPath) {
-        userSettings.setWorkoutForEditing(workoutPath);
-        window.location = 'index.html';
-    }
-
-
-    function downloadWorkout(workoutPath, workoutName) {
+    function getWorkout(workoutPath, workoutName) {
         var split = workoutPath.split('\\');
         var workout;
 
         if (split.length == 2) workout = workoutTemplates[split[0]][workoutName];
         else workout = workoutTemplates[split[0]][split[1]][workoutName];
+        return workout;
+    }
 
+
+    function cloneWorkout(workoutPath, workoutName) {
+        var workout = getWorkout(workoutPath, workoutName);
+        userSettings.setWorkoutForEditing(workout);
+        window.location = 'index.html';
+    }
+
+
+    function downloadWorkout(workoutPath, workoutName) {
+        workout = getWorkout(workoutPath, workoutName);
         var workoutToDownload = new Workout();
         workoutToDownload.reconstituteFromDeserialized(workout);
         var xml = workoutToDownload.toZwoXml();
