@@ -25,6 +25,7 @@
     <meta name="msapplication-square150x150logo" content="img/mstile-150x150.png" />
     <meta name="msapplication-wide310x150logo" content="img/mstile-310x150.png" />
     <meta name="msapplication-square310x310logo" content="img/mstile-310x310.png" />
+    <style>.folder { padding: 1em; margin: 0.5em; border: 1px solid #555; border-radius: 10px; }</style>
 </head> 
 <body>
 <header>
@@ -38,18 +39,24 @@ zwofactory.com
 
 <main>
 Workout Templates<hr />
-<div id="divToClone" class="invisible">
-    <a data-toggle></a>
-    <div class="invisible grid">
-        <div class="u-1-3 u-sm-1"><div data-workout></div></div>
-        <div class="u-1-6 u-sm-1" data-author></div>
-        <div class="u-1-6 u-sm-1" data-tags></div>
-        <div class="u-1-4 u-sm-1" data-description></div>
+<div class="grid">
+    <div class="u-1-10 u-sm-1">Group:</div>
+    <div class="u-9-10 u-sm-1"><select id="selWorkoutGroups"><option></option></select></div>
+</div>
+<div id="divToCloneFolder" class="invisible folder">
+    <a data-toggle></a><div class="invisible striped"></div>
+</div>
+<div id="divToCloneWorkout" class="invisible">
+    <div class="grid">
+        <div class="u-1-4 u-sm-1"><div data-name></div><div data-author></div><div data-tags></div></div>
+        <div class="u-3-8 u-sm-1"><div data-workout></div></div>
+        <div class="u-3-8 u-sm-1"><div data-description></div></div>
         <div class="u-1-4 u-sm-1-2"><button data-clone>Clone</button></div>
         <div class="u-1-4 u-sm-1-2"><button data-download>Download</button></div>
     </div>
 </div>
-<div id="divWorkoutTemplates" class="striped">
+
+<div id="divWorkoutTemplates">
 
 </div>
 </main>
@@ -66,6 +73,7 @@ Workout Templates<hr />
     <div>&copy; 2017 Matt McNeil</div>
 </footer>
 <script src="settings.js"></script>
+<script src="filesaver.js"></script>
 <script src="zwofactory.js"></script>
 <script src="templates.html.js"></script>
 </body>

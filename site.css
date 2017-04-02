@@ -31,6 +31,7 @@ label { display: block; }
 .u-1-12 { width: 8.33%; }
 .u-1-24 { width: 4.1666%; }
 textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; width:100%; border: 1px solid #555; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
+select,
 input[type=text],
 input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid #555; border-radius: 10px; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);}
 input[type=number] { text-align: center; min-width: 62px; }
