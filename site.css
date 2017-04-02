@@ -57,6 +57,7 @@ svg { display: inline-block; }
 .striped > * { padding: 1em; }
 .striped > *:nth-child(odd) { background-color: #eee; }
 
+[data-workout] { white-space: nowrap; overflow-x: auto; }
 #divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 344px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid #555; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
 #divSegmentChart div { display: inline-block; }
 #divSegmentChart svg { cursor: pointer; margin-right: 1px; }
