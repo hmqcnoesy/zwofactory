@@ -1,4 +1,3 @@
-- improved icons
 - ramp colors
 - fix "saved!" message on load of index.html
 - shareable links
