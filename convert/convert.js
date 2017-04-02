@@ -2,7 +2,7 @@ var fs = require('fs');
 var path = require('path');
 var DOMParser = require('xmldom').DOMParser;
 
-var filedata = fs.readFileSync('../zwofactory.js', 'utf8');
+var filedata = fs.readFileSync('../js/zwofactory.js', 'utf8');
 eval(filedata);
 var xml = fs.readFileSync(process.argv[2], 'utf8');
 var workout = new Workout();

@@ -154,7 +154,7 @@
     function cloneWorkout(workoutPath, workoutName) {
         var workout = getWorkout(workoutPath, workoutName);
         userSettings.setWorkoutForEditing(workout);
-        window.location = 'index.html';
+        window.location = '/';
     }
 
 
@@ -181,7 +181,7 @@
                 }
             }
         };
-        xhr.open('GET', 'workouts.json');
+        xhr.open('GET', '/js/workouts.json');
         xhr.send();
     }
 })();

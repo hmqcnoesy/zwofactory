@@ -75,7 +75,7 @@
     function editWorkout(workoutName) {
         var workout = userSettings.getMyWorkout(workoutName);
         userSettings.setWorkoutForEditing(workout);
-        window.location = 'index.html';
+        window.location = '/';
     }
 
 
