@@ -153,6 +153,12 @@
 
     function cloneWorkout(workoutPath, workoutName) {
         var workout = getWorkout(workoutPath, workoutName);
+        for (var i = 0; i < workout.segments.length; i++) {
+            workout.segments[i].id = createGuid();
+            for (var j = 0; j < workout.segments[i].textEvents.length; j++) {
+                workout.segments[i].textEvents[j].id = createGuid();
+            }
+        }
         userSettings.setWorkoutForEditing(workout);
         window.location = '/';
     }

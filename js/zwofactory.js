@@ -118,7 +118,7 @@ Workout.prototype.loadFromXml = function(xml) {
             for (var j = 0; j < xmlSegments[i].childNodes.length; j++) {
                 if (xmlSegments[i].childNodes[j].nodeType != 1) continue;
                 if (xmlSegments[i].childNodes[j].tagName.toLowerCase() != 'textevent') continue;
-                segmentToAdd.textEvents.push({ text: xmlSegments[i].childNodes[j].getAttribute('message'), 
+                segmentToAdd.textEvents.push({id: createGuid(), text: xmlSegments[i].childNodes[j].getAttribute('message'), 
                     offset: getIntOrDefault(xmlSegments[i].childNodes[j].getAttribute('timeoffset'), 0)});
             }
         }
@@ -137,6 +137,25 @@ function Segment(t, p1, d1, p2, d2, r) {
     if (isNumeric(r)) this.r = r;
     this.textEvents = [];
 };
+
+
+Segment.prototype.duplicateFrom = function(segmentToClone) {
+    this.id = createGuid();
+    this.t = segmentToClone.t;
+    if (isNumeric(segmentToClone.p1)) this.p1 = segmentToClone.p1;
+    if (isNumeric(segmentToClone.d1)) this.d1 = segmentToClone.d1;
+    if (isNumeric(segmentToClone.p2)) this.p2 = segmentToClone.p2;
+    if (isNumeric(segmentToClone.d2)) this.d2 = segmentToClone.d2;
+    if (isNumeric(segmentToClone.r)) this.r = segmentToClone.r;
+    if (isNumeric(segmentToClone.c1)) this.c1 = segmentToClone.c1;
+    if (isNumeric(segmentToClone.c2)) this.c2 = segmentToClone.c2;
+
+    if (userSettings.duplicateTextEvents) {
+        for(var i = 0; i < segmentToClone.textEvents.length; i++) {
+            this.textEvents.push({id: createGuid(), offset: segmentToClone.textEvents[i].offset, text: segmentToClone.textEvents[i].text });
+        }
+    }
+}
 
 
 Segment.prototype.addTextEvent = function(text, offset) {

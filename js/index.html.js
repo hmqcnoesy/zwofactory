@@ -38,6 +38,18 @@ document.getElementById('divSegmentButtons').addEventListener('click', function(
 }, false);
 
 
+document.getElementById('btnDuplicate').addEventListener('click', function() {
+    var selected = getSelectedSegment();
+    if (!selected) return;
+    
+    var segmentToDuplicate = currentWorkout.segments.find(s => s.id == selected.getAttribute('data-id'));
+    var duplicatedSegment = new Segment();
+    duplicatedSegment.duplicateFrom(segmentToDuplicate);
+    currentWorkout.addSegment(duplicatedSegment);
+    addSegmentToChart(duplicatedSegment);
+});
+
+
 document.getElementById('btnSelectPrevious').addEventListener('click', function() {
     var selected = getSelectedSegment();
     if (!selected) return;

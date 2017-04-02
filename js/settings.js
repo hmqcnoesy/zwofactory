@@ -5,6 +5,7 @@ function UserSettings(useDefaults) {
     this.verticalPercentsPerPixel = 1;
     this.showCadenceIndicator = true;
     this.showTextEventIndicator = true;
+    this.duplicateTextEvents = true;
 
     if (!useDefaults && localStorage && localStorage.zwofactorySettings) {
         var savedSettings = JSON.parse(localStorage.zwofactorySettings);
