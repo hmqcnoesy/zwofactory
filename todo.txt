@@ -1,9 +1,8 @@
-- remove name from author fields
 - improved icons
 - ramp colors
 - fix "saved!" message on load of index.html
 - shareable links
-- settings
-    - default durations?
-- crappy browser warning
+- settings default durations?
+- crappy browser warning?
 - segment editing by mouse
+- duplicate segment button
