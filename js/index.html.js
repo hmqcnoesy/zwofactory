@@ -112,6 +112,7 @@ document.getElementById('btnDelete').addEventListener('click', function(e) {
     } else {
         loadNoSegment();
     }
+    updateWorkoutDuration();
 });
 
 
@@ -175,6 +176,7 @@ document.getElementById('chkCadence').addEventListener('click', function() {
 
 document.getElementById('divSegmentInputs').addEventListener('input', function(e) {
     if (e.target.tagName != 'INPUT' && e.target.tagName != 'BUTTON') return;
+
     var selectedSegment = getSelectedSegment();
     if (!selectedSegment) return;
     
@@ -200,6 +202,7 @@ document.getElementById('divSegmentInputs').addEventListener('input', function(e
     for (var i = 0; i < svgs.length; i++) {
         label.appendChild(svgs[i]);
     }
+    updateWorkoutDuration();
 });
 
 
@@ -349,6 +352,7 @@ function addSegmentToChart(segment) {
     div.appendChild(label);
     document.getElementById('divSegmentChart').appendChild(div);
     input.click();
+    updateWorkoutDuration();
 }
 
 
@@ -425,4 +429,9 @@ function addTextEventControls(textEvent) {
     addedElement.querySelector('input').value = textEvent.text;
     addedElement.querySelector('input[type=number]').value = textEvent.offset;
     addedElement.querySelector('input').select();
+}
+
+
+function updateWorkoutDuration() {
+    document.getElementById('divWorkoutDuration').innerHTML = currentWorkout.calculateDuration();
 }

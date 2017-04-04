@@ -68,6 +68,7 @@ svg { display: inline-block; }
 #divSegmentChart input:checked + label { border-bottom: 6px solid #456; }
 #divSegmentChart label { display: inline; cursor: pointer; }
 #divSegmentChart label:hover { border-bottom: 6px solid gainsboro; }
+#divWorkoutDuration { position: relative; top: 6px; padding-right: 10px; text-align: right; float: right; height: 0; }
 
 .transparent { opacity: 0; }
 .opaque { transition-duration: 2s; transition-property: opacity; opacity: 1; }

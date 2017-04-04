@@ -29,6 +29,21 @@ Workout.prototype.reconstituteFromDeserialized = function(workout) {
 }
 
 
+Workout.prototype.calculateDuration = function() {
+    var totalSeconds = 0;
+    for (var i = 0; i < this.segments.length; i++) {
+        if (this.segments[i].t == 'i') {
+            totalSeconds += Number(this.segments[i].r) * (Number(this.segments[i].d1) + Number(this.segments[i].d2))
+        } else {
+            totalSeconds += Number(this.segments[i].d1);
+        }
+    }
+    var dt = new Date(null);
+    dt.setSeconds(totalSeconds);
+    return dt.toISOString().substr(11, 8);
+}
+
+
 Workout.prototype.setTags = function(tagStr) {
     this.tags = tagStr.split(' ');
 };

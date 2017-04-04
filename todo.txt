@@ -1,7 +1,10 @@
+- workout duration
+- workout stress points
+- input absolute power in watts instead of %ftp
+- dragable svg resizing
 - ramp colors
 - fix "saved!" message on load of index.html
 - shareable links
 - settings default durations?
 - crappy browser warning?
 - segment editing by mouse
-- duplicate segment button
