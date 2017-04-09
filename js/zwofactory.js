@@ -40,7 +40,9 @@ Workout.prototype.calculateDuration = function() {
     }
     var dt = new Date(null);
     dt.setSeconds(totalSeconds);
-    return dt.toISOString().substr(11, 8);
+    var str = dt.toISOString().substr(11, 8);
+    if (str.indexOf('0') == 0) str = str.substr(1);
+    return str;
 }
 
 

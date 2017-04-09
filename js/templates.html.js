@@ -86,17 +86,19 @@
 
 
     function loadWorkout(workout, targetElement) {
-        targetElement.setAttribute('data-path', workout.path);
-        targetElement.querySelector('[data-name]').appendChild(document.createTextNode(workout.name));
-        targetElement.querySelector('[data-author]').appendChild(document.createTextNode(workout.author));
-        targetElement.querySelector('[data-tags]').appendChild(document.createTextNode(workout.tags));
-        targetElement.querySelector('[data-description]').appendChild(document.createTextNode(workout.description));
-        drawWorkout(workout, targetElement.querySelector('[data-workout]'));
+        var realWorkout = new Workout();
+        realWorkout.reconstituteFromDeserialized(workout);
+        targetElement.setAttribute('data-path', realWorkout.path);
+        targetElement.querySelector('[data-name]').appendChild(document.createTextNode(realWorkout.name));
+        targetElement.querySelector('[data-duration]').appendChild(document.createTextNode(realWorkout.calculateDuration()));
+        targetElement.querySelector('[data-author]').appendChild(document.createTextNode(realWorkout.author));
+        targetElement.querySelector('[data-tags]').appendChild(document.createTextNode(realWorkout.tags));
+        targetElement.querySelector('[data-description]').appendChild(document.createTextNode(realWorkout.description));
+        drawWorkout(realWorkout, targetElement.querySelector('[data-workout]'));
     }
 
 
     function drawWorkout(workout, targetElement) {
-        var w = new Workout();
         var settings = {
             horizSecondsPerPixel: 20, 
             verticalPercentsPerPixel: 3, 
@@ -104,9 +106,8 @@
             showCadenceIndicator: false,
             showTextEventIndicator: false,
             minShapeWidth: 3 };
-        w.reconstituteFromDeserialized(workout);
-        for (var i = 0; i < w.segments.length; i++) {
-            var svgs = w.segments[i].toSvgs(settings);
+        for (var i = 0; i < workout.segments.length; i++) {
+            var svgs = workout.segments[i].toSvgs(settings);
             for (var j = 0; j < svgs.length; j++) {
                 targetElement.appendChild(svgs[j]);
             }

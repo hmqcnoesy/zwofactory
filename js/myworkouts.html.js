@@ -55,8 +55,12 @@
         var invisible = div.classList.contains('invisible');
 
         if (invisible) {
-            var workout = userSettings.getMyWorkout(aElement.getAttribute('data-name'));
-            if (!workout) return;
+            var savedWorkout = userSettings.getMyWorkout(aElement.getAttribute('data-name'));
+            if (!savedWorkout) return;
+            var workout = new Workout();
+            workout.reconstituteFromDeserialized(savedWorkout);
+            div.querySelector('[data-duration]').innerHTML = '';
+            div.querySelector('[data-duration]').appendChild(document.createTextNode(workout.calculateDuration()));
             div.querySelector('[data-tags]').innerHTML = '';
             div.querySelector('[data-tags]').appendChild(document.createTextNode(workout.tags));
             div.querySelector('[data-author]').innerHTML = '';
