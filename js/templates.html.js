@@ -88,7 +88,7 @@
     function loadWorkout(workout, targetElement) {
         var realWorkout = new Workout();
         realWorkout.reconstituteFromDeserialized(workout);
-        targetElement.setAttribute('data-path', realWorkout.path);
+        targetElement.setAttribute('data-path', workout.path);
         targetElement.querySelector('[data-name]').appendChild(document.createTextNode(realWorkout.name));
         targetElement.querySelector('[data-duration]').appendChild(document.createTextNode(realWorkout.calculateDuration()));
         targetElement.querySelector('[data-author]').appendChild(document.createTextNode(realWorkout.author));

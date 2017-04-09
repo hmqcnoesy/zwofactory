@@ -1,6 +1,6 @@
-- workout duration
+- setting: edit with minutes instead of seconds
+- setting: edit with watts instead of %ftp
 - workout stress points
-- input absolute power in watts instead of %ftp
 - dragable svg resizing
 - ramp colors
 - fix "saved!" message on load of index.html
