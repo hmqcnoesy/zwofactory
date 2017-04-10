@@ -1,3 +1,5 @@
+- cache busters
+- sticky selections on templates page
 - setting: edit with minutes instead of seconds
 - setting: edit with watts instead of %ftp
 - workout stress points

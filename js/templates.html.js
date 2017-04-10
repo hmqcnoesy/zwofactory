@@ -19,6 +19,11 @@
 
             workoutTemplates = groups;
             loadWorkoutGroups();   
+            if (sessionStorage && sessionStorage.lastSelectedGroupName) {
+                var lastSelectedGroupName = sessionStorage.lastSelectedGroupName;
+                document.getElementById('selWorkoutGroups').value = lastSelectedGroupName;
+                loadGroupMembers(lastSelectedGroupName);
+            }
         }, function() {
             alert('Error retrieving workout templates');
         });   
@@ -42,6 +47,7 @@
 
     document.getElementById('selWorkoutGroups').addEventListener('change', function() {
         loadGroupMembers(this.value);
+        sessionStorage.lastSelectedGroupName = this.value;
     });
 
 
