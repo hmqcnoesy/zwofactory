@@ -105,7 +105,8 @@ Workout.prototype.loadFromXml = function(xml) {
         if (xmlSegments[i].nodeType != 1) continue;
         switch (xmlSegments[i].tagName.toLowerCase().charAt(0)) {
             case "s":
-                var p1 = getIntOrDefault(100*xmlSegments[i].getAttribute('Power'), 5);
+                var attrName = xmlSegments[i].hasAttribute('Power') ? 'Power' : 'PowerHigh';
+                var p1 = getIntOrDefault(100*xmlSegments[i].getAttribute(attrName), 5);
                 var d1 = getIntOrDefault(xmlSegments[i].getAttribute('Duration'), 5);
                 segmentToAdd = new Segment('s', p1, d1, null, null, null);
                 break;
