@@ -1,0 +1,41 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>05 - 40/20's #1</name>
+    <description>The 40/20 sessions consist of 40sec above your threshold pace, followed by 20sec of rest.
+
+By continually lifting power above what is comfortable, you will improve your ability to recover from hard efforts.
+
+Monitor your heart rate before and after each interval. Has heart rate increased significantly over the course of the efforts?</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="130" message="High rpm in warm up sprints"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="10" OffDuration="50.000004" OnPower="1.7544999" OffPower="0.50449997" pace="682" Cadence="110" CadenceResting="80"/>
+        <SteadyState Duration="180.00002" Power="0.70449996" pace="682" Cadence="95"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="682" Cadence="90"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="140" message="Grip the bars firmly and"/>
+            <textevent timeoffset="140" message="ensure you don&apos;t rock your hips." y="270"/>
+            <textevent timeoffset="39" message="Looking for steady power..."/>
+            <textevent timeoffset="50.000004" message="No drop off in power"/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="40" OffDuration="30.000002" OnPower="1.0944999" OffPower="0.55449998" pace="682" Cadence="95" CadenceResting="80"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="260" message="Is starting HR as low as 1st?"/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="40" OffDuration="20" OnPower="1.0944999" OffPower="0.55449998" pace="682" Cadence="95" CadenceResting="80"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="5" message="How was your finishing HR?"/>
+            <textevent timeoffset="265" message="1 more set to go"/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="40" OffDuration="20" OnPower="1.0944999" OffPower="0.55449998" pace="682" Cadence="95" CadenceResting="80"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="11.000001" message="What was your peak HR?"/>
+        </SteadyState>
+    </workout>
+</workout_file>

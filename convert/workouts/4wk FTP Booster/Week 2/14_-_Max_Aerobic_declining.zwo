@@ -1,0 +1,47 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>14 - Max Aerobic declining</name>
+    <description>Working entirely in your Max Aerobic area, this session maintains the interval duration throughout all efforts, but decreases the intensity.
+
+With adequate recovery we are looking at your HR response to the effort.
+
+Power is decreasing... Is your HR decreasing along with the effort?</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <Warmup Duration="360.00003" PowerLow="0.41959631" PowerHigh="0.70449996" pace="682"/>
+        <SteadyState Duration="60.000004" Power="0.50449997" pace="682"/>
+        <SteadyState Duration="60.000004" Power="1.0944999" pace="682" Cadence="95"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682"/>
+        <SteadyState Duration="180.00002" Power="0.90449995" pace="682" Cadence="95"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="135" message="The 1st interval is the hardest"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="1.0545" pace="682" Cadence="90"/>
+        <SteadyState Duration="300" Power="0.56430817" pace="682">
+            <textevent timeoffset="13.000001" message="What was your finishing HR?"/>
+            <textevent timeoffset="278" message="A little easier this time"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="1.0044999" pace="682" Cadence="90">
+            <textevent timeoffset="11.000001" message="Controlled breathing"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.56652761" pace="682">
+            <textevent timeoffset="6.0000005" message="Finishing HR?"/>
+            <textevent timeoffset="246.00002" message="2 intervals to go!"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="0.95449996" pace="682" Cadence="90"/>
+        <SteadyState Duration="300" Power="0.5661068" pace="682">
+            <textevent timeoffset="240.00002" message="Final effort."/>
+            <textevent timeoffset="9" message="Finishing HR?"/>
+        </SteadyState>
+        <SteadyState Duration="360.00003" Power="0.90449995" pace="682" Cadence="90"/>
+        <SteadyState Duration="300" Power="0.56449997" pace="682">
+            <textevent timeoffset="54.000004" message="Well done."/>
+            <textevent timeoffset="64" message="How was your HR response?"/>
+            <textevent timeoffset="8" message="Finishing HR?"/>
+        </SteadyState>
+    </workout>
+</workout_file>

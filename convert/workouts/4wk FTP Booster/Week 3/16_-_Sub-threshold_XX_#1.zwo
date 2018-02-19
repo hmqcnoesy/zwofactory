@@ -1,0 +1,35 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>16 - Sub-threshold XX #1</name>
+    <description>This is a challenging session that builds upon the earlier work of steady sub-threshold efforts.
+
+By challenging your ability to process lactate at near threshold power,  you will increase your time to exhaustion and increase endurance.
+
+All this is achieved with a 30min steady state effort that dips briefly into the realms of VO2. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="240.00002" message="Varying cadence during warm up."/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="30.000002" OffDuration="30.000002" OnPower="0.65449995" OffPower="0.80449992" pace="682" OverUnder="1" Cadence="90" CadenceResting="95"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="80" message="Prepare yourself mentally"/>
+            <textevent timeoffset="80" message="for the 30min effort ahead." y="270"/>
+        </SteadyState>
+        <IntervalsT Repeat="10" OnDuration="150" OffDuration="30.000002" OnPower="0.91449988" OffPower="1.2045" pace="682" Cadence="90" CadenceResting="95">
+            <textevent timeoffset="120.00001" message="Lift rpm for the 30sec efforts"/>
+            <textevent timeoffset="185.00002" message="Back to sub-threshold effort."/>
+            <textevent timeoffset="970.00006" message="Is your HR rising" y="270"/>
+            <textevent timeoffset="970.00006" message="as the session goes on?" y="290"/>
+            <textevent timeoffset="1377.0001" message="Just 3 surges to go."/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="30.000002" message="How much did HR rise,"/>
+            <textevent timeoffset="30.000002" message="over the 30min effort?" y="270"/>
+        </SteadyState>
+    </workout>
+</workout_file>

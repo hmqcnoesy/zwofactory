@@ -1,0 +1,35 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>02 - HIT 45sec #1</name>
+    <description>With repeated anaerobic bouts of 45sec, you will be improving your ability to process lactate and recover from hard efforts.
+
+You will also be using up vital carbohydrate stores prior to the final 5min sub-threshold interval. This is where the adaptation occurs! </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="140" message="High cadence in these"/>
+            <textevent timeoffset="140" message="warm up efforts." y="270"/>
+        </SteadyState>
+        <IntervalsT Repeat="2" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997" pace="682" Cadence="90" CadenceResting="80"/>
+        <IntervalsT Repeat="2" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.90449989" OffPower="0.50449997" pace="682" Cadence="100" CadenceResting="80"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="90.000008" message="Looking for controlled steady"/>
+            <textevent timeoffset="90.000008" message="power, in the 45sec efforts." y="270"/>
+            <textevent timeoffset="115.00003" message="No drop off in power."/>
+        </SteadyState>
+        <IntervalsT Repeat="6" OnDuration="45.000004" OffDuration="255.00002" OnPower="1.7544999" OffPower="0.6045" pace="682" Cadence="100" CadenceResting="80">
+            <textevent timeoffset="789.00006" message="3 to go..."/>
+            <textevent timeoffset="799.00006" message="You are doing well."/>
+        </IntervalsT>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="110.00001" message="Now to finish with a strong"/>
+            <textevent timeoffset="110.00001" message="5min sub-threshold effort." y="270"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.95449996" pace="682" Cadence="95"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682" Cadence="85"/>
+    </workout>
+</workout_file>

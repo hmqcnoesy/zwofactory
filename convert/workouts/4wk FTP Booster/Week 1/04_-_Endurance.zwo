@@ -1,0 +1,14 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>04 - Endurance</name>
+    <description>A steady endurance ride today.
+
+Don't forget it's fine to miss a day. Just continue with the planned training when this happens.
+
+Ride as you feel aiming to keep power within Zone 2.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <FreeRide Duration="3600.0002" FlatRoad="0"/>
+    </workout>
+</workout_file>

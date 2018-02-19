@@ -1,0 +1,49 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>03 - Tempo into Sprints</name>
+    <description>The challenge is to complete 4 short, high intensity intervals of increasing power, after first opening with a steady 15min Tempo effort.
+
+By working aerobically in the early 15min effort you will be improving the ability to deliver oxygen to the working muscles and preserve your carbohydrate stores for the finishing maximal efforts.
+
+Can you achieve the same max power in both sets?</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="240.00002" message="Varying cadence during warm up."/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="30.000002" OffDuration="30.000002" OnPower="0.65449995" OffPower="0.80449992" pace="682" OverUnder="1" Cadence="80" CadenceResting="95"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="900.00006" Power="0.81449997" pace="682">
+            <textevent timeoffset="80" message="Settle into your moderate"/>
+            <textevent timeoffset="80" message="intensity effort." y="270"/>
+            <textevent timeoffset="810.00006" message="Prepare yourself for the"/>
+            <textevent timeoffset="810.00006" message="maximal efforts coming up." y="270"/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.5044999" pace="682" Cadence="100"/>
+        <SteadyState Duration="60.000004" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="30.000002" Power="1.7045" pace="682" Cadence="100"/>
+        <SteadyState Duration="30.000002" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="682" Cadence="110"/>
+        <SteadyState Duration="45.000004" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="10" Power="2.0044999" pace="682" Cadence="110"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="900.00006" Power="0.81449997" pace="682" Cadence="90">
+            <textevent timeoffset="820.00006" message="The aim is to achieve the same"/>
+            <textevent timeoffset="820.00006" message="power, as the opening set." y="270"/>
+            <textevent timeoffset="74" message="Controlled breathing."/>
+            <textevent timeoffset="84.000008" message="Settle into your tempo effort."/>
+        </SteadyState>
+        <SteadyState Duration="60.000004" Power="1.5044999" pace="682" Cadence="100"/>
+        <SteadyState Duration="60.000004" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="30.000002" Power="1.7045" pace="682" Cadence="100"/>
+        <SteadyState Duration="30.000002" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="682" Cadence="110"/>
+        <SteadyState Duration="45.000004" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="10" Power="2.0044999" pace="682" Cadence="110"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682" Cadence="85"/>
+    </workout>
+</workout_file>

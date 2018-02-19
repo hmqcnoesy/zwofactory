@@ -1,0 +1,38 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>01 - HIT 80% FTP #1</name>
+    <description>A short session to get you started on your FTP journey.
+
+With 4 x 5min moderate intensity intervals, you will be introducing yourself to the duration of the final test session in 4 weeks time.
+
+Training at the top end of your tempo range will improve aerobic capabilities by increasing muscle glycogen stores.
+
+</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.42449999" PowerHigh="0.70449996" pace="682"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682"/>
+        <SteadyState Duration="180.00002" Power="0.70449996" pace="682">
+            <textevent timeoffset="170.00002" message="High RPM in sprints."/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="10" OffDuration="50.000004" OnPower="1.7544999" OffPower="0.50449997" pace="682" Cadence="110" CadenceResting="80"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="682" Cadence="95"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="134" message="Steady power in the intervals"/>
+            <textevent timeoffset="40" message="Observe your starting and"/>
+            <textevent timeoffset="40" message="finishing HR for each interval." y="270"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="300" OffDuration="60.000004" OnPower="0.80449992" OffPower="0.61449999" pace="682">
+            <textevent timeoffset="683.00006" message="2 down, 2 to go"/>
+        </IntervalsT>
+        <SteadyState Duration="240.00002" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="30.000002" message="Did your HR response change"/>
+            <textevent timeoffset="30.000002" message="much for each interval?" y="270"/>
+        </SteadyState>
+    </workout>
+</workout_file>

@@ -1,0 +1,37 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>08 - HIT 80% FTP #2</name>
+    <description>Building upon your earlier HIT 80% session, today we are increasing the number of intervals with 5 x 5min moderate intensity efforts. 
+
+Training at the top end of the Tempo range will improve your aerobic capabilities by increasing muscle glycogen stores. Take note of your HR during the intervals.
+
+With only a short recovery period of 1min, the aim is to bring heart rate back to normal recovery levels after each effort.</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="130" message="High rpm in warm up sprints"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="10" OffDuration="50.000004" OnPower="1.7544999" OffPower="0.50449997" pace="682" Cadence="110" CadenceResting="80"/>
+        <SteadyState Duration="180.00002" Power="0.70449996" pace="682" Cadence="95"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="682" Cadence="90"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="155" message="Steady power in the intervals."/>
+            <textevent timeoffset="90.000008" message="Observe start and finish HR"/>
+            <textevent timeoffset="90.000008" message="of each interval." y="270"/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="300" OffDuration="60.000004" OnPower="0.80449992" OffPower="0.61449999" pace="682" Cadence="95" CadenceResting="80">
+            <textevent timeoffset="1049" message="3 down, 2 to go!"/>
+            <textevent timeoffset="268" message="What is your HR?"/>
+            <textevent timeoffset="637" message="How does HR compare to 1st?"/>
+            <textevent timeoffset="1449.0001" message="Are you recovering as well?"/>
+        </IntervalsT>
+        <SteadyState Duration="240.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="39" message="How was your HR response today?"/>
+        </SteadyState>
+    </workout>
+</workout_file>

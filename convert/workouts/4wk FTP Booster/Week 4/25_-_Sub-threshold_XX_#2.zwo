@@ -1,0 +1,38 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>25 - Sub-threshold XX #2</name>
+    <description>Building upon the previous Sub-Threshold XX session, this time we are decreasing the time between surges and increasing the number of surges.
+
+By challenging your ability to process lactate at near threshold power,  you will increase your time to exhaustion and increase endurance.
+
+All this is achieved with a 30min steady state effort that dips briefly into the realms of VO2.</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="240.00003" message="Varying cadence during warm up."/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="30.000002" OffDuration="30.000002" OnPower="0.65449995" OffPower="0.80449992" pace="682" OverUnder="1" Cadence="90" CadenceResting="95"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="80" message="Prepare yourself mentally"/>
+            <textevent timeoffset="80" message="for a 30min effort." y="270"/>
+        </SteadyState>
+        <IntervalsT Repeat="12" OnDuration="120.00001" OffDuration="30.000002" OnPower="0.91449988" OffPower="1.2045" pace="682" Cadence="90" CadenceResting="95">
+            <textevent timeoffset="110.00001" message="Lift rpm for the 30sec surges."/>
+            <textevent timeoffset="160" message="Back to sub-threshold effort."/>
+            <textevent timeoffset="950.00006" message="Is HR rising"/>
+            <textevent timeoffset="950.00006" message="as the session goes on?" y="270"/>
+            <textevent timeoffset="1429.0001" message="Just 3 to go!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="59.000004" message="Well done."/>
+            <textevent timeoffset="4200" message=""/>
+            <textevent timeoffset="93.000008" message="Hard session this one!"/>
+            <textevent timeoffset="160" message="Did HR rise much"/>
+            <textevent timeoffset="160" message="throughout the session?" y="270"/>
+        </SteadyState>
+    </workout>
+</workout_file>

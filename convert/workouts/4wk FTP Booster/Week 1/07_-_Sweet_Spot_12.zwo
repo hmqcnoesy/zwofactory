@@ -1,0 +1,38 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>07 - Sweet Spot 12</name>
+    <description>Time to challenge your ability to complete High Intensity efforts after first accumulating some time at sweet spot.
+
+In this session you will complete 2 x 12min sweet spot efforts before finishing with 4 x 1min VO2max efforts.
+
+The more efficient you are in the 12min efforts...
+
+The better your VO2 max efforts will be! </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="239.00002" message="High rpm in warm up sprints"/>
+        </SteadyState>
+        <IntervalsT Repeat="2" OnDuration="10" OffDuration="50.000004" OnPower="1.7544999" OffPower="0.50449997" pace="682" Cadence="110" CadenceResting="80"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="60.000004" Power="1.0944999" pace="682" Cadence="95"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="180.00002" Power="1.0044999" pace="682" Cadence="95"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="149" message="Focus on controlled breathing"/>
+        </SteadyState>
+        <IntervalsT Repeat="2" OnDuration="720.00006" OffDuration="180.00002" OnPower="0.91449988" OffPower="0.61449999" pace="682" Cadence="95" CadenceResting="80">
+            <textevent timeoffset="1693.0001" message="Now for your best 1min efforts!"/>
+            <textevent timeoffset="587" message="Is your HR remaining steady?"/>
+        </IntervalsT>
+        <IntervalsT Repeat="4" OnDuration="60.000004" OffDuration="120.00001" OnPower="1.0645" OffPower="0.50449997" pace="682" Cadence="95" CadenceResting="80">
+            <textevent timeoffset="120.00001" message="Aim to achieve the same power"/>
+            <textevent timeoffset="120.00001" message="for all 4 efforts." y="270"/>
+        </IntervalsT>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85"/>
+    </workout>
+</workout_file>

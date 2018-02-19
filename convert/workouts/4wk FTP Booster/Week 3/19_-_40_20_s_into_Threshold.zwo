@@ -1,0 +1,42 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>19 - 40/20's into Threshold</name>
+    <description>By building up some lactate prior to completing a sub-threshold effort, you will be training your body to clear lactate while improving the efficiency of your aerobic system.
+
+After warming up you will complete 4min of 40/20, leading straight into 10min sub-threshold.
+
+</description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="INTERVALS"/>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="239.00002" message="Varying cadence during warm up."/>
+        </SteadyState>
+        <IntervalsT Repeat="5" OnDuration="30.000002" OffDuration="30.000002" OnPower="0.65449995" OffPower="0.80449992" pace="682" OverUnder="1" Cadence="90" CadenceResting="95"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="159" message="Time to build some lactate"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="40" OffDuration="30.000002" OnPower="1.2145" OffPower="0.50449997" pace="682" Cadence="95" CadenceResting="80"/>
+        <SteadyState Duration="600" Power="0.95449996" pace="682" Cadence="90">
+            <textevent timeoffset="10" message="Settle into a rhythm early."/>
+            <textevent timeoffset="60.000004" message="Controlled breathing."/>
+            <textevent timeoffset="568" message="Take note of finishing HR"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.50449997" pace="682">
+            <textevent timeoffset="250.00002" message="Be sure to fuel up and"/>
+            <textevent timeoffset="250.00002" message="hydrate for the next effort" y="270"/>
+            <textevent timeoffset="562" message="Ready to go again?"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="40" OffDuration="20" OnPower="1.2145" OffPower="0.50449997" pace="682" Cadence="95" CadenceResting="80"/>
+        <SteadyState Duration="600" Power="0.95449996" pace="682" Cadence="90">
+            <textevent timeoffset="570" message="Take note of finishing HR."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="20" message="How did your end HR"/>
+            <textevent timeoffset="20" message="compare to the 1st effort?" y="270"/>
+        </SteadyState>
+    </workout>
+</workout_file>

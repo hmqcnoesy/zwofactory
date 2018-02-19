@@ -1,0 +1,37 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>09 - HIT 45sec #2</name>
+    <description>Building upon your previous HIT 45sec session, this time we are extending the final sub-threshold interval to 8min.
+
+The same principles apply. Burn up some carbs before completing a steady sub-threshold effort. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="130" message="High cadence in"/>
+            <textevent timeoffset="130" message="these warm up efforts." y="270"/>
+        </SteadyState>
+        <IntervalsT Repeat="2" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.75449997" OffPower="0.50449997" pace="682" Cadence="100" CadenceResting="80"/>
+        <IntervalsT Repeat="2" OnDuration="60.000004" OffDuration="60.000004" OnPower="0.90449989" OffPower="0.50449997" pace="682" Cadence="100" CadenceResting="80"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682" Cadence="85">
+            <textevent timeoffset="130" message="Looking for steady power."/>
+            <textevent timeoffset="140" message="With no drop off over 45sec."/>
+        </SteadyState>
+        <IntervalsT Repeat="6" OnDuration="45.000004" OffDuration="255.00002" OnPower="1.7544999" OffPower="0.6045" pace="682" Cadence="100" CadenceResting="85">
+            <textevent timeoffset="160" message="Keep pressure on the pedals"/>
+            <textevent timeoffset="160" message="during the recovery interval." y="270"/>
+            <textevent timeoffset="771.00006" message="Half way there. Doing well."/>
+        </IntervalsT>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="125.00001" message="Now the sub-threshold effort."/>
+        </SteadyState>
+        <SteadyState Duration="480.00003" Power="0.95449996" pace="682" Cadence="90">
+            <textevent timeoffset="28.000002" message="Find your rhythm early."/>
+            <textevent timeoffset="110.00001" message="This is where the"/>
+            <textevent timeoffset="110.00001" message="adaptations occur." y="270"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.50449997" pace="682"/>
+    </workout>
+</workout_file>

@@ -1,0 +1,39 @@
+<workout_file>
+    <author>Zwift</author>
+    <name>12 - 40/20's #2</name>
+    <description>Building upon your previous 40/20 session, this time we are increasing the number intervals before finishing with a 3min VO2max effort.
+
+We are challenging your ability to recover from hard work and measuring the final effort produced.
+
+Like last time, observe your heart rate before and after each of the 40/20 intervals. </description>
+    <sportType>bike</sportType>
+    <tags>
+        <tag name="4weekftp"/>
+    </tags>
+    <workout>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="130" message="High rpm in warm up sprints"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="10" OffDuration="50.000004" OnPower="1.7544999" OffPower="0.50449997" pace="682" Cadence="110" CadenceResting="80"/>
+        <SteadyState Duration="180.00002" Power="0.70449996" pace="682" Cadence="85"/>
+        <SteadyState Duration="120.00001" Power="0.50449997" pace="682" Cadence="85"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="682" Cadence="90"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="682">
+            <textevent timeoffset="140" message="Looking for controlled power..."/>
+            <textevent timeoffset="150" message="no drop off."/>
+        </SteadyState>
+        <IntervalsT Repeat="10" OnDuration="40" OffDuration="20" OnPower="1.0957547" OffPower="0.55487418" pace="682" Cadence="95" CadenceResting="80">
+            <textevent timeoffset="280.00021" message="Halfway there!"/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.50449997" pace="682"/>
+        <IntervalsT Repeat="10" OnDuration="40" OffDuration="20" OnPower="1.0944999" OffPower="0.55449998" pace="682" Cadence="95" CadenceResting="80"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682">
+            <textevent timeoffset="240.00002" message="Now to finish with a strong"/>
+            <textevent timeoffset="240.00002" message="3min effort!" y="270"/>
+            <textevent timeoffset="15.000001" message="How does your finishing HR"/>
+            <textevent timeoffset="25.000002" message="compare to the 1st effort?" y="270"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="1.2544999" pace="682" Cadence="90"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="682"/>
+    </workout>
+</workout_file>
