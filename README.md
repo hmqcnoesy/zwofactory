@@ -7,7 +7,7 @@
 
 [My Workouts](http://bit.do/zfmyworkouts-)
 
-[Info](http://bit.do/zfinf-)
+[Info](http://bit.do/zfinfo-)
 
 [Settings](http://bit.do/zfsettings-)
 
