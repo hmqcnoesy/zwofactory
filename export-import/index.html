@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>zwofactory.com - Settings</title>
+    <title>zwofactory.com - Export / Import</title>
     <link rel="stylesheet" href="/site.css" /><link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/apple-touch-icon-57x57.png" />
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/apple-touch-icon-114x114.png" />
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/apple-touch-icon-72x72.png" />
@@ -37,51 +37,21 @@ zwofactory.com
 </header>
 
 <main>
-<p>These settings change the behavior and appearance of the workout editing experience.  </p>
-<p>Do not change any settings unless you are certain what you are doing. </p>
-<p>If settings cause a problem with the app, reset your settings to defaults and save.</p>
+Export / Import
 <hr />
+
+<p>
+To download a file containing all "My Workouts" saved to this browser, click the "Export My Workouts" button.  <br />
+To import workouts from such an exported file, click the "Import Workouts File" button and navigate to the .json file.
+</p>
+
+
 <div class="grid">
-    <div class="u-1-4 u-sm-1-2"><button id="btnReloadDefaults">Reload defaults</button></div>
-    <div class="u-3-4 u-sm-1-2">Click this button to reload the app's default settings.  Don't forget to save.</div>
+    <div class="u-1-2"><button class="save" id="btnExport">Export My Workouts</button></div>
+    <div class="u-1-2"><button class="save" id="btnImport">Import Workouts File</button></div>
+    <input type="file" hidden style="visibility:hidden;opacity:0;" id="inputFile" />
 </div>
-<hr />
-<div class="striped">
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="showCadenceIndicator" />Show cadence indicators</label></div>
-        <div class="u-3-4 u-sm-1-2">Uncheck this box to remove the cadence indicators from blocks with a cadence requirement.</label></div>
-    </div>
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="showTextEventIndicator" />Show text event indicators</label></div>
-        <div class="u-3-4 u-sm-1-2">Uncheck this box to remove the text indicators from the segments with text events.</label></div>
-    </div>
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="duplicateTextEvents" />Duplicate text events</label></div>
-        <div class="u-3-4 u-sm-1-2">Uncheck this box to disable copying of text events onto duplicated segments.</label></div>
-    </div>
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="horizSecondsPerPixel" />Seconds per pixel</label></div>
-        <div class="u-3-4 u-sm-1-2"><label>Higher number squeezes more into the viewing area at a time, but can be harder to edit.</label></div>
-    </div>
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="shapeHeight" />Shape height</label></div>
-        <div class="u-3-4 u-sm-1-2"><label>Number of vertical pixels to use when drawing workout shapes.</label></div>
-    </div>
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="minShapeWidth" />Minimum shape width</label></div>
-        <div class="u-3-4 u-sm-1-2"><label>Minimum number of pixels to use when drawing a workout block's width.</label></div>
-    </div>
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="verticalPercentsPerPixel" />Vertical % per pixel</label></div>
-        <div class="u-3-4 u-sm-1-2"><label>Higher number compresses workout blocks vertically.</label></div>
-    </div>
-</div>
-<hr />
-<div class="grid">
-    <div class="u-1">
-        <button id="btnSave">Save Settings</button>
-    </div>
-</div>
+
 </main>
 
 <footer>
@@ -94,9 +64,11 @@ zwofactory.com
     </div>
     <hr />
     <div>&copy; 2019 Matt McNeil</div>
-    <img style="display:none" src="//bit.do/zfsettings" />
+    <img style="display:none" src="//bit.do/zfmyworkouts" />
 </footer>
 <script src="/js/settings.js"></script>
-<script src="/js/settings.html.js"></script>
+<script src="/js/zwofactory.js"></script>
+<script src="/js/fileSaver.js"></script>
+<script src="/js/export-import.html.js"></script>
 </body>
 </html>
