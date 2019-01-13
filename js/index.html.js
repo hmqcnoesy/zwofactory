@@ -36,7 +36,7 @@ document.getElementById('divSegmentButtons').addEventListener('click', function(
     var r = svg.getAttribute('data-r');
     var segment = new Segment(t, p1, d1, p2, d2, r);
     currentWorkout.addSegment(segment);
-    addSegmentToChart(segment);
+    addSegmentToChart(segment, true);
 }, false);
 
 
@@ -45,7 +45,8 @@ document.getElementById('btnInsertWorkout').addEventListener('click', function(e
     var workout = new Workout();
     workout.reconstituteFromDeserialized(userSettings.getMyWorkout(selectedWorkoutName));
     for (var i = 0; i < workout.segments.length; i++) {
-        addSegmentToChart(workout.segments[i]);
+        currentWorkout.addSegment(workout.segments[i]);
+        addSegmentToChart(workout.segments[i], i == (workout.segments.length - 1));
     }
 });
 
@@ -58,7 +59,7 @@ document.getElementById('btnDuplicate').addEventListener('click', function() {
     var duplicatedSegment = new Segment();
     duplicatedSegment.duplicateFrom(segmentToDuplicate);
     currentWorkout.addSegment(duplicatedSegment);
-    addSegmentToChart(duplicatedSegment);
+    addSegmentToChart(duplicatedSegment, true);
 });
 
 
@@ -364,12 +365,12 @@ function loadWorkout(workout) {
     document.getElementById('txtTags').value = workout.tags.join(' ');
     document.getElementById('divSegmentChart').innerHTML = '';
     for (var i = 0; i < workout.segments.length; i++) {
-        addSegmentToChart(workout.segments[i]);
+        addSegmentToChart(workout.segments[i], true);
     }
 }
 
 
-function addSegmentToChart(segment) {
+function addSegmentToChart(segment, performClick) {
     var svgs = segment.toSvgs(userSettings);
     var div = document.createElement('div');
     div.setAttribute('data-id', segment.id);
@@ -385,7 +386,7 @@ function addSegmentToChart(segment) {
     div.appendChild(input);
     div.appendChild(label);
     document.getElementById('divSegmentChart').appendChild(div);
-    input.click();
+    if (performClick) input.click();
     updateWorkoutDuration();
 }
 

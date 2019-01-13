@@ -39,6 +39,10 @@ UserSettings.prototype.getAllMyWorkouts = function() {
 
 UserSettings.prototype.saveMyWorkout = function(workout) {
     if (!localStorage) return;
+
+    if (!workout.description) workout.description = '';
+    if (!workout.author) workout.author = '';
+
     var now = new Date();
     var allWorkoutsInfo = this.getAllMyWorkouts();
     var thisWorkoutInfo = allWorkoutsInfo.find(w => w.name == workout.name);
