@@ -2,6 +2,7 @@ var userSettings = new UserSettings();
 var currentWorkout = new Workout();
 
 document.addEventListener('DOMContentLoaded', function() {
+    if (userSettings.enableWorkoutInsertion) setupWorkoutInsertion();
     var savedWorkout = userSettings.getAndUnsetWorkoutForEditing();
     if (!savedWorkout) return;
     var workoutToBeEdited = new Workout();
@@ -27,6 +28,7 @@ document.getElementById('divSegmentButtons').addEventListener('click', function(
         return;
         
     var t = svg.getAttribute('data-t');
+    if (!t) return;
     var p1 = svg.getAttribute('data-p-1');
     var d1 = svg.getAttribute('data-d-1');
     var p2 = svg.getAttribute('data-p-2');
@@ -36,6 +38,16 @@ document.getElementById('divSegmentButtons').addEventListener('click', function(
     currentWorkout.addSegment(segment);
     addSegmentToChart(segment);
 }, false);
+
+
+document.getElementById('btnInsertWorkout').addEventListener('click', function(e) {
+    var selectedWorkoutName = document.getElementById('selWorkout').value;
+    var workout = new Workout();
+    workout.reconstituteFromDeserialized(userSettings.getMyWorkout(selectedWorkoutName));
+    for (var i = 0; i < workout.segments.length; i++) {
+        addSegmentToChart(workout.segments[i]);
+    }
+});
 
 
 document.getElementById('btnDuplicate').addEventListener('click', function() {
@@ -258,6 +270,8 @@ document.getElementById('btnSaveToMyWorkouts').addEventListener('click', functio
     var savedDiv = this.parentNode.querySelector('.saved');
     savedDiv.classList.remove('saved');
     setTimeout(function() { savedDiv.classList.add('saved'); }, 2200);
+
+    if (userSettings.enableWorkoutInsertion) setupWorkoutInsertion();
 });
 
 
@@ -313,6 +327,26 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
     };
     reader.readAsText(files[0]);
 }, false);
+
+
+function setupWorkoutInsertion() {
+    var sel = document.getElementById('selWorkout');
+    sel.innerHTML = '';
+    sel.removeAttribute('hidden');
+    document.getElementById('btnInsertWorkout').removeAttribute('hidden');
+    
+    var workouts = userSettings.getAllMyWorkouts().sort(function(a,b) {
+        if (a.name > b.name) return 1;
+        if (a.name < b.name) return -1;
+        if (a.name == b.name) return 0;
+    });
+    
+    for (var i = 0; i < workouts.length; i++) {
+        var option = document.createElement("option");
+        option.text = workouts[i].name;
+        sel.add(option);
+    }
+}
 
 
 function getSelectedSegment() {
