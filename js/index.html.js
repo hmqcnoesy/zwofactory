@@ -317,13 +317,18 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
     this.classList.remove('dragover');
     var files = e.dataTransfer.files; 
     if (files.length != 1) return;
-    if (files[0].name.toLowerCase().indexOf('.zwo') != files[0].name.length - 4) return;
+    var ext = files[0].name.toLowerCase().substr(-4);
+    var acceptableExts = ['.zwo','.erg','.mrc'];
+    if (acceptableExts.indexOf(ext) < 0) return;
 
     var reader = new FileReader();
     reader.onload = function(event) {
-        var xml = event.target.result;
+        var text = event.target.result;
         var workout = new Workout();
-        workout.loadFromXml(xml);
+        if (ext == '.zwo')
+            workout.loadFromXml(text);
+        else
+            workout.loadFromErgOrMrc(text);
         loadWorkout(workout);
     };
     reader.readAsText(files[0]);

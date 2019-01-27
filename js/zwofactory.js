@@ -145,6 +145,78 @@ Workout.prototype.loadFromXml = function(xml) {
 };
 
 
+Workout.prototype.loadFromErgOrMrc = function(text) {
+    text = text.replace(/(\r\n)|\n/g, '\r');
+    var lines = text.split('\r');
+    var lineCount = lines.length;
+    var lineNumber = 0;
+    var line = lines[lineNumber];
+    var ftp = 0;
+    var isAbsolute = false;
+    var startTime = null;
+    var duration = 0;
+    var startPowerPercent = 0;
+    var endPowerPercent = 0;
+    var importedSegments = [];
+    var parsedLine = [];
+
+    this.name = '';
+    this.description = '';
+    this.author = '';
+    
+    while (line != '[END COURSE HEADER]') {
+        if (lineNumber >= lineCount) break;
+        line = lines[lineNumber++];
+        if (/^DESCRIPTION ?\=/i.test(line)) this.description = line.substr(line.indexOf('=')+1).trim();
+        if (/^FILE ?NAME ?\=/i.test(line)) this.name = line.substr(line.indexOf('=')+1).trim();
+        if (/^FTP ?\=/i.test(line)) ftp = parseFloat(line.substr(line.indexOf('=')+1).trim());
+        if (/^NUMBER (PERCENT)|(WATTS)/i.test(line)) isAbsolute = "WATTS" == line.substr(line.indexOf('=')+1).trim().toUpperCase();
+    }
+
+    while (line != '[END COURSE DATA]') {
+        if (lineNumber >= lineCount) break;
+        line = lines[lineNumber++];
+        if (!/^\d{1,4}\.?\d{0,2}\s+\d{1,4}$/i.test(line)) continue;
+        parsedLine = line.match(/^(\d{1,4}\.?\d{0,2})\s+(\d{1,4})$/i);
+        if (startTime == null) {
+            startTime = parseFloat(parsedLine[1]);
+            startPowerPercent = isAbsolute ? parseFloat(parsedLine[2]) / ftp : parseFloat(parsedLine[2]);
+        } else {
+            duration = Math.round((parseFloat(parsedLine[1]) - startTime) * 60, 0);
+            endPowerPercent = isAbsolute ? parseFloat(parsedLine[2]) / ftp : parseFloat(parsedLine[2]);
+
+            if (startPowerPercent == endPowerPercent)
+                importedSegments.push(new Segment('s', startPowerPercent, duration, null, null, null));
+            else
+                importedSegments.push(new Segment('r', startPowerPercent, duration, endPowerPercent, null, null));
+
+            startTime = null;
+        }
+    }
+
+    while (line != '[END COURSE TEXT]') {
+        if (lineNumber >= lineCount) break;
+        line = lines[lineNumber++];
+        if (!/^\d{1,5}\s+.+\s\d{1,2}$/i.test(line)) continue;
+
+        parsedLine = line.match(/^(\d{1,5})\s+(.+)\s+(\d{1,2})$/i);
+        startTime = parseInt(parsedLine[1]);
+        message = parsedLine[2];
+        var cumulativeSeconds = 0;
+        for (var i = 0; i < importedSegments.length; i++) {
+            if (startTime >= cumulativeSeconds && startTime < (cumulativeSeconds + importedSegments[i].d1))
+                importedSegments[i].textEvents.push({ id: createGuid(), offset: (startTime - cumulativeSeconds), text: message });
+            
+            cumulativeSeconds += importedSegments[i].d1;
+        }
+    }
+
+    for (var i = 0; i < importedSegments.length; i++) {
+        this.segments.push(importedSegments[i]);
+    }
+};
+
+
 function Segment(t, p1, d1, p2, d2, r) {
     this.id = createGuid();
     this.t = t;
