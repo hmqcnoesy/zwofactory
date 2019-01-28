@@ -151,7 +151,7 @@ Workout.prototype.loadFromErgOrMrc = function(text) {
     var lineCount = lines.length;
     var lineNumber = 0;
     var line = lines[lineNumber];
-    var ftp = 200;
+    var ftp = userSettings.userFtp;
     var isAbsolute = false;
     var startTime = null;
     var duration = 0;
@@ -186,9 +186,9 @@ Workout.prototype.loadFromErgOrMrc = function(text) {
             endPowerPercent = isAbsolute ? parseFloat(parsedLine[2]) * 100 / ftp : parseFloat(parsedLine[2]);
 
             if (startPowerPercent == endPowerPercent)
-                importedSegments.push(new Segment('s', startPowerPercent, duration, null, null, null));
+                importedSegments.push(new Segment('s', Math.round(startPowerPercent, 0), duration, null, null, null));
             else
-                importedSegments.push(new Segment('r', startPowerPercent, duration, endPowerPercent, null, null));
+                importedSegments.push(new Segment('r', Math.round(startPowerPercent, 0), duration, Math.round(endPowerPercent, 0), null, null));
 
             startTime = null;
         }
