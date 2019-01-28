@@ -151,7 +151,7 @@ Workout.prototype.loadFromErgOrMrc = function(text) {
     var lineCount = lines.length;
     var lineNumber = 0;
     var line = lines[lineNumber];
-    var ftp = 0;
+    var ftp = 200;
     var isAbsolute = false;
     var startTime = null;
     var duration = 0;
@@ -170,20 +170,20 @@ Workout.prototype.loadFromErgOrMrc = function(text) {
         if (/^DESCRIPTION ?\=/i.test(line)) this.description = line.substr(line.indexOf('=')+1).trim();
         if (/^FILE ?NAME ?\=/i.test(line)) this.name = line.substr(line.indexOf('=')+1).trim();
         if (/^FTP ?\=/i.test(line)) ftp = parseFloat(line.substr(line.indexOf('=')+1).trim());
-        if (/^NUMBER (PERCENT)|(WATTS)/i.test(line)) isAbsolute = "WATTS" == line.substr(line.indexOf('=')+1).trim().toUpperCase();
+        if (/^NUMBER (PERCENT)|(WATTS)/i.test(line)) isAbsolute = "WATTS" == line.substr(8);
     }
 
     while (line != '[END COURSE DATA]') {
         if (lineNumber >= lineCount) break;
         line = lines[lineNumber++];
-        if (!/^\d{1,4}\.?\d{0,2}\s+\d{1,4}$/i.test(line)) continue;
-        parsedLine = line.match(/^(\d{1,4}\.?\d{0,2})\s+(\d{1,4})$/i);
+        if (!/^(\d{1,4}\.?\d{0,2})\s+(\d{1,4}\.?\d{0,2})$/i.test(line)) continue;
+        parsedLine = line.match(/^(\d{1,4}\.?\d{0,2})\s+(\d{1,4}\.?\d{0,2})$/i);
         if (startTime == null) {
             startTime = parseFloat(parsedLine[1]);
-            startPowerPercent = isAbsolute ? parseFloat(parsedLine[2]) / ftp : parseFloat(parsedLine[2]);
+            startPowerPercent = isAbsolute ? parseFloat(parsedLine[2]) * 100 / ftp : parseFloat(parsedLine[2]);
         } else {
             duration = Math.round((parseFloat(parsedLine[1]) - startTime) * 60, 0);
-            endPowerPercent = isAbsolute ? parseFloat(parsedLine[2]) / ftp : parseFloat(parsedLine[2]);
+            endPowerPercent = isAbsolute ? parseFloat(parsedLine[2]) * 100 / ftp : parseFloat(parsedLine[2]);
 
             if (startPowerPercent == endPowerPercent)
                 importedSegments.push(new Segment('s', startPowerPercent, duration, null, null, null));
