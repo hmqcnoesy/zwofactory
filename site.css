@@ -1,12 +1,12 @@
 
-html { font-family: Segoe UI, Arial, Helvetica, sans-serif; padding:0; color: #555; text-shadow: 0px 0px 5px rgba(150, 150, 150, 1); background-color: #468; }
-body {  margin: auto; max-width: 1200px; }
+html { font-family: Segoe UI, Arial, Helvetica, sans-serif; padding:0; color: #333; background: #000428; background: linear-gradient(to right, #000428, #336688, #000428); /*! background-repeat: repeat; */ }
+body {  margin: auto; max-width: 1040px; }
 header,main,footer { background-color: white; padding: 1em; border-radius: 0.25em; border: 1px solid black; display: block; }
 header { border-top-left-radius: 0; border-top-right-radius: 0; border-top: none; padding: 0.5em 0; margin-bottom: 10px; }
 main { margin-bottom: 10px; }
 footer { border-bottom-left-radius: 0; border-bottom-right-radius: 0; padding: 1em; text-align: center; }
-header a { text-decoration: none; }
-a { display: block; color: #456; cursor:pointer; text-decoration: underline; }
+header a { text-decoration: none; color: #000428;}
+a { display: block; color: #000428; cursor:pointer; text-decoration: underline; }
 h1 { padding: 0; margin: 0; text-align: center; }
 hr { margin: 18px 0; border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(68, 85, 102, 0.75), rgba(0, 0, 0, 0)); }
 p {padding: 1em}
@@ -30,24 +30,24 @@ label { display: block; }
 .u-1-10 { width: 10%; }
 .u-1-12 { width: 8.33%; }
 .u-1-24 { width: 4.1666%; }
-textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 0.9em; width:100%; border: 1px solid #555; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
+textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 0.9em; width:100%; border: 1px solid #333; border-radius: 3px;  /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ }
 select,
 input[type=text],
-input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid #555; border-radius: 10px; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);}
+input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid #333; border-radius: 3px; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); *//*! background-color: #; */}
 input[type=number] { text-align: center; min-width: 62px; }
 *:focus { outline: none; }
-button { width: 100%; padding: 0.5em; cursor: pointer; color: #555; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid #555; border-radius: 10px; background-color: gainsboro; }
-button.save { background-color: #456; color: white; font-weight: bold; }
+button { width: 100%; padding: 0.5em; cursor: pointer; color: #333; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ border: 1px solid #333; border-radius: 3px; background-color: #e7e7e7; }
+button.save { background-color: #284a6c; color: white; font-weight: bold; border-color: #000428;}
 .saved { opacity: 0; transition-property: opacity; transition-duration: 1s;  }
 svg { display: inline-block; }
 
 .z0 { fill: gainsboro; }
-.z1 { fill: #837C83; }
-.z2 { fill: #3C8FD1; }
-.z3 { fill: #4AC171; }
-.z4 { fill: #FFCC3F; }
-.z5 { fill: #F06D43; }
-.z6 { fill: #D6270C; }
+.z1 { fill: #7b7971; }
+.z2 { fill: #284a6c; }
+.z3 { fill: #80b139; }
+.z4 { fill: yellow; }
+.z5 { fill: #f26418; }
+.z6 { fill: #D23430; }
 .wu { fill: #837C83; }
 .cd { fill: #837C83; }
 .fr { fill: #837C83; }
@@ -56,16 +56,16 @@ svg { display: inline-block; }
 .indicator { width: 1em; height: 1em; margin-top: auto; margin-bottom: auto; border-radius: 100%; vertical-align: bottom; line-height: 1em; }
 .invisible { display: none; }
 .striped > * { padding: 1em; }
-.striped > *:nth-child(odd) { background-color: #eee; }
+.striped > * {  /*! background: linear-gradient(to right bottom, #000428, #fff, #fff, #fff, #fff, #fff, #fff, white, white); *//*! border-bottom-color: linear-gradient(to right, #000428, white); */border: 1px solid #000428;border-radius: 3px;margin-bottom: 3px;}
 .striped > *:nth-child(even) { background-color: white; }
 
 [data-workout] { white-space: nowrap; overflow-x: auto; }
-#divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 344px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid #555; border-radius: 10px;  box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); }
+#divSegmentChart { width: 100%; box-sizing: border-box; margin: 0; white-space: nowrap; background-color: white; height: 344px; vertical-align: bottom; padding: 10px; overflow-x: auto;  border: 1px solid #333; border-radius: 3px;  /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ }
 #divSegmentChart div { display: inline-block; }
 #divSegmentChart svg { cursor: pointer; margin-right: 1px; }
 #divSegmentChart svg > path { stroke: black; stroke-width: 0.5; }
 #divSegmentChart input { display: none; }
-#divSegmentChart input:checked + label { border-bottom: 6px solid #456; }
+#divSegmentChart input:checked + label { border-bottom: 6px solid #000428; }
 #divSegmentChart label { display: inline; cursor: pointer; }
 #divSegmentChart label:hover { border-bottom: 6px solid gainsboro; }
 #divWorkoutDuration { position: relative; top: 6px; padding-right: 10px; text-align: right; float: right; height: 0; }
@@ -75,7 +75,7 @@ svg { display: inline-block; }
 .dragover { background-color: gainsboro !important; }
 
 .overlay { z-index:998;position:fixed;top:0;right:0;bottom:0;left:0;background-color:black;opacity:0.5; }
-.modal { display: none; width: 400px; max-height: 400px; overflow-y: auto; box-sizing: border-box; padding: 0.5em; background-color: white; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid #555; border-radius: 10px; }
+.modal { display: none; width: 400px; max-height: 400px; overflow-y: auto; box-sizing: border-box; padding: 0.5em; background-color: white; box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); border: 1px solid #333; border-radius: 3px; }
 .modal.shown { z-index:999; display: block; position: fixed; margin: auto; top: 30%; left: 50%; margin-left: -200px; margin-right: -200px; }
 
 @media only screen and (max-width:730px) {
