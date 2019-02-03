@@ -13,6 +13,7 @@ p {padding: 1em}
 img { display: block; margin: 0 auto; max-width: 100%; }
 li {padding: 0.3em;}
 label { display: block; }
+.display-none { display: none !important; }
 .grid { display: flex; flex-flow: row wrap; align-content: flex-start; letter-spacing: -.31em; vertical-align: bottom; }
 .grid > * { display: inline-block; padding: 0.25em; box-sizing: border-box; letter-spacing: normal; }
 .u-1 { width: 100%; }

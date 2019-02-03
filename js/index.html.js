@@ -3,7 +3,16 @@ var currentWorkout = new Workout();
 
 document.addEventListener('DOMContentLoaded', function() {
     if (userSettings.enableWorkoutInsertion) setupWorkoutInsertion();
-    var savedWorkout = userSettings.getAndUnsetWorkoutForEditing();
+    if (userSettings.enableUrlCreation) setupCreateWorkoutUrlButton();
+    
+    var savedWorkout = null;
+    var qs = new URLSearchParams(window.location.search);
+    if (qs.has('n') && qs.has('w')) {
+        savedWorkout = new Workout();
+        savedWorkout.loadFromUrl(window.location.search);
+    } else {
+        savedWorkout = userSettings.getAndUnsetWorkoutForEditing();
+    }
     if (!savedWorkout) return;
     var workoutToBeEdited = new Workout();
     workoutToBeEdited.reconstituteFromDeserialized(savedWorkout);
@@ -152,6 +161,7 @@ document.getElementById('btnShowTextEvents').addEventListener('click', function(
 
 document.getElementById('btnDimissCadence').addEventListener('click', dismissModal);
 document.getElementById('btnDimissTextEvents').addEventListener('click', dismissModal);
+document.getElementById('btnDimissUrl').addEventListener('click', dismissModal);
 
 document.getElementById('chkCadence').addEventListener('click', function() {
     var selectedSegment = getSelectedSegment();
@@ -290,6 +300,21 @@ document.getElementById('btnDownloadZwoFile').addEventListener('click', function
 });
 
 
+document.getElementById('btnCreateUrl').addEventListener('click', function() {
+    if (!currentWorkout.name) {
+        var name = getName();
+        currentWorkout.name = name;
+        document.getElementById('txtName').value = name;
+    }
+
+    var url = currentWorkout.toUrl();
+    var link = document.getElementById('aUrl');
+    link.setAttribute('href', url);
+    link.innerText = url;
+    showModal('divModalCreateUrl');
+});
+
+
 document.getElementById('divSegmentChart').addEventListener('dragenter', function(e) {
     e.stopPropagation();
     e.preventDefault();
@@ -351,6 +376,16 @@ function setupWorkoutInsertion() {
         var option = document.createElement("option");
         option.text = workouts[i].name;
         sel.add(option);
+    }
+}
+
+
+function setupCreateWorkoutUrlButton() {
+    var buttonDivs = document.querySelectorAll('#divButtons > div');
+    for (var i = 0; i < buttonDivs.length; i++) {
+        buttonDivs[i].classList.remove('display-none');
+        buttonDivs[i].classList.remove('u-1-2');
+        buttonDivs[i].classList.add('u-1-3');
     }
 }
 

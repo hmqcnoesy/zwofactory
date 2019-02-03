@@ -86,6 +86,30 @@ Workout.prototype.toZwoXml = function() {
 };
 
 
+Workout.prototype.toUrl = function() {
+    var url = location.protocol + '//' + location.host + location.pathname
+        + '?a=' + encodeURIComponent(this.author ? this.author : '') 
+        + '&n=' + encodeURIComponent(this.name) 
+        + '&d=' + encodeURIComponent(this.description ? this.description : '') 
+        + '&t=';
+    var encodedTags = [];
+
+    for (var i = 0; i < this.tags.length; i++) {
+        if (this.tags[i].trim() == '') continue;
+        encodedTags.push(encodeURIComponent(this.tags[i]));
+    }
+    url += encodedTags.join('+');
+    
+    url += '&w=';
+
+    for (var i = 0; i < this.segments.length; i++) {
+        url += this.segments[i].toUriComponent();
+    }
+
+    return url;
+};
+
+
 Workout.prototype.loadFromXml = function(xml) {
     parser = new DOMParser();
     xmlDoc = parser.parseFromString(xml, "text/xml");
@@ -213,6 +237,53 @@ Workout.prototype.loadFromErgOrMrc = function(text) {
 
     for (var i = 0; i < importedSegments.length; i++) {
         this.segments.push(importedSegments[i]);
+    }
+};
+
+
+Workout.prototype.loadFromUrl = function(queryString) {
+    var qsValues = new URLSearchParams(queryString);
+    this.name = qsValues.get('n');
+    this.description = qsValues.get('d');
+    this.author = qsValues.get('a');
+    this.tags = qsValues.get('t').split(' ');
+    var workoutString = qsValues.get('w');
+    var regex = /(s|r|f|i)([0-9A-Z]+)/g;
+    var match = regex.exec(workoutString);
+
+    while (match != null) {
+        switch (match[1]) {
+            case "s":
+                var d1 = getIntOrDefault(decodeNumber(match[2].substr(0,3)), 5);
+                var p1 = getIntOrDefault(decodeNumber(match[2].substr(3,2)), 5);
+                segmentToAdd = new Segment('s', p1, d1, null, null, null);
+                if (match[2].length == 7) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(5,2)), 5);
+                break;
+            case "r":
+                var d1 = getIntOrDefault(decodeNumber(match[2].substr(0,3)), 5);
+                var p1 = getIntOrDefault(decodeNumber(match[2].substr(3,2)), 5);
+                var p2 = getIntOrDefault(decodeNumber(match[2].substr(5,2)), 5);
+                segmentToAdd = new Segment('r', p1, d1, p2, null, null);
+                if (match[2].length == 9) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(7,2)), 5);
+                break;
+            case "f":
+                segmentToAdd = new Segment('f', null, getIntOrDefault(decodeNumber(match[2].substr(0,3)), 5), null, null, null);
+                if (match[2].length == 5) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(3,2)), 5);
+                break;
+            case "i":
+                var r = getIntOrDefault(decodeNumber(match[2].substr(0,1)), 1);
+                var d1 = getIntOrDefault(decodeNumber(match[2].substr(1,3)), 5);
+                var d2 = getIntOrDefault(decodeNumber(match[2].substr(4,3)), 5);
+                var p1 = getIntOrDefault(decodeNumber(match[2].substr(7,2)), 5);
+                var p2 = getIntOrDefault(decodeNumber(match[2].substr(9,2)), 5);
+                segmentToAdd = new Segment('i', p1, d1, p2, d2, r);
+                if (match[2].length >= 12) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(11,2)), 5);
+                if (match[2].length == 15) segmentToAdd.c2 = getIntOrDefault(decodeNumber(match[2].substr(13,2)), 5);
+                break;
+        }
+            
+        this.segments.push(segmentToAdd);
+        match = regex.exec(workoutString);
     }
 };
 
@@ -432,6 +503,74 @@ Segment.prototype.textEventsToZwoElements = function() {
     }
     return xmlElements;
 };
+
+
+Segment.prototype.toUriComponent = function() {
+    var url = '';
+    switch(this.t) {
+        case "s":
+            url += 's' + encodeNumber(this.d1,3) + encodeNumber(this.p1,2);
+            break;
+        case "w":
+        case "c":
+        case "r":
+            url += 'r' + encodeNumber(this.d1,3) + encodeNumber(this.p1,2) + encodeNumber(this.p2,2);
+            break;
+        case "f":
+            url += 'f' + encodeNumber(this.d1,3);
+            break;
+        case "i":
+            url += 'i' + encodeNumber(this.r,1) + encodeNumber(this.d1,3) + encodeNumber(this.d2,3) + encodeNumber(this.p1,2) + encodeNumber(this.p2,2);
+            break;
+        default:
+            break;
+    }
+
+    if (this.c1) url += encodeNumber(this.c1,2);
+    if (this.c2) url += encodeNumber(this.c2,2);
+    return url;
+};
+
+
+function encodeNumber(num, digits) {
+    if (!digits || digits > 3) digits = 3;
+    if (digits < 1) digits = 1;
+
+    if (digits == 3 && num > 46655) num = 46655;
+    if (digits == 2 && num > 1295) num = 1295;
+    if (digits == 1 && num > 35) num = 35;
+
+    var result = Math.round(num, 0);
+    var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
+    var mod;
+    var encoded = [];
+
+    while(true) {
+        mod = result % 36;
+        result = Math.floor(result / 36);
+        encoded.unshift(chars[mod]);
+        if (result == 0) break;
+    }
+
+    while (encoded.length < digits)
+        encoded.unshift('0');
+
+    return encoded.join('');
+}
+
+
+function decodeNumber(num) {
+    var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
+    var mult = 1;
+    var sum = 0;
+
+    for (var i = num.length; i > 0; i--) {
+        sum += mult * chars.indexOf(num[i-1]);
+        mult *= 36;
+    }
+
+    return sum;
+}
 
 
 function isNumeric(value) {
