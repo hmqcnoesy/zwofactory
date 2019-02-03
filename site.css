@@ -31,11 +31,12 @@ label { display: block; }
 .u-1-10 { width: 10%; }
 .u-1-12 { width: 8.33%; }
 .u-1-24 { width: 4.1666%; }
-textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 0.9em; width:100%; border: 1px solid #333; border-radius: 3px;  /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ }
+textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; width:100%; border: 1px solid #333; border-radius: 3px;  /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ }
 select,
 input[type=text],
-input[type=number] { width: 100%; box-sizing: border-box; padding: 0.5em; border: 1px solid #333; border-radius: 3px; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); *//*! background-color: #; */}
+input[type=number] { width: 100%; font-size: 1em; box-sizing: border-box; padding: 0.5em; border: 1px solid #333; border-radius: 3px; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); *//*! background-color: #; */}
 input[type=number] { text-align: center; min-width: 62px; }
+
 *:focus { outline: none; }
 button { width: 100%; padding: 0.5em; cursor: pointer; color: #333; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ border: 1px solid #333; border-radius: 3px; background-color: #e7e7e7; }
 button.save { background-color: #284a6c; color: white; font-weight: bold; border-color: #000428;}
