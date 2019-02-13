@@ -143,20 +143,26 @@
         <button id="btnDimissCadence">Close</button>
     </div>
     <div class="modal" id="divModalTextEvents">
-        <button id="btnAddTextEvent">+ Text Event</button>
-        <div class="grid">
-            <div class="u-3-5">Text</div>
-            <div class="u-2-5">Offset (s)</div>
+        <div class="modal-header">
+            <button id="btnAddTextEvent">+ Text Event</button>
+            <div class="grid">
+                <div class="u-3-5">Text</div>
+                <div class="u-2-5">Offset (s)</div>
+            </div>
         </div>
-        <div id="divTextEventToClone" class="invisible grid"><div class="u-3-5">
-            <input type="text" value="Text" /></div><div class="u-1-5">
-            <input type="number" value="0" min="0" step="10" name="offset" /></div><div class="u-1-5">
-            <button>⌫</button></div>
+        <div class="modal-body">
+            <div id="divTextEventToClone" class="invisible grid"><div class="u-3-5">
+                <input type="text" value="Text" /></div><div class="u-1-5">
+                <input type="number" value="0" min="0" step="10" name="offset" /></div><div class="u-1-5">
+                <button>⌫</button></div>
+            </div>
+            <div id="divTextEvents">
+            </div>
+            <hr />
         </div>
-        <div id="divTextEvents">
+        <div class="modal-footer">
+            <button id="btnDimissTextEvents">Close</button>
         </div>
-        <hr />
-        <button id="btnDimissTextEvents">Close</button>
     </div>
     <div class="modal" id="divModalCreateUrl">
         <div>
