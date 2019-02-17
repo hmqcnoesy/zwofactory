@@ -9,6 +9,8 @@ function UserSettings(useDefaults) {
     this.userFtp = 200;
     this.enableUrlCreation = true;
     this.enableWorkoutInsertion = false;
+    this.displayAbsolutePower = false;
+    this.displayTimeInMinutes = true;
 
     if (!useDefaults && localStorage && localStorage.zwofactorySettings) {
         var savedSettings = JSON.parse(localStorage.zwofactorySettings);

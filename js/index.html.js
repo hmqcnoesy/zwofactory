@@ -2,8 +2,9 @@ var userSettings = new UserSettings();
 var currentWorkout = new Workout();
 
 document.addEventListener('DOMContentLoaded', function() {
-    if (userSettings.enableWorkoutInsertion) setupWorkoutInsertion();
-    if (userSettings.enableUrlCreation) setupCreateWorkoutUrlButton();
+    if (userSettings.enableWorkoutInsertion) setupWorkoutInsertion(true);
+    if (userSettings.enableUrlCreation) setupCreateWorkoutUrlButton(true);
+    populateUserSettings();
     
     var savedWorkout = null;
     var qs = new URLSearchParams(window.location.search);
@@ -159,9 +160,10 @@ document.getElementById('btnShowTextEvents').addEventListener('click', function(
 });
 
 
-document.getElementById('btnDimissCadence').addEventListener('click', dismissModal);
-document.getElementById('btnDimissTextEvents').addEventListener('click', dismissModal);
-document.getElementById('btnDimissUrl').addEventListener('click', dismissModal);
+document.getElementById('btnDismissCadence').addEventListener('click', dismissModal);
+document.getElementById('btnDismissTextEvents').addEventListener('click', dismissModal);
+document.getElementById('btnDismissUrl').addEventListener('click', dismissModal);
+document.getElementById('btnDismissSettings').addEventListener('click', dismissModal);
 
 document.getElementById('chkCadence').addEventListener('click', function() {
     var selectedSegment = getSelectedSegment();
@@ -226,6 +228,8 @@ document.getElementById('divSegmentInputs').addEventListener('input', function(e
         label.appendChild(svgs[i]);
     }
     updateWorkoutDuration();
+    updateTimeInMinutes();
+    updateAbsolutePower();
 });
 
 
@@ -282,7 +286,7 @@ document.getElementById('btnSaveToMyWorkouts').addEventListener('click', functio
     savedDiv.classList.remove('saved');
     setTimeout(function() { savedDiv.classList.add('saved'); }, 2200);
 
-    if (userSettings.enableWorkoutInsertion) setupWorkoutInsertion();
+    if (userSettings.enableWorkoutInsertion) setupWorkoutInsertion(true);
 });
 
 
@@ -312,6 +316,31 @@ document.getElementById('btnCreateUrl').addEventListener('click', function() {
     link.setAttribute('href', url);
     link.innerText = url;
     showModal('divModalCreateUrl');
+});
+
+
+document.getElementById('aSettings').addEventListener('click', function() {
+    showModal('divModalSettings');
+});
+
+
+document.getElementById('btnDismissSettings').addEventListener('click', function(e) {
+    var checkboxes  = document.querySelectorAll('#divModalSettings input[type=checkbox]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        userSettings[checkboxes[i].getAttribute('data-key')] = checkboxes[i].checked;
+    }
+
+    var numInputs = document.querySelectorAll('#divModalSettings input[type=number]');
+    for (var i = 0; i < numInputs.length; i++) {
+        userSettings[numInputs[i].getAttribute('data-key')] = numInputs[i].value;
+    }
+
+    userSettings.saveSettings();
+
+    setupWorkoutInsertion(userSettings.enableWorkoutInsertion);
+    setupCreateWorkoutUrlButton(userSettings.enableUrlCreation);
+    updateTimeInMinutes();
+    updateAbsolutePower();
 });
 
 
@@ -360,12 +389,22 @@ document.getElementById('divSegmentChart').addEventListener('drop', function(e) 
 }, false);
 
 
-function setupWorkoutInsertion() {
+function setupWorkoutInsertion(enable) {
+
     var sel = document.getElementById('selWorkout');
-    sel.innerHTML = '';
-    sel.removeAttribute('hidden');
-    document.getElementById('btnInsertWorkout').removeAttribute('hidden');
+    var btn = document.getElementById('btnInsertWorkout');
+
+    if (enable) {
+        sel.removeAttribute('hidden');
+        btn.removeAttribute('hidden');
+    } else {
+        sel.setAttribute('hidden', '');
+        btn.setAttribute('hidden', '');
+        return;
+    }
     
+    sel.innerHTML = '';
+
     var workouts = userSettings.getAllMyWorkouts().sort(function(a,b) {
         if (a.name > b.name) return 1;
         if (a.name < b.name) return -1;
@@ -380,12 +419,23 @@ function setupWorkoutInsertion() {
 }
 
 
-function setupCreateWorkoutUrlButton() {
-    var buttonDivs = document.querySelectorAll('#divButtons > div');
-    for (var i = 0; i < buttonDivs.length; i++) {
-        buttonDivs[i].classList.remove('display-none');
-        buttonDivs[i].classList.remove('u-1-2');
-        buttonDivs[i].classList.add('u-1-3');
+function setupCreateWorkoutUrlButton(enable) {
+    var buttonSave = document.querySelector('#divButtons > div:nth-child(1)');
+    var buttonUrl = document.querySelector('#divButtons > div:nth-child(2)');
+    var buttonDownload = document.querySelector('#divButtons > div:nth-child(3)');
+    
+    if (enable) {
+        buttonSave.classList.remove('u-1-2');
+        buttonDownload.classList.remove('u-1-2');
+        buttonUrl.classList.remove('display-none');
+        buttonSave.classList.add('u-1-3');
+        buttonDownload.classList.add('u-1-3');
+    } else {
+        buttonSave.classList.remove('u-1-3');
+        buttonDownload.classList.remove('u-1-3');
+        buttonUrl.classList.add('display-none');
+        buttonSave.classList.add('u-1-2');
+        buttonDownload.classList.add('u-1-2');
     }
 }
 
@@ -406,6 +456,19 @@ function loadWorkout(workout) {
     document.getElementById('divSegmentChart').innerHTML = '';
     for (var i = 0; i < workout.segments.length; i++) {
         addSegmentToChart(workout.segments[i], true);
+    }
+}
+
+
+function populateUserSettings() {
+    var checkboxes  = document.querySelectorAll('#divModalSettings input[type=checkbox]');
+    for (var i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = userSettings[checkboxes[i].getAttribute('data-key')];
+    }
+
+    var numInputs = document.querySelectorAll('#divModalSettings input[type=number]');
+    for (var i = 0; i < numInputs.length; i++) {
+        numInputs[i].value = userSettings[numInputs[i].getAttribute('data-key')];
     }
 }
 
@@ -441,7 +504,6 @@ function loadSegmentInfo(segmentId) {
     var txtC1 = document.getElementById('txtC1');
     var txtC2 = document.getElementById('txtC2');
     var divTexts = document.getElementById('divTextEvents');
-    var btnAddTextEvent = document.getElementById('btnAddTextEvent');
     var selected = currentWorkout.segments.find(s => s.id === segmentId);
     
     if (selected.r) { txtR.value = selected.r; txtR.removeAttribute('disabled'); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
@@ -452,9 +514,81 @@ function loadSegmentInfo(segmentId) {
     if (selected.c1) { txtC1.value = selected.c1; txtC1.removeAttribute('disabled'); chkCadence.checked = true; } else { txtC1.value = ''; txtC1.setAttribute('disabled', true); chkCadence.checked = false;  }
     if (selected.c2) { txtC2.value = selected.c2; txtC2.removeAttribute('disabled'); } else { txtC2.value = ''; txtC2.setAttribute('disabled', true); }
 
+    updateTimeInMinutes();
+    updateAbsolutePower();
+
     divTexts.innerHTML = '';
     for (var i = 0; i < selected.textEvents.length; i++) {
         addTextEventControls(selected.textEvents[i]);
+    }
+}
+
+
+function updateTimeInMinutes() {
+    var txtD1 = document.getElementById('txtD1');
+    var txtD2 = document.getElementById('txtD2');
+    var divD1 = document.getElementById('divD1');
+    var divD2 = document.getElementById('divD2');
+
+    if (userSettings.displayTimeInMinutes) {
+        if (txtD1.hasAttribute('disabled')) {
+            divD1.setAttribute('hidden', '');
+        } else {
+            divD1.removeAttribute('hidden'); 
+            divD1.innerText = secondsToMinutes(txtD1.value);
+        }
+
+        if (txtD2.hasAttribute('disabled')) {
+            divD2.setAttribute('hidden', '');
+        } else {
+            divD2.removeAttribute('hidden'); 
+            divD2.innerText = secondsToMinutes(txtD2.value);
+        }
+    } else {
+        divD2.setAttribute('hidden', '');
+        divD1.setAttribute('hidden', '');
+    }
+}
+
+
+function updateAbsolutePower() {
+    var txtP1 = document.getElementById('txtP1');
+    var txtP2 = document.getElementById('txtP2');
+    var divP1 = document.getElementById('divP1');
+    var divP2 = document.getElementById('divP2');
+
+    divP1.classList.remove('z1', 'z2', 'z3', 'z4', 'z5', 'z6');
+    divP2.classList.remove('z1', 'z2', 'z3', 'z4', 'z5', 'z6');
+
+    if (userSettings.displayAbsolutePower) {
+        if (txtP1.hasAttribute('disabled')) {
+            divP1.setAttribute('hidden', '');
+        } else {
+            divP1.removeAttribute('hidden'); 
+            divP1.innerText = Math.round(txtP1.value / 100 * userSettings.userFtp) + ' W';
+            if (txtP1.value >= 119) divP1.classList.add('z6');
+            else if (txtP1.value >= 105) divP1.classList.add('z5');
+            else if (txtP1.value >= 90) divP1.classList.add('z4');
+            else if (txtP1.value >= 76) divP1.classList.add('z3');
+            else if (txtP1.value >= 60) divP1.classList.add('z2');
+            else divP1.classList.add('z1');
+        }
+
+        if (txtP2.hasAttribute('disabled')) {
+            divP2.setAttribute('hidden', '');
+        } else {
+            divP2.removeAttribute('hidden'); 
+            divP2.innerText = Math.round(txtP2.value / 100 * userSettings.userFtp) + ' W';
+            if (txtP2.value >= 119) divP2.classList.add('z6');
+            else if (txtP2.value >= 105) divP2.classList.add('z5');
+            else if (txtP2.value >= 90) divP2.classList.add('z4');
+            else if (txtP2.value >= 76) divP2.classList.add('z3');
+            else if (txtP2.value >= 60) divP2.classList.add('z2');
+            else divP2.classList.add('z1');
+        }
+    } else {
+        divP1.setAttribute('hidden', '');
+        divP2.setAttribute('hidden', '');
     }
 }
 
@@ -509,4 +643,15 @@ function addTextEventControls(textEvent) {
 
 function updateWorkoutDuration() {
     document.getElementById('divWorkoutDuration').innerHTML = currentWorkout.calculateDuration();
+}
+
+
+function secondsToMinutes(seconds) {
+    var dt = new Date(null);
+    dt.setSeconds(seconds);
+    var str = dt.toISOString().substr(11, 8);
+    if (seconds < 36000) str = str.substr(1);
+    if (seconds < 3600) str = str.substr(2);
+    if (seconds < 600) str = str.substr(1);
+    return str;
 }

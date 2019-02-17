@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -30,7 +30,7 @@
 <body>
 <header>
 <h1><a href="/">
-<img src="/img/logo.svg" alt="zwofactory logo" width="500px" />
+<img src="/img/logo.svg" alt="zwofactory.com" width="500px" />
 </a></h1>
 </header>
 
@@ -120,18 +120,18 @@
             <path d="M10,1 h10 v20 h-10 z" class="z0"></path>
             <path d="M10,23 h10 v3 h-10 z"></path>
             <path stroke="red" stroke-width="1" d="M8,6 l14,10 M8,16 l14,-10"></path>
-            <!--<path stroke="gray" stroke-width="1" d="M5,8 l2,20 h12 l2,-20 z M8,10 l2,16 M13,10 v16 M18,10 l-2,16 M5,8 h-1 v-2 h18 v2 h-2 z M11,6 v-3 h4 v3 z" class="z0"></path>-->
         </svg>
     </div>
 </div>
 <div id="divWorkoutDuration"></div>
+<a id="aSettings" title="Settings"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#284a6c"><path d="M24 13.616v-3.232c-1.651-.587-2.694-.752-3.219-2.019v-.001c-.527-1.271.1-2.134.847-3.707l-2.285-2.285c-1.561.742-2.433 1.375-3.707.847h-.001c-1.269-.526-1.435-1.576-2.019-3.219h-3.232c-.582 1.635-.749 2.692-2.019 3.219h-.001c-1.271.528-2.132-.098-3.707-.847l-2.285 2.285c.745 1.568 1.375 2.434.847 3.707-.527 1.271-1.584 1.438-3.219 2.02v3.232c1.632.58 2.692.749 3.219 2.019.53 1.282-.114 2.166-.847 3.707l2.285 2.286c1.562-.743 2.434-1.375 3.707-.847h.001c1.27.526 1.436 1.579 2.019 3.219h3.232c.582-1.636.75-2.69 2.027-3.222h.001c1.262-.524 2.12.101 3.698.851l2.285-2.286c-.744-1.563-1.375-2.433-.848-3.706.527-1.271 1.588-1.44 3.221-2.021zm-12 2.384c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4-1.791 4-4 4z"></path></svg></a>
 <div id="divSegmentChart"></div>
 
 <div id="divSegmentInputs" class="grid">
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="p1" /><label for="txtP1">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r 1 (%FTP)</label></div>
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="d1" /><label for="txtD1">Dur<span class="sm-hidden">ation</span> 1 (s)</label></div>
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="p2" /><label for="txtP2">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r 2 (%FTP)</label></div>
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="d2" /><label for="txtD2">Dur<span class="sm-hidden">ation</span> 2 (s)</label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="p1" /><label for="txtP1">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r 1 (%FTP) <span hidden id="divP1" class="calculated-info"></span></label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="d1" /><label for="txtD1">Dur<span class="sm-hidden">ation</span> 1 (s) <span hidden id="divD1" class="calculated-info"></span></label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="p2" /><label for="txtP2">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r 2 (%FTP) <span hidden id="divP2" class="calculated-info"></span></label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="d2" /><label for="txtD2">Dur<span class="sm-hidden">ation</span> 2 (s) <span hidden id="divD2" class="calculated-info"></span></label></div>
     <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtR" min="1" max="20" data-target="r" /><label for="txtR">R<span class="sm-hidden">e</span>p<span class="sm-hidden">ea</span>t</label></div>
     <div class="u-1-12 u-sm-1-2"><button id="btnShowCadence"><svg height="12" width="16"><path style="fill:none;" stroke="black" stroke-width="1" d="M8,6 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,6 l-5.5,-5.5 M11.5,9.5 l1.75,1.75"></path></svg></button></div>
     <div class="u-1-12 u-sm-1-2"><button id="btnShowTextEvents"><span style="font-family:'Times New Roman',Times,serif;font-weight:bold">T</span></button></div>
@@ -141,7 +141,7 @@
         <div><input type="number" id="txtC1" min="10" max="200" data-target="c1" /><label for="txtC1">Cadence 1 (RPM)</label></div>
         <div><input type="number" id="txtC2" min="10" max="200" data-target="c2" /><label for="txtC2">Cadence 2 (RPM)</label></div>
         <hr />
-        <button id="btnDimissCadence">Close</button>
+        <button id="btnDismissCadence">Close</button>
     </div>
     <div class="modal" id="divModalTextEvents">
         <div class="modal-header">
@@ -162,7 +162,7 @@
             <hr />
         </div>
         <div class="modal-footer">
-            <button id="btnDimissTextEvents">Close</button>
+            <button id="btnDismissTextEvents">Close</button>
         </div>
     </div>
     <div class="modal" id="divModalCreateUrl">
@@ -174,7 +174,26 @@
         <hr />
         <div style="overflow-x:hidden;white-space:nowrap"><a href="" id="aUrl"></a></div>
         <hr />
-        <button id="btnDimissUrl">Close</button>
+        <button id="btnDismissUrl">Close</button>
+    </div>
+    <div class="modal" id="divModalSettings">
+        <div class="modal-header">Settings</div>
+        <div class="modal-body">
+                <div class="striped">
+                    <div><label><input type="checkbox" data-key="displayTimeInMinutes">Display duration in minutes<a class="infoCircle tooltip">?<div class="left">Check this box to enable the display of segment durations in a min:sec format.</div></a></label></div>
+                    <div><label><input type="checkbox" data-key="displayAbsolutePower">Display absolute power<a class="infoCircle tooltip">?<div class="left">Check this box to enable the display of power in watts, calculated from %FTP and the "My FTP" setting (below).</div></a></label></div>
+                    <div><label><input type="number" min="1" step="1" data-key="userFtp">My FTP (Watts)<a class="infoCircle tooltip">?<div class="left">Your FTP value in watts, for use in displaying absolute power and importing an erg file without an FTP value in the [COURSE HEADER]</div></a></label></div>
+                    <div><label><input type="checkbox" data-key="enableWorkoutInsertion">Enable workout insertion<a class="infoCircle tooltip">?<div class="left">Check this box to enable insertion of entire saved workouts in the workout editor.</div></a></label></div>
+                    <div><label><input type="checkbox" data-key="enableUrlCreation">Enable URL creation<a class="infoCircle tooltip">?<div class="left">Check this box to display a button to share and save your workouts via URL.</div></a></label></div>
+                    <div><label><input type="checkbox" data-key="showCadenceIndicator">Show cadence indicators<a class="infoCircle tooltip">?<div class="left">Uncheck this box to remove the cadence indicators from blocks with a cadence requirement.</div></a></label></div>
+                    <div><label><input type="checkbox" data-key="showTextEventIndicator">Show text event indicators<a class="infoCircle tooltip">?<div class="left">Uncheck this box to remove the text indicators from the segments with text events.</div></a></label></div>
+                    <div><label><input type="checkbox" data-key="duplicateTextEvents">Duplicate text events<a class="infoCircle tooltip">?<div class="left">Uncheck this box to disable copying of text events onto duplicated segments.</div></a></label></div>
+                </div>
+            <hr />
+        </div>
+        <div class="modal-footer">
+            <button id="btnDismissSettings">Close</button>
+        </div>
     </div>
 </div>
 

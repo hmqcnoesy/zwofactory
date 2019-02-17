@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@
 <body>
 <header>
 <h1><a href="/">
-<img src="/img/logo.svg" alt="zwofactory logo" width="500px" />
+<img src="/img/logo.svg" alt="zwofactory.com" width="500px" />
 </a></h1>
 </header>
 
@@ -46,23 +46,35 @@
 <div class="striped">
     <div class="grid">
         <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="showCadenceIndicator" />Show cadence indicators</label></div>
-        <div class="u-3-4 u-sm-1-2">Uncheck this box to remove the cadence indicators from blocks with a cadence requirement.</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Uncheck this box to remove the cadence indicators from blocks with a cadence requirement.</label></div>
     </div>
     <div class="grid">
         <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="showTextEventIndicator" />Show text event indicators</label></div>
-        <div class="u-3-4 u-sm-1-2">Uncheck this box to remove the text indicators from the segments with text events.</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Uncheck this box to remove the text indicators from the segments with text events.</label></div>
     </div>
     <div class="grid">
         <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="duplicateTextEvents" />Duplicate text events</label></div>
-        <div class="u-3-4 u-sm-1-2">Uncheck this box to disable copying of text events onto duplicated segments.</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Uncheck this box to disable copying of text events onto duplicated segments.</label></div>
     </div>
     <div class="grid">
         <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="enableWorkoutInsertion" />Enable workout insertion</label></div>
-        <div class="u-3-4 u-sm-1-2">Check this box to enable insertion of entire saved workouts in the workout editor.</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Check this box to enable insertion of entire saved workouts in the workout editor.</label></div>
     </div>
     <div class="grid">
         <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="enableUrlCreation" />Enable URL creation</label></div>
-        <div class="u-3-4 u-sm-1-2">Check this box to display a button to share and save your workouts via URL.</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Check this box to display a button to share and save your workouts via URL.</label></div>
+    </div>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="displayTimeInMinutes" />Display duration in minutes</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Check this box to enable the display of segment durations in a minutes:seconds format.</label></div>
+    </div>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="checkbox" data-key="displayAbsolutePower" />Display absolute power</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Check this box to enable the display of power in watts, calculated from %FTP and the "My FTP" setting (below).</label></div>
+    </div>
+    <div class="grid">
+        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="userFtp" />Default FTP (Watts) for ERG file import</label></div>
+        <div class="u-3-4 u-sm-1-2"><label>Your FTP value in watts, for use in displaying absolute power and importing an erg file without an FTP value in the [COURSE HEADER]</label></div>
     </div>
     <div class="grid">
         <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="horizSecondsPerPixel" />Seconds per pixel</label></div>
@@ -79,10 +91,6 @@
     <div class="grid">
         <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="verticalPercentsPerPixel" />Vertical % per pixel</label></div>
         <div class="u-3-4 u-sm-1-2"><label>Higher number compresses workout blocks vertically.</label></div>
-    </div>
-    <div class="grid">
-        <div class="u-1-4 u-sm-1-2"><label><input type="number" min="1" step="1" data-key="userFtp" />Default FTP (Watts) for ERG file import</label></div>
-        <div class="u-3-4 u-sm-1-2"><label>Your FTP value in watts, for use only when importing an erg file without an FTP value in the [COURSE HEADER]</label></div>
     </div>
 </div>
 <hr />
