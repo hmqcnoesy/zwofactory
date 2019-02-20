@@ -68,8 +68,8 @@
         --><svg data-t="r" data-p-1="75" data-d-1="600" data-p-2="25" width="30" height="30"><path d="M1,1 L30,20 L30,30 L1,30 Z" class="cd"></path></svg><!--
         --><svg data-t="f" data-d-1="600" width="30" height="30"><path class="fr" d="M 1 15 C 9 2, 20 18, 29 10 H 30 V 30 H 1 Z"></path></svg><!--
         --><svg data-t="i" data-p-1="75" data-d-1="60" data-p-2="50" data-d-2="300" data-r="3" width="30" height="30"><path class="z2" d="M1,1 h5 v30 h-5 Z"></path><path class="z1" d="M5,10 h10 v20 h-10 Z"></path><path class="z2" d="M15,1 h5 v30 h-5 Z"></path><path class="z1" d="M20,10 h10 v20 h-10 Z"></path></svg><!--
-        --><select id="selWorkout" hidden style="margin-left:4px; vertical-align:top; height:30px; width:120px; padding:0;"></select><!--
-        --><span id="btnInsertWorkout" style="cursor:pointer" hidden><svg width="30" height="30"><path class="z3" d="m2,8 h19 v14 h10 l-14,7 l-14,-7 h10 v-10 h-11 Z"></path></svg></span>
+        --><span style="white-space:nowrap"><select id="selWorkout" hidden style="margin-left:4px; vertical-align:top; height:30px; width:120px; padding:0;"></select><!--
+        --><span id="btnInsertWorkout" style="cursor:pointer" hidden><svg width="30" height="30"><path class="z3" d="m2,8 h19 v14 h10 l-14,7 l-14,-7 h10 v-10 h-11 Z"></path></svg></span></span>
     </div>
     <div class="u-1-2 u-sm-1" style="text-align: right;">
         <svg width="30" height="30" id="btnSelectPrevious">
@@ -128,10 +128,10 @@
 <div id="divSegmentChart"></div>
 
 <div id="divSegmentInputs" class="grid">
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="p1" /><label for="txtP1">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r 1 (%FTP) <span hidden id="divP1" class="calculated-info"></span></label></div>
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="d1" /><label for="txtD1">Dur<span class="sm-hidden">ation</span> 1 (s) <span hidden id="divD1" class="calculated-info"></span></label></div>
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="p2" /><label for="txtP2">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r 2 (%FTP) <span hidden id="divP2" class="calculated-info"></span></label></div>
-    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="d2" /><label for="txtD2">Dur<span class="sm-hidden">ation</span> 2 (s) <span hidden id="divD2" class="calculated-info"></span></label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP1" min="5" step="5" data-target="p1" /><label for="txtP1">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r<span class="sm-hidden"> </span>1<span class="sm-hidden"> (%FTP)</span> <span hidden id="divP1" class="calculated-info"></span></label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD1" min="5" step="5" data-target="d1" /><label for="txtD1">Dur<span class="sm-hidden">ation </span>1<span class="sm-hidden"> (s)</span> <span hidden id="divD1" class="calculated-info"></span></label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="p2" /><label for="txtP2">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r<span class="sm-hidden"> </span>2<span class="sm-hidden"> (%FTP)</span> <span hidden id="divP2" class="calculated-info"></span></label></div>
+    <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="d2" /><label for="txtD2">Dur<span class="sm-hidden">ation </span>2<span class="sm-hidden"> (s)</span> <span hidden id="divD2" class="calculated-info"></span></label></div>
     <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtR" min="1" max="20" data-target="r" /><label for="txtR">R<span class="sm-hidden">e</span>p<span class="sm-hidden">ea</span>t</label></div>
     <div class="u-1-12 u-sm-1-2"><button id="btnShowCadence"><svg height="12" width="16"><path style="fill:none;" stroke="black" stroke-width="1" d="M8,6 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,6 l-5.5,-5.5 M11.5,9.5 l1.75,1.75"></path></svg></button></div>
     <div class="u-1-12 u-sm-1-2"><button id="btnShowTextEvents"><span style="font-family:'Times New Roman',Times,serif;font-weight:bold">T</span></button></div>
