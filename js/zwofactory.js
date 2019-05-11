@@ -33,7 +33,7 @@ Workout.prototype.calculateDuration = function() {
     var totalSeconds = 0;
     for (var i = 0; i < this.segments.length; i++) {
         if (this.segments[i].t == 'i') {
-            totalSeconds += Number(this.segments[i].r) * (Number(this.segments[i].d1) + Number(this.segments[i].d2))
+            totalSeconds += Number(this.segments[i].r) * (Number(this.segments[i].d1) + Number(this.segments[i].d2));
         } else {
             totalSeconds += Number(this.segments[i].d1);
         }
@@ -43,6 +43,30 @@ Workout.prototype.calculateDuration = function() {
     var str = dt.toISOString().substr(11, 8);
     if (str.indexOf('0') == 0) str = str.substr(1);
     return str;
+}
+
+
+Workout.prototype.calculateScore = function() {
+    var scoreSum = 0;
+    
+    for (var i = 0; i < this.segments.length; i++) {
+        if (this.segments[i].t == 'i') {
+            var pwr1 = Number(this.segments[i].p1) / 100;
+            var pwr2 = Number(this.segments[i].p2) / 100;
+            scoreSum += Number(this.segments[i].r) * pwr1 * pwr1 * (Number(this.segments[i].d1) / 36);
+            scoreSum += Number(this.segments[i].r) * pwr2 * pwr2 * (Number(this.segments[i].d2) / 36);
+        } else if (this.segments[i].t == 'r') {
+            var avgPwr = ((Number(this.segments[i].p1) + Number(this.segments[i].p2)) / 2) / 100;
+            scoreSum += avgPwr * avgPwr * (Number(this.segments[i].d1) / 36);
+        } else if (this.segments[i].t == 'f') {
+            scoreSum += 0.8 * 0.8 * (Number(this.segments[i].d1) / 36);
+        } else {
+            var pwr = Number(this.segments[i].p1) / 100;
+            scoreSum += pwr * pwr * (Number(this.segments[i].d1) / 36);
+        }
+    }
+
+    return Math.floor(scoreSum, 0);
 }
 
 
@@ -80,7 +104,7 @@ Workout.prototype.toZwoXml = function() {
     }
 
     xml += '    </workout>\r\n'
-        + '</workout_file>';
+        + '</workout_file>\r\n';
 
     return xml;
 };

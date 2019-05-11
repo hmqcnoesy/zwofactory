@@ -90,6 +90,9 @@ svg { display: inline-block; }
 
 .calculated-info { float: right; margin-top: 2px; font-size: 75%; font-weight: bold; border-radius: 3px; padding: 1px 6px; border: 1px solid black; white-space: nowrap; }
 
+.tss { font-size: 65%; border-radius: 3px; margin-left: 8px; padding: 1px 6px; border: 1px solid #333; white-space: nowrap; }
+.tss:empty { display: none; }
+
 @media only screen and (max-width:730px) {
     .sm-hidden { display:none; }
     .u-sm-1 { width: 100%; }

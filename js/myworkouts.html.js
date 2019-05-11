@@ -61,6 +61,12 @@
             workout.reconstituteFromDeserialized(savedWorkout);
             div.querySelector('[data-duration]').innerHTML = '';
             div.querySelector('[data-duration]').appendChild(document.createTextNode(workout.calculateDuration()));
+            if (userSettings.displayTss) {
+                var scoreSpan = document.createElement('span');
+                scoreSpan.classList.add('tss');
+                scoreSpan.appendChild(document.createTextNode(workout.calculateScore()));
+                div.querySelector('[data-duration]').appendChild(scoreSpan);
+            }
             div.querySelector('[data-tags]').innerHTML = '';
             div.querySelector('[data-tags]').appendChild(document.createTextNode(workout.tags));
             div.querySelector('[data-author]').innerHTML = '';

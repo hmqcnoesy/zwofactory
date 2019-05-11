@@ -341,6 +341,10 @@ document.getElementById('btnDismissSettings').addEventListener('click', function
     setupCreateWorkoutUrlButton(userSettings.enableUrlCreation);
     updateTimeInMinutes();
     updateAbsolutePower();
+    if (userSettings.displayTss) 
+        document.getElementById('spanTss').innerHTML = currentWorkout.calculateScore();
+    else 
+        document.getElementById('spanTss').innerHTML = '';
 });
 
 
@@ -642,7 +646,8 @@ function addTextEventControls(textEvent) {
 
 
 function updateWorkoutDuration() {
-    document.getElementById('divWorkoutDuration').innerHTML = currentWorkout.calculateDuration();
+    document.getElementById('spanWorkoutDuration').innerHTML = currentWorkout.calculateDuration();
+    if (userSettings.displayTss) document.getElementById('spanTss').innerHTML = currentWorkout.calculateScore();
 }
 
 

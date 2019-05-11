@@ -11,6 +11,7 @@ function UserSettings(useDefaults) {
     this.enableWorkoutInsertion = false;
     this.displayAbsolutePower = false;
     this.displayTimeInMinutes = true;
+    this.displayTss = false;
 
     if (!useDefaults && localStorage && localStorage.zwofactorySettings) {
         var savedSettings = JSON.parse(localStorage.zwofactorySettings);
