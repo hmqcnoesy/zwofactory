@@ -160,8 +160,24 @@ document.getElementById('btnShowTextEvents').addEventListener('click', function(
 });
 
 
+document.getElementById('btnShowOptions').addEventListener('click', function() {
+    var selectedSegment = getSelectedSegment();
+    if (!selectedSegment) return;
+    
+    var chkDisableFlatRoad = document.getElementById('chkDisableFlatRoad');
+    var segment = currentWorkout.segments.find(s => s.id == selectedSegment.getAttribute('data-id'));
+    if (segment.t == 'f')
+        chkDisableFlatRoad.removeAttribute('disabled');
+    else
+        chkDisableFlatRoad.setAttribute('disabled', 'disabled');
+        
+    showModal('divModalOptions');
+});
+
+
 document.getElementById('btnDismissCadence').addEventListener('click', dismissModal);
 document.getElementById('btnDismissTextEvents').addEventListener('click', dismissModal);
+document.getElementById('btnDismissOptions').addEventListener('click', dismissModal);
 document.getElementById('btnDismissUrl').addEventListener('click', dismissModal);
 document.getElementById('btnDismissSettings').addEventListener('click', dismissModal);
 
@@ -196,6 +212,22 @@ document.getElementById('chkCadence').addEventListener('click', function() {
     }
 
     txtC1.dispatchEvent(new Event('input', {bubbles:true,cancelable:true}));
+});
+
+
+document.getElementById('chkShowAvg').addEventListener('click', function() {
+    var selectedSegment = getSelectedSegment();
+    if (!selectedSegment) return;
+    var segmentObj = currentWorkout.segments.find(s => s.id == selectedSegment.getAttribute('data-id'));
+    segmentObj.avg = this.checked;
+});
+
+
+document.getElementById('chkDisableFlatRoad').addEventListener('click', function() {
+    var selectedSegment = getSelectedSegment();
+    if (!selectedSegment) return;
+    var segmentObj = currentWorkout.segments.find(s => s.id == selectedSegment.getAttribute('data-id'));
+    segmentObj.dfr = this.checked;
 });
 
 
@@ -509,6 +541,8 @@ function loadSegmentInfo(segmentId) {
     var txtC2 = document.getElementById('txtC2');
     var divTexts = document.getElementById('divTextEvents');
     var selected = currentWorkout.segments.find(s => s.id === segmentId);
+    var chkShowAvg = document.getElementById('chkShowAvg');
+    var chkDisableFlatRoad =  document.getElementById('chkDisableFlatRoad');
     
     if (selected.r) { txtR.value = selected.r; txtR.removeAttribute('disabled'); } else { txtR.value = ''; txtR.setAttribute('disabled', true); }
     if (selected.d2) { txtD2.value = selected.d2; txtD2.removeAttribute('disabled'); } else { txtD2.value = ''; txtD2.setAttribute('disabled', true); }
@@ -517,6 +551,8 @@ function loadSegmentInfo(segmentId) {
     if (selected.p1) { txtP1.value = selected.p1; txtP1.removeAttribute('disabled'); } else { txtP1.value = ''; txtP1.setAttribute('disabled', true); }
     if (selected.c1) { txtC1.value = selected.c1; txtC1.removeAttribute('disabled'); chkCadence.checked = true; } else { txtC1.value = ''; txtC1.setAttribute('disabled', true); chkCadence.checked = false;  }
     if (selected.c2) { txtC2.value = selected.c2; txtC2.removeAttribute('disabled'); } else { txtC2.value = ''; txtC2.setAttribute('disabled', true); }
+    if (selected.avg) chkShowAvg.checked = true; else chkShowAvg.checked = false;
+    if (selected.dfr) chkDisableFlatRoad.checked = true; else chkDisableFlatRoad.checked = false;
 
     updateTimeInMinutes();
     updateAbsolutePower();

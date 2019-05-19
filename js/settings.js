@@ -5,6 +5,8 @@ function UserSettings(useDefaults) {
     this.verticalPercentsPerPixel = 1;
     this.showCadenceIndicator = true;
     this.showTextEventIndicator = true;
+    this.showAvgPwrIndicator = true;
+    this.showDisabledFlatRoadIndicator = true;
     this.duplicateTextEvents = true;
     this.userFtp = 200;
     this.enableUrlCreation = true;

@@ -24,6 +24,8 @@ Workout.prototype.reconstituteFromDeserialized = function(workout) {
                 segment.textEvents.push({id: s.textEvents[j].id, text: s.textEvents[j].text, offset: s.textEvents[j].offset });
             }
         }
+        if (s.avg) segment.avg = s.avg;
+        if (s.dfr) segment.dfr = s.dfr;
         this.segments.push(segment);
     }
 }
@@ -188,6 +190,8 @@ Workout.prototype.loadFromXml = function(xml) {
                     offset: getIntOrDefault(xmlSegments[i].childNodes[j].getAttribute('timeoffset'), 0)});
             }
         }
+        if (xmlSegments[i].getAttribute('show_avg')) segmentToAdd.avg = xmlSegments[i].getAttribute('show_avg') == '1';
+        if (xmlSegments[i].getAttribute('FlatRoad')) segmentToAdd.dfr = xmlSegments[i].getAttribute('FlatRoad') == '0';
         this.segments.push(segmentToAdd);
     }
 };
@@ -272,7 +276,7 @@ Workout.prototype.loadFromUrl = function(queryString) {
     this.author = qsValues.get('a');
     this.tags = qsValues.get('t').split(' ');
     var workoutString = qsValues.get('w');
-    var regex = /(s|r|f|i)([0-9A-Z]+)/g;
+    var regex = /(s|r|f|i)([0-9A-Z]+)([!*]{0,2})/g;
     var match = regex.exec(workoutString);
 
     while (match != null) {
@@ -282,6 +286,7 @@ Workout.prototype.loadFromUrl = function(queryString) {
                 var p1 = getIntOrDefault(decodeNumber(match[2].substr(3,2)), 5);
                 segmentToAdd = new Segment('s', p1, d1, null, null, null);
                 if (match[2].length == 7) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(5,2)), 5);
+                if (match[3].length == 1) segmentToAdd.avg = match[3] === '!';
                 break;
             case "r":
                 var d1 = getIntOrDefault(decodeNumber(match[2].substr(0,3)), 5);
@@ -289,10 +294,15 @@ Workout.prototype.loadFromUrl = function(queryString) {
                 var p2 = getIntOrDefault(decodeNumber(match[2].substr(5,2)), 5);
                 segmentToAdd = new Segment('r', p1, d1, p2, null, null);
                 if (match[2].length == 9) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(7,2)), 5);
+                if (match[3].length == 1) segmentToAdd.avg = match[3] === '!';
                 break;
             case "f":
                 segmentToAdd = new Segment('f', null, getIntOrDefault(decodeNumber(match[2].substr(0,3)), 5), null, null, null);
                 if (match[2].length == 5) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(3,2)), 5);
+                if (match[3].length == 2) {
+                    segmentToAdd.avg = match[3].substr(0,1) === '!';
+                    segmentToAdd.dfr = match[3].substr(1,1) === '!';
+                }
                 break;
             case "i":
                 var r = getIntOrDefault(decodeNumber(match[2].substr(0,1)), 1);
@@ -303,6 +313,7 @@ Workout.prototype.loadFromUrl = function(queryString) {
                 segmentToAdd = new Segment('i', p1, d1, p2, d2, r);
                 if (match[2].length >= 12) segmentToAdd.c1 = getIntOrDefault(decodeNumber(match[2].substr(11,2)), 5);
                 if (match[2].length == 15) segmentToAdd.c2 = getIntOrDefault(decodeNumber(match[2].substr(13,2)), 5);
+                if (match[3].length == 1) segmentToAdd.avg = match[3] === '!';
                 break;
         }
             
@@ -334,6 +345,8 @@ Segment.prototype.duplicateFrom = function(segmentToClone) {
     if (isNumeric(segmentToClone.r)) this.r = segmentToClone.r;
     if (isNumeric(segmentToClone.c1)) this.c1 = segmentToClone.c1;
     if (isNumeric(segmentToClone.c2)) this.c2 = segmentToClone.c2;
+    if (segmentToClone.avg) this.avg = segmentToClone.avg;
+    if (segmentToClone.dfr) this.dfr = segmentToClone.dfr;
 
     if (userSettings.duplicateTextEvents) {
         for(var i = 0; i < segmentToClone.textEvents.length; i++) {
@@ -393,7 +406,8 @@ Segment.prototype.toSvgIntervals = function(settings) {
     }
 
     if (this.textEvents.length > 0 && settings.showTextEventIndicator) svgs[0].appendChild(this.createTextEventElement(settings, this.textEvents.length));
-
+    if (this.avg && settings.showAvgPwrIndicator) svgs[0].appendChild(this.createAvgPwrPath(settings));
+    
     return svgs;
 };
 
@@ -416,6 +430,9 @@ Segment.prototype.toSvgFreeRide = function(settings) {
     svg.appendChild(path);
     if (this.c1 && settings.showCadenceIndicator) svg.appendChild(this.createCadencePath(settings));
     if (this.textEvents.length > 0 && settings.showTextEventIndicator) svg.appendChild(this.createTextEventElement(settings, this.textEvents.length));
+    if (this.avg && settings.showAvgPwrIndicator) svg.appendChild(this.createAvgPwrPath(settings));
+    if (this.dfr && settings.showDisabledFlatRoadIndicator) svg.appendChild(this.createDisabledFlatRoadPath(settings));
+
     return svg;
 };
 
@@ -433,6 +450,7 @@ Segment.prototype.toSvgSinglePolygon = function(settings) {
     svg.appendChild(path);
     if (this.c1 && settings.showCadenceIndicator) svg.appendChild(this.createCadencePath(settings));
     if (this.textEvents.length > 0 && settings.showTextEventIndicator) svg.appendChild(this.createTextEventElement(settings, this.textEvents.length));
+    if (this.avg && settings.showAvgPwrIndicator) svg.appendChild(this.createAvgPwrPath(settings));
     return svg;
 }
 
@@ -480,6 +498,28 @@ Segment.prototype.createTextEventElement = function(settings, count) {
 };
 
 
+Segment.prototype.createAvgPwrPath = function(settings) {
+    var y1 = settings.shapeHeight - 30;
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('style', 'fill:none;');
+    path.setAttribute('stroke', 'black');
+    path.setAttribute('stroke-width', '1');
+    path.setAttribute('d', 'M4,' + y1 + ' l3,-9 l2,2 l4,-6 l-3,8.5 l-2,-1.5 z');
+    return path;
+};
+
+
+Segment.prototype.createDisabledFlatRoadPath = function(settings) {
+    var y1 = settings.shapeHeight - 46;
+    var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('style', 'fill:none;');
+    path.setAttribute('stroke', 'black');
+    path.setAttribute('stroke-width', '1.5');
+    path.setAttribute('d', 'M2,' + y1 + ' c2.98406,-6.0239 4.00398,-9.98805 4.9761,-7.01992c0.97211,2.96813 0.99602,11.95219 3.95219,8.89641c2.95618,-3.05578 1.9761,-1.95219 3.90438,-4.96414c1.92829,-3.01195 3.09562,0.05976 5.09163,0.05179');
+    return path; 
+};
+
+
 Segment.prototype.toZwoXmlElement = function() {
     var xml = '        ';
     switch(this.t) {
@@ -496,7 +536,7 @@ Segment.prototype.toZwoXmlElement = function() {
             xml += '<Ramp Duration="' + this.d1 + '" PowerLow="' + (this.p1 / 100) + '" PowerHigh="' + (this.p2 / 100) + '"';
             break;
         case "f":
-            xml += '<FreeRide Duration="' + this.d1 + '" FlatRoad="1"';
+            xml += '<FreeRide Duration="' + this.d1 + '"';
             break;
         case "i":
             xml += '<IntervalsT Repeat="' + this.r + '" OnDuration="' + this.d1 + '" OffDuration="' + this.d2 + '" OnPower="' + (this.p1 / 100) + '" OffPower="' + (this.p2 / 100) + '"';
@@ -507,6 +547,8 @@ Segment.prototype.toZwoXmlElement = function() {
 
     if (this.c1) xml += ' Cadence="' + this.c1 + '"';
     if (this.c2) xml += ' CadenceResting="' + this.c2 + '"';
+    if (this.avg) xml += ' show_avg="1"';
+    if (this.t == 'f') xml += ' FlatRoad="' + (this.dfr ? "0" : "1") + '"';
     var texts = this.textEventsToZwoElements();
     if (texts.length > 0) {
         xml += '>\r\n'
@@ -552,6 +594,13 @@ Segment.prototype.toUriComponent = function() {
 
     if (this.c1) url += encodeNumber(this.c1,2);
     if (this.c2) url += encodeNumber(this.c2,2);
+    if (this.t == 'f') {
+        url += this.avg ? '!' : '*';
+        url += this.dfr ? '!' : '*';
+    } else {
+        if (this.avg) url += '!';
+    }
+    
     return url;
 };
 

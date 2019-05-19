@@ -133,8 +133,9 @@
     <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtP2" min="5" step="5" data-target="p2" /><label for="txtP2">P<span class="sm-hidden">o</span>w<span class="sm-hidden">e</span>r<span class="sm-hidden"> </span>2<span class="sm-hidden"> (%FTP)</span> <span hidden id="divP2" class="calculated-info"></span></label></div>
     <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtD2" min="5" step="5" data-target="d2" /><label for="txtD2">Dur<span class="sm-hidden">ation </span>2<span class="sm-hidden"> (s)</span> <span hidden id="divD2" class="calculated-info"></span></label></div>
     <div class="u-1-6 u-sm-1-5"><input disabled type="number" id="txtR" min="1" max="20" data-target="r" /><label for="txtR">R<span class="sm-hidden">e</span>p<span class="sm-hidden">ea</span>t</label></div>
-    <div class="u-1-12 u-sm-1-2"><button id="btnShowCadence"><svg height="12" width="16"><path style="fill:none;" stroke="black" stroke-width="1" d="M8,6 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,6 l-5.5,-5.5 M11.5,9.5 l1.75,1.75"></path></svg></button></div>
-    <div class="u-1-12 u-sm-1-2"><button id="btnShowTextEvents"><span style="font-family:'Times New Roman',Times,serif;font-weight:bold">T</span></button></div>
+    <div class="u-1-18 u-sm-1-3"><button id="btnShowCadence"><svg height="12" width="16"><path style="fill:none;" stroke="black" stroke-width="1" d="M8,6 m-5,0 a 5,5 0 1,1 10,0 a 5,5 0 1,1 -10,0 M8,6 l-5.5,-5.5 M11.5,9.5 l1.75,1.75"></path></svg></button></div>
+    <div class="u-1-18 u-sm-1-3"><button id="btnShowTextEvents"><span style="font-family:'Times New Roman',Times,serif;font-weight:bold">T</span></button></div>
+    <div class="u-1-18 u-sm-1-3"><button id="btnShowOptions"><svg height="12" width="16"><path style="fill:none;" stroke="black" stroke-width="1" d="M4,12 l3,-9 l2,2 l4,-6 l-3,8.5 l-2,-1.5 z"></path></svg></button></div>
     <div class="modal" id="divModalCadence">
         <label for="chkCadence"><input type="checkbox" id="chkCadence" />Set cadence on selected segment</label>
         <hr />
@@ -165,6 +166,14 @@
             <button id="btnDismissTextEvents">Close</button>
         </div>
     </div>
+    <div class="modal" id="divModalOptions">
+        <hr />
+        <label for="chkShowAvg"><input type="checkbox" id="chkShowAvg" />Show average power during the selected segment</label>
+        <hr />
+        <label for="chkDisableFlatRoad"><input type="checkbox" id="chkDisableFlatRoad" />Disable forced flat road during the selected segment</label>
+        <hr />
+        <button id="btnDismissOptions">Close</button>
+    </div>
     <div class="modal" id="divModalCreateUrl">
         <div>
             The URL below can be used to share or save workouts.  Right-click or tap/hold to copy the URL.  Text events are not supported.
@@ -186,8 +195,6 @@
                     <div><label><input type="number" min="1" step="1" data-key="userFtp">My FTP (Watts)<a class="infoCircle tooltip">?<div class="left">Your FTP value in watts, for use in displaying absolute power and importing an erg file without an FTP value in the [COURSE HEADER]</div></a></label></div>
                     <div><label><input type="checkbox" data-key="enableWorkoutInsertion">Enable workout insertion<a class="infoCircle tooltip">?<div class="left">Check this box to enable insertion of entire saved workouts in the workout editor.</div></a></label></div>
                     <div><label><input type="checkbox" data-key="enableUrlCreation">Enable URL creation<a class="infoCircle tooltip">?<div class="left">Check this box to display a button to share and save your workouts via URL.</div></a></label></div>
-                    <div><label><input type="checkbox" data-key="showCadenceIndicator">Show cadence indicators<a class="infoCircle tooltip">?<div class="left">Uncheck this box to remove the cadence indicators from blocks with a cadence requirement.</div></a></label></div>
-                    <div><label><input type="checkbox" data-key="showTextEventIndicator">Show text event indicators<a class="infoCircle tooltip">?<div class="left">Uncheck this box to remove the text indicators from the segments with text events.</div></a></label></div>
                     <div><label><input type="checkbox" data-key="duplicateTextEvents">Duplicate text events<a class="infoCircle tooltip">?<div class="left">Uncheck this box to disable copying of text events onto duplicated segments.</div></a></label></div>
                 </div>
             <hr />
