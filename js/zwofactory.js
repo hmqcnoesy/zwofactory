@@ -112,6 +112,133 @@ Workout.prototype.toZwoXml = function() {
 };
 
 
+Workout.prototype.toMrcText = function() {
+    var description = this.description;
+    if (description) description = description.replace('\r', ' ').replace('\n', ' ');
+    else description = '';
+
+    var text = '[COURSE HEADER]\r\n'
+        + 'VERSION = 2\r\n'
+        + 'UNITS = ENGLISH\r\n'
+        + 'DESCRIPTION = ' + description + '\r\n'
+        + 'FILE NAME = ' + this.name + '\r\n'
+        + 'MINUTES PERCENT\r\n'
+        + '[END COURSE HEADER]\r\n'
+        + '[COURSE DATA]\r\n';
+
+    var elapsedMinutes = 0.0;
+    var textCues = [];
+        
+    for (var i = 0; i < this.segments.length; i++) {
+        for (var t = 0; t < this.segments[i].textEvents.length; t++) {
+            textCues[textCues.length] = 
+                { 
+                    seconds : Number(this.segments[i].textEvents[t].offset) + Math.round(elapsedMinutes * 60, 0),
+                    message : this.segments[i].textEvents[t].text
+                };
+        }
+
+        if (this.segments[i].t == 'r') {
+            text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p1, 0) + '\r\n';
+            elapsedMinutes += (this.segments[i].d1 / 60);
+            text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p2, 0) + '\r\n';
+        } else if (this.segments[i].t == 'i') {
+            for (var j = 0; j < this.segments[i].r; j++) {
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p1, 0) + '\r\n';
+                elapsedMinutes += (this.segments[i].d1 / 60);
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p1, 0) + '\r\n';
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p2, 0) + '\r\n';
+                elapsedMinutes += (this.segments[i].d2 / 60);
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p2, 0) + '\r\n';
+            }
+        } else {
+            var pwr = this.segments[i].t == 'f' ? 80 : Math.round(this.segments[i].p1, 0);
+            text += elapsedMinutes.toFixed(2) + '\t' + pwr + '\r\n';
+            elapsedMinutes += (this.segments[i].d1 / 60);
+            text += elapsedMinutes.toFixed(2) + '\t' + pwr + '\r\n';
+        }
+    }
+
+    text += '[END COURSE DATA]\r\n';
+
+    if (textCues.length > 0) {
+        text += '[COURSE TEXT]\r\n';
+        for (var i = 0; i < textCues.length; i++) {
+            var cue = textCues[i];
+            text += cue.seconds + '\t' + cue.message + '\t10\r\n';
+        }
+
+        text += '[END COURSE TEXT]\r\n';
+    }
+
+    return text;
+}
+
+
+Workout.prototype.toErgText = function(ftp) {
+    var description = this.description;
+    if (description) description = description.replace('\r', ' ').replace('\n', ' ');
+    else description = '';
+
+    var text = '[COURSE HEADER]\r\n'
+        + 'VERSION = 2\r\n'
+        + 'UNITS = ENGLISH\r\n'
+        + 'DESCRIPTION = ' + description + '\r\n'
+        + 'FILE NAME = ' + this.name + '\r\n'
+        + 'FTP=' + ftp + '\r\n'
+        + 'MINUTES WATTS\r\n'
+        + '[END COURSE HEADER]\r\n'
+        + '[COURSE DATA]\r\n';
+
+    var elapsedMinutes = 0.0;
+    var textCues = [];
+        
+    for (var i = 0; i < this.segments.length; i++) {
+        for (var t = 0; t < this.segments[i].textEvents.length; t++) {
+            textCues[textCues.length] = 
+                { 
+                    seconds : Number(this.segments[i].textEvents[t].offset) + Math.round(elapsedMinutes * 60, 0),
+                    message : this.segments[i].textEvents[t].text
+                };
+        }
+
+        if (this.segments[i].t == 'r') {
+            text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p1 / 100 * ftp, 0) + '\r\n';
+            elapsedMinutes += (this.segments[i].d1 / 60);
+            text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p2 / 100 * ftp, 0) + '\r\n';
+        } else if (this.segments[i].t == 'i') {
+            for (var j = 0; j < this.segments[i].r; j++) {
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p1 / 100 * ftp, 0) + '\r\n';
+                elapsedMinutes += (this.segments[i].d1 / 60);
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p1 / 100 * ftp, 0) + '\r\n';
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p2 / 100 * ftp, 0) + '\r\n';
+                elapsedMinutes += (this.segments[i].d2 / 60);
+                text += elapsedMinutes.toFixed(2) + '\t' + Math.round(this.segments[i].p2 / 100 * ftp, 0) + '\r\n';
+            }
+        } else {
+            var pwr = this.segments[i].t == 'f' ? Math.round(0.8 * ftp, 0) : Math.round(this.segments[i].p1 / 100 * ftp, 0);
+            text += elapsedMinutes.toFixed(2) + '\t' + pwr + '\r\n';
+            elapsedMinutes += (this.segments[i].d1 / 60);
+            text += elapsedMinutes.toFixed(2) + '\t' + pwr + '\r\n';
+        }
+    }
+
+    text += '[END COURSE DATA]\r\n';
+
+    if (textCues.length > 0) {
+        text += '[COURSE TEXT]\r\n';
+        for (var i = 0; i < textCues.length; i++) {
+            var cue = textCues[i];
+            text += cue.seconds + '\t' + cue.message + '\t10\r\n';
+        }
+
+        text += '[END COURSE TEXT]\r\n';
+    }
+
+    return text;
+}
+
+
 Workout.prototype.toUrl = function() {
     var url = location.protocol + '//' + location.host + location.pathname
         + '?a=' + encodeURIComponent(this.author ? this.author : '') 

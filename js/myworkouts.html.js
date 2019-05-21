@@ -16,6 +16,10 @@
             var a = cloned.querySelector('a');
             a.setAttribute('data-name', workouts[i].name);
             a.appendChild(document.createTextNode(workouts[i].name));
+            var clickables = cloned.querySelectorAll('[data-name]');
+            for (var j = 0; j < clickables.length; j++) {
+                clickables[j].setAttribute('data-name', workouts[i].name);
+            }
             divMyWorkouts.appendChild(cloned);
         }        
     });
@@ -24,10 +28,10 @@
     document.getElementById('divMyWorkouts').addEventListener('click', function(e) {
         if (e.target.hasAttribute('data-toggle')) toggleVisibility(e.target);
 
-        var workoutName = e.target.parentNode.parentNode.parentNode.querySelector('a').getAttribute('data-name');
-        if (e.target.hasAttribute('data-edit')) editWorkout(workoutName);
-        if (e.target.hasAttribute('data-download')) downloadWorkout(workoutName);
-        if (e.target.hasAttribute('data-delete')) deleteWorkout(workoutName);
+        if (e.target.hasAttribute('data-edit')) editWorkout(e.target.getAttribute('data-name'));
+        if (e.target.hasAttribute('data-download')) downloadWorkout(e.target.getAttribute('data-name'));
+        if (e.target.hasAttribute('data-delete')) deleteWorkout(e.target.getAttribute('data-name'));
+        if (e.target.hasAttribute('data-export')) exportWorkout(e.target.getAttribute('data-name'), e.target.getAttribute('data-export'));
     }, true);
 
 
@@ -106,6 +110,20 @@
         var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
         saveAs(blob, fileName);
     }
+
+
+    function exportWorkout(workoutName, format) {
+        var workout = new Workout();
+        workout.reconstituteFromDeserialized(userSettings.getMyWorkout(workoutName));
+        var text = '';
+        if (format == 'MRC') text = workout.toMrcText();
+        if (format == 'ERG') text = workout.toErgText(userSettings.userFtp);
+        if (format == 'JSON') text = JSON.stringify(workout, null, 4);
+        var blob = new Blob([text], {type: "application/octet-stream"});
+        var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.' + format.toLowerCase();
+        saveAs(blob, fileName);
+    }
+
     
     document.getElementById('btnExport').addEventListener('click', function() {
         var myWorkouts = { };

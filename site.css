@@ -1,5 +1,5 @@
 
-html { font-family: Segoe UI, Arial, Helvetica, sans-serif; padding:0; color: #333; background: #000428; background: linear-gradient(to right, #000428, #336688, #000428); /*! background-repeat: repeat; */ }
+html { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; padding:0; color: #333; background: #000428; background: linear-gradient(to right, #000428, #336688, #000428); /*! background-repeat: repeat; */ }
 body {  margin: auto; max-width: 1040px; }
 header,main,footer { background-color: white; padding: 1em; border-radius: 0.25em; border: 1px solid black; display: block; }
 header { border-top-left-radius: 0; border-top-right-radius: 0; border-top: none; padding: 0.5em 0; margin-bottom: 10px; }
@@ -32,15 +32,15 @@ label { display: block; }
 .u-1-12 { width: 8.33%; }
 .u-1-18 { width: 5.56%; }
 .u-1-24 { width: 4.1666%; }
-textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; width:100%; border: 1px solid #333; border-radius: 3px;  /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ }
+textarea { font-family: Segoe UI, Arial, Helvetica, sans-serif; font-size: 1em; width:100%; border: 1px solid #333; border-radius: 3px;   }
 select,
 input[type=text],
-input[type=number] { width: 100%; font-size: 1em; box-sizing: border-box; padding: 0.5em; border: 1px solid #333; border-radius: 3px; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); *//*! background-color: #; */}
+input[type=number] { width: 100%; font-size: 1em; box-sizing: border-box; padding: 0.5em; border: 1px solid #333; border-radius: 3px; }
 input[type=number] { text-align: center; min-width: 62px; }
 label { font-size: 75%; }
 
 *:focus { outline: none; }
-button { width: 100%; padding: 0.5em; cursor: pointer; color: #333; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ border: 1px solid #333; border-radius: 3px; background-color: #e7e7e7; }
+button { font-family: inherit; font-size: 90%; width: 100%; padding: 0.5em; cursor: pointer; color: #333; border: 1px solid #333; border-radius: 3px; background-color: #e7e7e7; }
 button.save { background-color: #284a6c; color: white; font-weight: bold; border-color: #000428;}
 .saved { opacity: 0; transition-property: opacity; transition-duration: 1s;  }
 svg { display: inline-block; }
@@ -93,6 +93,13 @@ svg { display: inline-block; }
 
 .tss { font-size: 65%; border-radius: 3px; margin-left: 8px; padding: 1px 6px; border: 1px solid #333; white-space: nowrap; }
 .tss:empty { display: none; }
+
+.dd-label { padding: 4px; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; }
+.dd-button { font-size: 0.9rem !important; text-align: center; width: 100%; padding: 0.5em 0; cursor: pointer; color: #333; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ border: 1px solid #333; border-radius: 3px; background-color: #e7e7e7; }
+.dd-input { display: none; }
+.dd-menu { display: none; text-align: left; list-style: none; padding-left: 1em; }
+.dd-input:checked + .dd-menu { display: block; }
+.dd-menu > li { margin-left: 0.5em; }
 
 @media only screen and (max-width:730px) {
     .sm-hidden { display:none; }
