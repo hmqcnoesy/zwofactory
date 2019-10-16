@@ -107,7 +107,7 @@
         workout.reconstituteFromDeserialized(userSettings.getMyWorkout(workoutName));
         var xml = workout.toZwoXml();
         var blob = new Blob([xml], {type: "application/octet-stream"});
-        var fileName = getName().replace(/[^A-Z0-9]/ig, '_') + '.zwo';;
+        var fileName = workout.name.replace(/[^A-Z0-9]/ig, '_') + '.zwo';
         saveAs(blob, fileName);
     }
 
