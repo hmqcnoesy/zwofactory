@@ -142,21 +142,44 @@
     document.getElementById('inputFile').addEventListener('change', function(e) {
         var userSettings = new UserSettings();
         var files = e.target.files; 
-        if (files.length != 1) return;
+        if (files.length == 1 && files[0].name.toLowerCase().endsWith('.json'))
+			readJsonFile(files[0]);
+		if (Array.from(files).every(f => f.name.toLowerCase().endsWith('.zwo')))
+			readWorkoutFiles(files);
 
-        var reader = new FileReader();
+        window.location = '/myworkouts';
+    }, false);
+
+    document.getElementById('btnImport').addEventListener('click', function() {
+        document.getElementById('inputFile').click();
+    });
+	
+	
+	function readJsonFile(file) {
+		var reader = new FileReader();
         reader.onload = function(event) {
             var json = event.target.result;
             var data = JSON.parse(json);
             for (var i = 0; i < data.myWorkoutInfo.length; i++) {
                 userSettings.saveMyWorkout(data["workout:" + data.myWorkoutInfo[i].name]);
             }
-            window.location = '/myworkouts';
         };
-        reader.readAsText(files[0]);
-    }, false);
-
-    document.getElementById('btnImport').addEventListener('click', function() {
-        document.getElementById('inputFile').click();
-    });
+        reader.readAsText(file);
+	}
+	
+	
+	function readWorkoutFiles(files) {
+			
+		for (var i = 0; i < files.length; i++) {
+			var reader = new FileReader();
+			reader.onload = function(event) {
+				var text = event.target.result;
+				var workout = new Workout();
+				workout.loadFromXml(text);
+				
+				userSettings.saveMyWorkout(workout);
+			};
+			reader.readAsText(files[i]);
+		}
+	}
 })();

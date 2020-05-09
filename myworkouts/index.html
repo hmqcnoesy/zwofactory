@@ -58,14 +58,15 @@ Export / Import
 
 <p>
 To download a file containing all "My Workouts" saved to this browser, click the "Export My Workouts" button.  <br />
-To import workouts from such an exported file, click the "Import Workouts File" button and navigate to the exported .json file.
+To import workouts from an exported json file or from one or more zwo files, click the "Import Workouts File" button.  <br />
+<span style="color: #D23430">Warning:  this will overwrite current workouts saved with the same name.</span>
 </p>
 
 
 <div class="grid">
     <div class="u-1-2"><button class="save" id="btnExport">Export All My Workouts</button></div>
     <div class="u-1-2"><button class="save" id="btnImport">Import Workouts File</button></div>
-    <input type="file" hidden style="visibility:hidden;opacity:0;" id="inputFile" />
+    <input type="file" hidden style="visibility:hidden;opacity:0;" id="inputFile" multiple />
 </div>
 </main>
 
