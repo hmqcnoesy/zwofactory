@@ -1,0 +1,72 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 6</name>
+    <description>This workout is a key workout that Annika uses as preparation for key events. In mountain biking, to get up a short steep climb, or to get through some mud or over roots, the best way is to do it quickly - lots of power for a short period of time.
+
+
+
+This session gets our anaerobic energy systems firing, as we make repeated 30 second efforts at 170% of FTP, simulating those short spikes in effort to get up a steep bank or through a technical part of the course. 
+
+
+
+Don't be discouraged if your power drops throughout the blocks. You'll burn a lot of matches as you progress through the session, so just try and hold on as long as you can as you will still benefit from the effort.
+
+
+
+In the same fashion - don't go out too hard! This is a fairly long session, so in the first block, just do what you need to do. 170% of FTP - no more.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 6!"/>
+            <textevent timeoffset="25" message="Today&apos;s session is all about stressing your anaerobic energy systems in making repeated short, sharp efforts - critical for mountain bikers"/>
+            <textevent timeoffset="38" message="Today&apos;s we will complete 3 blocks of 8 efforts of 30 seconds at 170% of FTP with 30 seconds recovery between each effort"/>
+            <textevent timeoffset="46" message="There is a 10 minute rest between each block to ensure we recover enough to give it our all in each block"/>
+            <textevent timeoffset="63" message="We have a nice progressive warm up to start, with some 30second activation efforts to get us ready for the session. "/>
+            <textevent timeoffset="79" message="This is a fairly standard warm up for Annika Lagvard, four time Absa Cape Epic Champion"/>
+            <textevent timeoffset="106" message=" Absa Cape Epic as with all mountain bike events, will contain some technical parts, which you will need to navigate through technically but also produce a lot of power to get over."/>
+            <textevent timeoffset="116" message="For example - if you hit some boggy mud, you need to power through it, producing a real spike in power - as we will train today."/>
+            <textevent timeoffset="390" message="You should be feeling pretty warmed up now. Do you have a sweat on?"/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How was that?"/>
+            <textevent timeoffset="31" message="Now focus on your cadence - try and find a nice smooth rhythm"/>
+            <textevent timeoffset="150" message="Another sprint incoming!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9.9999313" message="Good effort - we should be pretty warm now, with a nice sweat on?"/>
+            <textevent timeoffset="269" message="Are you ready for the first block of 8 x 30 second efforts?"/>
+            <textevent timeoffset="281" message="Aim for 70-80rpm, which is a nice efficient cadence but also a cadence that you ride at a lot in mountain biking, especially when going through a technical part of the course."/>
+        </SteadyState>
+        <IntervalsT Repeat="8" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.7045" OffPower="0.50449997" pace="1122314923">
+            <textevent timeoffset="65" message="Commit to these efforts - let&apos;s really hit them hard"/>
+            <textevent timeoffset="310" message="Explode up this muddy bank - nice smooth power transfer to avoid wheels slipping"/>
+        </IntervalsT>
+        <SteadyState Duration="570" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="444.99982" message="Second set coming!"/>
+            <textevent timeoffset="519.99994" message="This one will burn more..."/>
+        </SteadyState>
+        <IntervalsT Repeat="8" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.7045" OffPower="0.50449997" pace="1122314923">
+            <textevent timeoffset="245" message="These efforts will hurt - but they are hugely rewarding! Stick with it."/>
+        </IntervalsT>
+        <SteadyState Duration="570" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="325" message="Final set on it&apos;s way!"/>
+            <textevent timeoffset="382" message="This could get hard!"/>
+            <textevent timeoffset="419.99994" message="Stay with it though"/>
+            <textevent timeoffset="489" message="Even if power drops..."/>
+            <textevent timeoffset="542" message="... you&apos;ll still benefit!"/>
+        </SteadyState>
+        <IntervalsT Repeat="8" OnDuration="30.000002" OffDuration="30.000002" OnPower="1.7045" OffPower="0.50449997" pace="1122314923">
+            <textevent timeoffset="215" message="Make the most of the recovery periods - take a drink and try recycle that lactate."/>
+            <textevent timeoffset="400" message="Almost there... one more effort to go!"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="62.000053" message="Good job - workout 6 complete! Make sure you recover well - carbs and protein for recovery."/>
+            <textevent timeoffset="82" message="We have done a lot of muscle damage during this session, so expect some sore legs tomorrow!"/>
+            <textevent timeoffset="355" message="See you on workout 7 as we edge closer to Absa Cape Epic - it will be fun!"/>
+        </SteadyState>
+    </workout>
+</workout_file>

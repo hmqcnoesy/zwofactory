@@ -1,0 +1,46 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 3</name>
+    <description>This third workout is a continuation of the endurance build. Structured much like the first workout this session increases the intensity and also omits the breaks between the three sets. It should still feel "do-able" but put you under a bit of pressure towards the end of the workout. During the Absa Cape Epic you may not have time to rest your legs, you have to just power through to reach today's peak.
+
+
+
+This workout also has a focus on higher RPM's in the first 5 minutes of each block. This will prep you for the situations where you will have to spin faster in the stages and in this workout also serves the purpose of trying to loosen the legs from Z4 much as you would try to do out on the trails.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.43673909" PowerHigh="0.75" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series curated by Annika Langvad"/>
+            <textevent timeoffset="32" message="This workout increases the endurance intensity and omits the breaks"/>
+            <textevent timeoffset="43" message="These endurance intervals will give you a great foundation in your Absa Cape Epic goals"/>
+            <textevent timeoffset="520" message="The start of interval includes a high cadence focus"/>
+            <textevent timeoffset="531" message="This will be useful later in the workout to deal with lactate"/>
+        </Warmup>
+        <SteadyState Duration="300" Power="0.75449997" pace="1122314923" Cadence="95">
+            <textevent timeoffset="10" message="Let&apos;s get going"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.82449996" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.95449996" pace="1122314923">
+            <textevent timeoffset="10" message="OK, a bit more intensity now. Should still be &quot;comfortable&quot;"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.75413042" pace="1122314923" Cadence="95">
+            <textevent timeoffset="10" message="Back to Z2. Focus on RPM"/>
+            <textevent timeoffset="21" message="Rinse and repeat"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.82449996" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.95413041" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.75449997" pace="1122314923" Cadence="95">
+            <textevent timeoffset="10" message="Again, back to Z2. Focus on RPM"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.82449996" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.95413041" pace="1122314923">
+            <textevent timeoffset="10" message="Last effort of the day"/>
+            <textevent timeoffset="21" message="This is the final push!"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.50195652" pace="1122314923">
+            <textevent timeoffset="10" message="Thats it! Great job!"/>
+            <textevent timeoffset="21" message="Time for a cool down"/>
+            <textevent timeoffset="32" message="These endurance efforts will make you feel much stronger in the next workout where we will focus our efforts on sprints and going above threshold"/>
+        </SteadyState>
+    </workout>
+</workout_file>

@@ -1,0 +1,102 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 13</name>
+    <description>This workout is really fun and engaging - plenty of changes in effort, as is the case in a mountain bike event. 
+
+
+
+Another take on 'Over - Unders' - we vary our effort between 95% and 78% of FTP - so we don't actually go over our threshold, but we do complete 30 second Zone 6 efforts at 175% of FTP, critically at 60rpm!
+
+
+
+The 60rpm 175% of FTP efforts simulate making an effort up a steep bank, where the best way up is to do it quickly without changing gear and creating chances for your gears to jump. By the top you will be grinding the gear, with a low cadence, circa 60rpm!
+
+
+
+After the steep bank, we are straight back in to  Zone 3 as we continue riding along a nice wide, open path.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 13!"/>
+            <textevent timeoffset="25" message="Today&apos;s session is a real all round session involving some Zone 3, 4 and 6 efforts!"/>
+            <textevent timeoffset="36" message="Today&apos;s we will complete alternating efforts of Zone 3 and 4, with some 30 second Zone 6 efforts at 60rpm"/>
+            <textevent timeoffset="50" message="The 30 second 60rpm efforts aim to replicate the effort required in riding up a steep banking"/>
+            <textevent timeoffset="143" message="We have a nice progressive warm up to start"/>
+            <textevent timeoffset="163" message="We will do two 30second activation efforts to get us ready for the session - nothing too strenuous"/>
+            <textevent timeoffset="248" message="You will hopefully be familiar with this standard warm up by now which Annika Lagvard, four time Absa Cape Epic Champion uses"/>
+            <textevent timeoffset="311" message="Absa Cape Epic has some beautiful sections where you alternate between smooth, fast surfaces and rocky technical parts."/>
+            <textevent timeoffset="336" message="Being able to produce high power for a short period to get over the technical sections is really beneficial. This is what the 30 second efforts are."/>
+            <textevent timeoffset="380" message="You should be feeling pretty warmed up now. Do you have a sweat on?"/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How was that?"/>
+            <textevent timeoffset="25" message="Now focus on your cadence - try and find a nice smooth rhythm"/>
+            <textevent timeoffset="150" message="Another sprint incoming!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9.9999313" message="Good effort - we should be pretty warm now, with a nice sweat on?"/>
+            <textevent timeoffset="229" message="Are you ready for the first block?"/>
+            <textevent timeoffset="281" message="Ride the whole session at your chosen cadence, but for the 30 second Zone 6 efforts - target cadence is 60rpm"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.95449996" pace="1122314923">
+            <textevent timeoffset="270" message="1st sprint coming up - give it full gas up the climb."/>
+            <textevent timeoffset="285" message="Cadence of 60rpm, which will feel like a real grind."/>
+            <textevent timeoffset="48" message="Straight in to Zone 4 for 5 minutes at 95% of FTP. A nice controlled effort."/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.7544999" pace="1122314923" Cadence="60">
+            <textevent timeoffset="15" message="Great effort - keep it going, navigating around any rocks and obstacles."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.78449994" pace="1122314923">
+            <textevent timeoffset="20" message="Settle in to this Zone 3 effort now, letting the metabolic waste flush from your legs while still producing high power."/>
+            <textevent timeoffset="183" message="Zone 3, 5 minutes at 78% of FTP - sit upright for maximum control."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.95449996" pace="1122314923">
+            <textevent timeoffset="270" message="2nd sprint coming up - get ready. Target cadence 60rpm"/>
+            <textevent timeoffset="85" message="Try and adopt a nice and smooth pedalling style - to reduce wheel slippage on loose surfaces"/>
+            <textevent timeoffset="137" message="This effort will hurt - we are producing big powers!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.7544999" pace="1122314923" Cadence="60">
+            <textevent timeoffset="10" message="Give it the big beans for this sprint - get up this bank as quickly as you can"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.78449994" pace="1122314923">
+            <textevent timeoffset="88" message="Back in to Zone 3 - good work."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.40450001" pace="1122314923">
+            <textevent timeoffset="81" message="Recovery 5 mins 40% - take a drink. Fantastic efforts everyone."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.95449996" pace="1122314923">
+            <textevent timeoffset="240" message="We&apos;re sprinting again in 60 sec - try this one out of the saddle"/>
+            <textevent timeoffset="291" message="Get ready - 60rpm target cadence, out the saddle."/>
+            <textevent timeoffset="26" message="Absorb this Zone 4 effort as the sun beats down on your back."/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.7544999" pace="1122314923" Cadence="60">
+            <textevent timeoffset="9" message="Watch out for that drop off!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.78449994" pace="1122314923">
+            <textevent timeoffset="48" message="Zone 3 - settle in."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.94999999" pace="1122314923">
+            <textevent timeoffset="290" message="Final sprint coming up - once again, give it full gas."/>
+            <textevent timeoffset="205" message="We are training smartly here - sure it hurts, but we are getting seriously strong!"/>
+            <textevent timeoffset="55" message="Back in to our Zone 4 efforts."/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.7544999" pace="1122314923" Cadence="60">
+            <textevent timeoffset="6" message="GO GO GO - big effort."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.78449994" pace="1122314923">
+            <textevent timeoffset="81" message="Final stint - just cruising through a field now, with all those technical sections successfully navigated!"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="62.000053" message="Good job - that is workout 13 complete!"/>
+            <textevent timeoffset="222" message="You can have confidence that every pedal stroke of this session counts for something and will help you come Absa Cape Epic."/>
+            <textevent timeoffset="252" message="We are training smartly - making the most of the time we have available"/>
+            <textevent timeoffset="317" message="High quality recovery is also training - treat yourself to some relaxing later if you can!"/>
+            <textevent timeoffset="555" message="See you on workout 14 - Absa Cape Epic is just around the corner. Be sure to maintain your IRL mountain biking to keep your skills polished."/>
+            <textevent timeoffset="592" message="Ride On!"/>
+        </SteadyState>
+    </workout>
+</workout_file>

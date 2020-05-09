@@ -1,0 +1,72 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 9</name>
+    <description>In today's session we're working right at threshold. By chunking up the workload in to blocks 7 minutes, we will complete a total of 6 x 7 minute blocks at 100% of FTP, which gives us a really good training stress as we rack up 42 minutes worth of threshold power in total.
+
+
+
+While riding under threshold is a smart and efficient way to develop all sorts of physical attributes, there is no substitute for developing yourself physically and mentally for pushing your body right to threshold power. This session helps to give you the confidence that you can push yourself right up to your FTP for over 40 minutes worth of work, while also creating plenty of muscle damage. 
+
+
+
+When you hit lactate threshold, the sensations are hugely different vs riding even 2-3% below - so we need to prepare ourselves. 
+
+
+
+Depending on how fatigued you are going in to this session, you may need an easy day tomorrow!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 5!"/>
+            <textevent timeoffset="25" message="Today&apos;s session is all about developing your aerobic base and endurance - critical for mountain bikers"/>
+            <textevent timeoffset="43" message="We have a progressive warm up to start, with some 30second activation efforts to get us ready for the session. "/>
+            <textevent timeoffset="55" message="This is a fairly standard warm up for Annika Langvad, four time Absa Cape Epic Champion"/>
+            <textevent timeoffset="111" message="The Absa Cape Epic is an endurance event, so plenty of aerobic conditioning is required."/>
+            <textevent timeoffset="122" message="By riding just under and threshold we realise similar aerobic benefits to a long endurance ride"/>
+            <textevent timeoffset="380" message="You should be feeling pretty warmed up now."/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How was that?"/>
+            <textevent timeoffset="38" message="Now focus on your cadence - try and find a  smooth rhythm"/>
+            <textevent timeoffset="150" message="Another sprint incoming!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9.9999313" message="Good effort - we should be pretty warm now"/>
+            <textevent timeoffset="269" message="Are you ready for the first block of 3 efforts?"/>
+            <textevent timeoffset="281" message="Aim for 70-80rpm, which is an efficient cadence but also a cadence that you ride at a lot in mountain biking"/>
+        </SteadyState>
+        <IntervalsT Repeat="3" OnDuration="420.00003" OffDuration="180.00002" OnPower="1.0044999" OffPower="0.40450001" pace="1122314923">
+            <textevent timeoffset="49" message="7 minutes at threshold power - settle in to your rhythm."/>
+            <textevent timeoffset="435" message="3 minutes easy to recover - take a drink and make the most of these easy periods."/>
+            <textevent timeoffset="607" message="Back in to threshold now - this may start to bite a little, but keep your composure."/>
+            <textevent timeoffset="884" message="80-90rpm target for these efforts - similar to what we would aim for on the road."/>
+            <textevent timeoffset="1035" message="Recovery time again - take a drink and make sure your fan is on blowing strongly!"/>
+            <textevent timeoffset="1285" message="Last effort of block 1 - it&apos;s still early days, so just sit there and suck the effort up. "/>
+            <textevent timeoffset="1472" message="We want a fluid pedalling style - smooth is fast."/>
+            <textevent timeoffset="1485" message="We are mid-stage of Absa Cape Epic cruising through some open fields - the scenery is beautiful."/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.40450001" pace="1122314923">
+            <textevent timeoffset="44.689651" message="10 min Recovery block - make the most of this opportunity. Keep hydrated."/>
+            <textevent timeoffset="487" message="Block 2 coming up - same as block 1"/>
+        </SteadyState>
+        <IntervalsT Repeat="3" OnDuration="420.00003" OffDuration="180.00002" OnPower="1.0044999" OffPower="0.50449997" pace="1122314923">
+            <textevent timeoffset="103" message="Settle into the effort. We want to be seated for all of today&apos;s session"/>
+            <textevent timeoffset="115" message="Nice and efficient, letting all the power come from the waist down."/>
+            <textevent timeoffset="1285" message="We will have completed 42 minutes of threshold by the end of today&apos;s session - that is a serious training stress."/>
+            <textevent timeoffset="1520" message="Keep going - we are almost there. "/>
+            <textevent timeoffset="916" message="Sit upright for maximum power transfer. A mountain bike position is very upright, as its all about handling and power"/>
+            <textevent timeoffset="930" message="Not aerodynamics like the road. You need to be super comfortable and in control."/>
+        </IntervalsT>
+        <Cooldown Duration="420.00003" PowerLow="0.50449997" PowerHigh="0.25449997" pace="1122314923">
+            <textevent timeoffset="77" message="Easy now - it&apos;s recovery time"/>
+            <textevent timeoffset="162" message="Top workout! That is workout 9 complete!"/>
+            <textevent timeoffset="180" message="You will have depleted your glycogen stores a fair bit today, so it is vital you take on some carbs asap after this session."/>
+            <textevent timeoffset="355" message="See you on workout 10 for another structured session"/>
+            <textevent timeoffset="370" message="Be sure to get some volume in and around these sessions now as we edge closer to the Absa Cape Epic."/>
+        </Cooldown>
+    </workout>
+</workout_file>

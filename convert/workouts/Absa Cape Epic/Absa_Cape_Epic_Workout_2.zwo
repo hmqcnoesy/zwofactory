@@ -1,0 +1,75 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 2</name>
+    <description>Workout two is a mix. Starting out with a longer work period in Z3 and introducing Z5 intensity in two following sets of increasing intensity.
+
+
+
+The purpose is to maintain the endurance you've built and start working on improving lactate tolerance and VO2max. This also replicates a tough uphill stint, in and out of the saddle.
+
+
+
+For me it's often also a mental thing getting used to working at higher intensity. The dips into Z5 in today's session is also a mental preparation of things to come. 
+
+
+
+Despite being an endurance event more than anything you will find yourself in Z5 at the Absa Cape Epic. So it's important not to neglect this type of training.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="300" PowerLow="0.43673915" PowerHigh="0.6541304" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series curated by Annika Langvad"/>
+            <textevent timeoffset="50" message="This workout starts with a Zone 3 intro period"/>
+            <textevent timeoffset="61" message="Following with 2 sets of increasing intensity Zone 5 efforts"/>
+            <textevent timeoffset="90" message="This workout is designed to improve on the endurance you have built"/>
+            <textevent timeoffset="101" message="And to start work on your lactate tolerance and VO2 Max"/>
+            <textevent timeoffset="130" message="You will find yourself in Zone 5+ at the Absa Cape Epic"/>
+            <textevent timeoffset="141" message="So it is important not to neglect this type of training"/>
+            <textevent timeoffset="200" message="Let&apos;s get warmed up then get stuck in"/>
+        </Warmup>
+        <SteadyState Duration="300" Power="0.6541304" pace="1122314923">
+            <textevent timeoffset="10" message="Here we go. Nice and steady to start"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.85413045" pace="1122314923">
+            <textevent timeoffset="10" message="We&apos;re now moving into a strong endurance effort"/>
+            <textevent timeoffset="21" message="Find your rhythm and keep a steady to high cadence to keep the blood flowing and your legs warm"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.50630432" pace="1122314923">
+            <textevent timeoffset="10" message="Quick rest before the real work starts"/>
+            <textevent timeoffset="21" message="You should be feeling pretty good now"/>
+            <textevent timeoffset="270" message="Let&apos;s get moving! 2 intervals of increasing intensity to Zone 5"/>
+            <textevent timeoffset="281" message="with a short Zone 5 effort mixed in"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="10" message="Find your rhythm early"/>
+            <textevent timeoffset="21" message="Focus on steady breathing"/>
+            <textevent timeoffset="32" message="Especially after the upcoming short sharp effort to get your heart rate back down"/>
+        </SteadyState>
+        <SteadyState Duration="10" Power="1.1541305" pace="1122314923"/>
+        <SteadyState Duration="300" Power="1.0044999" pace="1122314923">
+            <textevent timeoffset="10" message="That short effort should give you a taste of what&apos;s coming"/>
+            <textevent timeoffset="270" message="Hold steady"/>
+            <textevent timeoffset="281" message="Get out the saddle if you find it easier in the next Z5 section"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="1.1541305" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50195652" pace="1122314923">
+            <textevent timeoffset="10" message="Good effort!"/>
+            <textevent timeoffset="21" message="Now a rest before the next interval"/>
+            <textevent timeoffset="290" message="Here we go again!"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="280" message="Get ready for that short effort"/>
+        </SteadyState>
+        <SteadyState Duration="10" Power="1.1541305" pace="1122314923"/>
+        <SteadyState Duration="300" Power="1.0044999" pace="1122314923">
+            <textevent timeoffset="280" message="Great job! Final set now! Get ready for the final push"/>
+        </SteadyState>
+        <SteadyState Duration="120.00001" Power="1.1544999" pace="1122314923"/>
+        <SteadyState Duration="600" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="Well done today! You should be feeling that now!"/>
+            <textevent timeoffset="21" message="Today&apos;s effort will put you in good stead for next week"/>
+            <textevent timeoffset="32" message="We will continue to work on endurance and going above threshold"/>
+            <textevent timeoffset="43" message="Sprints and RPM training re also on the menu in the coming weeks"/>
+        </SteadyState>
+    </workout>
+</workout_file>

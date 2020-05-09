@@ -1,0 +1,103 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 10</name>
+    <description>Today's workout again focuses on helping to develop our endurance and aerobic capacity - both key attributes for mountain biking and specifically the Absa Cape Epic. 
+
+
+
+Long days in the saddle, with some tricky terrain that requires a bursts of power to get through - this is where being able to produce spikes in power output, repeatedly for a few minutes at a time is critical for success. These efforts are not all out max efforts, but surges above threshold, but still a controlled, aerobic effort. 
+
+
+
+We are completing two blocks of Zone 3 effort at the start of this session to generate some fatigue and give the 3 minute Zone 5 efforts much more of a 'race feel' vs doing them fresh. 
+
+
+
+The 3 minutes Z5 efforts are to be completed as much as possible, out of the saddle as we imitate a very steep single track section!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 10!"/>
+            <textevent timeoffset="25" message="Today&apos;s session is all about heavily stressing your aerobic energy systems in making 2 long blocks of Zone 3, followed by 4 x 3 minute Zone 5 efforts"/>
+            <textevent timeoffset="36" message="Today we will complete 2 blocks of Zone 3 followed by 4 x 3 minute Zone 5 (Vo2 Max) efforts."/>
+            <textevent timeoffset="50" message="The 3 minute efforts should be done out of the saddle as much as possible, aiming to replicate climbing a steep technical section"/>
+            <textevent timeoffset="143" message="We have a progressive warm up to start, with some 30second activation efforts to get us ready for the session. "/>
+            <textevent timeoffset="248" message="You will hopefully be familiar with this warm up by now, which Annika Langvad uses"/>
+            <textevent timeoffset="311" message="The Absa Cape Epic as with all mountain bike events, will contain some technical parts, which you will need to navigate through"/>
+            <textevent timeoffset="322" message="you will need to produce a lot of power to get over these, this is what the 3 minute efforts are at the end of this session."/>
+            <textevent timeoffset="336" message="We will be going well above threshold, engaging our fast twitch muscle fibres which use the most energy, but also help produce high power."/>
+            <textevent timeoffset="380" message="You should be feeling pretty warmed up now."/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How was that?"/>
+            <textevent timeoffset="25" message="Now focus on your cadence - try and find a nice smooth rhythm"/>
+            <textevent timeoffset="150" message="Another sprint incoming!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9.9999313" message="Good effort - you should be pretty warm now"/>
+            <textevent timeoffset="229" message="Are you ready for the first 15 minute block of Zone 3?"/>
+            <textevent timeoffset="281" message="Ride the two blocks of Zone 3 at your chosen cadence - whatever feels comfortable for you. 80-90rpm is ideal."/>
+        </SteadyState>
+        <SteadyState Duration="900.00006" Power="0.85449994" pace="1122314923">
+            <textevent timeoffset="80" message="As I&apos;m sure you appreciate - producing 115% of FTP at the end of 100km is totally different to producing the same power when fresh"/>
+            <textevent timeoffset="49.999962" message="This block of Zone 3 shouldn&apos;t be too hard - ride with a controlled, smooth pedalling stroke, still body, sat upright."/>
+            <textevent timeoffset="390" message="This block of Zone 3 is helping to build some fatigue for the top end efforts at the end of this workout"/>
+            <textevent timeoffset="401" message="helping to replicate the feeling and sensations when you try and make a winning move at the end of a race"/>
+            <textevent timeoffset="559" message="Don&apos;t forget to drink - hydration is key both on Zwift but also during Absa Cape Epic! Think about your nutrition strategy well in advance."/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="65" message="Short recovery - take a drink and loosen those legs off. Make the most of these easy few minutes."/>
+        </SteadyState>
+        <SteadyState Duration="900.00006" Power="0.85449994" pace="1122314923">
+            <textevent timeoffset="115" message="Block 2 - we are back on it. Settle in to that rhythm and just turn those pedals over like a machine."/>
+            <textevent timeoffset="487" message="Stay focused - good effort"/>
+            <textevent timeoffset="667" message="80-90rpm is ideal here"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="35" message="Nice work - the long efforts are done. Now we get in to the shorter, sharper efforts... the ones that hurt! Pain is gain!"/>
+            <textevent timeoffset="59.999874" message="The next block of 3 minute efforts should be completed out of the saddle as much as possible - to replicate climbing a very steep single track."/>
+            <textevent timeoffset="292" message="Get ready for Zone 5 effort 1 - here we go!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="1.1544999" pace="1122314923">
+            <textevent timeoffset="23" message="UP UP UP - good work, out of the saddle!"/>
+            <textevent timeoffset="133" message="Keep pushing, up out of the saddle as you navigate around rocks and tree stumps!"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.30450001" pace="1122314923">
+            <textevent timeoffset="39" message="Easy 3 minutes - recover as much as you can. Nice high cadence to flush the legs. "/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="1.1544999" pace="1122314923">
+            <textevent timeoffset="14.695778" message="Here we go again - up out of the saddle"/>
+            <textevent timeoffset="34.695778" message="Keep pushing - nice and controlled but stood up out of the saddle"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.30450001" pace="1122314923">
+            <textevent timeoffset="71" message="Enjoy the rest - you are probably feeling this session by now. At least you should be - how are you doing?"/>
+            <textevent timeoffset="100" message="Don&apos;t forget to keep drinking"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="1.1544999" pace="1122314923">
+            <textevent timeoffset="34" message="Effort 3 - lets do this. Out of the saddle remember - your quads will burn, but you need strong quads for mountain biking"/>
+            <textevent timeoffset="133" message="Keep working hard - you are carrying a lot of fatigue by now, so this should be hurting"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.30450001" pace="1122314923">
+            <textevent timeoffset="16" message="And relax! Recovery time - one more effort to go."/>
+            <textevent timeoffset="160" message="Last effort coming up - let&apos;s make it count."/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="1.1544999" pace="1122314923">
+            <textevent timeoffset="34" message="Effort 4 - last effort of the day. Up out of the saddle - feel the burn."/>
+            <textevent timeoffset="97" message="Keep it going - out of the saddle as you try to maintain that momentum across uneven terrain."/>
+            <textevent timeoffset="137" message="You learn to use your body weight and momentum to help you get over roots, up banks and around berms"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="62.000053" message="Good job - that is workout 10 complete! Make sure you recover well as always - carbs and protein for recovery."/>
+            <textevent timeoffset="222" message="You can have confidence that every pedal stroke of this session counts for something and will help you come Absa Cape Epic. "/>
+            <textevent timeoffset="233" message="We are training smartly - making the most of the time we have available"/>
+            <textevent timeoffset="302" message="TOP TIP..."/>
+            <textevent timeoffset="317" message="Workout 11 is a really aerobic session - very steady state and will not be that damaging."/>
+            <textevent timeoffset="330" message="Aim to train the day before to create some cumulative fatigue to aid training stress from the next workout!"/>
+            <textevent timeoffset="555" message="See you on workout 11 - Absa Cape Epic is just around the corner! Keep training hard - well done."/>
+        </SteadyState>
+    </workout>
+</workout_file>

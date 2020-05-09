@@ -1,0 +1,80 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 7</name>
+    <description>Today's session is another variant of a threshold workout. Added with a 15 sec burst of power at the beginning and end of each block of threshold. 
+
+
+
+Often referred to as EPD's or Explosive Power Development effort, we make an explosive effort at the start of each effort to produce some lactate, before settling in to 100% of FTP.
+
+
+
+Imagine accelerating round a hairpin, and then settling in to 12 minutes of threshold through a field during Absa Cape Epic! We then finish each effort with a 15 second sprint for position heading in to a technical section.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 7!"/>
+            <textevent timeoffset="31" message="Today&apos;s session is all about developing your explosive power and threshold"/>
+            <textevent timeoffset="43" message="We have a nice progressive warm up to start, with some 30second activation efforts to get us ready for the session. "/>
+            <textevent timeoffset="58" message="This is a fairly standard warm up for Annika Lagvard, four time Absa Cape Epic Champion"/>
+            <textevent timeoffset="111" message=" Absa Cape Epic is a real endurance event, so having a good threshold really helps on the long climbs."/>
+            <textevent timeoffset="390" message="You should be feeling pretty warmed up now. Do you have a sweat on?"/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How was that?"/>
+            <textevent timeoffset="31" message="Now focus on your cadence - try and find a nice smooth rhythm"/>
+            <textevent timeoffset="150" message="Another sprint incoming!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9.9999313" message="Good effort - we should be pretty warm now, with a nice sweat on?"/>
+            <textevent timeoffset="260" message="We have 3 efforts today - each being a 15 second sprint, followed by 12 minutes at 100% of FTP, and another 15 second spring to finish."/>
+            <textevent timeoffset="271" message="Are you ready for this?"/>
+            <textevent timeoffset="282" message="While in mountain biking your cadence drops through technical parts of the course - when riding along fast roads, your target cadence should be 80-90rpm just like on the road. Aim for 80-90rpm in today&apos;s session."/>
+        </SteadyState>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="1122314923">
+            <textevent timeoffset="3" message="UP UP UP - get stuck in to this 15 seconds"/>
+        </SteadyState>
+        <SteadyState Duration="720.00006" Power="1.0044999" pace="1122314923">
+            <textevent timeoffset="52" message="Block 1 - 100% FTP for 12 Minutes. Settle in to this effort - aim for 80-90rpm, with a smooth pedalling style."/>
+            <textevent timeoffset="152" message="You should feel that your body has flushed the lactate from your legs and the effort gets slightly easier now?"/>
+        </SteadyState>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="1122314923">
+            <textevent timeoffset="2" message="Let&apos;s go - we want a big 15 seconds from you."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.40450001" pace="1122314923">
+            <textevent timeoffset="151" message="5 Minutes rest - make the most of it. Take a drink and relax!"/>
+            <textevent timeoffset="291" message="Effort 2 coming up - 200% of FTP for the first 15 seconds. Imaging accelerating up a rooty trail"/>
+        </SteadyState>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="1122314923"/>
+        <SteadyState Duration="720.00006" Power="1.0044999" pace="1122314923">
+            <textevent timeoffset="172" message="Settle in to the effort - it&apos;s a long slog, where your body will be trying to shuttle the lactate away. Keeping your body still and pedalling smoothly will help you produce power most efficiently."/>
+            <textevent timeoffset="360" message="halfway through the session now - picture yourself climbing a winding climb through some fields - sun beating down on your back and dust clouds being thrown up from your rear wheel!"/>
+            <textevent timeoffset="681" message="15 second sprint at 200% of FTP coming up - make it a real explosive effort"/>
+        </SteadyState>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.40450001" pace="1122314923">
+            <textevent timeoffset="141.02789" message="Take a drink and turn that fan up!"/>
+            <textevent timeoffset="291" message="Final effort in 10 seconds - this will hurt, but dig in! You can use the arrows to the left to make it easier if you need to."/>
+        </SteadyState>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="1122314923">
+            <textevent timeoffset="2" message="Awesome - commit to the effort! Feel the burn. This final set will hurt."/>
+        </SteadyState>
+        <SteadyState Duration="720.00006" Power="1.0044999" pace="1122314923">
+            <textevent timeoffset="72" message="Last effort of the day - find the right gear for you. Target cadence 80-90rpm, which is considered efficient - similar to the road"/>
+            <textevent timeoffset="132" message="Hold it right there - it&apos;s all about consistency in these long efforts, which will support you in super endurance events like Absa Cape Epic."/>
+            <textevent timeoffset="472" message="Being able to produce threshold power after a sprint, with lactate in your legs will set you up nicely for Absa Cape Epic, tackling those 100km days, with plenty of climbing."/>
+            <textevent timeoffset="715" message="Last sprint - get ready...it&apos;s hammer time!"/>
+        </SteadyState>
+        <SteadyState Duration="15.000001" Power="2.0044999" pace="1122314923">
+            <textevent timeoffset="6" message="Keep it going! Go go go!"/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="62" message="Good job - workout 7 nailed! Recovery is super important to ensure all the hard work we put in counts! A recovery shake is a great starting point."/>
+            <textevent timeoffset="355" message="See you on workout 8 - the halfway point of the Absa Cape Epic Workout series as we edge closer to the Absa Cape Epic - it will be fun!"/>
+        </SteadyState>
+    </workout>
+</workout_file>

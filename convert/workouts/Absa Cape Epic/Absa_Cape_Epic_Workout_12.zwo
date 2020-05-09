@@ -1,0 +1,75 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 12</name>
+    <description>Today's workout is a very famous 'Over - Under' session, where we repeatedly ride over and under our threshold.
+
+
+
+We will complete 2 x 28 minute blocks, each alternating between 3 minutes 'over' Zone 3 (80% of FTP) and 4 minutes 'under' Zone 4 (102% of FTP). 
+
+
+
+Critically, both the under and over sections are to be completed at a cadence slightly lower than 'standard', at 70rpm. This is to give the session a strength endurance focus - ensuring we get used to producing not only high power, but also high crank torque, to support us in those sections of a mountain bike race where we have to momentarily freewheel, and are asked to produce huge crank torque from 0rpm!
+
+
+
+We stimulate acidosis during the 'over' efforts, and we are then trying to recover, while still producing a moderate effort during the 'under' phase. Think of the 'over' as a technical part of a climb, while the under is climbing on a fire road or through a field!</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 12!"/>
+            <textevent timeoffset="25" message="Today&apos;s session is a strength endurance focused session, where we repeatedly tip over and dip under our threshold, at 70rpm."/>
+            <textevent timeoffset="43" message="As has now become our standard warm up, we start with a progressive ramp before going in to some 30second activation efforts to get us ready for the session."/>
+            <textevent timeoffset="51" message="A progressive ramp followed by some sprints ticks all the boxes for a warm up and will leave you ready to get the most out of efforts in this session"/>
+            <textevent timeoffset="101" message="The Absa Cape Epic, being a long distance event coupled with some tricky terrain will require a lot of strength and good endurance."/>
+            <textevent timeoffset="11" message="Strength and endurance - two attributes which we are developing today."/>
+            <textevent timeoffset="188" message="Strength is fundamental in mountain biking to be able to cope with sections where you have to produce huge crank torque from a very low cadence as you stall on a technical section."/>
+            <textevent timeoffset="390" message="You should be feeling pretty warmed up now. Do you have a sweat on?"/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How did that effort feel? Your blood will be warming up nicely now"/>
+            <textevent timeoffset="25" message="I hope your fan is on full speed?"/>
+            <textevent timeoffset="150" message="Another sprint incoming"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="269" message="Are you ready for the first block? 70rpm Over and Unders."/>
+            <textevent timeoffset="285" message="Don&apos;t push too hard in the Unders oe the Overs will be very tough - 102% coupled with low cadence will place high demand on your muscular strength"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="180.00002" OffDuration="240.00002" OnPower="0.80449992" OffPower="1.0244999" pace="1122314923" Cadence="70" CadenceResting="70">
+            <textevent timeoffset="41" message="80% of FTP for 3 minutes - a nice gentle introduction to the block."/>
+            <textevent timeoffset="153" message="Step up in effort incoming - get ready, but just try and squeeze in to it."/>
+            <textevent timeoffset="237" message="Good work - find your rhythm here and keep your composure"/>
+            <textevent timeoffset="471" message="Slight recovery - take a drink if you can and then try and control your breathing"/>
+            <textevent timeoffset="705" message="Back in to 102% of FTP - zone in to your cadence, aiming for 70rpm."/>
+            <textevent timeoffset="908" message="Good work - this is a real tough session on the legs but will make us super strong."/>
+            <textevent timeoffset="1097" message="Nice - smooth pedalling style is key to prevent our wheels slipping on rough surfaces"/>
+            <textevent timeoffset="1342" message="Partial recovery - fatigue will be setting in big time now. Hold on as we are almost done with block 1"/>
+            <textevent timeoffset="1487" message="Final Zone 4 effort of block 1 - fantastic riding. You will be glad of nailing this session when you do your next mountain biking event"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.40450001" pace="1122314923">
+            <textevent timeoffset="178" message="10 Minutes easy - take a drink, check your fan is on and perfect your bunny hops!"/>
+        </SteadyState>
+        <IntervalsT Repeat="4" OnDuration="180.00002" OffDuration="240.00002" OnPower="0.80449992" OffPower="1.0244999" pace="1122314923" Cadence="70" CadenceResting="70">
+            <textevent timeoffset="36" message="Settle in to the block - find rhythm again, dialling in to 70rpm."/>
+            <textevent timeoffset="48" message="You can try alternate between in and out of the saddle - maybe a minute of each?"/>
+            <textevent timeoffset="255" message="This is the last block - zone out of the pain, and keep turning the pedals. "/>
+            <textevent timeoffset="499" message="Slight recovery - make the most of it. This part of the effort is on fire roads - a very measured effort."/>
+            <textevent timeoffset="716" message="We have turned off the fire road and are on a technical section, requiring increased power to maintain momentum"/>
+            <textevent timeoffset="911" message="80% FTP - slight rest as we head down a drop off on the fire road again"/>
+            <textevent timeoffset="1072" message="The legs will be hurting, but hold on - 102% of FTP, 70rpm - we are over our threshold! You can do it."/>
+            <textevent timeoffset="1347" message="Maintain 70rpm - keeping your body still, nice upright body position."/>
+            <textevent timeoffset="1563" message="Over threshold for the last time - awesome! Grind it out"/>
+        </IntervalsT>
+        <SteadyState Duration="600" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="62" message="Nice one! Workout 12, completed it mate! You will need some carbs to replenish your glycogen after this session!"/>
+            <textevent timeoffset="325" message="See you on workout 13! We only have 4 more sessions left in the Absa Cape Epic workout series!"/>
+            <textevent timeoffset="390" message="The training we complete now will really benefit you come Absa Cape Epic!"/>
+            <textevent timeoffset="455" message="Make sure you supplement this training plan with some mountain biking, to keep your technical skills sharp!"/>
+            <textevent timeoffset="555" message="See you on workout 13!"/>
+        </SteadyState>
+    </workout>
+</workout_file>

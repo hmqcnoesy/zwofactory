@@ -1,0 +1,75 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 5</name>
+    <description>Today's session continues to focus on developing your endurance and aerobic conditioning which are fundamental attributes for anyone looking to perform the Absa Cape Epic, which has 100km + days with 2800m of climbing!  
+
+
+
+We are going to push ourselves right up to our threshold, by completing 6 efforts, split in to two blocks of 3 efforts (90%, 95% and 100% of our FTP). As the intensity goes up, the volume goes down so this session is definitely manageable and is a nice building block rather than leaving you totally exhausted for tomorrow. 
+
+
+
+The Absa Cape Epic is 8 days of back to back riding, so we need to be replicating this to a degree in training so try and ride your bike for a few days in a row after this session.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 5!"/>
+            <textevent timeoffset="25" message="Today&apos;s session is all about developing your aerobic base and endurance - critical for mountain bikers"/>
+            <textevent timeoffset="43" message="We have a nice progressive warm up to start, with some 30second activation efforts to get us ready for the session. "/>
+            <textevent timeoffset="58" message="This is a fairly standard warm up for Annika Lagvard, four time Absa Cape Epic Champion"/>
+            <textevent timeoffset="111" message=" Absa Cape Epic is a real endurance event, so plenty of aerobic conditioning is required - by riding just under and at threshold we realise similar aerobic benefits to a long endurance ride"/>
+            <textevent timeoffset="390" message="You should be feeling pretty warmed up now. Do you have a sweat on?"/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How was that?"/>
+            <textevent timeoffset="31" message="Now focus on your cadence - try and find a nice smooth rhythm"/>
+            <textevent timeoffset="150" message="Another sprint incoming!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9.9999313" message="Good effort - we should be pretty warm now, with a nice sweat on?"/>
+            <textevent timeoffset="269" message="Are you ready for the first block of 3 efforts?"/>
+            <textevent timeoffset="281" message="Aim for 70-80rpm, which is a nice efficient cadence but also a cadence that you ride at a lot in mountain biking"/>
+        </SteadyState>
+        <SteadyState Duration="420.00003" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="195" message="Effort one - find your rhythm. 7 minutes at 90% of your FTP to start."/>
+        </SteadyState>
+        <SteadyState Duration="90.000008" Power="0.50449997" pace="1122314923"/>
+        <SteadyState Duration="360" Power="0.95528054" pace="1122314923">
+            <textevent timeoffset="76" message="Block 2 -  6 min 95%"/>
+        </SteadyState>
+        <SteadyState Duration="90.000008" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="43" message=""/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="1.0044999" pace="1122314923">
+            <textevent timeoffset="63" message="Maintain a nice fluid pedalling style. In mountain biking you are often riding over loose bits of rock or slippery surfaces. "/>
+            <textevent timeoffset="78" message="Keeping smooth pedalling style prevents your wheel skipping and loosing traction."/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="67" message="The next 5 minutes are super important - rest well, think of it as a downhill section before we ramp up again."/>
+            <textevent timeoffset="88" message="Make the most of the rest"/>
+        </SteadyState>
+        <SteadyState Duration="420.00003" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="65" message="Block 2 underway, settle in to this first effort - 90% of FTP. The start of a long, winding dirt path"/>
+            <textevent timeoffset="292" message="Smooth pedalling "/>
+        </SteadyState>
+        <SteadyState Duration="90.000008" Power="0.50449997" pace="1122314923"/>
+        <SteadyState Duration="360.00003" Power="0.95449996" pace="1122314923">
+            <textevent timeoffset="13" message="6 minutes at 95% of FTP now - nice upright position as in mountain biking we climb at relatively slow speeds, so aerodynamics is not as important."/>
+            <textevent timeoffset="33" message="It is more important to be comfortable and able to produce max power - really using your glutes and hamstrings."/>
+        </SteadyState>
+        <SteadyState Duration="90.000008" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9" message="A short rest before the final effort"/>
+        </SteadyState>
+        <SteadyState Duration="300" Power="1.0044999" pace="1122314923">
+            <textevent timeoffset="137" message="Last effort here, this time we will be riding at threshold power - 100% of our FTP. Important to nudge your FTP up to handle the long climbs."/>
+        </SteadyState>
+        <SteadyState Duration="600" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="62" message="Good job - workout 5 complete! Make sure you recover well - carbs and protein for recovery to ensure we can train again tomorrow."/>
+            <textevent timeoffset="355" message="See you on workout 6 as we edge closer to Absa Cape Epic - it will be fun!"/>
+        </SteadyState>
+    </workout>
+</workout_file>

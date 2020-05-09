@@ -1,0 +1,75 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 4</name>
+    <description>Today's session is all about lactate tolerance. During the Absa Cape Epic you will find many obstacles requiring you to go above threshold. Teaching your body to be able to deal with lactate after such efforts and continue at a steady state is vital to getting through stages as fast a possible.
+
+
+
+The workout is focused on Z4 interspersed with 30 sec sprints. This type of workout is where it starts to get uncomfortable for me but it helps to keep the eye on the prize. We will start by doing two shorter accelerations in the warm up to get you used to the effort before we move into the main body of the session. </description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series curated by Annika Langvad"/>
+            <textevent timeoffset="32" message="Today&apos;s session is all about Lactate tolerance"/>
+            <textevent timeoffset="43" message="The workout is focused on but with some 30 sec sprints thrown in"/>
+            <textevent timeoffset="60" message="I find this type of effort uncomfortable, but it helps you keep your eyes on the prize!"/>
+            <textevent timeoffset="100" message="During the Absa Cape Epic you will find many obstacles requiring you to go above threshold"/>
+            <textevent timeoffset="122" message="It&apos;s vital your muscles are able to deal lactate after those efforts"/>
+            <textevent timeoffset="390" message="You should be feeling warmed up"/>
+            <textevent timeoffset="401" message="Here comes the first sprint"/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How was that?"/>
+            <textevent timeoffset="21" message="Now focus on your cadence and find a smooth rhythm to loosen your legs back up"/>
+            <textevent timeoffset="150" message="Another sprint incoming!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="Good effort"/>
+            <textevent timeoffset="21" message="Again, focus on your cadence in each of these rest sections"/>
+            <textevent timeoffset="32" message="You should be feeling nice and warm now"/>
+            <textevent timeoffset="270" message="Ready for the first set?"/>
+            <textevent timeoffset="281" message="It may aid you to get out the saddle in the 30 sec efforts as you would outside"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5063044" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.90630436" pace="1122314923">
+            <textevent timeoffset="270" message="30 seconds until the next sprint"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5063044" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.90577561" pace="1122314923">
+            <textevent timeoffset="270" message="Not long until the next sprint"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5044999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="270" message="Last one of this set coming up!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5044999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.5" pace="1122314923">
+            <textevent timeoffset="10" message="Great!"/>
+            <textevent timeoffset="21" message="Take this time to regroup and flush those legs"/>
+            <textevent timeoffset="270" message="Round 2 incoming"/>
+            <textevent timeoffset="281" message="Remember to get out the saddle!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5044999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="270" message="30 seconds until the next sprint"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5044999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="270" message="Not long until the next sprint"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5044999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.90449995" pace="1122314923">
+            <textevent timeoffset="270" message="Get yourself ready for the last effort!"/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.5044999" pace="1122314923"/>
+        <SteadyState Duration="480.00003" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="Well done!"/>
+            <textevent timeoffset="21" message="That should have been tough for everyone"/>
+            <textevent timeoffset="32" message="This type of effort is imperative for you to get used to shuttling that lactate"/>
+            <textevent timeoffset="43" message="In the next workout we will take our endurance training up a notch!"/>
+        </SteadyState>
+    </workout>
+</workout_file>

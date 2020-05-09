@@ -1,0 +1,67 @@
+<workout_file>
+    <author>Annika Langvad</author>
+    <name>Absa Cape Epic Workout 15</name>
+    <description>Today's session is focused on hitting our Vo2 Max, by completing 7 efforts, each being 3 minutes long, with 5 minutes rest between each effort. 
+
+
+
+You may think that you don't need the full 5 minutes after effort 1, however its about getting enough recovery early on in the session that efforts 5, 6 and 7 are still quality efforts and you are not too fatigued.
+
+
+
+This session will help you become more efficient at utilising oxygen as an energy source, and help you to produce high power more efficiently / more aerobically. 
+
+
+
+So translating this to mountain biking - it means you can more efficiently tackle those few minute tough sections, leaving you fresher later on in your ride.</description>
+    <sportType>bike</sportType>
+    <tags/>
+    <workout>
+        <Warmup Duration="420.00003" PowerLow="0.43673915" PowerHigh="0.74978262" pace="1122314923">
+            <textevent timeoffset="10" message="Welcome to the Absa Cape Epic Workout Series - this is workout 15!"/>
+            <textevent timeoffset="25" message="Today&apos;s session is focused on hitting our Vo2 Max"/>
+            <textevent timeoffset="43" message="Stressing our bodies to our maximum aerobic ability - training us to become more efficient as using as much oxygen as possible"/>
+            <textevent timeoffset="51" message="A progressive ramp followed by some sprints ticks all the boxes for a warm up and will leave you ready to get the most out of efforts in this session"/>
+            <textevent timeoffset="101" message=" Absa Cape Epic, being a long distance event coupled with some tricky terrain will require a lot of strength and good endurance."/>
+            <textevent timeoffset="121" message="The ability to produce high power, efficiently is critical for mountain biking."/>
+            <textevent timeoffset="188" message="As the Absa Cape Epic is a super endurance event - being able to cycle efficiently, across difficult terrain is important."/>
+            <textevent timeoffset="198" message="from a very low cadence as you stall on a technical section."/>
+            <textevent timeoffset="390" message="You should be feeling pretty warmed up now. Do you have a sweat on?"/>
+            <textevent timeoffset="401" message="Here comes the first activation effort - notice its 30 seconds, very different to a road sprint. More of a capacity effort."/>
+        </Warmup>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="10" message="How did that effort feel? Your blood will be warming up nicely now"/>
+            <textevent timeoffset="25" message="I hope your fan is on full speed?"/>
+            <textevent timeoffset="150" message="Another sprint incoming - but time for a big bunny hop. Skills pay the bills remember..."/>
+        </SteadyState>
+        <SteadyState Duration="30.000002" Power="1.0944999" pace="1122314923"/>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="9.9999313" message="How did the bunny hop go?"/>
+            <textevent timeoffset="269" message="Are you ready for the efforts?"/>
+            <textevent timeoffset="285" message="A measured effort is required - these efforts are Zone 5, so nothing too explosive but rather a measured effort"/>
+        </SteadyState>
+        <SteadyState Duration="180.00002" Power="0.50449997" pace="1122314923"/>
+        <IntervalsT Repeat="7" OnDuration="180.00002" OffDuration="300" OnPower="1.1544999" OffPower="0.50449997" pace="1122314923">
+            <textevent timeoffset="2847" message="Final one coming up! Go!"/>
+            <textevent timeoffset="119" message="Effort 1 - 3 minutes at 115% of FTP. Settle in and produce the power in a nice controlled way"/>
+            <textevent timeoffset="333" message="5 Minutes rest at 50% of FTP - make the most of these rest periods"/>
+            <textevent timeoffset="2978" message="Effort 7 - last effort, make it count. Commit right to the last second."/>
+            <textevent timeoffset="2416" message="Effort 6 - it&apos;s going to really hurt now, but stay composed and just keep turning those legs over."/>
+            <textevent timeoffset="1972" message="Effort 5 - over halfway. Stick with it."/>
+            <textevent timeoffset="1477" message="Effort 4 - top job. Stay focused, and stay sat upright and look forward as you would have to do to navigate obstacles during Absa Cape Epic"/>
+            <textevent timeoffset="1001" message="Effort 3 - great work. Try and control your breathing, taking nice controlled, deep breaths."/>
+            <textevent timeoffset="502" message="Effort 2 - keep it smooth. Sit nice and upright just as you would on the mountain bike for stability "/>
+            <textevent timeoffset="2187" message="Another rest - your muscles will be heavily fatigued by now. This is where the magic happens."/>
+            <textevent timeoffset="1657" message="Rest - loosen your legs and let the lactate flush from your legs"/>
+            <textevent timeoffset="1206" message="Rest - keep drinking."/>
+        </IntervalsT>
+        <SteadyState Duration="300" Power="0.50449997" pace="1122314923">
+            <textevent timeoffset="22" message="Nice one! Workout 15, completed it! Only one more session to go in this workout series."/>
+            <textevent timeoffset="125" message="See you next time for the final workout! We have worked really hard throughout this series, so now is the time to stay healthy!"/>
+            <textevent timeoffset="190" message="Really focus on getting good quality rest and eat healthy to support our immune systems"/>
+            <textevent timeoffset="215" message="Keep getting out on your mountain bike to practice those wheelies! Big handling skills are huge in mountain biking"/>
+            <textevent timeoffset="255" message="See you on workout 16!"/>
+        </SteadyState>
+    </workout>
+</workout_file>
