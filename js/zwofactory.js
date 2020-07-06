@@ -72,6 +72,26 @@ Workout.prototype.calculateScore = function() {
 }
 
 
+Workout.prototype.calculateXp = function() {
+    var xpSum = 0;
+    
+    for (var i = 0; i < this.segments.length; i++) {
+        if (this.segments[i].t == 'i') {
+            var segmentTime = this.segments[i].r * (this.segments[i].d1 + this.segments[i].d2);
+            xpSum += Math.floor(segmentTime / 5.06);  // 1 xp every 5.06 seconds
+        } else if (this.segments[i].t == 'r') {
+            xpSum += Math.floor(this.segments[i].d1 / 10.9);  // 1 xp every 10.9 seconds
+        } else if (this.segments[i].t == 'f') {
+            xpSum += Math.floor((this.segments[i].d1 / 10.1666)); // 1 xp every 10.1666 seconds
+        } else {
+            xpSum += Math.floor(this.segments[i].d1 / 5.6);  // 1 xp every 5.6 seconds
+        }
+    }
+
+    return xpSum;
+}
+
+
 Workout.prototype.setTags = function(tagStr) {
     this.tags = tagStr.split(' ');
 };

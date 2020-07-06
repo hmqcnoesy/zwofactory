@@ -71,6 +71,12 @@
                 scoreSpan.appendChild(document.createTextNode(workout.calculateScore()));
                 div.querySelector('[data-duration]').appendChild(scoreSpan);
             }
+            if (userSettings.displayXp) {
+                var xpSpan = document.createElement('span');
+                xpSpan.classList.add('xp');
+                xpSpan.appendChild(document.createTextNode(workout.calculateXp() + " XP"));
+                div.querySelector('[data-duration]').appendChild(xpSpan);
+            }
             div.querySelector('[data-tags]').innerHTML = '';
             div.querySelector('[data-tags]').appendChild(document.createTextNode(workout.tags));
             div.querySelector('[data-author]').innerHTML = '';

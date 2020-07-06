@@ -14,6 +14,7 @@ function UserSettings(useDefaults) {
     this.displayAbsolutePower = false;
     this.displayTimeInMinutes = true;
     this.displayTss = false;
+    this.displayXp = false;
 
     if (!useDefaults && localStorage && localStorage.zwofactorySettings) {
         var savedSettings = JSON.parse(localStorage.zwofactorySettings);

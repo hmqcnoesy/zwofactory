@@ -93,6 +93,8 @@ svg { display: inline-block; }
 
 .tss { font-size: 65%; border-radius: 3px; margin-left: 8px; padding: 1px 6px; border: 1px solid #333; white-space: nowrap; }
 .tss:empty { display: none; }
+.xp { font-size: 65%; border-radius: 3px; margin-left: 8px; padding: 1px 6px; border: 1px solid #284a6c; background-color: #284a6c; color: white; white-space: nowrap; }
+.xp:empty { display: none; }
 
 .dd-label { padding: 4px; user-select: none; -moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; }
 .dd-button { font-size: 0.9rem !important; text-align: center; width: 100%; padding: 0.5em 0; cursor: pointer; color: #333; /*! box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5); */ border: 1px solid #333; border-radius: 3px; background-color: #e7e7e7; }

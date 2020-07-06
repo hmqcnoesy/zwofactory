@@ -377,6 +377,10 @@ document.getElementById('btnDismissSettings').addEventListener('click', function
         document.getElementById('spanTss').innerHTML = currentWorkout.calculateScore();
     else 
         document.getElementById('spanTss').innerHTML = '';
+    if (userSettings.displayXp) 
+        document.getElementById('spanXp').innerHTML = currentWorkout.calculateXp() + " XP";
+    else 
+        document.getElementById('spanXp').innerHTML = '';
 });
 
 
@@ -684,6 +688,7 @@ function addTextEventControls(textEvent) {
 function updateWorkoutDuration() {
     document.getElementById('spanWorkoutDuration').innerHTML = currentWorkout.calculateDuration();
     if (userSettings.displayTss) document.getElementById('spanTss').innerHTML = currentWorkout.calculateScore();
+    if (userSettings.displayXp) document.getElementById('spanXp').innerHTML = currentWorkout.calculateXp() + " XP";
 }
 
 
