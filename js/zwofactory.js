@@ -843,6 +843,6 @@ function escapeXml(unsafe) {
 
 function getXmlElementValue(xmlDoc, tagName) {
     var node = xmlDoc.getElementsByTagName(tagName)[0];
-    if (!node.childNodes || !node.childNodes.length || node.childNodes.length == 0) return '';
+    if (!node || !node.childNodes || !node.childNodes.length || node.childNodes.length == 0) return '';
     return node.childNodes[0].nodeValue;
 }
