@@ -4,6 +4,8 @@ body {  margin: auto; max-width: 1040px; }
 header,main,footer { background-color: white; padding: 1em; border-radius: 0.25em; border: 1px solid black; display: block; }
 header { border-top-left-radius: 0; border-top-right-radius: 0; border-top: none; padding: 0.5em 0; margin-bottom: 10px; }
 main { margin-bottom: 10px; }
+#divMessage:not(:empty) { text-align: center; background-color: rgba(194,165,103,.6); padding: 0.6em; }
+#divMessage:not(:empty) a { display: inline; }
 footer { border-bottom-left-radius: 0; border-bottom-right-radius: 0; padding: 1em; text-align: center; }
 header a { text-decoration: none; color: #000428;}
 a { display: block; color: #000428; cursor:pointer; text-decoration: underline; }
