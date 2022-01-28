@@ -10,15 +10,32 @@
         var divMyWorkouts = document.getElementById('divMyWorkouts');
         var divToClone = document.getElementById('divToClone');
         for (var i = 0; i < workouts.length; i++) {
+            var workout = new Workout();
+            workout.reconstituteFromDeserialized(userSettings.getMyWorkout(workouts[i].name));
             var cloned = divToClone.cloneNode(true);
             cloned.removeAttribute('id');
             cloned.classList.remove('invisible');
+
             var a = cloned.querySelector('a');
-            a.setAttribute('data-name', workouts[i].name);
-            a.appendChild(document.createTextNode(workouts[i].name));
+            a.setAttribute('data-name', workout.name);
+            a.appendChild(document.createTextNode(workout.name));
+            
+            var spanDuration = cloned.querySelector('span.duration');
+            spanDuration.appendChild(document.createTextNode(workout.calculateDuration()));
+
+            if (userSettings.displayTss) {
+                var spanTss = cloned.querySelector('span.tss');
+                spanTss.appendChild(document.createTextNode(workout.calculateScore()));
+            }
+
+            if (userSettings.displayXp) {
+                var spanXp = cloned.querySelector('span.xp');
+                spanXp.appendChild(document.createTextNode(workout.calculateXp() + " XP"));
+            }
+
             var clickables = cloned.querySelectorAll('[data-name]');
             for (var j = 0; j < clickables.length; j++) {
-                clickables[j].setAttribute('data-name', workouts[i].name);
+                clickables[j].setAttribute('data-name', workout.name);
             }
             divMyWorkouts.appendChild(cloned);
         }        
@@ -55,7 +72,7 @@
 
 
     function toggleVisibility(aElement) {
-        var div = aElement.parentNode.querySelector('div');
+        var div = aElement.parentNode.querySelector('div.grid');
         var invisible = div.classList.contains('invisible');
 
         if (invisible) {
@@ -63,20 +80,6 @@
             if (!savedWorkout) return;
             var workout = new Workout();
             workout.reconstituteFromDeserialized(savedWorkout);
-            div.querySelector('[data-duration]').innerHTML = '';
-            div.querySelector('[data-duration]').appendChild(document.createTextNode(workout.calculateDuration()));
-            if (userSettings.displayTss) {
-                var scoreSpan = document.createElement('span');
-                scoreSpan.classList.add('tss');
-                scoreSpan.appendChild(document.createTextNode(workout.calculateScore()));
-                div.querySelector('[data-duration]').appendChild(scoreSpan);
-            }
-            if (userSettings.displayXp) {
-                var xpSpan = document.createElement('span');
-                xpSpan.classList.add('xp');
-                xpSpan.appendChild(document.createTextNode(workout.calculateXp() + " XP"));
-                div.querySelector('[data-duration]').appendChild(xpSpan);
-            }
             div.querySelector('[data-tags]').innerHTML = '';
             div.querySelector('[data-tags]').appendChild(document.createTextNode(workout.tags));
             div.querySelector('[data-author]').innerHTML = '';
