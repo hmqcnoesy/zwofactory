@@ -4,7 +4,7 @@
   "description": "convert zwo file to json string",
   "main": "convert.js",
   "dependencies": {
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.6.0"
   },
   "devDependencies": {},
   "scripts": {
