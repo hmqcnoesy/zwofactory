@@ -7,7 +7,6 @@ function Workout (name, desc, auth, tagStr) {
     this.segments = [];
 };
 
-
 Workout.prototype.reconstituteFromDeserialized = function(workout) {
     this.name = workout.name;
     this.description = workout.description;
@@ -30,7 +29,6 @@ Workout.prototype.reconstituteFromDeserialized = function(workout) {
     }
 }
 
-
 Workout.prototype.calculateDuration = function() {
     var totalSeconds = 0;
     for (var i = 0; i < this.segments.length; i++) {
@@ -46,7 +44,6 @@ Workout.prototype.calculateDuration = function() {
     if (str.indexOf('0') == 0) str = str.substr(1);
     return str;
 }
-
 
 Workout.prototype.calculateScore = function() {
     var scoreSum = 0;
@@ -71,7 +68,6 @@ Workout.prototype.calculateScore = function() {
     return Math.floor(scoreSum, 0);
 }
 
-
 Workout.prototype.calculateXp = function() {
     var xpSum = 0;
     
@@ -91,16 +87,13 @@ Workout.prototype.calculateXp = function() {
     return xpSum;
 }
 
-
 Workout.prototype.setTags = function(tagStr) {
     this.tags = tagStr.split(' ');
 };
 
-
 Workout.prototype.addSegment = function(segment) {
     this.segments.push(segment);
 };
-
 
 Workout.prototype.toZwoXml = function() {
     var xml = '<workout_file>\r\n'
@@ -130,7 +123,6 @@ Workout.prototype.toZwoXml = function() {
 
     return xml;
 };
-
 
 Workout.prototype.toMrcText = function() {
     var description = this.description;
@@ -193,7 +185,6 @@ Workout.prototype.toMrcText = function() {
 
     return text;
 }
-
 
 Workout.prototype.toErgText = function(ftp) {
     var description = this.description;
@@ -258,7 +249,6 @@ Workout.prototype.toErgText = function(ftp) {
     return text;
 }
 
-
 Workout.prototype.toUrl = function() {
     var url = location.protocol + '//' + location.host + location.pathname
         + '?a=' + encodeURIComponent(this.author ? this.author : '') 
@@ -281,7 +271,6 @@ Workout.prototype.toUrl = function() {
 
     return url;
 };
-
 
 Workout.prototype.loadFromXml = function(xml) {
     parser = new DOMParser();
@@ -342,7 +331,6 @@ Workout.prototype.loadFromXml = function(xml) {
         this.segments.push(segmentToAdd);
     }
 };
-
 
 Workout.prototype.loadFromErgOrMrc = function(text) {
     text = text.replace(/(\r\n)|\n/g, '\r');
@@ -415,7 +403,6 @@ Workout.prototype.loadFromErgOrMrc = function(text) {
     }
 };
 
-
 Workout.prototype.loadFromUrl = function(queryString) {
     var qsValues = new URLSearchParams(queryString);
     this.name = qsValues.get('n');
@@ -469,7 +456,6 @@ Workout.prototype.loadFromUrl = function(queryString) {
     }
 };
 
-
 function Segment(t, p1, d1, p2, d2, r) {
     this.id = createGuid();
     this.t = t;
@@ -480,7 +466,6 @@ function Segment(t, p1, d1, p2, d2, r) {
     if (isNumeric(r)) this.r = r;
     this.textEvents = [];
 };
-
 
 Segment.prototype.duplicateFrom = function(segmentToClone) {
     this.id = createGuid();
@@ -502,7 +487,6 @@ Segment.prototype.duplicateFrom = function(segmentToClone) {
     }
 }
 
-
 Segment.prototype.addTextEvent = function(text, offset) {
     var id = createGuid();
     this.textEvents.push({id:id, text:text, offset:offset});
@@ -514,13 +498,11 @@ Segment.prototype.addCadence = function(c1, c2) {
     if (isNumeric(c2)) this.c2 = c2;
 };
 
-
 Segment.prototype.toSvgs = function(settings) {
     if (this.t == 'i') return this.toSvgIntervals(settings);
     else if (this.t == 'f') return [this.toSvgFreeRide(settings)];
     else return [this.toSvgSinglePolygon(settings)];
 };
-
 
 Segment.prototype.toSvgIntervals = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
@@ -558,7 +540,6 @@ Segment.prototype.toSvgIntervals = function(settings) {
     return svgs;
 };
 
-
 Segment.prototype.toSvgFreeRide = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
     this.d1 = getIntOrDefault(this.d1, 5);
@@ -583,7 +564,6 @@ Segment.prototype.toSvgFreeRide = function(settings) {
     return svg;
 };
 
-
 Segment.prototype.toSvgSinglePolygon = function(settings) {
     var uri = 'http://www.w3.org/2000/svg';
     var d1 = getIntOrDefault(this.d1, 5);
@@ -600,7 +580,6 @@ Segment.prototype.toSvgSinglePolygon = function(settings) {
     if (this.avg && settings.showAvgPwrIndicator) svg.appendChild(this.createAvgPwrPath(settings));
     return svg;
 }
-
 
 Segment.prototype.createPolygonPath = function(settings, t, p1, p2, width) {
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -622,7 +601,6 @@ Segment.prototype.createPolygonPath = function(settings, t, p1, p2, width) {
     return path;
 };
 
-
 Segment.prototype.createCadencePath = function(settings) {
     var y1 = settings.shapeHeight - 8;
     var y2 = y1 + 3.5;
@@ -634,7 +612,6 @@ Segment.prototype.createCadencePath = function(settings) {
     return path;
 };
 
-
 Segment.prototype.createTextEventElement = function(settings, count) {
     var text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
     text.setAttribute('x', 2);
@@ -643,7 +620,6 @@ Segment.prototype.createTextEventElement = function(settings, count) {
     text.innerHTML = 'T:' + count;
     return text;    
 };
-
 
 Segment.prototype.createAvgPwrPath = function(settings) {
     var y1 = settings.shapeHeight - 30;
@@ -655,7 +631,6 @@ Segment.prototype.createAvgPwrPath = function(settings) {
     return path;
 };
 
-
 Segment.prototype.createDisabledFlatRoadPath = function(settings) {
     var y1 = settings.shapeHeight - 46;
     var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
@@ -665,7 +640,6 @@ Segment.prototype.createDisabledFlatRoadPath = function(settings) {
     path.setAttribute('d', 'M2,' + y1 + ' c2.98406,-6.0239 4.00398,-9.98805 4.9761,-7.01992c0.97211,2.96813 0.99602,11.95219 3.95219,8.89641c2.95618,-3.05578 1.9761,-1.95219 3.90438,-4.96414c1.92829,-3.01195 3.09562,0.05976 5.09163,0.05179');
     return path; 
 };
-
 
 Segment.prototype.toZwoXmlElement = function() {
     var xml = '        ';
@@ -707,7 +681,6 @@ Segment.prototype.toZwoXmlElement = function() {
     return xml;
 };
 
-
 Segment.prototype.textEventsToZwoElements = function() {
     var xmlElements = [];
     if (!this.textEvents || !this.textEvents.length || this.textEvents.length == 0) return xmlElements;
@@ -716,7 +689,6 @@ Segment.prototype.textEventsToZwoElements = function() {
     }
     return xmlElements;
 };
-
 
 Segment.prototype.toUriComponent = function() {
     var url = '';
@@ -751,7 +723,6 @@ Segment.prototype.toUriComponent = function() {
     return url;
 };
 
-
 function encodeNumber(num, digits) {
     if (!digits || digits > 3) digits = 3;
     if (digits < 1) digits = 1;
@@ -778,7 +749,6 @@ function encodeNumber(num, digits) {
     return encoded.join('');
 }
 
-
 function decodeNumber(num) {
     var chars = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',];
     var mult = 1;
@@ -792,11 +762,9 @@ function decodeNumber(num) {
     return sum;
 }
 
-
 function isNumeric(value) {
     return !isNaN(parseFloat(value)) && isFinite(value);
 }
-
 
 function getName() {
      var now = new Date();
@@ -810,7 +778,6 @@ function getName() {
      return name;
 }
 
-
 function createGuid() {
     return 'zxxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
         var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
@@ -818,14 +785,12 @@ function createGuid() {
     });
 }
 
-
 function getIntOrDefault(toParse, minimumDefaultValue) {
     var parsed = parseFloat(toParse);
     if (!parsed) return minimumDefaultValue;
     if (parsed < minimumDefaultValue) return minimumDefaultValue;
     return Math.max(Math.round(parsed), minimumDefaultValue);
 }
-
 
 function escapeXml(unsafe) {
     if (!unsafe) return '';
@@ -839,7 +804,6 @@ function escapeXml(unsafe) {
         }
     });
 }
-
 
 function getXmlElementValue(xmlDoc, tagName) {
     var node = xmlDoc.getElementsByTagName(tagName)[0];
