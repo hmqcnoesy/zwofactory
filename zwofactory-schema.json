@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorkoutExport",
+  "type": "object",
+
+  "properties": {
+    "myWorkoutInfo": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "modifiedOn": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "required": ["name", "modifiedOn"],
+        "additionalProperties": false
+      }
+    }
+  },
+
+  "patternProperties": {
+    "^workout:.*$": {
+      "type": "object",
+
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "author": { "type": "string" },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+
+        "segments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+
+            "properties": {
+              "id": { "type": "string" },
+
+              "t": {
+                "type": "string",
+                "enum": ["r", "s", "i", "f"]
+              },
+
+              "p1": { "type": ["number", "string"] },
+              "d1": { "type": ["number", "string"] },
+              "p2": { "type": ["number", "string"] },
+              "d2": { "type": ["number", "string"] },
+              "r":  { "type": ["number", "string"] },
+
+              "c1": { "type": ["number", "string"] },
+              "c2": { "type": ["number", "string"] },
+              "avg": { "type": "boolean" },
+              "dfr": { "type": "boolean" },
+
+              "textEvents": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "text": { "type": "string" },
+                    "offset": { "type": ["number", "string"] }
+                  },
+                  "required": ["id", "text", "offset"],
+                  "additionalProperties": false
+                }
+              }
+            },
+
+            "required": ["id", "t", "d1", "textEvents"],
+            "additionalProperties": false
+          }
+        }
+      },
+
+      "required": ["name", "description", "author", "tags", "segments"],
+      "additionalProperties": false
+    }
+  },
+
+  "required": ["myWorkoutInfo"],
+  "additionalProperties": false
+}
